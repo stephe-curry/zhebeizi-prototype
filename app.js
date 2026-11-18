@@ -4,7 +4,7 @@
   const C = globalThis.LifeContent, E = globalThis.LifeEngine, S = globalThis.LifeScenes, A = globalThis.LifeAudio;
   const root = document.querySelector('#app');
   const announcement = document.querySelector('#announcement');
-  const key = 'zhebeizi-1.3-workbench';
+  const save = globalThis.LifeSave, key = save.key;
   const places = ['小时候的家','青年住处','中晚年的家'];
   const labels = {lamp:'桌上的旧台灯',console:'借来的游戏机',letter:'桌上的志愿简章',badge:'桌上的岗位单',box:'桌边的纸箱',phone:'手机上的新消息',planner:'摊开的日程本',album:'架上的相册'};
   const states = {display:'摆在房间',stored:'收在箱中',given:'已经赠出',discarded:'已经丢弃'};
@@ -17,18 +17,16 @@
     '<button type="button" class="'+cls+'" data-action="'+action+'" data-id="'+esc(id)+'" '+attributes+'>'+esc(name)+'</button>';
   const token = () => globalThis.crypto?.getRandomValues
     ? Array.from(crypto.getRandomValues(new Uint32Array(2)),value => value.toString(36)).join('-') : Date.now().toString(36)+'-'+Math.random().toString(36).slice(2);
-  const fresh = () => ({version:1,revision:'',points:0,talents:[],trees:{},branches:{},active:null,motion:'auto',sound:false});
   let saving = true;
   function read() {
     try {
-      const json = localStorage.getItem(key);
-      return json ? JSON.parse(json) : null;
+      return save.read(localStorage);
     } catch {
       saving = false;
       return null;
     }
   }
-  let data = read() ?? fresh();
+  let data = read() ?? save.fresh();
   let page = 'home', selected = data.active, modal = null, memoPage = 0, compare = '', notice = '', setup = null;
   let testBranch = null, modalReturn = null, packingFocus = null;
   const entry = () => selected === 'test' ? testBranch : data.branches[selected];
@@ -43,7 +41,7 @@
 
   function persist() {
     data.revision = token();
-    try { localStorage.setItem(key,JSON.stringify(data)); saving = true; }
+    try { save.write(localStorage,data); saving = true; }
     catch { saving = false; }
   }
 
@@ -452,7 +450,7 @@
         [['auto','跟随系统设置'],['on','播放动画'],['off','减少动态效果']].map(([id,label])=>'<option value="'+id+'" '+(motionPreference()===id?'selected':'')+'>'+label+'</option>').join('')+
         '</select></label><label class="switch"><input type="checkbox" data-input="sound" '+(data.sound?'checked':'')+'> 播放音乐和音效</label><p><a href="art/index.html">查看人物、物件和环境动画样片</a></p>'+
         '<div class="groups">'+button('导出 JSON 备份','export','','secondary')+'<label class="file-pick">导入 JSON 备份<input type="file" accept=".json,application/json" data-input="import"></label></div>'+
-        '<p class="fine">导入会替换这个浏览器里的 v1.3 进度。</p><details class="small-section"><summary>独立走测</summary><p class="fine">走测只保留当前页面会话，可以复现提前谢幕。</p>'+
+        '<p class="fine">导入会替换这个浏览器里的 v1.3.2 进度。</p><details class="small-section"><summary>独立走测</summary><p class="fine">走测只保留当前页面会话，可以复现提前谢幕。</p>'+
         button('体验提前谢幕','test','','secondary')+
         button('导出本机走测统计','playtest-export','','secondary')+'</details>';
     } else if (modal.type==='fork') {
@@ -629,8 +627,8 @@
       close:()=>{modal=null;},
       'open-branch':()=>{if(data.branches[id]) {selected=data.active=id;page='play';memoPage=0;persist();}},
       test:birthTest,
-      export:()=>download(JSON.stringify(data,null,2),'application/json','这辈子-v1.3-备份.json'),
-      'playtest-export':()=>download(JSON.stringify(data.playtest??{counts:{},turnMs:0},null,2),'application/json','这辈子-v1.3-走测统计.json')
+      export:()=>download(JSON.stringify(data,null,2),'application/json','这辈子-v1.3.2-备份.json'),
+      'playtest-export':()=>download(JSON.stringify(data.playtest??{counts:{},turnMs:0},null,2),'application/json','这辈子-v1.3.2-走测统计.json')
     };
     if(Object.hasOwn(globalActions,action)) {globalActions[action]();render(!['settings','export','playtest-export','close'].includes(action));return;}
     if (page==='setup') {
@@ -775,46 +773,6 @@
     render(focus);
   }
 
-  function validateImport(incoming) {
-    const record = value => !!value && typeof value === 'object' && !Array.isArray(value);
-    const id = value => typeof value === 'string' && /^[a-z0-9-]+$/.test(value);
-    const slot = value => Number.isInteger(value) && value>=1 && value<=46;
-    const fact = value => record(value) && slot(value.slot) && Number.isFinite(value.age)
-      && ['people','echoes','items','highlights'].every(key=>Array.isArray(value[key]))
-      && value.items.every(key=>Object.hasOwn(C.items,key))
-      && value.echoes.every(echo=>record(echo)&&typeof echo.text==='string')
-      && (value.relations===undefined||Array.isArray(value.relations)&&value.relations.every(change=>record(change)&&Object.hasOwn(C.people,change.id)));
-    const activity = value => !value || (value.kind==='study'
-      ? Number.isFinite(value.deadline)&&Array.isArray(value.tiles)&&value.tiles.length===42&&value.tiles.every(tile=>Number.isInteger(tile)&&tile>=0&&tile<5)
-      : value.kind==='duel'&&Array.isArray(value.rounds)&&value.rounds.length<3);
-    const validRun = run => record(run) && run.scenario==='life' && C.origins.some(origin=>origin.id===run.birth)
-      && slot(run.slot)
-      && ['event','result','memoir'].includes(run.stage) && C.cards.some(card=>card.id===run.eventId&&card.slot===run.slot)
-      && record(run.stats) && Object.keys(C.labels).every(key=>Number.isFinite(run.stats[key]))
-      && ['items','people','draft','experience','highlights','project','threads'].every(key=>record(run[key]))
-      && ['facts','forks','careerLog','wishLog'].every(key=>Array.isArray(run[key]))
-      && Object.keys(run.items).every(id=>Object.hasOwn(C.items,id))
-      && Object.keys(run.people).every(id=>Object.hasOwn(C.people,id))
-      && Object.keys(run.experience).every(id=>Object.hasOwn(C.experience,id))
-      && Array.isArray(run.draft.support) && run.draft.support.every(id=>Object.hasOwn(C.supports,id))
-      && Array.isArray(run.draft.memory) && Array.isArray(run.draft.order)
-      && run.facts.every(fact) && activity(run.activity)
-      && (run.stage!=='result' || record(run.result)&&record(run.result.deltas)&&fact(run.result.fact))
-      && Object.values(run.items).every(item=>record(item)&&slot(item.first)&&Array.isArray(item.trail)&&item.trail.every(entry=>slot(entry.slot)))
-      && (run.stage!=='memoir'||record(run.memo))
-      && (!run.memo || ['timeline','career','highlights','forks','token'].every(key=>Array.isArray(run.memo[key]))
-        && run.memo.timeline.every(fact) && run.memo.token.every(id=>Object.hasOwn(C.items,id))
-        && record(run.memo.related) && typeof run.memo.line==='string');
-    const playtest = incoming?.playtest;
-    const validPlaytest = playtest===undefined || record(playtest)&&record(playtest.counts)&&Number.isFinite(playtest.turnMs)
-      && Object.values(playtest.counts).every(Number.isFinite);
-    return record(incoming)&&validPlaytest&&incoming.version===1&&typeof incoming.revision==='string'
-      && Number.isInteger(incoming.points)&&incoming.points>=0&&Array.isArray(incoming.talents)&&incoming.talents.every(id=>Object.hasOwn(C.talents,id))
-      && record(incoming.trees)&&record(incoming.branches)&&Object.entries(incoming.trees).every(([name,tree])=>id(name)&&record(tree)&&C.origins.some(origin=>origin.id===tree.birth))
-      && Object.entries(incoming.branches).every(([name,branch])=>id(name)&&record(branch)&&id(branch.tree)&&Object.hasOwn(incoming.trees,branch.tree)&&validRun(branch.run))
-      && (incoming.active===null || Object.hasOwn(incoming.branches,incoming.active));
-  }
-
   let lastTouchDrop=null;
   root.addEventListener('click',event=>{
     const target=event.target.closest('[data-action]');
@@ -837,9 +795,9 @@
       if(!file)return;
       file.text().then(text=>{
         const incoming=JSON.parse(text);
-        if(!validateImport(incoming))throw Error('备份结构不完整');
-        edit(()=>{data=incoming;selected=data.active;page='home';modal=null;notice='已载入 v1.3 备份。';persist();render(true);});
-      }).catch(()=>{notice='无法载入备份。请选择有效的 v1.3 JSON 文件。';render();});
+        if(!save.validateImport(incoming))throw Error('备份结构不完整');
+        edit(()=>{data=incoming;selected=data.active;page='home';modal=null;notice='已载入 v1.3.2 备份。';persist();render(true);});
+      }).catch(()=>{notice='无法载入备份。请选择有效的 v1.3.2 JSON 文件。';render();});
       return;
     }
     if(type==='sound')A.enable(input.checked);

@@ -490,10 +490,12 @@ globalThis.LifeEngine = (() => {
 
   function preview(run) {
     const event = currentCard(run);
-    const choice = event.choices.find(choice => choice.id === run.draft.main);
+    const interaction = event.interaction ? globalThis.LifeInteraction.preview(run) : null;
+    const main = event.interaction ? interaction?.choiceId : run.draft.main;
+    const choice = event.choices.find(choice => choice.id === main);
     const used = event.hotspot && choice ? mainCost(run) + run.draft.support.reduce((total,id) => total+C.supports[id][1],0) : 0;
     const reuse = choice?.commands.includes('reopen:choose') ? reuseChoices(run) : [];
-    return {choice,used,remaining:energy(run)-used,options:permittedExperience(run),wish:wishCandidate(run,choice),reuse,day:dayPlan(run,event,choice),
+    return {choice,interaction,used,remaining:energy(run)-used,options:permittedExperience(run),wish:wishCandidate(run,choice),reuse,day:dayPlan(run,event,choice),
       reuseSelected:reuse.length?selectedReuse(run):null,opportunities:opportunityPreview(run,choice)};
   }
 
@@ -501,6 +503,7 @@ globalThis.LifeEngine = (() => {
     const event = currentCard(run);
     const draft = preview(run);
     return run.stage === 'event' && !run.committed && !run.activity && draft.choice &&
+      (!event.interaction || draft.interaction?.phase === 'ready') &&
       (!event.hotspot || run.entered) && draft.remaining >= 0 &&
       (!C.familySlots.includes(run.slot) || run.draft.parent !== null);
   }
@@ -508,7 +511,8 @@ globalThis.LifeEngine = (() => {
   function commit(run) {
     if (!canApply(run)) return false;
     const event = currentCard(run);
-    const {choice,wish,reuse,reuseSelected,opportunities,day} = preview(run);
+    const {choice,interaction,wish,reuse,reuseSelected,opportunities,day} = preview(run);
+    const actionResult = interaction && globalThis.LifeInteraction.settlement(interaction);
     const before = {...run.stats};
     const careerBefore = run.career;
     const events = {items:new Set(),people:new Set(),lines:[],highlights:[],relations:[],reused:[],hazard:hash(run.historyKey,event.id,'hazard')%100};
@@ -529,6 +533,7 @@ globalThis.LifeEngine = (() => {
     const decisions = [
       [...run.draft.support].sort(),run.draft.experience,Object.entries(run.draft.items).sort(),run.draft.wish,run.draft.parent,run.draft.order,run.minigame?.slot === run.slot ? run.minigame : null
     ];
+    if (actionResult) decisions.push(actionResult.performed);
     if(run.draft.postcard)decisions.push(['postcard',run.draft.postcard]);
     if (reuseSelected && reuseSelected !== reuse[0]) decisions.push(reuseSelected);
     if (day?.extra) decisions.push(['day-extra',day.extra.id]);
@@ -584,6 +589,7 @@ globalThis.LifeEngine = (() => {
       if(!fact.people.includes('friend'))fact.people.push('friend');
     }
     if (day?.extra) fact.dayExtra = day.extra.id;
+    if (actionResult) fact.interaction = actionResult;
     run.facts.push(fact);
     if (run.checkpoint && event.choices.length > 1 && !run.finalType) run.forks.push({
       slot:run.slot,eventId:event.id,title:event.title,choiceId:choice.id,action:choice.label,point:run.checkpoint

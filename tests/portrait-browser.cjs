@@ -250,7 +250,7 @@ async function main() {
       if(LifeContent.familySlots.includes(run.slot))run.draft.parent=2;
       if(!LifeEngine.commit(run)||!LifeEngine.advance(run))throw Error('packing fixture failed');
     }
-    const key='zhebeizi-1.3-workbench';
+    const key=LifeSave.key;
     const save=JSON.parse(localStorage.getItem(key));
     save.branches[save.active].run=run;
     localStorage.setItem(key,JSON.stringify(save));
@@ -306,7 +306,7 @@ async function main() {
   assert.deepEqual(remoteRequests,[],'game flow never requests a remote resource');
 
   await evaluate(`(()=>{
-    const key='zhebeizi-1.3-workbench', save=JSON.parse(localStorage.getItem(key));
+    const key=LifeSave.key, save=JSON.parse(localStorage.getItem(key));
     const finish=(run,alternate=false)=>{
       while(!run.memo){
         const event=LifeEngine.currentCard(run);
