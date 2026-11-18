@@ -181,7 +181,9 @@ globalThis.LifeContent = (() => {
       beat(choice.id.slice('life-4-'.length),npcId,choice.label,choice.outcome,choice.id,{afterObservation:npcId});
     }
     for(const fact of run.facts) {
-      if(fact.slot>=run.slot || fact.choiceId==='life-2-0' && !fact.items?.includes('lamp')) continue;
+      if(fact.slot>=run.slot) continue;
+      // The homework variant shares this choice and lamp, but never earns repair here.
+      if(fact.choiceId==='life-2-0' && !(fact.eventId==='life-2' && fact.slot===2 && run.experience.repair===fact.slot)) continue;
       const story = Object.hasOwn(dinnerStories,fact.choiceId) && dinnerStories[fact.choiceId];
       if(!story) continue;
       const [label,newReply] = story;

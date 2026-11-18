@@ -930,7 +930,7 @@
       const file=input.files[0];
       if(!file)return;
       file.text().then(text=>{
-        const incoming=JSON.parse(text);
+        const incoming=save.decode(text);
         if(!save.validateImport(incoming))throw Error('备份结构不完整');
         edit(()=>{data=incoming;selected=data.active;page='home';modal=null;notice='已载入 v1.3.2 备份。';persist();render(true);});
       }).catch(()=>{notice='无法载入备份。请选择有效的 v1.3.2 JSON 文件。';render();});

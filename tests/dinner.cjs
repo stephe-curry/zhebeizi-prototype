@@ -3,10 +3,8 @@ const assert=require('node:assert/strict');
 const {test}=require('node:test');
 for(const name of ['content','engine','interaction','guidance','save']) require('../'+name+'.js');
 const E=LifeEngine,I=LifeInteraction;
-function dinner(choices=[0,0,1]){
-  const run=E.create(1,{talent:null});
-  // Force the repair variant when the fixture requests the repair story.
-  run.birth='craft-child';
+function dinner(choices=[0,0,1],seed=9){
+  const run=E.create(seed);
   for(const index of choices){
     run.entered=true;
     run.draft.main=E.currentCard(run).choices[index].id;
@@ -149,4 +147,59 @@ test('legacy choice IDs, suspended and resolved saves, later duel, memoir and br
   const branch=E.fork(run,run.memo.forks[0].slot);
   assert.deepEqual(branch.facts.find(fact=>fact.slot===4),recorded);
   assert.equal(branch.facts.filter(fact=>fact.slot===4).length,1);
+});
+
+test('same lamp and choice ID, different real experience in a non-craft family',()=>{
+  for(const repaired of [false,true]){
+    const run=restore(open(dinner([repaired?2:0,0,1],1)));
+    assert.notEqual(run.birth,'craft-child');
+    const source=run.facts[1];
+    assert.equal(source.choiceId,'life-2-0');
+    assert.equal(source.action,repaired?'跟着家人修灯':'把作业本推到灯下');
+    assert(E.held(run.items.lamp));
+    assert.equal(run.experience.repair,repaired?2:undefined);
+    assert(act(run,'listen'));
+    assert.equal(I.preview(run).allowed.some(a=>a.actionId==='story-2'),repaired);
+    assert.equal(act(run,'story-2'),repaired);
+    if(repaired)assert.deepEqual(finish(restore(run),'life-4-story').sourceSlots,[2]);
+  }
+});
+
+test('obsolete repair draft cannot settle; reloading keeps valid beats and permits a new ending',()=>{
+  const run=open(dinner([0,0,1],1));
+  const facts=E.copy(run.facts), stats=E.copy(run.stats);
+  run.draft.interaction.actions=['listen','story-2','turn','finish'];
+  assert.equal(I.confirm(run,'dinner'),false);
+  assert.equal(E.commit(run),false);
+  const resumed=restore(run);
+  assert.deepEqual(I.preview(resumed).performed,['listen','turn']);
+  assert.deepEqual(resumed.facts,facts);
+  assert.deepEqual(resumed.stats,stats);
+  assert.equal(E.commit(resumed),false);
+  assert.equal(act(resumed,'story-2'),false);
+  assert(act(resumed,'story-3'));
+  const fact=finish(resumed,'life-4-story');
+  assert.deepEqual(fact.sourceSlots,[3]);
+  assert(!fact.text.includes('螺丝'));
+  assert(E.advance(resumed));
+  assert.equal(resumed.slot,5);
+});
+
+test('repair learned in another turn cannot authenticate the lamp story',()=>{
+  const run=open(dinner([0,0,1],1));
+  run.experience.repair=1;
+  assert(act(run,'listen'));
+  assert.equal(act(run,'story-2'),false);
+});
+
+test('loading a settled legacy record leaves its original account intact',()=>{
+  const run=open(dinner());
+  assert(act(run,'listen') && act(run,'story-2'));
+  finish(run,'life-4-story');
+  // Model an already-settled record without corroborating repair experience.
+  delete run.experience.repair;
+  const before=JSON.stringify(run);
+  const restored=restore(run);
+  assert.equal(JSON.stringify(restored),before);
+  assert.equal(E.commit(restored),false);
 });

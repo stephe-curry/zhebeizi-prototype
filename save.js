@@ -7,9 +7,25 @@ globalThis.LifeSave = (() => {
   const isCurrent = value => value?.format === key && value.version === version;
   const fresh = () => ({version,format:key,revision:'',points:0,talents:[],trees:{},branches:{},active:null,motion:'auto',sound:false});
 
+  function decode(json) {
+    const value = JSON.parse(json);
+    if (!isCurrent(value)) return null;
+    for (const branch of Object.values(value.branches ?? {})) {
+      const run = branch?.run;
+      const session = run?.draft?.interaction;
+      if (run?.stage !== 'event' || run.committed || run.slot !== 4 || run.eventId !== 'life-4' ||
+          session?.eventId !== 'life-4' || session.variant !== undefined ||
+          !Array.isArray(session.actions) || !session.actions.includes('story-2')) continue;
+      const scene = globalThis.LifeEngine.currentCard(run)?.interaction;
+      if (scene?.sceneId !== 'family-dinner' || scene.actions.some(action => action.actionId === 'story-2')) continue;
+      // Keep the other beats. The old finish confirmed a story that is no longer eligible.
+      session.actions = session.actions.filter(id => id !== 'story-2' && id !== 'finish');
+    }
+    return value;
+  }
+
   function read(storage) {
-    const value = JSON.parse(storage.getItem(key));
-    return isCurrent(value) ? value : null;
+    return decode(storage.getItem(key));
   }
 
   function write(storage,value) {
@@ -58,5 +74,5 @@ globalThis.LifeSave = (() => {
       && (incoming.active===null || Object.hasOwn(incoming.branches,incoming.active));
   }
 
-  return {key,fresh,read,write,validateImport};
+  return {key,fresh,decode,read,write,validateImport};
 })();
