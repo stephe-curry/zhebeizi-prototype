@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>《这辈子》像素动画</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #202923; color: #f5e9d1; font: 15px/1.55 system-ui, sans-serif; }
+    main { max-width: 980px; margin: auto; padding: 22px max(16px, env(safe-area-inset-left)) 40px; }
+    header { display: grid; gap: 7px; }
+    h1, h2, h3, p { margin: 0; }
+    h1 { font-size: clamp(25px, 6vw, 36px); }
+    h2 { margin-bottom: 10px; font-size: 19px; }
+    h3 { font-size: 16px; }
+    a { color: #f4cb8d; text-underline-offset: 3px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid #f1cf91; outline-offset: 3px; }
+    section { margin-top: 24px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); gap: 12px; }
+    article { padding: 12px; border: 1px solid #6c6550; border-radius: 8px; background: #302e27; }
+    .stage { display: grid; place-items: center; height: 148px; margin-bottom: 10px; border-radius: 4px;
+      background: radial-gradient(ellipse at 50% 56%, #626557, #3f473c 80%); }
+    .sprite { width: 128px; aspect-ratio: 1; image-rendering: pixelated;
+      background-image: url(../assets/objects.png); background-size: var(--atlas); background-repeat: no-repeat; }
+    .info { color: #dac6a6; font-size: 13px; margin-bottom: 6px; }
+    .actions { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 6px; }
+    button { margin: 0; min-height: 44px; color: #fbdfaf; font: inherit; padding: 4px 10px;
+      border: 1px solid #917551; border-radius: 4px; background: #443a2d; cursor: pointer; }
+    footer { margin-top: 24px; color: #dac6a6; }
+  </style>
+  <script src="../sprite-data.js" defer></script>
+  <script src="../scenes.js" defer></script>
+  <script src="preview.js" defer></script>
+</head>
+<body>
+  <main>
+    <header>
+      <a href="../index.html">返回试玩</a>
+      <h1>《这辈子》像素动画</h1>
+      <p>每个动作都有独立的 32 × 32 Aseprite 工程。这里用游戏图集以 4 倍最近邻播放。</p>
+      <div class="actions">
+        <button id="motion" type="button" aria-pressed="false">暂停动画</button>
+        <a href="previews/selected-clips.gif">查看三个人物和三件道具的 GIF</a>
+      </div>
+    </header>
+    <div id="clips"></div>
+    <footer>人物以桌沿和座位定位。道具、手部和环境特效各有可单独编辑的图层。</footer>
+    <noscript>启用 JavaScript 可播放离线预览。各工程位于 animations 目录。</noscript>
+  </main>
+</body>
+</html>

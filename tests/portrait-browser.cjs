@@ -1,0 +1,374 @@
+'use strict';
+
+// Usage: node prototype/v1.3/tests/portrait-browser.cjs
+// CHROME_BIN can override the macOS Chrome path (or select Chromium on Linux).
+const assert = require('node:assert/strict');
+const {spawn} = require('node:child_process');
+const {existsSync, mkdtempSync, rmSync, writeFileSync} = require('node:fs');
+const {tmpdir} = require('node:os');
+const {resolve, join} = require('node:path');
+const {pathToFileURL} = require('node:url');
+const {setTimeout:delay} = require('node:timers/promises');
+
+const chrome = process.env.CHROME_BIN ?? (process.platform === 'darwin'
+  ? '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
+  : '/usr/bin/chromium');
+const url = pathToFileURL(resolve(__dirname,'../index.html')).href;
+const profile = mkdtempSync(join(tmpdir(),'life13-portrait-'));
+let stderr='', id=0, sessionId, buffer='';
+const pending = new Map(), faults=[], remoteRequests=[];
+const browser = spawn(chrome,[
+  '--headless','--disable-gpu','--disable-background-networking','--no-default-browser-check','--no-first-run',
+  '--remote-debugging-pipe', '--user-data-dir='+profile, 'about:blank'
+],{stdio:['ignore','ignore','pipe','pipe','pipe']});
+browser.stderr.setEncoding('utf8').on('data',chunk=>{stderr=(stderr+chunk).slice(-2500);});
+
+function rejectPending(error) {
+  for(const reply of pending.values()) reply.reject(error);
+  pending.clear();
+}
+browser.on('error',rejectPending);
+browser.on('exit',(code,signal)=>rejectPending(new Error('Chrome exited '+(code??signal)+'\n'+stderr)));
+browser.stdio[3].on('error',rejectPending);
+browser.stdio[4].setEncoding('utf8').on('data',chunk=>{
+  buffer+=chunk;
+  const lines=buffer.split('\0');
+  buffer=lines.pop();
+  for(const line of lines) {
+    if(!line)continue;
+    const reply=JSON.parse(line);
+    const promise=pending.get(reply.id);
+    if(promise) {
+      pending.delete(reply.id);
+      if(reply.error)promise.reject(new Error(reply.error.message));
+      else promise.resolve(reply.result);
+    }
+    if(reply.method==='Runtime.exceptionThrown') {
+      const detail=reply.params.exceptionDetails;
+      faults.push(detail.exception?.description??detail.text);
+    }
+    if(reply.method==='Network.requestWillBeSent' && /^https?:/.test(reply.params.request.url)) remoteRequests.push(reply.params.request.url);
+  }
+});
+
+function send(method,params={},attach=true) {
+  const current=++id;
+  return new Promise((resolve,reject)=>{
+    const timeout=setTimeout(()=>{
+      pending.delete(current);
+      reject(new Error(method+' timed out\n'+stderr));
+    },method==='Target.createTarget'?20000:5000);
+    pending.set(current,{
+      resolve:value=>{clearTimeout(timeout);resolve(value);},
+      reject:error=>{clearTimeout(timeout);reject(error);}
+    });
+    browser.stdio[3].write(JSON.stringify({id:current,method,params,sessionId:attach?sessionId:undefined})+'\0');
+  });
+}
+
+async function evaluate(expression) {
+  const {result,exceptionDetails}=await send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});
+  if(exceptionDetails)throw new Error(exceptionDetails.exception?.description??exceptionDetails.text);
+  return result.value;
+}
+
+async function wait(expression,message) {
+  for(let attempt=0;attempt<75;attempt++) {
+    if(await evaluate(expression))return;
+    await delay(30);
+  }
+  const heading=await evaluate('document.querySelector("h1")?.textContent');
+  throw new Error((message??expression)+' · '+heading+(faults.length?'\n'+faults.join('\n'):''));
+}
+
+const query=selector=>'document.querySelector('+JSON.stringify(selector)+')';
+const action=name=>'[data-action="'+name+'"]';
+const has=selector=>'Boolean('+query(selector)+')';
+
+async function touch(type,x,y) {
+  const touchPoints=type==='touchEnd' ? [] : [{x,y,id:1,radiusX:4,radiusY:4}];
+  await send('Input.dispatchTouchEvent',{type,touchPoints});
+}
+
+async function point(selector,scroll=true) {
+  const location=await evaluate(`(()=>{
+    const target=${query(selector)};
+    if(!target||target.disabled)return null;
+    if(${scroll})target.scrollIntoView({block:'center'});
+    const box=target.getBoundingClientRect();
+    const x=Math.round(box.left+box.width/2), y=Math.round(box.top+box.height/2);
+    return target.contains(document.elementFromPoint(x,y)) ? {x,y} : null;
+  })()`);
+  assert(location,'Visible, enabled, reachable control '+selector);
+  return location;
+}
+
+async function tap(selector) {
+  const {x,y}=await point(selector);
+  await touch('touchStart',x,y);
+  await touch('touchEnd');
+}
+
+async function pressEnter(selector) {
+  assert(await evaluate(`(()=>{const el=${query(selector)}; el?.focus(); return el===document.activeElement})()`));
+  const key = {key:'Enter',code:'Enter',windowsVirtualKeyCode:13,nativeVirtualKeyCode:process.platform==='darwin'?36:13};
+  await send('Input.dispatchKeyEvent',{...key,type:'keyDown',text:'\r',unmodifiedText:'\r'});
+  await send('Input.dispatchKeyEvent',{...key,type:'keyUp'});
+}
+
+async function mouseClick(selector) {
+  const {x,y}=await point(selector);
+  await send('Input.dispatchMouseEvent',{type:'mousePressed',x,y,button:'left',clickCount:1});
+  await send('Input.dispatchMouseEvent',{type:'mouseReleased',x,y,button:'left',clickCount:1});
+}
+
+async function resize(width,height,mobile) {
+  await send('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile});
+  await send('Emulation.setTouchEmulationEnabled',{enabled:mobile,maxTouchPoints:1});
+}
+
+async function portrait(label) {
+  const geometry=await evaluate(`(()=>{
+    const frame=document.querySelector('.game-frame');
+    const scroll=frame?.querySelector('.game-scroll');
+    if(!scroll)return null;
+    const {x,y,width,height}=frame.getBoundingClientRect();
+    const footer=frame.querySelector('.turn-footer');
+    const dialog=frame.querySelector('dialog[open]')?.getBoundingClientRect();
+    return {x,y,width,height, viewWidth:innerWidth,viewHeight:innerHeight, horizontal:scroll.scrollWidth-scroll.clientWidth,
+      pageHorizontal:document.documentElement.scrollWidth-innerWidth,
+      footerTop:footer?.getBoundingClientRect().top, footerBottom:footer?.getBoundingClientRect().bottom,
+      dialogBounds:dialog ? [dialog.left,dialog.top,dialog.right,dialog.bottom] : null};
+  })()`);
+  assert(geometry,label+' game frame contains its own scrolling area');
+  const {x,y,width,height,viewWidth,viewHeight,horizontal,pageHorizontal,footerTop,footerBottom,dialogBounds}=geometry;
+  assert(Math.abs(width-height*9/16)<=1,label+' frame ratio: '+width+' × '+height);
+  assert(width>0 && x>=-1 && y>=-1 && x+width<=viewWidth+1 && y+height<=viewHeight+1,label+' frame fits viewport');
+  assert(horizontal<=1 && pageHorizontal<=1,label+' no horizontal overflow');
+  if(footerTop!==undefined)assert(footerTop>=y && footerBottom<=y+height+1,label+' footer stays in frame');
+  if(dialogBounds) {
+    const [left,top,right,bottom]=dialogBounds;
+    assert(left>=x-1 && right<=x+width+1 && top>=y-1 && bottom<=y+height+1,label+' dialog stays in frame');
+  }
+  return {viewport:[viewWidth,viewHeight],frame:[Math.round(width),Math.round(height)]};
+}
+
+async function load() {
+  await send('Page.navigate',{url});
+  await wait('location.protocol === "file:" && '+has(action('setup')+','+action('resume')));
+}
+
+async function main() {
+  assert(existsSync(chrome),'Cannot find Chrome. Set CHROME_BIN.');
+  const {targetId}=await send('Target.createTarget',{url:'about:blank'},false);
+  ({sessionId}=await send('Target.attachToTarget',{targetId,flatten:true},false));
+  await send('Runtime.enable');
+  await send('Page.enable');
+  await send('Network.enable');
+  await resize(360,640,true);
+  await load();
+  const dimensions=[await portrait('small phone')];
+  for(const [width,height,mobile] of [[320,568,true],[390,844,true],[430,932,true],[1366,768,false]]) {
+    await resize(width,height,mobile);
+    dimensions.push(await portrait(width+'×'+height));
+  }
+  await resize(360,640,true);
+  await tap('.start-panel '+action('setup'));
+  await wait(has(action('birth')));
+  await pressEnter(action('birth'));
+  await wait(has('.day-track')+' && '+has('.day-card'));
+  await tap('.day-card[data-id="life-1-0"]');
+  await wait("document.querySelector('.day-track').textContent.includes('由主要安排占用')");
+  assert(await evaluate("!document.querySelector('.day-extra')"),'two-slot action leaves no second action');
+  await tap('.day-card[data-id="life-1-1"]');
+  await wait(has('[data-action="day-extra"]'));
+  await pressEnter('[data-action="day-extra"][data-id="quiet"]');
+  await wait("document.querySelector('.day-track').textContent.includes('在楼下歇一歇')");
+  await wait(has('.turn-footer '+action('commit')+':enabled'));
+  await portrait('two-slot day planner');
+  await tap('.turn-footer '+action('commit'));
+  await wait(has('.turn-footer '+action('next')));
+  assert(await evaluate("document.querySelector('.event-panel').textContent.includes('台阶上坐了一小会儿')"),'second action appears in life story');
+  await pressEnter('.turn-footer '+action('next'));
+  await wait(has('.scene '+action('enter')));
+  await portrait('lamp scene');
+  await tap('.scene '+action('enter'));
+  await wait(has('.choice .drag-grip'));
+
+  await resize(720,1280,true);
+  const handle=await point('.choice .drag-grip');
+  const drop=await point('[data-drop="main"]',false);
+  await touch('touchStart',handle.x,handle.y);
+  for(let i=1;i<=6;i++)await touch('touchMove',handle.x+(drop.x-handle.x)*i/6,handle.y+(drop.y-handle.y)*i/6);
+  await touch('touchEnd');
+  await wait('document.querySelector(\'.choice[aria-pressed="true"]\')?.dataset.id === document.querySelector(\'.choice\')?.dataset.id','real touch drag selects primary workbench card');
+  const draft=await evaluate('document.querySelector(\'.choice[aria-pressed="true"]\').dataset.id');
+  await resize(390,844,true);
+  await send('Page.reload',{ignoreCache:true});
+  await wait(has('.start-panel '+action('resume')));
+  await tap('.start-panel '+action('resume'));
+  await wait('document.querySelector(\'.choice[aria-pressed="true"]\')?.dataset.id === '+JSON.stringify(draft),'workbench draft restored after reload');
+  await tap('.turn-footer '+action('commit'));
+  await wait(has('.turn-footer '+action('next')));
+  assert(await evaluate('Boolean(document.querySelector(\'.room-prop[data-id="lamp"]\'))'),'lamp gained by confirmation');
+  await portrait('workbench result');
+  assert.deepEqual(faults,[],'no browser runtime errors');
+  assert.deepEqual(remoteRequests,[],'offline game never requests a remote resource');
+  const screenshot=process.env.PORTRAIT_SCREENSHOT;
+  if(screenshot) {
+    const {data}=await send('Page.captureScreenshot',{format:'png'});
+    writeFileSync(screenshot,Buffer.from(data,'base64'));
+  }
+
+  await tap(action('keepsake'));
+  await wait(has('[data-action="keepsake"]:disabled'));
+  await tap(action('history'));
+  await wait(has('dialog [data-action="share-memory"]'));
+  await tap('dialog '+action('close'));
+  await wait('!'+has('dialog[open]'));
+  await tap('.turn-footer '+action('next'));
+  await wait(has(action('touch-object')));
+  await tap('[data-action="touch-object"][data-id="life-3-1"]');
+  await wait(has(action('do-object')));
+  await tap('[data-action="do-object"]');
+  await wait(has(action('next')));
+  await tap(action('next'));
+  await wait(has('[data-action="activity"][data-id="duel"]'));
+  await tap('[data-action="activity"][data-id="duel"]');
+  await wait(has('.dinner-scene [data-id="listen"]'));
+  await tap('.dinner-scene [data-id="listen"]');
+  await wait("document.querySelector('.dinner-scene .activity').textContent.includes('抬起头')");
+  await tap('.dinner-scene [data-id="dish"]');
+  await wait('!'+has('.dinner-scene'));
+
+  await evaluate(`(()=>{
+    const run=LifeEngine.create(1);
+    while(run.slot<28){
+      const event=LifeEngine.currentCard(run);
+      run.entered=Boolean(event.hotspot);
+      run.draft.main=event.choices[0].id;
+      if(LifeContent.familySlots.includes(run.slot))run.draft.parent=2;
+      if(!LifeEngine.commit(run)||!LifeEngine.advance(run))throw Error('packing fixture failed');
+    }
+    const key='zhebeizi-1.3-workbench';
+    const save=JSON.parse(localStorage.getItem(key));
+    save.branches[save.active].run=run;
+    localStorage.setItem(key,JSON.stringify(save));
+    return true;
+  })()`);
+  await resize(390,844,true);
+  await send('Page.reload',{ignoreCache:true});
+  await wait(has('.start-panel '+action('resume')));
+  await tap('.start-panel '+action('resume'));
+  await wait(has('.turn-footer '+action('enter')));
+  await tap('.turn-footer '+action('enter'));
+  await wait(has('.packing-board [data-id="lamp"]'));
+  await tap('.packing-board [data-action="pack-item"][data-id="lamp"]');
+  await wait(has('.packing-zone [data-id="store"]:enabled'));
+  await tap('.packing-zone [data-id="store"]');
+  await wait("document.querySelector('[data-drop=store] .packed-preview')?.getAttribute('aria-label').includes('旧台灯')");
+  const packGrip=await point('.pack-item[data-id="lamp"] .drag-grip');
+  const packTarget=await point('[data-drop=keep]',false);
+  await touch('touchStart',packGrip.x,packGrip.y);
+  for(let i=1;i<=6;i++)await touch('touchMove',packGrip.x+(packTarget.x-packGrip.x)*i/6,packGrip.y+(packTarget.y-packGrip.y)*i/6);
+  await touch('touchEnd');
+  await wait("document.querySelector('[data-drop=keep] .packed-preview')?.getAttribute('aria-label').includes('旧台灯')",'real touch drag moves the lamp to another destination');
+  await portrait('packing board at phone width');
+
+  await resize(320,568,true);
+  await tap(action('settings'));
+  await wait(has('dialog[open]'));
+  await portrait('small-phone settings');
+  await tap('dialog details summary');
+  await tap('dialog '+action('test'));
+  await wait(has(action('choose'))+' && !'+has('dialog[open]'));
+  assert(await evaluate('document.querySelector("[role=progressbar]").getAttribute("aria-valuenow") === "43"'));
+  for(let i=0;i<2;i++) {
+    const enter='.turn-footer '+action('enter');
+    await wait(has(enter+','+action('choose')));
+    if(await evaluate(has(enter)))await tap(enter);
+    await wait(has(action('choose')));
+    await tap(action('choose'));
+    await wait(has('.turn-footer '+action('commit')+':enabled'));
+    await tap('.turn-footer '+action('commit'));
+    await wait(has('.turn-footer '+action('next')));
+    await tap('.turn-footer '+action('next'));
+  }
+  await wait(has('.memoir'));
+  await portrait('small-phone memoir');
+  await resize(1366,768,false);
+  await mouseClick('.book-nav '+action('memo')+'[data-id="3"]');
+  await wait(has(action('fork-preview')));
+  await mouseClick(action('fork-preview'));
+  await wait(has('dialog[open]'));
+  await portrait('desktop fork confirmation');
+  assert.deepEqual(faults,[],'no browser runtime errors through early memoir');
+  assert.deepEqual(remoteRequests,[],'game flow never requests a remote resource');
+
+  await evaluate(`(()=>{
+    const key='zhebeizi-1.3-workbench', save=JSON.parse(localStorage.getItem(key));
+    const finish=(run,alternate=false)=>{
+      while(!run.memo){
+        const event=LifeEngine.currentCard(run);
+        run.entered=true;run.draft.main=event.choices[alternate?1:0].id;
+        if(LifeContent.familySlots.includes(run.slot))run.draft.parent=2;
+        if(!LifeEngine.commit(run))throw Error('fixture failed: '+event.id);
+        if(run.slot===3)run.facts.at(-1).saved=true;
+        LifeEngine.advance(run);
+      }
+      return run;
+    };
+    const first=finish(LifeEngine.create(2));
+    const slot=first.memo.forks[0].slot, second=finish(LifeEngine.fork(first,slot),true);
+    const parent=save.active, tree=save.branches[parent].tree;
+    save.branches[parent].run=first;
+    save.branches['second-test']={tree,parent,from:slot,run:second};
+    localStorage.setItem(key,JSON.stringify(save));
+  })()`);
+  await send('Page.reload',{ignoreCache:true});
+  await wait(has(action('archive')));
+  await evaluate(`(()=>{
+    window.cardSizes=[];
+    HTMLAnchorElement.prototype.click=function(){
+      const image=new Image();image.onload=()=>window.cardSizes.push([image.width,image.height]);image.src=this.href;
+    };
+  })()`);
+  await mouseClick(action('archive'));
+  await wait(has('#compare'));
+  await evaluate("const select=document.querySelector('#compare');select.value='second-test';select.dispatchEvent(new Event('change',{bubbles:true}));");
+  await wait(has(action('share-pair')));  await mouseClick(action('share-pair'));
+  await wait('window.cardSizes.length===1');
+  await mouseClick(action('open-branch'));
+  await wait(has(action('share-memory')));
+  await mouseClick(action('share-memory'));
+  await wait('window.cardSizes.length===2');
+  assert.deepEqual(await evaluate('window.cardSizes'),[[720,1280],[720,1280]]);
+
+  const gallery=pathToFileURL(resolve(__dirname,'../art/index.html')).href;
+  await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'no-preference'}]});
+  await send('Page.navigate',{url:gallery});
+  await wait("document.querySelectorAll('#clips a[download]').length === 17",'seventeen independent source links load offline');
+  const links=await evaluate("Array.from(document.querySelectorAll('#clips a[download]'),link=>link.href)");
+  const {fileURLToPath}=require('node:url');
+  assert(links.every(link=>existsSync(fileURLToPath(link))),'each animation points to an existing Aseprite source');
+  const actor="document.querySelector('[data-sprite=child]').style.backgroundPosition";
+  const startingFrame=await evaluate(actor);
+  await wait(actor+' !== '+JSON.stringify(startingFrame),'child advances visibly in the offline gallery');
+  await mouseClick('#motion');
+  await wait("document.querySelector('#motion').textContent === '播放动画'");
+  const pausedFrame=await evaluate(actor);
+  await delay(260);
+  assert.equal(await evaluate(actor),pausedFrame,'paused gallery stays on one frame');
+  assert.deepEqual(faults,[],'no browser runtime errors through the gallery');
+  assert.deepEqual(remoteRequests,[],'gallery never requests a remote resource');
+  console.log('PASS · local file, 9:16 layout, no sideways overflow, touch, mouse, keyboard, drag, reload, day planner, packing board, object settlement, early memoir, fork dialog and 17 animation previews');
+  console.log(JSON.stringify(dimensions));
+}
+
+main().catch(error=>{console.error(error);process.exitCode=1;}).finally(async()=>{
+  if(browser.exitCode===null && browser.pid) {
+    browser.kill();
+    await Promise.race([new Promise(resolve=>browser.once('exit',resolve)),delay(1500)]);
+  }
+  rmSync(profile,{recursive:true,force:true,maxRetries:2});
+});
