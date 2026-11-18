@@ -115,10 +115,18 @@ globalThis.LifeInteraction = (() => {
     return true;
   }
 
-  function settlement(view) {
+  function settlement(view, scene) {
     if (view?.phase !== 'ready') return null;
     const {eventId,interactionId,sceneId,choiceId,balances,observed,performed} = view;
-    return {eventId,interactionId,sceneId,choiceId,balances,observed,performed};
+    const finalBalances = {...balances};
+    if (scene?.retainRemainder) {
+      const {sources,target} = scene.retainRemainder;
+      for (const id of sources) {
+        finalBalances[target] += finalBalances[id];
+        finalBalances[id] = 0;
+      }
+    }
+    return {eventId,interactionId,sceneId,choiceId,balances:finalBalances,observed,performed};
   }
 
   function confirm(run, interactionId) {

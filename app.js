@@ -700,6 +700,7 @@
     if(!run)return;
     if (page==='play' && run.eventId==='life-3' && run.stage==='event') {
       if(action==='help') action='guide-help';
+      if(action==='shop-leave' && id===run.eventId && LifeShop.leave(run)) action='commit';
       if(action==='shop-undo'){
         shopMessage='';
         const session=run.draft.interaction;

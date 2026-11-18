@@ -513,7 +513,7 @@ globalThis.LifeEngine = (() => {
     if (!canApply(run)) return false;
     const event = currentCard(run);
     const {choice,interaction,wish,reuse,reuseSelected,opportunities,day} = preview(run);
-    const actionResult = interaction && globalThis.LifeInteraction.settlement(interaction);
+    const actionResult = interaction && globalThis.LifeInteraction.settlement(interaction,event.interaction);
     const before = {...run.stats};
     const careerBefore = run.career;
     const events = {items:new Set(),people:new Set(),lines:[],highlights:[],relations:[],reused:[],hazard:hash(run.historyKey,event.id,'hazard')%100};

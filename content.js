@@ -136,11 +136,13 @@ globalThis.LifeContent = (() => {
         incompatible:objectId==='blocks'?['ice','purse']:['blocks']});
     }
   }
+  shopActions.push({actionId:'leave-shop',kind:'arrange',objectId:'purse',incompatible:['blocks','ice'],label:'今天不买了'});
   shared.find(event=>event.id==='life-3').interaction={
     sceneId:'school-shop',situation:'放学经过校门口的小卖部。',goal:'手里有两元钱。看看柜台，想想怎么花。',
     objects:shopObjects,actions:shopActions,balances:{yuanA:1,yuanB:1,blocks:0,ice:0,purse:0},
-    outcomes:[{balances:{blocks:2},choiceId:'life-3-0'},{balances:{ice:1,purse:1},choiceId:'life-3-1'},
-      {balances:{purse:2},choiceId:'life-3-2'}]
+    retainRemainder:{sources:['yuanA','yuanB'],target:'purse'},
+    outcomes:[{balances:{blocks:2},choiceId:'life-3-0'},{balances:{ice:1},choiceId:'life-3-1'},
+      {balances:{purse:2},choiceId:'life-3-2'},{after:'leave-shop',balances:{ice:0,blocks:0},choiceId:'life-3-2'}]
   };
 
   const occupationRows = {
