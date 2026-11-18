@@ -16,6 +16,12 @@ globalThis.LifeEngine = (() => {
   function currentCard(run) {
     const card = C.cards.find(card => card.id === run.eventId);
     if (!card) return;
+    if (card.id==='life-4') {
+      const legacy = run.activity?.kind==='duel' || run.minigame?.slot===4 && run.minigame.kind==='duel' ||
+        !run.draft.interaction && (card.choices.some(choice=>choice.id===run.draft.main) || run.draft.objectFocus) ||
+        run.stage==='result' && !run.result?.fact?.interaction;
+      return legacy ? card : C.dinner(run,card);
+    }
     if(card.id==='life-2'){
       const repair=run.birth==='craft-child'||run.facts[0]?.choiceId==='life-1-2';
       if(!repair)return {...card,title:'把桌子让出一角',body:'家人放下一盏旧灯，桌上只空出一角。作业本摊在哪里？',
@@ -562,9 +568,16 @@ globalThis.LifeEngine = (() => {
       if (run.wish.id === 'save' && run.stats.money >= 3000 || run.wish.id === 'rest' && run.stats.health >= 78 && run.stats.stress <= 45 || run.wish.id === 'pass' && Object.hasOwn(run.experience,'mentor')) updateWish(run,run.wish.id,'done');
     }
     const echo = callbacks(run,events);
+    const dinnerResult = actionResult?.sceneId === 'family-dinner';
+    if (dinnerResult) {
+      if (Object.hasOwn(C.people,actionResult.npcId)) events.people.add(actionResult.npcId);
+      events.lines.unshift(...actionResult.steps.map(step=>step.feedback));
+    }
     const fact = {
       slot:run.slot,age:age(run),eventId:event.id,choiceId:choice.id,title:event.title,action:events.packSummary?'给旧物安排去处':choice.label,
-      text:[events.packSummary??choice.outcome,...events.lines].join(' '),important:!!event.hotspot || !!event.job || !!event.rule,
+      text:dinnerResult
+        ? [...events.lines,...(choice.id==='life-4-quiet'?[choice.outcome]:[])].join(' ')
+        : [events.packSummary??choice.outcome,...events.lines].join(' '),important:!!event.hotspot || !!event.job || !!event.rule || dinnerResult,
       people:[...events.people],items:[...events.items],highlights:events.highlights,
       relations:events.relations,reused:events.reused,opportunities,
       careerBefore,careerAfter:run.career,echoes:echo,
@@ -576,6 +589,7 @@ globalThis.LifeEngine = (() => {
       run.slot===23 && run.prepared && run.facts.findLast(f=>f.slot===21)?.slot,
       run.draft.experience && run.experience[run.draft.experience],
       ...events.reused.map(id=>run.items[id]?.first),...events.relations.map(r=>run.people[r.id]?.first),
+      ...(actionResult?.steps ?? []).map(step=>step.sourceSlot),
       ...echo.map(e=>e.sourceSlot??run.items[e.id]?.first),run.low?.status==='recovering' && run.low.slot];
     fact.sourceSlots=[...new Set(origins.filter(slot=>Number.isInteger(slot)&&slot>0&&slot<run.slot))];
     if(choice.commands.some(command=>command.startsWith('release:'))) {
@@ -688,7 +702,7 @@ globalThis.LifeEngine = (() => {
   }
 
   function beginActivity(run,kind,now=Date.now()) {
-    const allowed = (kind === 'study' && run.slot === 12) || (kind === 'duel' && [4,29].includes(run.slot));
+    const allowed = (kind === 'study' && run.slot === 12) || (kind === 'duel' && (run.slot === 29 || run.slot === 4 && !currentCard(run).interaction));
     if (!allowed || run.committed || run.minigame?.slot === run.slot || run.activity) return false;
     const activity = {kind,seed:hash(run.historyKey,kind),step:0};
     if (kind === 'study') {

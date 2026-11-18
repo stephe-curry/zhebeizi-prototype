@@ -20,6 +20,8 @@ globalThis.LifeInteraction = (() => {
   function permits(run, scene, state, action) {
     if (!['observe','manipulate','arrange'].includes(action.kind)) return false;
     if (action.kind === 'manipulate' && !action.sourceId) return false;
+    if (scene.terminal && scene.resolve(state)) return false;
+    if (action.once && state.performed.includes(action.actionId)) return false;
     if (!available(run,scene,action.objectId)) return false;
     if (action.sourceId && !available(run,scene,action.sourceId)) return false;
     if (action.afterObservation && !state.observed.includes(action.afterObservation)) return false;
@@ -68,13 +70,13 @@ globalThis.LifeInteraction = (() => {
     const session = run.draft.interaction;
     const state = replay(run,scene,session);
     if (!state || run.committed || run.activity) return null;
-    const outcome = session.opened && scene.outcomes.find(rule =>
+    const candidate = session.opened && (scene.resolve ? scene.resolve(state) : scene.outcomes.find(rule =>
       (!rule.after || state.performed.includes(rule.after)) &&
-      Object.entries(rule.balances ?? {}).every(([id,value]) => state.balances[id] === value) &&
-      event.choices.some(choice => choice.id === rule.choiceId));
+      Object.entries(rule.balances ?? {}).every(([id,value]) => state.balances[id] === value)));
+    const outcome = candidate && event.choices.some(choice=>choice.id===candidate.choiceId) ? candidate : null;
     const phase = !session.opened ? 'intro' : !outcome ? 'explore' :
       scene.requiresPreview && !session.reviewed ? 'preview' : 'ready';
-    const allowed = session.opened ? scene.actions.filter(action => permits(run,scene,state,action)) : [];
+    const allowed = session.opened && !(outcome && scene.terminal) ? scene.actions.filter(action => permits(run,scene,state,action)) : [];
     return {eventId:event.id,interactionId:session.interactionId,sceneId:scene.sceneId,
       situation:scene.situation,goal:scene.goal,phase,choiceId:outcome?.choiceId ?? null,
       ...state,allowed:globalThis.LifeEngine.copy(allowed)};
@@ -126,7 +128,8 @@ globalThis.LifeInteraction = (() => {
         finalBalances[id] = 0;
       }
     }
-    return {eventId,interactionId,sceneId,choiceId,balances:finalBalances,observed,performed};
+    const details = scene?.record?.(view);
+    return {eventId,interactionId,sceneId,choiceId,balances:finalBalances,observed,performed,...details};
   }
 
   function confirm(run, interactionId) {

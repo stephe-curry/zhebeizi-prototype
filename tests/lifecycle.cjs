@@ -216,9 +216,11 @@ assert.equal(keepsakes.items.yearbook.state,'display');
 assert.equal(keepsakes.items.lamp.state,'stored');
 
 const table=through(E.create(5),4);
-assert(E.beginActivity(table,'duel'));
+assert.equal(E.beginActivity(table,'duel'),false);
+// Restore an old save already one move into its round-four duel.
+table.activity=JSON.parse('{"kind":"duel","seed":37,"step":0,"rounds":["fact-1"]}');
 assert.equal(E.activityMove(table,'fact-99'),false);
-assert(E.activityMove(table,'fact-1'));
+assert.deepEqual(table.activity.rounds,['fact-1']);
 assert(E.activityMove(table,'dish'));
 assert.equal(table.activity,null);
 plan(table,0);

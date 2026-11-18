@@ -145,6 +145,71 @@ globalThis.LifeContent = (() => {
       {balances:{purse:2},choiceId:'life-3-2'},{after:'leave-shop',balances:{ice:0,blocks:0},choiceId:'life-3-2'}]
   };
 
+  // A story requires the actual historical choice, never just an item or an age.
+  const dinnerStories = {
+    'life-1-0':['帮阿宁找水壶','原来你们那天一起找了半天。阿宁还分了糖给你呀。'],
+    'life-2-0':['和家人修台灯','拧紧最后一颗螺丝，灯就亮了。你现在说起来还记得这么清楚。'],
+    'life-3-0':['用积木拼站台','用空盒做站台？下次我也给你留几个纸盒。'],
+    'life-3-1':['请阿宁吃冰棍','吃完还把木棍收起来做书签，阿宁挺会想的。']
+  };
+  const dinnerChoices = [
+    ['turn','给家人转一道菜','转盘慢了下来，家人伸手接过那盘鱼。',{family:2}],
+    ['reply','接一句近况','你说最近放学路上挺热闹，家人笑着点了点头。',{social:1}],
+    ['ask','问家人小时候的事','家人讲起从前放学总绕去看河里的小鱼。',{family:1}],
+    ['humor','开个玩笑','你说这条鱼转了三圈，比自己跑步还勤快。桌边有人笑出了声。',{mood:2}],
+    ['story','讲一段真实往事','你把先前发生的事讲给家人听。',{social:2}],
+    ['quiet','安静吃完这顿饭','你慢慢吃完碗里的饭，碗筷声也渐渐轻了。',{}]
+  ].map(([id,label,outcome,delta])=>({id:'life-4-'+id,label,outcome,delta,commands:[]}));
+
+  function dinner(run,card) {
+    const known = run.people.parent && run.people.parent.status!=='dead';
+    const npcId = known ? 'parent' : 'relative';
+    const speaker = known ? people.parent : run.birth==='grandma' && !run.people.parent ? '外婆' : '桌边的亲戚';
+    const objects = {[npcId]:{label:speaker},fish:{label:'转盘上的鱼'},rice:{label:'饭碗和饭勺'},'table-exit':{label:'散席'}};
+    const actions = [{
+      actionId:'listen',kind:'observe',objectId:npcId,once:true,label:'听'+speaker+'说话',
+      feedback:speaker+'放下筷子：“最近放学，有什么好玩的事吗？”',
+      hintText:'可以点桌边的人听听，也可以直接转菜、盛饭或散席。'
+    }];
+    function beat(actionId,objectId,label,feedback,choiceId,extra={}) {
+      actions.push({actionId,objectId,label,feedback,choiceId,kind:'arrange',once:true,sourceId:'beats',transfer:1,...extra});
+    }
+    objects.beats={label:'交流余量'};
+    beat('turn','fish','转菜',dinnerChoices[0].outcome,'life-4-turn');
+    beat('serve','rice','盛饭',card.choices[1].outcome,'life-4-1');
+    for(const choice of dinnerChoices.slice(1,4)) {
+      beat(choice.id.slice('life-4-'.length),npcId,choice.label,choice.outcome,choice.id,{afterObservation:npcId});
+    }
+    for(const fact of run.facts) {
+      if(fact.slot>=run.slot || fact.choiceId==='life-2-0' && !fact.items?.includes('lamp')) continue;
+      const story = Object.hasOwn(dinnerStories,fact.choiceId) && dinnerStories[fact.choiceId];
+      if(!story) continue;
+      const [label,newReply] = story;
+      const witnessed = known && fact.people.includes(npcId);
+      const response = witnessed && fact.choiceId==='life-2-0'
+        ? '“我还记得那颗螺丝，还是你亲手拧紧的。”' : '“'+newReply+'”';
+      beat('story-'+fact.slot,npcId,label,speaker+'说：'+response,'life-4-story',
+        {afterObservation:npcId,sourceSlot:fact.slot,witnessed});
+    }
+    actions.push({actionId:'finish',kind:'arrange',objectId:'table-exit',label:'散席'});
+    const balances = {beats:3,[npcId]:0,fish:0,rice:0};
+    return {...card,choices:[...card.choices,...dinnerChoices],interaction:{
+      sceneId:'family-dinner',npcId,elder:run.birth==='grandma' && speaker==='外婆',objects,actions,balances,terminal:true,
+      goal:'家人问起放学后的趣事。你想怎么参与这顿饭？',
+      resolve(state) {
+        if(state.balances.beats && !state.performed.includes('finish')) return null;
+        const lastBeat = state.performed.map(id=>actions.find(action=>action.actionId===id)).findLast(action=>action?.choiceId);
+        return {choiceId:lastBeat?.choiceId ?? 'life-4-quiet'};
+      },
+      record(view) {
+        const steps = view.performed.map(id=>actions.find(action=>action.actionId===id))
+          .filter(action=>action?.feedback).map(({actionId,label,feedback,sourceSlot,witnessed})=>
+            ({actionId,label,feedback,...(sourceSlot?{sourceSlot,witnessed}:{})}));
+        return {npcId,steps};
+      }
+    }};
+  }
+
   const occupationRows = {
     office:[
       ['进门后的第一张表','小周提醒你，报销表总是退在同一列。','查清退件原因|下次你把例子贴在打印机上|make|gain:notebook,exp:workshop~请小周看一遍|他圈了一栏，问你为什么认为应该填在那里|help|meet:colleague~把自己的第一单做对|交单以后终于有空记一个门禁号码|learn'],
@@ -274,5 +339,5 @@ globalThis.LifeContent = (() => {
     ['indie-weekend','life-26',[2,1,1],['console','planner','phone']],
     ['indie-feedback','life-42',[2,1,1],['letter','photo','book']]
   ]) dayPlans[variant]={...dayPlans[base],costs,icons};
-  return {ages,keySlots,familySlots,labels,origins,items,experience,wishes,jobs,directions,people,threads,opportunities,shared,cards,talents,supports,dayPlans};
+  return {ages,keySlots,familySlots,labels,origins,items,experience,wishes,jobs,directions,people,threads,opportunities,shared,cards,talents,supports,dayPlans,dinner};
 })();

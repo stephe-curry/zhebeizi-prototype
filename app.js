@@ -100,7 +100,7 @@
     39:['新人','清单','工位'],41:['日历','通讯录','旧提案'],43:['排班表','小项目','通讯录'],45:['地图','信纸','锅铲']
   };
   function roomTargets(run,event){
-    return event?.id==='life-'+run.slot && roomObjects[run.slot];
+    return event?.interaction?.sceneId!=='family-dinner' && event?.id==='life-'+run.slot && roomObjects[run.slot];
   }
   function objectActions(run,event){
     const names=roomTargets(run,event);
@@ -159,9 +159,9 @@
       '<div class="progress" role="progressbar" aria-label="人生进度" aria-valuemin="0" aria-valuemax="46" aria-valuenow="'+run.slot+'"><i style="--progress:'+run.slot/46*100+'%"></i></div>';
   }
 
-  function tools(run) {
+  function tools(run,showHelp=run.eventId!=='life-3') {
     const counts = Object.values(run.items).filter(E.held).length;
-    return '<div class="shelf-actions">'+button('物件 '+counts,'objects','','small')+button('履历','history','','small')+(run.eventId==='life-3'?'':button('我能做什么？','help','','small'))+button('六维与状态','stats','','small')+'</div>'+
+    return '<div class="shelf-actions">'+button('物件 '+counts,'objects','','small')+button('履历','history','','small')+(showHelp?button('我能做什么？','help','','small'):'')+button('六维与状态','stats','','small')+'</div>'+
       (run.wish ? '<p class="wish"><span>心愿</span> '+esc(C.wishes[run.wish.id])+' <small>· '+({active:'在做',done:'已达成',unfinished:'未竟',paused:'已搁置'}[run.wish.status])+'</small></p>' : '');
   }
 
@@ -367,7 +367,7 @@
   function updateGuide(run) {
     clearTimeout(guideTimer);
     const scene = run && E.currentCard(run)?.interaction;
-    if (page==='play' && scene?.sceneId==='school-shop' && run.stage==='event' && !run.draft.interaction) {
+    if (page==='play' && ['school-shop','family-dinner'].includes(scene?.sceneId) && run.stage==='event' && !run.draft.interaction) {
       LifeInteraction.create(run,token());
       LifeInteraction.update(run,run.draft.interaction.interactionId,'open');
     }
@@ -410,6 +410,8 @@
     const event = E.currentCard(run);
     if (event.interaction?.sceneId==='school-shop') return '<main class="layout play shop-layout">'+resources(run)+
       LifeShop.render(run,guideView,guide,button,esc,shopMessage)+tools(run)+(run.stage==='result'?resultPanel(run):'')+'</main>';
+    if (event.interaction?.sceneId==='family-dinner' && guideView) return '<main class="layout play">'+resources(run)+
+      LifeDinner.render(event.interaction,guideView,guide,button,esc)+tools(run,false)+(run.stage==='result'?resultPanel(run):'')+'</main>';
     if (event.interaction) return '<main class="layout play">'+resources(run)+guidedPanel(run,event)+
       (run.stage==='result'?resultPanel(run):'')+'</main>';
     return '<main class="layout play"><section class="place" aria-label="当前生活空间">'+resources(run)+scene(run)+tools(run)+'</section>'+
@@ -724,6 +726,17 @@
         return;
       }
     }
+    if (action==='dinner-act' && page==='play' && run.stage==='event' && E.currentCard(run).interaction?.sceneId==='family-dinner') {
+      if (id==='listen' && LifeInteraction.preview(run)?.performed.includes('listen')) {
+        root.querySelector('.dinner-replies button,.dinner-recall summary')?.focus();
+        return;
+      }
+      if (!LifeInteraction.update(run,run.draft.interaction?.interactionId,'act',id)) return;
+      if (LifeInteraction.preview(run).phase==='ready') return mutate('commit',run.eventId);
+      if (branch!==testBranch) persist();
+      render();
+      return;
+    }
     if (action.startsWith('guide-') && page==='play' && run.stage==='event') {
       if (action==='guide-help') { guideClock.help(); render(); return; }
       if (action==='guide-open' && !run.draft.interaction) LifeInteraction.create(run,token());
@@ -811,7 +824,7 @@
     } else if(run.stage==='event') {
       if(action==='enter'&&event.hotspot&&id===event.hotspot&&!run.entered) {run.entered=true;measure('workbench_open');focus='event';}
       else if(action==='cancel'&&run.entered) {run.entered=false;run.draft=E.emptyDraft();packingFocus=null;focus=true;}
-      else if(action==='choose'&&(!event.hotspot||run.entered)&&event.choices.some(choice=>choice.id===id)) {
+      else if(action==='choose'&&event.interaction?.sceneId!=='family-dinner'&&(!event.hotspot||run.entered)&&event.choices.some(choice=>choice.id===id)) {
         if(draft.main!==id){
           draft.main=id;
           draft.wish=null;

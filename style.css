@@ -302,3 +302,23 @@ dialog::backdrop { background:#101612bc; }
 .shop-entity.picked,.shop-entity:focus-visible,[data-guide-level="1"] .shop-entity.suggested,[data-guide-level="2"] .shop-entity.suggested {outline:2px dashed #fff0b0;outline-offset:-2px}
 .shop-info {padding:6px 2px;min-height:80px}
 .shop-info small {color:var(--accent)}
+
+/* 12 歲的飯桌：像素物件與字幕佔用各自的區域。 */
+.dinner-panel h1 {font-size:20px;margin:0}
+.dinner-goal,.dinner-feedback {font-size:14px;margin:5px 0 8px}
+.dinner-room {position:relative;aspect-ratio:150/84;background:url(assets/dinner-room.png) center/100% 100% no-repeat;image-rendering:pixelated;overflow:hidden}
+.dinner-entity {position:absolute;transform:translate(-50%,-50%);display:grid;place-items:center;width:48px;height:48px;min-height:44px;padding:0;border:0;background:transparent;touch-action:manipulation}
+.dinner-speaker {left:50%;top:37%;width:64px;height:64px}
+
+.dinner-entity.suggested::after {content:'◆';position:absolute;top:0;color:#fff0b0;font-size:11px;text-shadow:1px 1px #352827}
+[data-guide-level="1"] .dinner-entity.suggested,[data-guide-level="2"] .dinner-entity.suggested,.dinner-entity:focus-visible {outline:2px dashed #fff0b0;outline-offset:-2px}
+.dinner-fish {left:36%;top:68%}
+.dinner-fish.passed {left:56%;top:68%}
+.dinner-rice {left:75%;top:77%}
+.dinner-rice.served {left:77%;top:64%}
+.dinner-entity i {width:48px;height:48px;background:url(assets/dinner-food.png) left top/96px 48px no-repeat;image-rendering:pixelated;pointer-events:none}
+.dinner-rice i {background-position:right top}
+.dinner-speaker i {width:64px;height:64px;background:url(assets/dinner-actor.png) no-repeat;background-size:384px 64px;background-position-x:calc(var(--pose) * -64px);transform:translateX(10px)}
+.dinner-replies,.dinner-recall,.dinner-controls {margin-block-start:8px}
+.dinner-replies button,.dinner-recall button,.dinner-controls button,.dinner-recall summary {min-height:44px}
+.dinner-recall summary {display:list-item;padding-block:11px;cursor:pointer}

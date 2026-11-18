@@ -268,13 +268,57 @@ async function main() {
   await wait("document.querySelector('.shop-info p').textContent.includes('剩下的一元放进口袋')");
   await shopShot('06-settled');
   await tap(action('next'));
-  await wait(has('[data-action="activity"][data-id="duel"]'));
-  await tap('[data-action="activity"][data-id="duel"]');
-  await wait(has('.dinner-scene [data-id="listen"]'));
-  await tap('.dinner-scene [data-id="listen"]');
-  await wait("document.querySelector('.dinner-scene .activity').textContent.includes('抬起头')");
-  await tap('.dinner-scene [data-id="dish"]');
-  await wait('!'+has('.dinner-scene'));
+  const dinnerAct=id=>'.dinner-panel [data-action="dinner-act"][data-id="'+id+'"]';
+  async function dinnerShot(name){
+    if (!process.env.DINNER_SHOTS) return;
+    const {data}=await send('Page.captureScreenshot',{format:'png'});
+    writeFileSync(join(process.env.DINNER_SHOTS,name+'.png'),Buffer.from(data,'base64'));
+  }
+  async function reloadDinner(){
+    await send('Page.reload',{ignoreCache:true});
+    await wait(has('.start-panel '+action('resume')));
+    await tap('.start-panel '+action('resume'));
+    await wait(has('.dinner-panel'));
+  }
+  await wait(has('.dinner-room .dinner-speaker.suggested'));
+  await portrait('dinner 320×568');
+  assert(await evaluate("Array.from(document.querySelectorAll('.dinner-room button')).every(b=>b.clientWidth>=44&&b.clientHeight>=44)"));
+  await dinnerShot('01-initial-320');
+  await reloadDinner();
+  await tap('.dinner-panel '+action('guide-help'));
+  await wait(has('.dinner-panel .fine'));
+  await evaluate("document.querySelector('.game-scroll').scrollTop=0");
+  await dinnerShot('02-recommended-320');
+  await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
+  await tap(dinnerAct('turn'));
+  await wait(has('.dinner-fish.passed'));
+  await dinnerShot('03-passed-320');
+  await reloadDinner();
+  await wait(has('.dinner-fish.passed'));
+  await pressEnter(dinnerAct('listen'));
+  await wait(has('.dinner-replies'));
+  await resize(390,844,true);
+  await portrait('dinner phone');
+  await dinnerShot('04-listening-phone');
+  await tap('.dinner-recall summary');
+  await tap(dinnerAct('story-3'));
+  await wait("document.querySelector('.dinner-feedback').textContent.includes('书签')");
+  await reloadDinner();
+  await wait("document.querySelector('.dinner-feedback').textContent.includes('书签')");
+  await resize(1366,768,false);
+  await portrait('dinner desktop');
+  await dinnerShot('05-story-desktop');
+  await mouseClick(dinnerAct('finish'));
+  await wait(has(action('next')));
+  assert.equal(await evaluate(has(action('commit'))),false,'there is no second dinner confirmation');
+  await reloadDinner();
+  await wait(has(action('next')));
+  await dinnerShot('06-ended-desktop');
+  await send('Emulation.setEmulatedMedia',{features:[]});
+  await mouseClick(action('next'));
+  await wait('!'+has('.dinner-panel'));
+  await resize(390,844,true);
+  console.log('PASS · dinner touch, keyboard, reduced motion, draft recovery and single settlement');
 
   await evaluate(`(()=>{
     const run=LifeEngine.create(1);
@@ -438,5 +482,5 @@ main().catch(error=>{console.error(error);process.exitCode=1;}).finally(async()=
     browser.kill();
     await Promise.race([new Promise(resolve=>browser.once('exit',resolve)),delay(1500)]);
   }
-  rmSync(profile,{recursive:true,force:true,maxRetries:2});
+  rmSync(profile,{recursive:true,force:true,maxRetries:6,retryDelay:150});
 });
