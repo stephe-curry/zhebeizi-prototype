@@ -76,9 +76,9 @@ globalThis.LifeDinner = (() => {
     const seat = scene.gathering?'<span class="fish-target fish-seat" aria-hidden="true">'+sprite('seat-art',8)+'</span>':'';
     return '<section class="surface event-panel dinner-panel last-fish" data-guide-level="'+(guide?.hintLevel ?? 0)+'">'+
       '<h1 tabindex="-1">最后一块鱼</h1>'+
-      (done?'':'<p class="dinner-goal">'+esc(guide?.goalText ?? scene.goal)+'</p>')+
       '<p class="fish-dialogue" role="status">'+esc(done?view.outcome:
         view.feedback ?? (asked?scene.actions.find(a=>a.actionId==='ask-family').feedback:scene.intro))+'</p>'+
+      (done?'':'<p class="dinner-goal">'+esc(guide?.goalText ?? scene.goal)+'</p>')+
       '<div class="dinner-room fish-room" data-decision="'+(decision ?? '')+'">'+guest+speaker+seat+plate+own+reserve+movedFish+
         '<span class="fish-target fish-player" aria-hidden="true">'+sprite('player-art',decision==='eat-fish'?2:0)+'</span></div>'+
       (!done?((guide?.hintText && guide.hintText!==guide.goalText?

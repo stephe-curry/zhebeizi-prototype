@@ -330,6 +330,12 @@ async function main() {
   await portrait('last fish 320×568');
   assert(await evaluate(`Array.from(document.querySelectorAll('.fish-room button')).every(b=>b.clientWidth>=44&&b.clientHeight>=44)`));
   assert(await evaluate(has('.fish-player')+' && '+has('.fish-guest')+' && '+has('.fish-seat')));
+  assert(await evaluate(`(()=>{
+    const context=document.querySelector('.fish-dialogue'), goal=document.querySelector('.last-fish .dinner-goal');
+    return context.textContent.includes('空位前摆着他的碗') && goal.textContent==='这块鱼，你想怎么处理？'
+      && context.getBoundingClientRect().bottom<=goal.getBoundingClientRect().top
+      && goal.getBoundingClientRect().bottom<=document.querySelector('.fish-room').getBoundingClientRect().top;
+  })()`));
   await fishShot('01-initial-320');
   await tap('.last-fish '+action('guide-help'));
   await wait(has('.fish-hint'));

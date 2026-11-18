@@ -219,12 +219,12 @@ globalThis.LifeContent = (() => {
     const gathering = atTable && !elder;
     const npcId = atTable ? 'parent' : elder ? 'dinner-grandma' : null;
     const speaker = elder ? '外婆' : '家人';
-    const goal = '最后一块鱼，你想怎么处理？';
+    const goal = '这块鱼，你想怎么处理？';
     const serveHint = gathering ? '可以点空碗留给晚归的人，也可以点自己的碗。'
       : '可以点小碗留到下顿，也可以点自己的碗。';
-    const intro = gathering ? '还有一位家人没回来。家人说：“菜要凉了，快吃吧。”'
-      : elder ? '外婆把鱼盘往你这边推了推：“菜要凉了，快吃吧。”'
-        : '桌上还剩一块鱼，边上放着一个盛剩菜的小碗。';
+    const intro = gathering ? '一家人吃到最后，盘里只剩一块鱼。还有人没回来，空位前摆着他的碗。'
+      : elder ? '你和外婆吃到最后，盘里只剩一块鱼。外婆把装剩菜的小碗放在盘边。'
+        : '饭快吃完了，盘里只剩一块鱼。旁边的小碗可以装起来，留到下顿。';
     const objects = {
       fish:{label:'最后一块鱼'},
       'reserve-bowl':{label:gathering?'空碗，留给晚归的人':'小碗，留到下顿'},
@@ -258,8 +258,8 @@ globalThis.LifeContent = (() => {
     if (npcId) {
       objects[npcId]={label:speaker};
       actions.push({actionId:'ask-family',kind:'observe',objectId:npcId,once:true,label:'问问'+speaker,
-        feedback:gathering?'家人说：“他留言说在外面吃过了。不过留一点，明早也能配粥。”'
-          :'外婆说：“你想吃就趁热吃。吃不下，咱们明早配粥。”'});
+        feedback:gathering?'家人说：“他刚来过电话，在外面吃过了，不用给他留饭。你想现在吃，还是留着明早配粥，都行。”'
+          :'外婆说：“我吃饱了。你要吃就趁热，吃不下就搁小碗里，明早配粥。”'});
     }
     actions.push({actionId:'keep-eating',kind:'arrange',objectId:'table-exit',label:'继续吃饭'});
     return {...card,title:'最后一块鱼',choices:[...card.choices,...dinnerChoices,...choices],interaction:{

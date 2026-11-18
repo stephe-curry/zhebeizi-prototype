@@ -100,7 +100,7 @@ test('guidance starts on the fish and offers both bowls after selection',()=>{
     return G.describe(view,clock.sample(view,now,true));
   };
   let guide=describe(0);
-  assert.equal(guide.goalText,'最后一块鱼，你想怎么处理？');
+  assert.equal(guide.goalText,'这块鱼，你想怎么处理？');
   assert.deepEqual(guide.recommendedObjectIds,['fish']);
   assert.equal(describe(7999).hintLevel,0);
   assert.equal(describe(8000).hintLevel,1);
@@ -135,4 +135,39 @@ test('family state controls guests and the meaning of the reserve bowl',()=>{
   assert(act(absent,'select-fish')&&act(absent,'save-fish')&&I.confirm(absent,'fish-test'));
   assert.deepEqual(absent.result.fact.people,[]);
   assert.doesNotMatch(absent.result.fact.text,/晚归|外婆/);
+});
+
+test('the opening sets up the meal and asking resolves its uncertainty across reload',()=>{
+  for (const [birth,context,answer] of [
+    ['craft-child',/一家人.*只剩一块鱼.*没回来.*空位.*碗/,/在外面吃过了.*不用给他留饭.*现在吃.*明早配粥/],
+    ['grandma',/你和外婆.*只剩一块鱼.*装剩菜的小碗/,/我吃饱了.*趁热.*明早配粥/]
+  ]) {
+    const run=open(dinner(birth));
+    const {intro}=E.currentCard(run).interaction;
+    assert.match(intro,context);
+    assert.doesNotMatch(intro,/吃过了|吃饱了/);
+    if (birth==='grandma') assert.doesNotMatch(intro,/没回来|晚归/);
+    const stats=E.copy(run.stats), facts=E.copy(run.facts);
+    assert(act(run,'ask-family'));
+    const view=I.preview(run);
+    assert.match(view.feedback,answer);
+    const restored=restore(run);
+    assert.equal(I.preview(restored).feedback,view.feedback);
+    assert.deepEqual(restored.stats,stats);
+    assert.deepEqual(restored.facts,facts);
+    for (const decision of ['save-fish','eat-fish']) {
+      const branch=E.copy(restored);
+      assert(act(branch,decision) && I.confirm(branch,'fish-test'));
+      assert.equal(branch.result.fact.interaction.steps[0].feedback,view.feedback);
+      assert.equal(E.commit(branch),false);
+      assert(E.advance(branch));
+      assert.equal(branch.slot,5);
+    }
+  }
+  const solo=dinner();
+  solo.people.parent.status='dead';
+  const scene=E.currentCard(solo).interaction;
+  assert.match(scene.intro,/只剩一块鱼.*小碗.*下顿/);
+  assert.doesNotMatch(scene.intro,/家人|外婆|没回来/);
+  assert(!scene.actions.some(action=>action.actionId==='ask-family'));
 });
