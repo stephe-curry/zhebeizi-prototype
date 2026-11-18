@@ -10,6 +10,7 @@ globalThis.LifeScenes = (() => {
   }]));
 
   function sprite(id,style='',play='') {
+    if(id==='yoyo')return '<span aria-hidden="true" class="sprite gift-inventory '+style+'"></span>';
     return '<span aria-hidden="true" class="sprite '+style+'" data-sprite="'+id+'" data-play="'+play+'" style="--atlas:'+
       100*size.w/32+'% '+100*size.h/32+'%;background-position:'+clips[id].frames[0].position+'"></span>';
   }

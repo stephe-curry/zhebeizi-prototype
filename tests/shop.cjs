@@ -64,7 +64,7 @@ test('undo a purchase and choose another item',()=>{
 });
 test('the other 98 cards still settle through their existing choice',()=>{
   const history=E.create(1);
-  const otherCards=LifeContent.cards.filter(card=>card.id!=='life-3');
+  const otherCards=LifeContent.cards.filter(card=>card.id!=='life-3' && !card.childhoodGift);
   assert.equal(otherCards.length,98);
   function choose(run){
     run.entered=true;

@@ -10,7 +10,7 @@
   const states = {display:'摆在房间',stored:'收在箱中',given:'已经赠出',discarded:'已经丢弃'};
   const signs = ['语','数','英','理','化'];
   const animatedItems = ['console','letter','box','album','phone','planner'];
-  const experienceName = id => C.experience[id][0];
+  const experienceName = (id,run) => id==='repair' && run?.experience.repair===8 ? '搭木板的手艺' : C.experience[id][0];
   const price = value => new Intl.NumberFormat('zh-CN').format(value);
   const esc = (value='') => String(value).replace(/[&<>"']/g,char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
   const button = (name,action,id='',cls='',attributes='') =>
@@ -300,7 +300,7 @@
         button(text+' · '+cost,'support',id,'chip','aria-pressed="'+run.draft.support.includes(id)+'" '+(plan.remaining<cost&&!run.draft.support.includes(id)?'disabled':''))
       ).join('')+'</div></div>' : '')+
       (plan.choice && plan.options.length ? '<details class="small-section" '+(run.draft.experience?'open':'')+'><summary>调用经历 · 1 精力</summary><div class="groups">'+plan.options.map(id=>
-        button(experienceName(id),'experience',id,'chip','aria-pressed="'+(run.draft.experience===id)+'" '+(plan.remaining<1&&!run.draft.experience?'disabled':''))
+        button(experienceName(id,run),'experience',id,'chip','aria-pressed="'+(run.draft.experience===id)+'" '+(plan.remaining<1&&!run.draft.experience?'disabled':''))
       ).join('')+'</div>'+(run.draft.experience?'<p class="fine">'+esc(C.experience[run.draft.experience][1])+'</p>':'')+'</details>' : '')+
       itemPlanner(run)+'</div>';
   }
@@ -367,7 +367,7 @@
   function updateGuide(run) {
     clearTimeout(guideTimer);
     const scene = run && E.currentCard(run)?.interaction;
-    if (page==='play' && ['school-shop','family-dinner'].includes(scene?.sceneId) && run.stage==='event' && !run.draft.interaction) {
+    if (page==='play' && ['school-shop','family-dinner',...C.giftEvents].includes(scene?.sceneId) && run.stage==='event' && !run.draft.interaction) {
       LifeInteraction.create(run,token());
       LifeInteraction.update(run,run.draft.interaction.interactionId,'open');
     }
@@ -408,6 +408,7 @@
 
   function play(run) {
     const event = E.currentCard(run);
+    if (event.childhoodGift) return '<main class="layout play gift-layout">'+resources(run)+LifeGift.render(event,guideView,guide,button,esc)+tools(run,false)+(run.stage==='result'?resultPanel(run,false):'')+'</main>';
     if (event.interaction?.sceneId==='school-shop') return '<main class="layout play shop-layout">'+resources(run)+
       LifeShop.render(run,guideView,guide,button,esc,shopMessage)+tools(run)+(run.stage==='result'?resultPanel(run):'')+'</main>';
     if (event.interaction?.sceneId==='family-dinner' && guideView) return '<main class="layout play">'+resources(run)+
@@ -550,7 +551,7 @@
       body='<h3>职业</h3><p>'+esc(run.careerLog.map(job=>E.job(job.to)).join(' → ')||'还在求学')+'</p>'+
         (run.age35?'<p class="fine">35 岁职业小结 · '+esc(E.job(run.age35.job))+' · 存款 ¥'+price(run.age35.stats.money)+'</p>':'')+
         (run.wishLog.length?'<h3>心愿</h3><ul>'+run.wishLog.map(wish=>'<li>'+C.ages[wish.slot-1]+' 岁 · '+esc(C.wishes[wish.id])+' · '+({active:'定下',done:'达成',unfinished:'未竟',paused:'搁置'})[wish.status]+'</li>').join('')+'</ul>':'')+
-        (Object.keys(run.experience).length?'<h3>以后可以调用的经历</h3><div class="groups">'+Object.keys(run.experience).map(id=>'<span class="tag">'+esc(experienceName(id))+'</span>').join('')+'</div>':'')+
+        (Object.keys(run.experience).length?'<h3>以后可以调用的经历</h3><div class="groups">'+Object.keys(run.experience).map(id=>'<span class="tag">'+esc(experienceName(id,run))+'</span>').join('')+'</div>':'')+
         (people.length?'<h3>遇见的人</h3><ul class="relationship-list">'+people.map(([id,person])=>
           '<li><strong>'+esc(C.people[id])+'</strong> <small>'+esc(({'in-touch':'仍有联系',lost:'已失联',dead:'已离世'})[person.status])+
           '</small><p>'+esc(C.ages[person.first-1])+' 岁初识 · '+esc(C.ages[person.last-1])+' 岁最近一次留下共同经历</p></li>').join('')+'</ul>':'')+
@@ -563,6 +564,7 @@
 
   function animate() {
     const run=nowRun();
+    root.classList.toggle('still-gifts',motionPreference()==='off');
     S.animate(root,motionPreference(),[page,selected,run?.slot,run?.stage,run?.entered,memoPage,modal?.type,modal?.id].join('/'));
   }
 
@@ -692,7 +694,7 @@
       const n=Object.values(setup.points).reduce((a,b)=>a+b,0);
       if(action==='birth' && n<=Math.min(data.points,6)){
         data.points-=n;
-        start(E.create(setup.seed,{points:setup.points,talent:setup.talent}));
+        start(E.create(setup.seed,{points:setup.points,talent:setup.talent,childhood:'spring-gift'}));
         render(true);
       } else if(action==='point-up'&&E.attributes.includes(id)&&n<Math.min(data.points,6)) {
         setup.points[id]=(setup.points[id]??0)+1;render();
@@ -725,6 +727,10 @@
         render();
         return;
       }
+    }
+    if (action==='gift-act' && page==='play' && run.stage==='event' && E.currentCard(run).childhoodGift) {
+      if (LifeInteraction.update(run,run.draft.interaction?.interactionId,'act',id)) mutate('commit',run.eventId);
+      return;
     }
     if (action==='dinner-act' && page==='play' && run.stage==='event' && E.currentCard(run).interaction?.sceneId==='family-dinner') {
       if (id==='listen' && LifeInteraction.preview(run)?.performed.includes('listen')) {

@@ -21,6 +21,7 @@ globalThis.LifeContent = (() => {
   };
 
   const items = {
+    yoyo:['悠悠球','八岁那年，你用整笔压岁钱换来的悠悠球。','yoyo'],
     lamp:['旧台灯','玻璃灯罩上有一道白痕，只有开灯时才显出来。','lamp'],
     console:['旧游戏机','背面的小螺丝生了锈。存档还记着第一次通关的日子。','console'],
     notes:['错题本','每个折角都留给一道曾经不会的题。','book'],
@@ -410,5 +411,54 @@ globalThis.LifeContent = (() => {
     ['indie-weekend','life-26',[2,1,1],['console','planner','phone']],
     ['indie-feedback','life-42',[2,1,1],['letter','photo','book']]
   ]) dayPlans[variant]={...dayPlans[base],costs,icons};
-  return {ages,keySlots,familySlots,labels,origins,items,experience,wishes,jobs,directions,people,threads,opportunities,shared,cards,talents,supports,dayPlans,dinner,lastFish};
+  const giftAmount = 10;
+  const giftEvents = ['spring-envelope','school-yoyo'];
+  const giftPlaces = {box:'小盒子', family:'红纸包', drawer:'抽屉'};
+  function giftCard(run,card) {
+    const saving = card.id===giftEvents[0];
+    const caregiver = run.birth==='grandma'?'外婆':'家人';
+    const origin = run.facts.find(f=>f.slot===1 && f.eventId===giftEvents[0]);
+    const deposit = origin?.interaction;
+    const place = deposit?.place;
+    const funded = run.childhood==='spring-gift' && deposit?.sceneId===giftEvents[0] &&
+      deposit.amount===giftAmount && deposit.balance===giftAmount && deposit.performed?.[0]===place &&
+      origin.choiceId===giftEvents[0]+'-'+place &&
+      Object.hasOwn(giftPlaces,place);
+    const withdraw = {box:'打开当年的小盒子',family:'从'+caregiver+'手里接过红纸包',drawer:'拉开熟悉的抽屉'};
+    const descriptions = {
+      box:'你把红包藏进自己的小盒子，轻轻扣好搭扣。这个位置你记住了。',
+      family:caregiver+'接过红包，用红纸包好，放进柜子：“想用的时候就跟我说。”',
+      drawer:'你拉开抽屉，把红包放在最前面。每天拿铅笔时都能看见它。',
+      buy:'你'+withdraw[place]+'，用整整十元换了悠悠球。你第一次把球甩下去，同学伸手比画：“收线的时候，手腕往上提！”',
+      keep:'你让钱继续留在'+giftPlaces[place]+'里。看完同学最后一个花式，你背起书包回家了。'
+    };
+    const choices=card.choices.map(c=>({...c,outcome:descriptions[c.key]}));
+    const eligible=saving ? run.childhood==='spring-gift' : funded;
+    const actions=(eligible ? choices : []).map(c=>({actionId:c.key,objectId:c.key,kind:'arrange',
+      label:c.label,hintText:saving?'点小盒子、家人的手或抽屉，红包就会收好。':'点柜台的球买下它，或点左边的旧物继续存钱。'}));
+    return {...card,choices,interaction:{sceneId:card.id,caregiver,place,price:giftAmount,
+      situation:saving?'过年了。'+caregiver+'伸出手：“这么多压岁钱，要不要我帮你收着？”':
+        '放学了，同学甩出悠悠球，又稳稳收回：“你的呢？”',
+      goal:saving?'这笔压岁钱，你想放在哪里？':'买下它，还是继续留着这笔钱？',
+      objects:Object.fromEntries(actions.map(a=>[a.objectId,{label:a.label}])),actions,balances:{},terminal:true,
+      resolve(state){const id=state.performed[0];return id?{choiceId:card.id+'-'+id}:null;},
+      record(view){
+        const id=view.performed[0];
+        const location=saving?id:place;
+        const amount=saving?giftAmount:deposit.balance;
+        const spent=id==='buy'?giftAmount:0;
+        const keeper=location==='family'?caregiver:'player';
+        return {owner:'player',place:location,custodian:spent?null:keeper,amount,balance:amount-spent,
+          ...(saving?{}:{sourceCustodian:deposit.custodian,price:giftAmount,spent,purchased:id==='buy',sourceSlot:origin.slot})};
+      }
+    }};
+  }
+  function giftDefinition(id,slot,title,labels){
+    return {id,slot,title,childhoodGift:true,choices:Object.entries(labels).map(([key,label])=>({
+      key,id:id+'-'+key,label,outcome:label,delta:{},commands:key==='buy'?['gain:yoyo']:key==='family'?['meet:parent']:[]
+    }))};
+  }
+  cards.push(giftDefinition(giftEvents[0],1,'这笔钱，我想自己管',{box:'自己藏好',family:'交给家人',drawer:'放进抽屉'}),
+    giftDefinition(giftEvents[1],2,'我也想玩那个',{keep:'继续留着',buy:'买下它'}));
+  return {giftEvents,giftCard,ages,keySlots,familySlots,labels,origins,items,experience,wishes,jobs,directions,people,threads,opportunities,shared,cards,talents,supports,dayPlans,dinner,lastFish};
 })();

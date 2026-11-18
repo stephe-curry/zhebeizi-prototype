@@ -363,3 +363,55 @@ dialog::backdrop { background:#101612bc; }
   65% {visibility:visible;opacity:1}
   to {visibility:visible;opacity:0;transform:translate(0,12px)}
 }
+
+/* The pocket money and its destination are part of the scene. */
+.gift-panel p {margin:5px 0 8px}
+.gift-panel h1 {margin-bottom:4px}
+.gift-scene {position:relative;isolation:isolate;overflow:hidden;margin:8px 0;border:2px solid #71523b;aspect-ratio:1.9;background-color:#a97b52;image-rendering:pixelated}
+.gift-scene.spring {background-image:url(assets/rooms.png);background-size:100% 300%;background-position:center top}
+.gift-scene.school {background:url(assets/yoyo-gate.png) center / 100% 100%}
+.gift-art,.sprite.gift-inventory {display:inline-block;width:64px;height:64px;background:url(assets/childhood-gift.png) no-repeat;background-size:2500% 100%;background-position-x:calc(var(--cel,6) * 100% / 24);image-rendering:pixelated;pointer-events:none}
+.sprite.gift-inventory {height:auto;background-size:2500% 100%;background-position:25% center}
+.gift-scene .gift-person {width:64px;height:64px}
+.gift-target {position:absolute;transform:translate(-50%,-50%);width:64px;min-height:44px;height:64px;background:transparent;border:0;display:grid;place-content:center;padding:0;color:#fff0ca}
+.gift-target small,.gift-memory small {position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);white-space:nowrap;background:#503b31;padding:1px 4px;font:12px/1.4 system-ui}
+.gift-target.suggested:before {content:'◆';position:absolute;left:46%;top:-3px;color:#ffe798;text-shadow:1px 1px #55392d}
+.gift-scene[data-level="1"] .suggested,.gift-scene[data-level="2"] .suggested,.gift-target:focus-visible {outline:2px dotted #ffe798}
+.gift-target.box {left:18%;top:73%}.gift-target.family {left:53%;top:37%}.gift-target.drawer {left:82%;top:73%}
+.gift-child,.gift-packet,.wrapped,.lantern,.classmate,.playmate,.gift-owner {position:absolute;transform:translate(-50%,-50%);pointer-events:none}
+.gift-child {left:35%;top:70%}.gift-packet {left:39%;top:69%;width:42px;height:42px}
+.spring[data-decision="box"] .gift-packet {--dx:-21%;--dy:4%}.spring[data-decision="drawer"] .gift-packet {--dx:43%;--dy:4%}
+.spring[data-decision="family"] .gift-packet {--dx:14%;--dy:-29%}
+.spring[data-decision]:not([data-decision=""]) .gift-packet {animation:put-gift .85s steps(10) both}
+@keyframes put-gift {0%{left:39%;top:69%}75%{opacity:1;left:calc(39% + var(--dx));top:calc(69% + var(--dy))}100%{opacity:0;left:calc(39% + var(--dx));top:calc(69% + var(--dy))}}
+.wrapped {left:58%;top:43%;width:45px;height:45px;animation:wrap-gift .95s steps(5) both}
+
+.lantern {top:12%;width:40px;height:40px}.lantern.left {left:11%}.lantern.right {left:89%}
+.gift-memory {position:absolute;inset:12% 66% 9% 3%;border:3px double #b99168;background:#57463a url(assets/rooms.png) center top / auto 300%;box-shadow:2px 2px #533f31}
+.gift-memory small {bottom:auto;top:3px}.gift-target.keep {left:19%;top:58%}.gift-target.buy {top:72%;left:80%}
+.nest {position:absolute;width:34px;height:34px;top:10px;left:16px}.emptied {filter:saturate(.35)}
+.classmate {left:58%;top:47%}.playmate {left:83%;top:44%}.spinning {position:absolute;left:55%;top:53%;width:48px;height:48px;animation:yoyo-throw 1.2s steps(12,end) infinite}
+@keyframes yoyo-throw {from{background-position-x:33.333333%}to{background-position-x:83.333333%}}
+.gift-owner {left:46%;top:71%;animation:take-yoyo .65s steps(7) both}
+@keyframes take-yoyo {from{left:75%}}
+@media(prefers-reduced-motion:reduce){.spinning,.gift-owner,.wrapped {animation:none}.spring[data-decision]:not([data-decision=""]) .gift-packet {animation:none;opacity:0}}
+
+.gate-sign {position:absolute;right:0;top:0;padding:0 5px;background:#4e5f50;color:#fff1cb;border:1px solid #a58c65;font-size:10px}
+.gift-scene .spinning {left:61%;top:46%}
+.gift-target.buy .gift-art {width:80px;height:80px}
+.spring[data-decision="box"] .box .gift-art {animation:close-gift-box .85s steps(1) both}
+@keyframes close-gift-box {0%{background-position-x:0}80%,100%{background-position-x:4.166667%}}
+.spring[data-decision="family"] .wrapped {left:84%;top:38%}
+@keyframes wrap-gift {0%,55%{opacity:0;left:55%;top:35%}65%{opacity:1;left:55%;top:35%}100%{left:84%;top:38%}}
+.school[data-decision="keep"] .playmate {animation:head-home 1.3s steps(8) both}
+@keyframes head-home {to{left:102%;opacity:0}}
+@media(prefers-reduced-motion:reduce){.spring .box .gift-art,.school .playmate {animation-duration:.001s!important}}
+
+.gift-payment {position:absolute;left:19%;top:56%;width:40px;height:40px;animation:pay-for-yoyo .7s steps(9) both}
+@keyframes pay-for-yoyo {0%{transform:translate(-50%,-50%)}75%{opacity:1;left:79%;top:61%}100%{opacity:0;left:80%;top:69%}}
+.still-gifts .gift-scene * {animation-duration:.001s!important;animation-iteration-count:1!important}
+@media(prefers-reduced-motion:reduce){.gift-payment {display:none}}
+
+.classmate>.gift-person,.gift-owner>.gift-person {transform-origin:50% 93%;animation:throw-weight 1.2s steps(2) infinite}
+@keyframes throw-weight {0%,90%,100%{transform:translateY(0)}20%{transform:translateY(-2px)}45%,60%{transform:translate(2px,1px)}}
+@media(prefers-reduced-motion:reduce){.classmate>.gift-person,.gift-owner>.gift-person {animation:none}}

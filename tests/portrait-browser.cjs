@@ -173,9 +173,57 @@ async function main() {
     dimensions.push(await portrait(width+'×'+height));
   }
   await resize(360,640,true);
-  await tap('.start-panel '+action('setup'));
-  await wait(has(action('birth')));
-  await pressEnter(action('birth'));
+  await resize(320,568,true);
+  const giftAction=id=>'[data-action="gift-act"][data-id="'+id+'"]';
+  async function giftShot(name){
+    if(!process.env.GIFT_SHOTS)return;
+    await evaluate("document.querySelector('.game-scroll').scrollTop=0");
+    await delay(900);
+    const {data}=await send('Page.captureScreenshot',{format:'png'});
+    writeFileSync(join(process.env.GIFT_SHOTS,name+'.png'),Buffer.from(data,'base64'));
+  }
+  for(const [place,decision] of [['box','buy'],['family','keep'],['drawer','buy']]){
+    await tap('.start-panel '+action('setup'));
+    await wait(has(action('birth')));
+    await pressEnter(action('birth'));
+    await wait(has(giftAction(place)));
+    if(place==='box')await giftShot('spring');
+    await portrait('spring pocket money');
+    assert(await evaluate("Array.from(document.querySelectorAll('.gift-target')).every(b=>b.clientWidth>=44 && b.clientHeight>=44)"));
+    await tap(giftAction(place));
+    await wait(has(action('next')));
+    await giftShot(place+'-stored');
+    await tap(action('next'));
+    await wait(has(giftAction(decision)));
+    await send('Page.reload',{ignoreCache:true});
+    await wait(has('.start-panel '+action('resume')));
+    await tap('.start-panel '+action('resume'));
+    await wait(has(giftAction(decision)));
+    await giftShot(place+'-before');
+    await tap(giftAction(decision));
+    await wait(has(action('next')));
+    const receipt=await evaluate("(()=>{const d=LifeSave.read(localStorage);return d.branches[d.active].run.facts[1].interaction})()");
+    assert.equal(receipt.place,place);
+    assert.equal(receipt.balance,decision==='buy'?0:10);
+    await giftShot(place+'-'+decision);
+    await tap(action('next'));
+    await wait(has('[data-action="shop-leave"]'));
+    await tap(action('shop-leave'));
+    await wait(has(action('next')));
+    await tap(action('next'));
+    await wait(has('[data-action="dinner-act"][data-id="keep-eating"]'));
+    await tap('[data-action="dinner-act"][data-id="keep-eating"]');
+    await wait(has(action('next')));
+    await tap(action('next'));
+    await wait(has('.day-track'));
+    await tap(action('home'));
+    await wait(has('.start-panel '+action('setup')));
+  }
+  // Resume a pre-gift life through the same persisted branch entry as an old installation.
+  await evaluate("(()=>{const d=LifeSave.read(localStorage),r=LifeEngine.create(1);d.branches[d.active].run=r;d.trees[d.branches[d.active].tree].birth=r.birth;LifeSave.write(localStorage,d)})()");
+  await send('Page.reload',{ignoreCache:true});
+  await wait(has('.start-panel '+action('resume')));
+  await tap('.start-panel '+action('resume'));
   await wait(has('.day-track')+' && '+has('.day-card'));
   await tap('.day-card[data-id="life-1-0"]');
   await wait("document.querySelector('.day-track').textContent.includes('由主要安排占用')");
@@ -522,7 +570,7 @@ async function main() {
   await evaluate("const select=document.querySelector('#compare');select.value='second-test';select.dispatchEvent(new Event('change',{bubbles:true}));");
   await wait(has(action('share-pair')));  await mouseClick(action('share-pair'));
   await wait('window.cardSizes.length===1');
-  await mouseClick(action('open-branch'));
+  await mouseClick(action('open-branch')+'[data-id="second-test"]');
   await wait(has(action('share-memory')));
   await mouseClick(action('share-memory'));
   await wait('window.cardSizes.length===2');

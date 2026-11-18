@@ -16,6 +16,7 @@ globalThis.LifeEngine = (() => {
   function currentCard(run) {
     const card = C.cards.find(card => card.id === run.eventId);
     if (!card) return;
+    if (card.childhoodGift) return C.giftCard(run,card);
     if (card.id==='life-4') {
       const legacy = run.activity?.kind==='duel' || run.minigame?.slot===4 && run.minigame.kind==='duel' ||
         !run.draft.interaction && (card.choices.some(choice=>choice.id===run.draft.main) || run.draft.objectFocus) ||
@@ -114,6 +115,7 @@ globalThis.LifeEngine = (() => {
   }
 
   function schedule(run) {
+    if(run.childhood==='spring-gift' && run.slot<=2)return C.cards.find(card=>card.id===C.giftEvents[run.slot-1]);
     const matching = C.cards.filter(card => card.slot === run.slot && card.rule && rule(run,card.rule));
     const story = matching.find(card => card.rule === 'early-next' || card.rule === 'early')
       ?? matching.find(card => card.id === 'arena-final')
@@ -144,7 +146,7 @@ globalThis.LifeEngine = (() => {
     return run;
   }
 
-  function create(seed,{scenario='life',points={},talent=null}={}) {
+  function create(seed,{scenario='life',points={},talent=null,childhood}={}) {
     seed >>>= 0;
     const birth = origin(seed);
     const stats = {...base};
@@ -152,7 +154,7 @@ globalThis.LifeEngine = (() => {
     modify(stats,points);
     if (talent) modify(stats,C.talents[talent]?.[2]);
     return prepare({
-      seed,scenario,birth:birth.id,stats,points,talent,career:null,direction:null,careerLog:[],items:{},people:{},
+      ...(childhood==='spring-gift'?{childhood}:{}),seed,scenario,birth:birth.id,stats,points,talent,career:null,direction:null,careerLog:[],items:{},people:{},
       threads:{},experience:{},highlights:{},facts:[],forks:[],wish:null,wishLog:[],historyKey:hash(seed,'story'),
       project:{points:0},low:null,early:null,age35:null
     },1);
@@ -579,14 +581,14 @@ globalThis.LifeEngine = (() => {
       slot:run.slot,age:age(run),eventId:event.id,choiceId:choice.id,title:event.title,action:events.packSummary?'给旧物安排去处':choice.label,
       text:dinnerResult
         ? [...events.lines,...(actionResult.variant==='last-fish' || choice.id==='life-4-quiet'?[choice.outcome]:[])].join(' ')
-        : [events.packSummary??choice.outcome,...events.lines].join(' '),important:!!event.hotspot || !!event.job || !!event.rule || dinnerResult,
+        : [events.packSummary??choice.outcome,...events.lines].join(' '),important:!!event.childhoodGift || !!event.hotspot || !!event.job || !!event.rule || dinnerResult,
       people:[...events.people],items:[...events.items],highlights:events.highlights,
       relations:events.relations,reused:events.reused,opportunities,
       careerBefore,careerAfter:run.career,echoes:echo,
       wish:run.wish ? {...run.wish} : null,parent:run.draft.parent,
       plan:event.hotspot ? {support:[...run.draft.support],experience:run.draft.experience,order:[...run.draft.order]} : null
     };
-    const origins=[event.id==='school-result' && run.facts.findLast(f=>f.slot===14)?.slot,
+    const origins=[actionResult?.sourceSlot,event.id==='school-result' && run.facts.findLast(f=>f.slot===14)?.slot,
       run.slot===35 && run.opportunities?.length && run.facts.findLast(f=>f.slot===33)?.slot,
       run.slot===23 && run.prepared && run.facts.findLast(f=>f.slot===21)?.slot,
       run.draft.experience && run.experience[run.draft.experience],
