@@ -118,6 +118,31 @@ globalThis.LifeContent = (() => {
 
   const shared = sharedRows.map(([title,body,lines], index) => card('life-'+(index+1),index+1,title,body,lines));
 
+  const shopObjects = {
+    yuanA:{label:'第一枚一元硬币'}, yuanB:{label:'第二枚一元硬币'},
+    blocks:{label:'旧积木',price:2,description:'木块的边角磨得发亮，正好能拼一座小站台。'},
+    ice:{label:'冰棍',price:1,description:'给放学同行的同学买一根，剩下的一元可以留作车钱。'},
+    purse:{label:'零钱袋',description:'把零钱留下，等下雨时坐车回家。'}
+  };
+  const shopActions = Object.entries(shopObjects).map(([id,obj])=>({
+    actionId:'look-'+id,kind:'observe',objectId:id,requireBalance:id==='yuanA'||id==='yuanB',label:'看看'+obj.label,
+    hintText:'点一下硬币，再点货架上的商品或零钱袋。'
+  }));
+  for (const sourceId of ['yuanA','yuanB']) {
+    for (const objectId of ['blocks','ice','purse']) {
+      shopActions.push({actionId:sourceId+'-'+objectId,kind:'arrange',sourceId,objectId,transfer:1,
+        guideObjectId:sourceId,label:'安排一元',hintText:'点一枚还在手边的硬币，再点它的去处。',
+        capacity:shopObjects[objectId].price ?? 2,
+        incompatible:objectId==='blocks'?['ice','purse']:['blocks']});
+    }
+  }
+  shared.find(event=>event.id==='life-3').interaction={
+    sceneId:'school-shop',situation:'放学经过校门口的小卖部。',goal:'手里有两元钱。看看柜台，想想怎么花。',
+    objects:shopObjects,actions:shopActions,balances:{yuanA:1,yuanB:1,blocks:0,ice:0,purse:0},
+    outcomes:[{balances:{blocks:2},choiceId:'life-3-0'},{balances:{ice:1,purse:1},choiceId:'life-3-1'},
+      {balances:{purse:2},choiceId:'life-3-2'}]
+  };
+
   const occupationRows = {
     office:[
       ['进门后的第一张表','小周提醒你，报销表总是退在同一列。','查清退件原因|下次你把例子贴在打印机上|make|gain:notebook,exp:workshop~请小周看一遍|他圈了一栏，问你为什么认为应该填在那里|help|meet:colleague~把自己的第一单做对|交单以后终于有空记一个门禁号码|learn'],

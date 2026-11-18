@@ -490,8 +490,9 @@ globalThis.LifeEngine = (() => {
 
   function preview(run) {
     const event = currentCard(run);
-    const interaction = event.interaction ? globalThis.LifeInteraction.preview(run) : null;
-    const main = event.interaction ? interaction?.choiceId : run.draft.main;
+    const interaction = event.interaction && run.draft.interaction ? globalThis.LifeInteraction.preview(run) : null;
+    const legacyShopChoice = event.id==='life-3' && !run.draft.interaction;
+    const main = event.interaction && !legacyShopChoice ? interaction?.choiceId : run.draft.main;
     const choice = event.choices.find(choice => choice.id === main);
     const used = event.hotspot && choice ? mainCost(run) + run.draft.support.reduce((total,id) => total+C.supports[id][1],0) : 0;
     const reuse = choice?.commands.includes('reopen:choose') ? reuseChoices(run) : [];
@@ -503,7 +504,7 @@ globalThis.LifeEngine = (() => {
     const event = currentCard(run);
     const draft = preview(run);
     return run.stage === 'event' && !run.committed && !run.activity && draft.choice &&
-      (!event.interaction || draft.interaction?.phase === 'ready') &&
+      (!event.interaction || event.id==='life-3' && !run.draft.interaction || draft.interaction?.phase === 'ready') &&
       (!event.hotspot || run.entered) && draft.remaining >= 0 &&
       (!C.familySlots.includes(run.slot) || run.draft.parent !== null);
   }

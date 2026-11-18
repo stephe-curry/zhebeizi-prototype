@@ -24,6 +24,9 @@ globalThis.LifeInteraction = (() => {
     if (action.sourceId && !available(run,scene,action.sourceId)) return false;
     if (action.afterObservation && !state.observed.includes(action.afterObservation)) return false;
     if (action.experienceId && !Object.hasOwn(run.experience,action.experienceId)) return false;
+    if (action.requireBalance && !state.balances[action.objectId]) return false;
+    if (action.incompatible?.some(id=>state.balances[id]>0)) return false;
+    if (action.capacity !== undefined && state.balances[action.objectId]+action.transfer>action.capacity) return false;
     if (action.transfer !== undefined) {
       if (action.kind === 'observe') return false;
       const {sourceId,objectId,transfer} = action;

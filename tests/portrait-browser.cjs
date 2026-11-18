@@ -227,11 +227,39 @@ async function main() {
   await tap('dialog '+action('close'));
   await wait('!'+has('dialog[open]'));
   await tap('.turn-footer '+action('next'));
-  await wait(has(action('touch-object')));
-  await tap('[data-action="touch-object"][data-id="life-3-1"]');
-  await wait(has(action('do-object')));
-  await tap('[data-action="do-object"]');
+  async function shopShot(name) {
+    if (!process.env.SHOP_SHOTS) return;
+    const {data}=await send('Page.captureScreenshot',{format:'png'});
+    writeFileSync(join(process.env.SHOP_SHOTS,name+'.png'),Buffer.from(data,'base64'));
+  }
+  const shopObject=id=>'[data-action="shop-object"][data-id="'+id+'"]';
+  await wait(has(shopObject('ice')));
+  await shopShot('01-counter');
+  await resize(320,568,true);
+  await portrait('small shop');
+  await shopShot('02-small-phone');
+  await tap(shopObject('ice'));
+  await wait("document.querySelector('.shop-info strong').textContent.includes('¥1')");
+  await shopShot('03-price');
+  await tap(shopObject('yuanA'));
+  await wait(has('.shop-entity.picked[data-id="yuanA"]'));
+  await tap(shopObject('ice'));
+  await wait(has('.shop-entity.paid'));
+  await shopShot('04-one-yuan');
+  await send('Page.reload',{ignoreCache:true});
+  await wait(has('.start-panel '+action('resume')));
+  await tap('.start-panel '+action('resume'));
+  await wait(has('.shop-entity.paid'));
+  const coinPoint=await point(shopObject('yuanB'));
+  const pursePoint=await point(shopObject('purse'),false);
+  await touch('touchStart',coinPoint.x,coinPoint.y);
+  await touch('touchMove',pursePoint.x,pursePoint.y);
+  await touch('touchEnd');
+  await wait(has(action('commit')+':enabled'));
+  await shopShot('05-ready');
+  await tap(action('commit'));
   await wait(has(action('next')));
+  await shopShot('06-settled');
   await tap(action('next'));
   await wait(has('[data-action="activity"][data-id="duel"]'));
   await tap('[data-action="activity"][data-id="duel"]');
@@ -361,6 +389,39 @@ async function main() {
   assert.equal(await evaluate(actor),pausedFrame,'paused gallery stays on one frame');
   assert.deepEqual(faults,[],'no browser runtime errors through the gallery');
   assert.deepEqual(remoteRequests,[],'gallery never requests a remote resource');
+  await resize(320,568,true);
+  const demo=pathToFileURL(resolve(__dirname,'guidance.html')).href;
+  await send('Page.navigate',{url:demo});
+  const recommended='[data-object-id="note"][data-recommended="true"]';
+  await wait(has(recommended));
+  await portrait('guidance demo');
+  await tap('[data-id="file-note"]');
+  await wait(has(action('guide-undo')));
+  await tap(action('guide-undo'));
+  await wait(has('[data-guide-level="0"] '+recommended));
+  await tap(action('guide-help'));
+  await wait("document.querySelector('.guide-hint')?.textContent.includes('收好便签')");
+  await tap('[data-id="file-photo"]');
+  await wait(has(recommended)+' && '+has('.event-panel')+" && document.querySelector('.event-panel').textContent.includes('还有一张便签')");
+  await pressEnter('[data-id="file-note"]');
+  await wait(has('[data-action="commit"]:enabled'));
+  await tap(action('commit'));
+  await wait("document.querySelector('.play')?.textContent.includes('这次互动已结束')");
+  assert.equal(await evaluate(has(action('guide-help'))),false);
+  await tap(action('home'));
+  await wait(has('.start-panel'));
+  await send('Page.reload',{ignoreCache:true});
+  await wait(has(recommended));
+  // Advance the browser clock without making the player wait during the test.
+  async function advanceGuideTime(ms) {
+    await send('Emulation.setVirtualTimePolicy',{policy:'advance',budget:ms});
+  }
+  await advanceGuideTime(8500);
+  await wait(has('[data-guide-level="1"] '+recommended));
+  await advanceGuideTime(10500);
+  await wait(has('[data-guide-level="2"] .guide-hint'));
+  assert.deepEqual(faults,[],'guidance demo without runtime errors');
+  console.log('PASS · narrow guidance demo, help, alternative action, redraw, keyboard, confirmation and exit');
   console.log('PASS · local file, 9:16 layout, no sideways overflow, touch, mouse, keyboard, drag, reload, day planner, packing board, object settlement, early memoir, fork dialog and 17 animation previews');
   console.log(JSON.stringify(dimensions));
 }

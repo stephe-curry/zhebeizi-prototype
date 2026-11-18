@@ -161,7 +161,7 @@
 
   function tools(run) {
     const counts = Object.values(run.items).filter(E.held).length;
-    return '<div class="shelf-actions">'+button('物件 '+counts,'objects','','small')+button('履历','history','','small')+button('我能做什么？','help','','small')+button('六维与状态','stats','','small')+'</div>'+
+    return '<div class="shelf-actions">'+button('物件 '+counts,'objects','','small')+button('履历','history','','small')+(run.eventId==='life-3'?'':button('我能做什么？','help','','small'))+button('六维与状态','stats','','small')+'</div>'+
       (run.wish ? '<p class="wish"><span>心愿</span> '+esc(C.wishes[run.wish.id])+' <small>· '+({active:'在做',done:'已达成',unfinished:'未竟',paused:'已搁置'}[run.wish.status])+'</small></p>' : '');
   }
 
@@ -358,7 +358,60 @@
       (fact.items.length?'<div class="groups">'+fact.items.map(id=>button(C.items[id][0]+' · '+states[run.items[id].state],'item',id,'chip')).join('')+'</div>':'')+'</section>';
   }
 
+  const guideClock = LifeGuidance.clock();
+  let shopMessage='';
+  let guideTimer;
+  let guideView;
+  let guide;
+
+  function updateGuide(run) {
+    clearTimeout(guideTimer);
+    const scene = run && E.currentCard(run)?.interaction;
+    if (page==='play' && scene?.sceneId==='school-shop' && run.stage==='event' && !run.draft.interaction) {
+      LifeInteraction.create(run,token());
+      LifeInteraction.update(run,run.draft.interaction.interactionId,'open');
+    }
+    guideView = scene ? LifeInteraction.preview(run) : null;
+    const active = page==='play' && !document.hidden && !modal && !run?.activity;
+    const timing = guideClock.sample(guideView,performance.now(),active);
+    const thresholds = scene?.guidanceTiming ?? LifeGuidance.defaults;
+    guide = LifeGuidance.describe(guideView,timing,thresholds);
+    if (active && guide?.availableHelp && guide.hintLevel<2) {
+      const deadline = guide.hintLevel===0 ? thresholds.emphasize : thresholds.explain;
+      guideTimer = setTimeout(()=>render(),Math.max(1,deadline-timing.elapsed));
+    }
+  }
+
+  function guidedPanel(run,event) {
+    const scene = event.interaction;
+    if (!guideView) return '<section class="surface">'+heading('当前目标',event.title,scene.goal)+
+      button('进入情境','guide-open',event.id,'primary')+'</section>';
+    if (guide.completionText) return '<section class="surface" role="status">'+esc(guide.completionText)+'</section>';
+    const controls = Object.entries(scene.objects).map(([objectId,object])=>{
+      const actions = guideView.allowed.filter(a=>
+        (Object.hasOwn(scene.objects,a.guideObjectId) ? a.guideObjectId : a.objectId)===objectId);
+      if (!actions.length) return '';
+      const recommended = guide.recommendedObjectIds.includes(objectId);
+      return '<div class="guide-object" data-object-id="'+esc(objectId)+'" data-recommended="'+recommended+'"><strong>'+
+        esc(object.label ?? objectId)+'</strong>'+(recommended?' <small>建议查看</small>':'')+
+        '<div class="groups">'+actions.map(a=>button(a.label ?? a.actionId,'guide-act',a.actionId,'chip')).join('')+'</div></div>';
+    }).join('');
+    return '<section class="surface event-panel" data-guide-level="'+guide.hintLevel+'">'+heading('当前目标',event.title,guide.goalText)+
+      controls+'<p role="status">'+esc(guide.feedback ?? '')+'</p>'+
+      (guide.hintText?'<p class="guide-hint" role="status">'+esc(guide.hintText)+'</p>':'')+
+      button('我能做什么？','guide-help','','small')+
+      (guideView.performed.length?button('撤回上一步','guide-undo','','secondary'):'')+
+      (guideView.phase==='preview'?button('查看安排','guide-review','','secondary'):'')+
+      (guideView.phase==='intro'?button('进入情境','guide-open',event.id,'primary'):'')+
+      (guideView.phase==='ready'?button('确认安排','commit',event.id,'primary',E.canApply(run)?'':'disabled'):'')+'</section>';
+  }
+
   function play(run) {
+    const event = E.currentCard(run);
+    if (event.interaction?.sceneId==='school-shop') return '<main class="layout play shop-layout">'+resources(run)+
+      LifeShop.render(run,guideView,guide,button,esc,shopMessage)+tools(run)+(run.stage==='result'?resultPanel(run):'')+'</main>';
+    if (event.interaction) return '<main class="layout play">'+resources(run)+guidedPanel(run,event)+
+      (run.stage==='result'?resultPanel(run):'')+'</main>';
     return '<main class="layout play"><section class="place" aria-label="当前生活空间">'+resources(run)+scene(run)+tools(run)+'</section>'+
       (run.stage==='result'?resultPanel(run):eventPanel(run))+'</main>';
   }
@@ -366,6 +419,7 @@
   function turnFooter(run) {
     if (run.activity || run.memo) return '';
     const event = E.currentCard(run);
+    if (event.interaction && run.stage==='event') return '';
     let primary, secondary = '', status = '';
     if (run.stage === 'result') {
       primary = button(run.slot===46||run.finalType==='early'?'翻开回忆录':'进入下一回合','next',run.eventId,'primary');
@@ -520,6 +574,7 @@
     const branch=entry();
     if (page==='play'&&!branch) page='home';
     const run=branch?.run;
+    updateGuide(run);
     const turn=page==='play'&&run?.stage==='event'?selected+':'+run.slot:null;
     if(turn!==activeTurn?.key)activeTurn=turn?{key:turn,started:performance.now()}:null;
     root.innerHTML='<div class="game-frame">'+header()+'<div class="game-scroll">'+
@@ -643,6 +698,41 @@
       return;
     }
     if(!run)return;
+    if (page==='play' && run.eventId==='life-3' && run.stage==='event') {
+      if(action==='help') action='guide-help';
+      if(action==='shop-undo'){
+        shopMessage='';
+        const session=run.draft.interaction;
+        let last;
+        do {
+          last=session.actions.at(-1);
+          if(!LifeInteraction.update(run,session.interactionId,'undo'))return;
+        } while(last.startsWith('look-'));
+        run.draft.shopFocus=null;
+      } else if(action==='shop-object'){
+        const focus=itemId ?? run.draft.shopFocus;
+        shopMessage='';
+        if(!LifeShop.input(run,id,LifeShop.coins.includes(focus)?focus:null)){
+          shopMessage='这枚硬币不能这样放。可以换个去处，或先撤回上一次支付。';
+          render();return;
+        }
+      }
+      if(action==='shop-object' || action==='shop-undo'){
+        if(branch!==testBranch)persist();
+        render();
+        return;
+      }
+    }
+    if (action.startsWith('guide-') && page==='play' && run.stage==='event') {
+      if (action==='guide-help') { guideClock.help(); render(); return; }
+      if (action==='guide-open' && !run.draft.interaction) LifeInteraction.create(run,token());
+      const command = {'guide-open':'open','guide-act':'act','guide-review':'review','guide-undo':'undo'}[action];
+      if (!LifeInteraction.update(run,run.draft.interaction?.interactionId,command,id)) return;
+      if (command==='open') run.entered=true;
+      if (branch!==testBranch) persist();
+      render();
+      return;
+    }
     if(['stats','history','objects','item','drawer','help'].includes(action)) {
       if(action==='item'&&run.items[id]&&branch!==testBranch){measure('item_interaction');persist();}
       modal={type:action,id};render();return;
@@ -773,11 +863,38 @@
     render(focus);
   }
 
+  let shopDrag=null, suppressShopClick=0;
+  root.addEventListener('pointerdown',e=>{
+    const coin=e.target.closest('.shop-entity[data-object-id]');
+    if(!coin || !LifeShop.coins.includes(coin.dataset.id))return;
+    coin.setPointerCapture(e.pointerId);
+    shopDrag={coin,id:e.pointerId,x:e.clientX,y:e.clientY,moved:false};
+  });
+  root.addEventListener('pointermove',e=>{
+    if(shopDrag?.id!==e.pointerId)return;
+    const dx=e.clientX-shopDrag.x, dy=e.clientY-shopDrag.y;
+    if(Math.hypot(dx,dy)>6)shopDrag.moved=true;
+    if(shopDrag.moved)shopDrag.coin.style.translate=dx+'px '+dy+'px';
+  });
+  root.addEventListener('pointerup',e=>{
+    if(shopDrag?.id!==e.pointerId)return;
+    const {coin,moved}=shopDrag;
+    shopDrag=null;
+    coin.style.translate='';
+    if(!moved)return;
+    suppressShopClick=performance.now()+250;
+    coin.style.pointerEvents='none';
+    const target=document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-object-id]');
+    coin.style.pointerEvents='';
+    if(target && !LifeShop.coins.includes(target.dataset.id))edit(()=>mutate('shop-object',target.dataset.id,coin.dataset.id));
+  });
+  root.addEventListener('pointercancel',()=>{if(shopDrag)shopDrag.coin.style.translate='';shopDrag=null;});
   let lastTouchDrop=null;
   root.addEventListener('click',event=>{
     const target=event.target.closest('[data-action]');
     if(!target||target.disabled)return;
     const {action,id=''}=target.dataset;
+    if(action==='shop-object' && event.detail && performance.now()<suppressShopClick)return;
     if(['choose','pack-item'].includes(action)&&event.detail>0&&lastTouchDrop?.id===id&&performance.now()<lastTouchDrop.until)return;
     if(data.sound)A.enable(true);
     edit(()=>{
@@ -885,6 +1002,7 @@
     if(zone)finishDrop(card,zone);
   });
   root.addEventListener('pointercancel',clearTouchDrag);
+  document.addEventListener('visibilitychange',()=>{if(guideView)render();});
   S.motion.addEventListener('change',()=>render());
   setInterval(()=>{
     const run=nowRun(),timer=document.querySelector('#timer');
