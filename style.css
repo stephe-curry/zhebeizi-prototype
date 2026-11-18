@@ -322,3 +322,44 @@ dialog::backdrop { background:#101612bc; }
 .dinner-replies,.dinner-recall,.dinner-controls {margin-block-start:8px}
 .dinner-replies button,.dinner-recall button,.dinner-controls button,.dinner-recall summary {min-height:44px}
 .dinner-recall summary {display:list-item;padding-block:11px;cursor:pointer}
+
+.last-fish .dinner-goal {color:#f2d7a7;font-weight:700}
+.fish-dialogue {font-size:13px;margin:4px 0 8px;line-height:1.5}
+.fish-room {aspect-ratio:150/96;background-position:top center;background-size:100% auto;background-color:#8b6449}
+.fish-target {position:absolute;display:grid;place-items:center;transform:translate(-50%,-50%);width:52px;height:52px;min-height:44px;padding:0;border:0;background:none;touch-action:manipulation}
+.fish-target:disabled {opacity:1}
+.fish-target i {position:absolute;width:52px;height:52px;image-rendering:pixelated;pointer-events:none}
+.fish-target small {position:absolute;top:36px;white-space:nowrap;background:#342923;color:#fff0c8;padding:0 4px;font-size:11px;pointer-events:none}
+.fish-own small {top:auto;bottom:8px;right:calc(100% - 5px)}
+.fish-art {background:url(assets/dinner-last-fish.png) no-repeat;background-size:468px 52px;background-position-x:calc(var(--cel) * -52px)}
+.fish-target .fish-adult {width:60px;height:60px;background:url(assets/dinner-actor.png) no-repeat;background-size:360px 60px;background-position-x:calc(var(--pose) * -60px);transform:translate(9px,-1px)}
+.fish-speaker {left:35%;top:32%}
+.fish-guest {left:64%;top:32%;pointer-events:none}
+.fish-plate {left:49%;top:56%}
+.fish-own {left:29%;top:74%}
+.fish-reserve {left:74%;top:62%}
+.fish-player {left:29%;top:87%;pointer-events:none}
+.fish-seat {left:86%;top:75%;pointer-events:none}
+.fish-placed,.fish-eaten {pointer-events:none}
+.fish-eaten {visibility:hidden}
+.fish-room.settling .fish-eaten .fish-piece {animation:fish-eat 240ms ease-out}
+.fish-target.suggested::after {content:'◆';position:absolute;top:0;color:#ffe4a5;font-size:10px;text-shadow:1px 1px #372923}
+.fish-target.selected .fish-dish {filter:drop-shadow(0 0 2px #ffe4a5)}
+.fish-target:focus-visible,[data-guide-level="1"] .fish-target.suggested,[data-guide-level="2"] .fish-target.suggested {outline:2px dashed #ffe4a5;outline-offset:-5px}
+.fish-hint {margin:6px 0}
+.fish-room.settling .player-art {animation:fish-reach 240ms steps(1,end)}
+.fish-room.settling .fish-placed .fish-piece {animation:fish-save 240ms ease-out}
+@keyframes fish-reach {
+  from {background-position-x:0}
+  50%,to {background-position-x:-52px}
+}
+@keyframes fish-save {
+  from {opacity:0;transform:translate(-24px,-8px)}
+  to {opacity:1;transform:translate(0)}
+}
+
+@keyframes fish-eat {
+  from {visibility:visible;transform:translate(28px,-16px)}
+  65% {visibility:visible;opacity:1}
+  to {visibility:visible;opacity:0;transform:translate(0,12px)}
+}

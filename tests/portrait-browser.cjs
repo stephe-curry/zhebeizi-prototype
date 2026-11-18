@@ -280,6 +280,105 @@ async function main() {
     await tap('.start-panel '+action('resume'));
     await wait(has('.dinner-panel'));
   }
+  await wait(has('.last-fish .fish-plate.suggested'));
+  const dinnerSave = await evaluate('localStorage.getItem(LifeSave.key)');
+  async function loadDinnerSave(raw, update='') {
+    await evaluate(`(()=>{
+      const save=JSON.parse(${JSON.stringify(raw)});
+      const branch=save.branches[save.active], run=branch.run;
+      ${update}
+      localStorage.setItem(LifeSave.key,JSON.stringify(save));
+    })()`);
+    await reloadDinner();
+  }
+  // Use a regular family setting for the scene captures, independent of the random origin.
+  await loadDinnerSave(dinnerSave,`
+    if(run.birth==='grandma') {
+      run.birth='scholar';
+      save.trees[branch.tree].birth='scholar';
+    }
+  `);
+  const fishSave = await evaluate('localStorage.getItem(LifeSave.key)');
+  async function fishShot(name){
+    if (!process.env.FISH_SHOTS) return;
+    await evaluate("document.querySelector('.game-scroll').scrollTop=0");
+    const {data}=await send('Page.captureScreenshot',{format:'png'});
+    writeFileSync(join(process.env.FISH_SHOTS,name+'.png'),Buffer.from(data,'base64'));
+  }
+  async function countDinnerCommits(){
+    await evaluate(`(()=>{
+      const commit=LifeEngine.commit;
+      window.dinnerCommitCount=0;
+      LifeEngine.commit=run=>{
+        if(run.slot===4) window.dinnerCommitCount++;
+        return commit(run);
+      };
+    })()`);
+  }
+  async function assertDinnerSettled(id){
+    await wait(has(action('next')));
+    assert.equal(await evaluate('window.dinnerCommitCount'),1);
+    assert.equal(await evaluate(has(action('commit'))),false,'the final action already committed');
+    assert.equal(await evaluate(has(action('guide-help'))),false,'resolved scenes stop helping');
+    const facts=await evaluate(`(()=>{
+      const save=LifeSave.read(localStorage);
+      return save.branches[save.active].run.facts.filter(f=>f.slot===4);
+    })()`);
+    assert.equal(facts.length,1);
+    assert.equal(facts[0].choiceId,'life-4-'+id);
+  }
+  await portrait('last fish 320×568');
+  assert(await evaluate(`Array.from(document.querySelectorAll('.fish-room button')).every(b=>b.clientWidth>=44&&b.clientHeight>=44)`));
+  assert(await evaluate(has('.fish-player')+' && '+has('.fish-guest')+' && '+has('.fish-seat')));
+  await fishShot('01-initial-320');
+  await tap('.last-fish '+action('guide-help'));
+  await wait(has('.fish-hint'));
+  await tap(dinnerAct('select-fish'));
+  await wait(has('.fish-own.suggested')+' && '+has('.fish-reserve.suggested'));
+  await fishShot('02-selected-320');
+  await reloadDinner();
+  await wait(has('.fish-plate.selected'));
+  await countDinnerCommits();
+  await tap(dinnerAct('save-fish'));
+  await assertDinnerSettled('save-fish');
+  await wait(has('.fish-placed')+' && '+has('.fish-room.settling'));
+  await wait("document.querySelector('.fish-dialogue').textContent.includes('明早还能配粥')");
+  await wait("document.querySelector('.fish-room').getAnimations({subtree:true}).length===0");
+  await resize(390,844,true);
+  await portrait('last fish reserve result 390×844');
+  await fishShot('04-saved-phone');
+  await reloadDinner();
+  await wait(has('.fish-placed')+' && '+has(action('next')));
+
+  await loadDinnerSave(fishSave);
+  await pressEnter(dinnerAct('ask-family'));
+  await wait("document.querySelector('.fish-dialogue').textContent.includes('在外面吃过了')");
+  await fishShot('03-asked-phone');
+  await reloadDinner();
+  await wait("document.querySelector('.fish-dialogue').textContent.includes('在外面吃过了')");
+  await resize(1366,768,false);
+  await portrait('last fish desktop');
+  await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
+  await countDinnerCommits();
+  await mouseClick(dinnerAct('eat-fish'));
+  await assertDinnerSettled('eat-fish');
+  await wait("document.querySelector('.fish-dialogue').textContent.includes('趁热吃')");
+  assert.equal(await evaluate(has('.fish-room.settling')),false,'reduced motion skips dinner animation');
+  await fishShot('05-eaten-desktop');
+  await mouseClick(action('next'));
+  await wait("document.querySelector('.life-hud .kicker').textContent.includes('第 5 / 46 回合')");
+  await resize(320,568,true);
+
+  await loadDinnerSave(fishSave);
+  await countDinnerCommits();
+  await tap(dinnerAct('keep-eating'));
+  await assertDinnerSettled('keep-eating');
+  console.log('PASS · last fish, two-tap decisions, one-tap quiet route, guidance, save restore and reduced motion');
+
+  // A pre-T4.2 draft must still render and complete the original T4 dinner.
+  await loadDinnerSave(dinnerSave,`
+    run.draft.interaction={eventId:'life-4',interactionId:'t4-legacy',opened:true,reviewed:false,actions:[]};
+  `);
   await wait(has('.dinner-room .dinner-speaker.suggested'));
   await portrait('dinner 320×568');
   assert(await evaluate("Array.from(document.querySelectorAll('.dinner-room button')).every(b=>b.clientWidth>=44&&b.clientHeight>=44)"));
@@ -478,9 +577,14 @@ async function main() {
 }
 
 main().catch(error=>{console.error(error);process.exitCode=1;}).finally(async()=>{
-  if(browser.exitCode===null && browser.pid) {
-    browser.kill();
-    await Promise.race([new Promise(resolve=>browser.once('exit',resolve)),delay(1500)]);
+  if(browser.exitCode===null && browser.signalCode===null && browser.pid) {
+    const exited = new Promise(resolve=>browser.once('exit',resolve));
+    browser.stdio[3].write(JSON.stringify({id:++id,method:'Browser.close'})+'\0');
+    const closed = await Promise.race([exited.then(()=>true),delay(1500,false)]);
+    if (!closed) {
+      browser.kill();
+      await Promise.race([exited,delay(1500)]);
+    }
   }
   rmSync(profile,{recursive:true,force:true,maxRetries:6,retryDelay:150});
 });

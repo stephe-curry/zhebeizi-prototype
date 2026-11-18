@@ -16,7 +16,9 @@ function dinner(choices=[0,0,1]){
   return run;
 }
 function open(run){
-  assert(I.create(run,'dinner')&&I.update(run,'dinner','open'));
+  // T4 saves predate the scene variant field. Leave it out to replay their original rules.
+  run.draft.interaction={eventId:'life-4',interactionId:'dinner',opened:false,reviewed:false,actions:[]};
+  assert(I.update(run,'dinner','open'));
   return run;
 }
 const act=(run,id)=>I.update(run,'dinner','act',id);

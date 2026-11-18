@@ -345,9 +345,9 @@
       (plan.choice && !event.hotspot ? previewText(run,event,plan.choice,plan.day)+optionsConsequences(plan)+reusePicker(run,plan) : '') : '')+'</section>';
   }
 
-  function resultPanel(run) {
+  function resultPanel(run,showBody=true) {
     const {fact,deltas} = run.result;
-    return '<section class="surface event-panel">'+heading('这一次之后',fact.action,fact.text)+
+    return '<section class="surface event-panel">'+heading('这一次之后',fact.action,showBody?fact.text:'')+
       '<div class="groups changes">'+Object.entries(deltas).filter(([id])=>!['budget','expect','parentHealth','affinity'].includes(id)).map(([id,value])=>
         '<span class="tag '+(value<0?'drop':'')+'">'+esc(C.labels[id])+' '+(value>0?'+':'−')+price(Math.abs(value))+'</span>').join('')+'</div>'+
       fact.highlights.map(id=>'<div class="echo"><strong>人生高光</strong><p>'+esc(run.highlights[id].label)+'</p></div>').join('')+
@@ -411,7 +411,7 @@
     if (event.interaction?.sceneId==='school-shop') return '<main class="layout play shop-layout">'+resources(run)+
       LifeShop.render(run,guideView,guide,button,esc,shopMessage)+tools(run)+(run.stage==='result'?resultPanel(run):'')+'</main>';
     if (event.interaction?.sceneId==='family-dinner' && guideView) return '<main class="layout play">'+resources(run)+
-      LifeDinner.render(event.interaction,guideView,guide,button,esc)+tools(run,false)+(run.stage==='result'?resultPanel(run):'')+'</main>';
+      LifeDinner.render(event.interaction,guideView,guide,button,esc)+tools(run,false)+(run.stage==='result'?resultPanel(run,event.interaction.variant!=='last-fish'):'')+'</main>';
     if (event.interaction) return '<main class="layout play">'+resources(run)+guidedPanel(run,event)+
       (run.stage==='result'?resultPanel(run):'')+'</main>';
     return '<main class="layout play"><section class="place" aria-label="当前生活空间">'+resources(run)+scene(run)+tools(run)+'</section>'+
@@ -732,7 +732,12 @@
         return;
       }
       if (!LifeInteraction.update(run,run.draft.interaction?.interactionId,'act',id)) return;
-      if (LifeInteraction.preview(run).phase==='ready') return mutate('commit',run.eventId);
+      if (LifeInteraction.preview(run).phase==='ready') {
+        mutate('commit',run.eventId);
+        if (run.stage==='result' && (motionPreference()==='on' || motionPreference()==='auto' && !S.motion.matches))
+          LifeDinner.animateDecision(root,run.result.fact.interaction?.decisionId);
+        return;
+      }
       if (branch!==testBranch) persist();
       render();
       return;

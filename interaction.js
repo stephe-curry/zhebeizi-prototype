@@ -8,6 +8,7 @@ globalThis.LifeInteraction = (() => {
     if (!scene || !interactionId || typeof interactionId !== 'string' ||
         run.stage !== 'event' || run.committed || run.activity || run.draft.interaction) return false;
     run.draft.interaction = {eventId:run.eventId, interactionId, opened:false, reviewed:false, actions:[]};
+    if (scene.variant) run.draft.interaction.variant = scene.variant;
     return true;
   }
 
@@ -24,6 +25,7 @@ globalThis.LifeInteraction = (() => {
     if (action.once && state.performed.includes(action.actionId)) return false;
     if (!available(run,scene,action.objectId)) return false;
     if (action.sourceId && !available(run,scene,action.sourceId)) return false;
+    if (action.afterAnyAction && !action.afterAnyAction.some(id=>state.performed.includes(id))) return false;
     if (action.afterObservation && !state.observed.includes(action.afterObservation)) return false;
     if (action.experienceId && !Object.hasOwn(run.experience,action.experienceId)) return false;
     if (action.requireBalance && !state.balances[action.objectId]) return false;
@@ -40,7 +42,7 @@ globalThis.LifeInteraction = (() => {
   }
 
   function replay(run, scene, session) {
-    if (!session || session.eventId !== run.eventId || typeof session.interactionId !== 'string' ||
+    if (!session || session.variant !== scene.variant || session.eventId !== run.eventId || typeof session.interactionId !== 'string' ||
         !session.interactionId || typeof session.opened !== 'boolean' ||
         typeof session.reviewed !== 'boolean' || !Array.isArray(session.actions) ||
         (!session.opened && (session.reviewed || session.actions.length))) return null;

@@ -36,7 +36,7 @@ globalThis.LifeGuidance = (() => {
       || (next?.label ? '可以试试「'+next.label+'」。' : '可以查看当前可用操作，或撤回上一步。');
     const hintLevel = complete ? 0 : timing.manual || timing.elapsed >= thresholds.explain ? 2 :
       timing.elapsed >= thresholds.emphasize ? 1 : 0;
-    return {goalText:complete?'':goalText,recommendedObjectIds:next?[next.guideObjectId ?? next.objectId]:[],
+    return {goalText:complete?'':goalText,recommendedObjectIds:next?(next.guideObjectIds ?? [next.guideObjectId ?? next.objectId]):[],
       hintLevel,hintText:hintLevel===2?instructions:'',feedback:view.feedback,
       completionText:complete?'这次互动已结束。':'',availableHelp:!complete};
   }

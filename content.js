@@ -210,6 +210,75 @@ globalThis.LifeContent = (() => {
     }};
   }
 
+  function lastFish(run,card) {
+    const family = run.people.parent;
+    const atTable = family?.status === 'in-touch';
+    const elder = run.birth==='grandma' && (!family || atTable);
+    // The relationship model tracks one aggregate family contact. Other seats
+    // are local to this meal, and are only used in the established family setting.
+    const gathering = atTable && !elder;
+    const npcId = atTable ? 'parent' : elder ? 'dinner-grandma' : null;
+    const speaker = elder ? '外婆' : '家人';
+    const goal = '最后一块鱼，你想怎么处理？';
+    const serveHint = gathering ? '可以点空碗留给晚归的人，也可以点自己的碗。'
+      : '可以点小碗留到下顿，也可以点自己的碗。';
+    const intro = gathering ? '还有一位家人没回来。家人说：“菜要凉了，快吃吧。”'
+      : elder ? '外婆把鱼盘往你这边推了推：“菜要凉了，快吃吧。”'
+        : '桌上还剩一块鱼，边上放着一个盛剩菜的小碗。';
+    const objects = {
+      fish:{label:'最后一块鱼'},
+      'reserve-bowl':{label:gathering?'空碗，留给晚归的人':'小碗，留到下顿'},
+      'own-bowl':{label:'自己的碗'},
+      'table-exit':{label:'继续吃饭'}
+    };
+    const decisions = [
+      {id:'save-fish',target:'reserve-bowl',label:gathering?'给晚归的家人留鱼':'把鱼留到下顿',
+        outcome:gathering?'家人把空碗往里挪了挪：“行，我盖上。明早还能配粥。”'
+          : elder?'外婆找来一个小碟盖上：“明天配粥正好。”':'你找了个小碟盖住碗，把鱼留到下顿。',
+        tag:gathering?'fish-saved-for-family':'fish-saved-for-later',recipientId:gathering?'dinner-late-family':null},
+      {id:'eat-fish',target:'own-bowl',label:'夹走最后一块鱼',
+        outcome:gathering?'家人递来一双筷子：“趁热吃。他说在外面吃过了，不用等。”'
+          : elder?'外婆把自己的筷子收了回去：“好，慢慢吃，小心鱼刺。”':'你把鱼夹到碗里，剔了刺，趁热吃完。',
+        tag:'last-fish-eaten'},
+      {id:'keep-eating',target:'table-exit',label:'继续吃饭',
+        outcome:gathering?'你继续吃碗里的饭。家人见鱼还在，顺手拿小碟盖上。'
+          : elder?'外婆见你还在吃饭，就把鱼盘往桌里收了收。':'你吃完碗里的饭，鱼还留在原来的盘里。',
+        tag:'fish-left-on-plate'}
+    ];
+    const choices = decisions.map(decision=>({
+      id:'life-4-'+decision.id,label:decision.label,outcome:decision.outcome,delta:{},commands:[]
+    }));
+    const readyAfter = ['select-fish','ask-family'];
+    const actions = decisions.slice(0,2).map(decision=>({
+      actionId:decision.id,kind:'manipulate',sourceId:'fish',objectId:decision.target,transfer:1,
+      afterAnyAction:readyAfter,goalText:serveHint,hintText:serveHint,guideObjectIds:['reserve-bowl','own-bowl']
+    }));
+    actions.push({actionId:'select-fish',kind:'observe',objectId:'fish',once:true,label:'选中鱼盘',
+      hintText:npcId?'点一下鱼盘，可以决定留给谁；也可以先问问家人。':'点一下鱼盘，再决定现在吃还是留到下顿。'});
+    if (npcId) {
+      objects[npcId]={label:speaker};
+      actions.push({actionId:'ask-family',kind:'observe',objectId:npcId,once:true,label:'问问'+speaker,
+        feedback:gathering?'家人说：“他留言说在外面吃过了。不过留一点，明早也能配粥。”'
+          :'外婆说：“你想吃就趁热吃。吃不下，咱们明早配粥。”'});
+    }
+    actions.push({actionId:'keep-eating',kind:'arrange',objectId:'table-exit',label:'继续吃饭'});
+    return {...card,title:'最后一块鱼',choices:[...card.choices,...dinnerChoices,...choices],interaction:{
+      sceneId:'family-dinner',variant:'last-fish',npcId,elder,gathering,objects,actions,
+      balances:{fish:1,'reserve-bowl':0,'own-bowl':0},goal,intro,terminal:true,
+      resolve(state) {
+        const index = decisions.findIndex(decision=>state.performed.includes(decision.id));
+        return index===-1 ? null : {choiceId:choices[index].id};
+      },
+      record(view) {
+        const decision = decisions.find(item=>'life-4-'+item.id===view.choiceId);
+        const steps = actions.filter(action=>action.feedback && view.performed.includes(action.actionId))
+          .map(({actionId,label,feedback})=>({actionId,label,feedback}));
+        return {variant:'last-fish',npcId,steps,decisionId:decision.id,recipientId:decision.recipientId ?? null,
+          tags:['last-fish',decision.tag],outcome:decision.outcome};
+      }
+    }};
+  }
+
   const occupationRows = {
     office:[
       ['进门后的第一张表','小周提醒你，报销表总是退在同一列。','查清退件原因|下次你把例子贴在打印机上|make|gain:notebook,exp:workshop~请小周看一遍|他圈了一栏，问你为什么认为应该填在那里|help|meet:colleague~把自己的第一单做对|交单以后终于有空记一个门禁号码|learn'],
@@ -339,5 +408,5 @@ globalThis.LifeContent = (() => {
     ['indie-weekend','life-26',[2,1,1],['console','planner','phone']],
     ['indie-feedback','life-42',[2,1,1],['letter','photo','book']]
   ]) dayPlans[variant]={...dayPlans[base],costs,icons};
-  return {ages,keySlots,familySlots,labels,origins,items,experience,wishes,jobs,directions,people,threads,opportunities,shared,cards,talents,supports,dayPlans,dinner};
+  return {ages,keySlots,familySlots,labels,origins,items,experience,wishes,jobs,directions,people,threads,opportunities,shared,cards,talents,supports,dayPlans,dinner,lastFish};
 })();

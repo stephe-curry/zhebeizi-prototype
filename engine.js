@@ -20,7 +20,9 @@ globalThis.LifeEngine = (() => {
       const legacy = run.activity?.kind==='duel' || run.minigame?.slot===4 && run.minigame.kind==='duel' ||
         !run.draft.interaction && (card.choices.some(choice=>choice.id===run.draft.main) || run.draft.objectFocus) ||
         run.stage==='result' && !run.result?.fact?.interaction;
-      return legacy ? card : C.dinner(run,card);
+      if (legacy) return card;
+      const interaction = run.stage==='result' ? run.result?.fact?.interaction : run.draft.interaction;
+      return interaction && !interaction.variant ? C.dinner(run,card) : C.lastFish(run,card);
     }
     if(card.id==='life-2'){
       const repair=run.birth==='craft-child'||run.facts[0]?.choiceId==='life-1-2';
@@ -576,7 +578,7 @@ globalThis.LifeEngine = (() => {
     const fact = {
       slot:run.slot,age:age(run),eventId:event.id,choiceId:choice.id,title:event.title,action:events.packSummary?'给旧物安排去处':choice.label,
       text:dinnerResult
-        ? [...events.lines,...(choice.id==='life-4-quiet'?[choice.outcome]:[])].join(' ')
+        ? [...events.lines,...(actionResult.variant==='last-fish' || choice.id==='life-4-quiet'?[choice.outcome]:[])].join(' ')
         : [events.packSummary??choice.outcome,...events.lines].join(' '),important:!!event.hotspot || !!event.job || !!event.rule || dinnerResult,
       people:[...events.people],items:[...events.items],highlights:events.highlights,
       relations:events.relations,reused:events.reused,opportunities,
