@@ -175,14 +175,22 @@ async function main() {
   await resize(360,640,true);
   await resize(320,568,true);
   const giftAction=id=>'[data-action="gift-act"][data-id="'+id+'"]';
-  async function giftShot(name){
+  async function giftShot(name,settle=900){
     if(!process.env.GIFT_SHOTS)return;
     await evaluate("document.querySelector('.game-scroll').scrollTop=0");
-    await delay(900);
+    await delay(settle);
     const {data}=await send('Page.captureScreenshot',{format:'png'});
     writeFileSync(join(process.env.GIFT_SHOTS,name+'.png'),Buffer.from(data,'base64'));
   }
-  for(const [place,decision] of [['box','buy'],['family','keep'],['drawer','buy']]){
+  async function resumeGift(expected) {
+    await send('Page.reload',{ignoreCache:true});
+    await wait(has('.start-panel '+action('resume')));
+    await tap('.start-panel '+action('resume'));
+    await wait(has(expected));
+  }
+  for(const [place,decision] of [['box','buy'],['family','buy'],['family','keep'],['drawer','buy']]){
+    const route=place+'-'+decision;
+    const homeAction={box:'open-box',family:'ask-family',drawer:'open-drawer'}[place];
     await tap('.start-panel '+action('setup'));
     await wait(has(action('birth')));
     await pressEnter(action('birth'));
@@ -194,18 +202,47 @@ async function main() {
     await wait(has(action('next')));
     await giftShot(place+'-stored');
     await tap(action('next'));
+    await wait(has(giftAction('see-price')));
+    assert(!await evaluate(has(giftAction('buy'))));
+    if(place==='box')await giftShot('school');
+    if(route==='family-buy')await resumeGift(giftAction('see-price'));
+    await tap(giftAction('see-price'));
+    await wait(has(giftAction('go-home')));
+    assert.match(await evaluate("document.querySelector('.gift-panel [role=status]').textContent"),/还有十块压岁钱/);
+    if(place==='box')await giftShot('price');
+    await tap(giftAction('go-home'));
+    await wait(has(giftAction(homeAction)));
+    assert(!await evaluate(has(giftAction(decision))));
+    assert.equal(await evaluate("document.querySelectorAll('.gift-scene .suggested').length"),1);
+    if(route==='family-buy'){
+      await resumeGift(giftAction(homeAction));
+      await giftShot('family-arrived');
+    }
+    if(route==='family-keep')await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
+    await tap(giftAction(homeAction));
     await wait(has(giftAction(decision)));
-    await send('Page.reload',{ignoreCache:true});
-    await wait(has('.start-panel '+action('resume')));
-    await tap('.start-panel '+action('resume'));
-    await wait(has(giftAction(decision)));
-    await giftShot(place+'-before');
+    assert(await evaluate(has('.gift-scene[data-beat="retrieved"] .yoyo-envelope')));
+    if(place==='family'){
+      assert.match(await evaluate("document.querySelector('.gift-dialogue').textContent"),/能把我的压岁钱拿出来吗/);
+      assert.match(await evaluate("document.querySelector('.gift-panel [role=status]').textContent"),/从柜子里拿出红纸包.*你自己拿主意/);
+    }
+    if(route==='family-buy'){
+      await giftShot('family-taking-envelope',615);
+      await resumeGift(giftAction(decision));
+    }
+    await giftShot(route+'-home',1300);
     await tap(giftAction(decision));
     await wait(has(action('next')));
+    if(route==='family-buy')await giftShot('family-paying',790);
+    if(place==='family')await resumeGift(action('next'));
     const receipt=await evaluate("(()=>{const d=LifeSave.read(localStorage);return d.branches[d.active].run.facts[1].interaction})()");
+    assert.deepEqual(receipt.performed,['see-price','go-home',homeAction,decision]);
     assert.equal(receipt.place,place);
     assert.equal(receipt.balance,decision==='buy'?0:10);
-    await giftShot(place+'-'+decision);
+    assert(await evaluate(has(decision==='buy'?'.gift-scene[data-beat="purchase"] .yoyo-first-try':'.gift-scene[data-beat="put-back"]')));
+    assert(!await evaluate(has('[data-action="guide-help"]')));
+    await giftShot(route+'-result',1650);
+    if(route==='family-keep')await send('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'no-preference'}]});
     await tap(action('next'));
     await wait(has('[data-action="shop-leave"]'));
     await tap(action('shop-leave'));

@@ -414,6 +414,7 @@ globalThis.LifeContent = (() => {
   const giftAmount = 10;
   const giftEvents = ['spring-envelope','school-yoyo'];
   const giftPlaces = {box:'小盒子', family:'红纸包', drawer:'抽屉'};
+  const yoyoStory = 'yoyo-story';
   function giftCard(run,card) {
     const saving = card.id===giftEvents[0];
     const caregiver = run.birth==='grandma'?'外婆':'家人';
@@ -421,35 +422,63 @@ globalThis.LifeContent = (() => {
     const deposit = origin?.interaction;
     const place = deposit?.place;
     const funded = run.childhood==='spring-gift' && deposit?.sceneId===giftEvents[0] &&
+      deposit.owner==='player' && deposit.custodian===(place==='family'?caregiver:'player') &&
       deposit.amount===giftAmount && deposit.balance===giftAmount && deposit.performed?.[0]===place &&
       origin.choiceId===giftEvents[0]+'-'+place &&
       Object.hasOwn(giftPlaces,place);
-    const withdraw = {box:'打开当年的小盒子',family:'从'+caregiver+'手里接过红纸包',drawer:'拉开熟悉的抽屉'};
+    const keeper = place==='family' ? deposit?.custodian : 'player';
+    const family = keeper==='外婆' ? '外婆' : '家人';
+    const homeBeat = {
+      box:{action:'open-box',label:'打开小盒子',line:'搭扣有点磨旧了。你打开盒子，当年的红包还在里面。'},
+      family:{action:'ask-family',label:'问'+family,request:'我想买个悠悠球。能把我的压岁钱拿出来吗？',
+        line:family==='外婆'?'外婆给你收着呢。给，你自己拿主意。':'这是你的压岁钱。给，你自己拿主意。'},
+      drawer:{action:'open-drawer',label:'拉开抽屉',line:'你拉开抽屉，几本练习本下面，还是当年的红包。'}
+    }[place];
+    const returnLine = {
+      box:'你把十块钱放回小盒子，扣好搭扣。',
+      family:'你说先不买了。'+family+'把十块钱重新包好，放回柜子。',
+      drawer:'你把十块钱放回练习本下面，轻轻推上抽屉。'
+    };
     const descriptions = {
       box:'你把红包藏进自己的小盒子，轻轻扣好搭扣。这个位置你记住了。',
       family:caregiver+'接过红包，用红纸包好，放进柜子：“想用的时候就跟我说。”',
       drawer:'你拉开抽屉，把红包放在最前面。每天拿铅笔时都能看见它。',
-      buy:'你'+withdraw[place]+'，用整整十元换了悠悠球。你第一次把球甩下去，同学伸手比画：“收线的时候，手腕往上提！”',
-      keep:'你让钱继续留在'+giftPlaces[place]+'里。看完同学最后一个花式，你背起书包回家了。'
+      buy:'第二天，你用这十块钱买下悠悠球。第一次甩得有点歪，同学说：“你先慢一点，我教你。”',
+      keep:returnLine[place]
     };
     const choices=card.choices.map(c=>({...c,outcome:descriptions[c.key]}));
-    const eligible=saving ? run.childhood==='spring-gift' : funded;
-    const actions=(eligible ? choices : []).map(c=>({actionId:c.key,objectId:c.key,kind:'arrange',
-      label:c.label,hintText:saving?'点小盒子、家人的手或抽屉，红包就会收好。':'点柜台的球买下它，或点左边的旧物继续存钱。'}));
-    return {...card,choices,interaction:{sceneId:card.id,caregiver,place,price:giftAmount,
+    const decisionGoal='你想明天去买悠悠球，还是把钱继续留着？';
+    const action=(id,label,after,goalText,hintText,kind='arrange')=>({
+      actionId:id,objectId:id,label,kind,once:true,
+      ...(after?{afterAnyAction:[after]}:{}),goalText,hintText
+    });
+    const actions=saving && run.childhood==='spring-gift' ? choices.map(c=>
+      action(c.key,c.label,null,null,'点小盒子、家人的手或抽屉，红包就会收好。')) : !saving && funded ? [
+      action('see-price','看看标价',null,null,'点柜台上的悠悠球，看看多少钱。','observe'),
+      action('go-home','回家找压岁钱','see-price','想起了压岁钱，回家找找看。','点「回家找压岁钱」。','observe'),
+      action(homeBeat.action,homeBeat.label,'go-home','去看看当年收好的压岁钱。','可以'+homeBeat.label+'。','observe'),
+      action('buy','明天去买',homeBeat.action,decisionGoal,'点「明天去买」，或让钱继续留在原处。'),
+      action('keep','继续留着',homeBeat.action,decisionGoal,'点「继续留着」，把十元放回原处。')
+    ] : [];
+    return {...card,choices,interaction:{sceneId:card.id,caregiver,place,keeper,homeBeat,price:giftAmount,
+      ...(!saving?{variant:yoyoStory}:{}),
       situation:saving?'过年了。'+caregiver+'伸出手：“这么多压岁钱，要不要我帮你收着？”':
-        '放学了，同学甩出悠悠球，又稳稳收回：“你的呢？”',
-      goal:saving?'这笔压岁钱，你想放在哪里？':'买下它，还是继续留着这笔钱？',
+        '两年后，放学的校门口。',
+      goal:saving?'这笔压岁钱，你想放在哪里？':'看看同学手里的悠悠球，再看看柜台上的标价。',
       objects:Object.fromEntries(actions.map(a=>[a.objectId,{label:a.label}])),actions,balances:{},terminal:true,
-      resolve(state){const id=state.performed[0];return id?{choiceId:card.id+'-'+id}:null;},
+      resolve(state){
+        const id=state.performed.at(-1);
+        return choices.some(choice=>choice.key===id)?{choiceId:card.id+'-'+id}:null;
+      },
       record(view){
-        const id=view.performed[0];
+        const id=view.performed.at(-1);
         const location=saving?id:place;
         const amount=saving?giftAmount:deposit.balance;
         const spent=id==='buy'?giftAmount:0;
-        const keeper=location==='family'?caregiver:'player';
-        return {owner:'player',place:location,custodian:spent?null:keeper,amount,balance:amount-spent,
-          ...(saving?{}:{sourceCustodian:deposit.custodian,price:giftAmount,spent,purchased:id==='buy',sourceSlot:origin.slot})};
+        const custodian=saving?(location==='family'?caregiver:'player'):keeper;
+        return {owner:'player',place:location,custodian:spent?null:custodian,amount,balance:amount-spent,
+          ...(saving?{}:{sourceCustodian:deposit.custodian,price:giftAmount,spent,purchased:id==='buy',sourceSlot:origin.slot,story:yoyoStory,
+            retrievedBy:homeBeat.action,storedAt:spent?null:location})};
       }
     }};
   }
@@ -460,5 +489,5 @@ globalThis.LifeContent = (() => {
   }
   cards.push(giftDefinition(giftEvents[0],1,'这笔钱，我想自己管',{box:'自己藏好',family:'交给家人',drawer:'放进抽屉'}),
     giftDefinition(giftEvents[1],2,'我也想玩那个',{keep:'继续留着',buy:'买下它'}));
-  return {giftEvents,giftCard,ages,keySlots,familySlots,labels,origins,items,experience,wishes,jobs,directions,people,threads,opportunities,shared,cards,talents,supports,dayPlans,dinner,lastFish};
+  return {giftEvents,giftCard,yoyoStory,ages,keySlots,familySlots,labels,origins,items,experience,wishes,jobs,directions,people,threads,opportunities,shared,cards,talents,supports,dayPlans,dinner,lastFish};
 })();

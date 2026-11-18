@@ -408,7 +408,7 @@
 
   function play(run) {
     const event = E.currentCard(run);
-    if (event.childhoodGift) return '<main class="layout play gift-layout">'+resources(run)+LifeGift.render(event,guideView,guide,button,esc)+tools(run,false)+(run.stage==='result'?resultPanel(run,false):'')+'</main>';
+    if (event.childhoodGift) return '<main class="layout play gift-layout">'+resources(run)+LifeGift.render(event,guideView,guide,button,esc,run.result?.fact.text)+tools(run,false)+(run.stage==='result'?resultPanel(run,false):'')+'</main>';
     if (event.interaction?.sceneId==='school-shop') return '<main class="layout play shop-layout">'+resources(run)+
       LifeShop.render(run,guideView,guide,button,esc,shopMessage)+tools(run)+(run.stage==='result'?resultPanel(run):'')+'</main>';
     if (event.interaction?.sceneId==='family-dinner' && guideView) return '<main class="layout play">'+resources(run)+
@@ -729,7 +729,14 @@
       }
     }
     if (action==='gift-act' && page==='play' && run.stage==='event' && E.currentCard(run).childhoodGift) {
-      if (LifeInteraction.update(run,run.draft.interaction?.interactionId,'act',id)) mutate('commit',run.eventId);
+      if (!LifeInteraction.update(run,run.draft.interaction?.interactionId,'act',id)) return;
+      if (LifeInteraction.preview(run).phase==='ready') {
+        mutate('commit',run.eventId);
+        return;
+      }
+      if (branch!==testBranch) persist();
+      render();
+      root.querySelector('.gift-panel h1')?.focus();
       return;
     }
     if (action==='dinner-act' && page==='play' && run.stage==='event' && E.currentCard(run).interaction?.sceneId==='family-dinner') {

@@ -544,7 +544,9 @@ globalThis.LifeEngine = (() => {
     const decisions = [
       [...run.draft.support].sort(),run.draft.experience,Object.entries(run.draft.items).sort(),run.draft.wish,run.draft.parent,run.draft.order,run.minigame?.slot === run.slot ? run.minigame : null
     ];
-    if (actionResult) decisions.push(actionResult.performed);
+    // The added story beats are presentation and retrieval, not new life decisions.
+    if (actionResult) decisions.push(event.id===C.giftEvents[1]
+      ? actionResult.performed.slice(-1) : actionResult.performed);
     if(run.draft.postcard)decisions.push(['postcard',run.draft.postcard]);
     if (reuseSelected && reuseSelected !== reuse[0]) decisions.push(reuseSelected);
     if (day?.extra) decisions.push(['day-extra',day.extra.id]);

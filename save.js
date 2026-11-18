@@ -13,6 +13,14 @@ globalThis.LifeSave = (() => {
     for (const branch of Object.values(value.branches ?? {})) {
       const run = branch?.run;
       const session = run?.draft?.interaction;
+      // The previous yoyo draft allowed a direct purchase. Restart only unfinished
+      // sessions from that version, keeping the deposit and all committed facts.
+      if (run?.childhood === 'spring-gift' && run.slot === 2 && run.eventId === C.giftEvents[1] &&
+          run.stage === 'event' && !run.committed && session?.eventId === run.eventId &&
+          session.variant === undefined) {
+        delete run.draft.interaction;
+        continue;
+      }
       if (run?.stage !== 'event' || run.committed || run.slot !== 4 || run.eventId !== 'life-4' ||
           session?.eventId !== 'life-4' || session.variant !== undefined ||
           !Array.isArray(session.actions) || !session.actions.includes('story-2')) continue;
