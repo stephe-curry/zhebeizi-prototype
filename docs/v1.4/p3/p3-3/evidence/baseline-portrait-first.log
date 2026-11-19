@@ -1,0 +1,5 @@
+PASS · last fish, two-tap decisions, one-tap quiet route, guidance, save restore and reduced motion
+Error: !Boolean(document.querySelector(".dinner-panel")) · 圆桌坐哪边
+    at wait (/private/tmp/p33-base/game/tests/portrait-browser.cjs:81:9)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async main (/private/tmp/p33-base/game/tests/portrait-browser.cjs:564:3)

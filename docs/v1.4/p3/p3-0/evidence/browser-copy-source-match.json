@@ -1,0 +1,16 @@
+{
+  "responses.js": true,
+  "save.js": true,
+  "interaction.js": true,
+  "dinner.js": true,
+  "continuity.js": true,
+  "audio.js": true,
+  "guidance.js": true,
+  "shop.js": true,
+  "engine.js": true,
+  "content.js": true,
+  "sprite-data.js": true,
+  "gift.js": true,
+  "app.js": true,
+  "scenes.js": true
+}

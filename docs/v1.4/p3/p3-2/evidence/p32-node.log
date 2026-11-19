@@ -1,0 +1,120 @@
+TAP version 13
+# Subtest: 少年赛场
+ok 1 - 少年赛场
+  ---
+  duration_ms: 26.253083
+  ...
+# Subtest: 成年试训
+ok 2 - 成年试训
+  ---
+  duration_ms: 15.990167
+  ...
+# Subtest: 竞技未竟
+ok 3 - 竞技未竟
+  ---
+  duration_ms: 6.116958
+  ...
+# Subtest: 少年本科
+ok 4 - 少年本科
+  ---
+  duration_ms: 7.61375
+  ...
+# Subtest: 在职重考
+ok 5 - 在职重考
+  ---
+  duration_ms: 23.423375
+  ...
+# Subtest: 重考落选
+ok 6 - 重考落选
+  ---
+  duration_ms: 11.601083
+  ...
+# Subtest: 本科后读研
+ok 7 - 本科后读研
+  ---
+  duration_ms: 21.112875
+  ...
+# Subtest: 工厂附近的家
+ok 8 - 工厂附近的家
+  ---
+  duration_ms: 14.647625
+  ...
+# Subtest: 搬离再安顿
+ok 9 - 搬离再安顿
+  ---
+  duration_ms: 24.507666
+  ...
+# Subtest: 退租再寻找
+ok 10 - 退租再寻找
+  ---
+  duration_ms: 19.770417
+  ...
+# Subtest: 租住未竟
+ok 11 - 租住未竟
+  ---
+  duration_ms: 12.583083
+  ...
+# Subtest: 办公室交接
+ok 12 - 办公室交接
+  ---
+  duration_ms: 6.363958
+  ...
+# Subtest: 并组撤岗
+ok 13 - 并组撤岗
+  ---
+  duration_ms: 6.81625
+  ...
+# Subtest: 离职再聘
+ok 14 - 离职再聘
+  ---
+  duration_ms: 6.032667
+  ...
+# Subtest: 制造带教
+ok 15 - 制造带教
+  ---
+  duration_ms: 8.801166
+  ...
+# Subtest: 工位转向
+ok 16 - 工位转向
+  ---
+  duration_ms: 8.818041
+  ...
+# Subtest: 街区老客
+ok 17 - 街区老客
+  ---
+  duration_ms: 6.275166
+  ...
+# Subtest: 站点调度
+ok 18 - 站点调度
+  ---
+  duration_ms: 6.539334
+  ...
+# Subtest: 送餐草稿可刷新，错误封签、跳过路线、改写回执都不能正式交付
+ok 19 - 送餐草稿可刷新，错误封签、跳过路线、改写回执都不能正式交付
+  ---
+  duration_ms: 4.131375
+  ...
+# Subtest: 工艺权限、实际样单与本科资格必须各有出处，停班与满班争用资源
+ok 20 - 工艺权限、实际样单与本科资格必须各有出处，停班与满班争用资源
+  ---
+  duration_ms: 4.077667
+  ...
+# Subtest: 搬迁不会确立梦想，缺少入住不能产生回望，第二处住处需要独立布置
+ok 21 - 搬迁不会确立梦想，缺少入住不能产生回望，第二处住处需要独立布置
+  ---
+  duration_ms: 33.989417
+  ...
+# Subtest: 没有个人上场记录不能得到个人赛果，训练不足者保留未竟人生
+ok 22 - 没有个人上场记录不能得到个人赛果，训练不足者保留未竟人生
+  ---
+  duration_ms: 4.331667
+  ...
+1..22
+# tests 22
+# suites 0
+# pass 22
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 359.304334

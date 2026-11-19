@@ -1,0 +1,49 @@
+main
+3ce57a24d6a3749ff4b821eeb4144b4d40587307
+ M app.js
+ M content.js
+ M engine.js
+ M index.html
+ M save.js
+ M style.css
+ M tests/acceptance.cjs
+ M tests/gift.cjs
+ M tests/guidance.html
+ M tests/portrait-browser.cjs
+?? art/appointment-stamp.aseprite
+?? art/delivery-slip.aseprite
+?? art/dream-note.aseprite
+?? art/echo-play.aseprite
+?? art/life-desks.aseprite
+?? art/previews/appointment-stamp-preview.gif
+?? art/previews/delivery-slip-preview.gif
+?? art/previews/dream-note-preview.gif
+?? art/previews/life-desks-preview.gif
+?? art/previews/shift-desk-preview.gif
+?? art/shift-desk.aseprite
+?? assets/appointment-stamp.json
+?? assets/appointment-stamp.png
+?? assets/delivery-slip.json
+?? assets/delivery-slip.png
+?? assets/dream-note.json
+?? assets/dream-note.png
+?? assets/echo-play.png
+?? assets/life-desks.json
+?? assets/life-desks.png
+?? assets/shift-desk.json
+?? assets/shift-desk.png
+?? chapters.js
+?? continuity.js
+?? docs/
+?? responses.js
+?? routes.js
+?? tests/continuity.cjs
+?? tests/p2-browser.cjs
+?? tests/p2-evidence.cjs
+?? tests/p2-paths.cjs
+?? tests/p2.cjs
+?? tests/p3-browser.cjs
+?? tests/p3.cjs
+?? tests/p32-browser.cjs
+?? tests/p32-lives.cjs
+?? tests/p32.cjs

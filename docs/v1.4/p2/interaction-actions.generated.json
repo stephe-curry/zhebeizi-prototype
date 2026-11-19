@@ -1,0 +1,254 @@
+{
+  "spring-envelope/original": {
+    "declared": [
+      "box",
+      "drawer",
+      "family"
+    ],
+    "performed": {
+      "box": {
+        "suite": "gift",
+        "seed": 1,
+        "choice": "spring-envelope-box"
+      },
+      "family": {
+        "suite": "gift",
+        "seed": 2,
+        "choice": "spring-envelope-family"
+      },
+      "drawer": {
+        "suite": "gift",
+        "seed": 1,
+        "choice": "spring-envelope-drawer"
+      }
+    }
+  },
+  "school-yoyo/original": {
+    "declared": [
+      "ask-family",
+      "buy",
+      "go-home",
+      "keep",
+      "open-box",
+      "open-drawer",
+      "see-price"
+    ],
+    "performed": {
+      "see-price": {
+        "suite": "gift",
+        "seed": 1,
+        "choice": "school-yoyo-buy"
+      },
+      "go-home": {
+        "suite": "gift",
+        "seed": 1,
+        "choice": "school-yoyo-buy"
+      },
+      "open-box": {
+        "suite": "gift",
+        "seed": 1,
+        "choice": "school-yoyo-buy"
+      },
+      "buy": {
+        "suite": "gift",
+        "seed": 1,
+        "choice": "school-yoyo-buy"
+      },
+      "keep": {
+        "suite": "gift",
+        "seed": 1,
+        "choice": "school-yoyo-keep"
+      },
+      "ask-family": {
+        "suite": "gift",
+        "seed": 2,
+        "choice": "school-yoyo-buy"
+      },
+      "open-drawer": {
+        "suite": "gift",
+        "seed": 1,
+        "choice": "school-yoyo-buy"
+      }
+    }
+  },
+  "life-3/original": {
+    "declared": [
+      "leave-shop",
+      "look-blocks",
+      "look-ice",
+      "look-purse",
+      "look-yuanA",
+      "look-yuanB",
+      "yuanA-blocks",
+      "yuanA-ice",
+      "yuanA-purse",
+      "yuanB-blocks",
+      "yuanB-ice",
+      "yuanB-purse"
+    ],
+    "performed": {
+      "leave-shop": {
+        "suite": "gift",
+        "seed": 1,
+        "choice": "life-3-2"
+      },
+      "yuanA-ice": {
+        "suite": "shop",
+        "seed": 1,
+        "choice": "life-3-1"
+      },
+      "yuanB-purse": {
+        "suite": "shop",
+        "seed": 1,
+        "choice": "life-3-1"
+      },
+      "yuanA-purse": {
+        "suite": "shop",
+        "seed": 1,
+        "choice": "life-3-1"
+      },
+      "yuanB-ice": {
+        "suite": "shop",
+        "seed": 1,
+        "choice": "life-3-1"
+      },
+      "yuanA-blocks": {
+        "suite": "shop",
+        "seed": 1,
+        "choice": "life-3-0"
+      },
+      "yuanB-blocks": {
+        "suite": "shop",
+        "seed": 1,
+        "choice": "life-3-0"
+      },
+      "look-yuanA": {
+        "suite": "p2",
+        "seed": 2,
+        "choice": "life-3-0"
+      },
+      "look-yuanB": {
+        "suite": "p2",
+        "seed": 2,
+        "choice": "life-3-0"
+      },
+      "look-blocks": {
+        "suite": "p2",
+        "seed": 2,
+        "choice": "life-3-0"
+      },
+      "look-ice": {
+        "suite": "p2",
+        "seed": 2,
+        "choice": "life-3-0"
+      },
+      "look-purse": {
+        "suite": "p2",
+        "seed": 2,
+        "choice": "life-3-0"
+      }
+    }
+  },
+  "life-4/last-fish": {
+    "declared": [
+      "ask-family",
+      "eat-fish",
+      "keep-eating",
+      "save-fish",
+      "select-fish"
+    ],
+    "performed": {
+      "keep-eating": {
+        "suite": "gift",
+        "seed": 1,
+        "choice": "life-4-keep-eating"
+      },
+      "select-fish": {
+        "suite": "dinner-fish",
+        "seed": 1,
+        "choice": "life-4-save-fish"
+      },
+      "save-fish": {
+        "suite": "dinner-fish",
+        "seed": 1,
+        "choice": "life-4-save-fish"
+      },
+      "eat-fish": {
+        "suite": "dinner-fish",
+        "seed": 1,
+        "choice": "life-4-eat-fish"
+      },
+      "ask-family": {
+        "suite": "dinner-fish",
+        "seed": 1,
+        "choice": "life-4-save-fish"
+      }
+    }
+  },
+  "life-4/original": {
+    "declared": [
+      "ask",
+      "finish",
+      "humor",
+      "listen",
+      "reply",
+      "serve",
+      "story-1",
+      "story-2",
+      "story-3",
+      "turn"
+    ],
+    "performed": {
+      "listen": {
+        "suite": "dinner",
+        "seed": 9,
+        "choice": "life-4-story"
+      },
+      "story-2": {
+        "suite": "dinner",
+        "seed": 9,
+        "choice": "life-4-story"
+      },
+      "story-3": {
+        "suite": "dinner",
+        "seed": 9,
+        "choice": "life-4-story"
+      },
+      "finish": {
+        "suite": "dinner",
+        "seed": 9,
+        "choice": "life-4-story"
+      },
+      "turn": {
+        "suite": "dinner",
+        "seed": 9,
+        "choice": "life-4-turn"
+      },
+      "serve": {
+        "suite": "dinner",
+        "seed": 9,
+        "choice": "life-4-1"
+      },
+      "humor": {
+        "suite": "dinner",
+        "seed": 9,
+        "choice": "life-4-humor"
+      },
+      "ask": {
+        "suite": "dinner",
+        "seed": 9,
+        "choice": "life-4-ask"
+      },
+      "reply": {
+        "suite": "dinner",
+        "seed": 9,
+        "choice": "life-4-reply"
+      },
+      "story-1": {
+        "suite": "p2",
+        "seed": 2,
+        "choice": "life-4-story"
+      }
+    }
+  }
+}

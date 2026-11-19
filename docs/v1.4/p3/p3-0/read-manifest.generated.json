@@ -1,0 +1,164 @@
+[
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.4/这辈子_游戏产品文档_v1.4_梦想职业统一完成版.md",
+    "bytes": 79087,
+    "lines": 691,
+    "sha256": "45386a0ea83b6a35566ad1fcaf38e91074791795454c0dd79f875edd933f1e1f"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.4/这辈子_v1.4_完整原型开发执行书_梦想职业统一完成版.md",
+    "bytes": 23478,
+    "lines": 225,
+    "sha256": "a2601f58868f71f0cb3252f11ee05e4a244a30dcf28f3fade5b2756b3e265b8e"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/docs/v1.4/p1/report.md",
+    "bytes": 4874,
+    "lines": 43,
+    "sha256": "6d7029da1da5b3ee800c77fb71af2415facc84489b98c74c4a4d5316dc78ea44"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/docs/v1.4/p1/contract.md",
+    "bytes": 4245,
+    "lines": 38,
+    "sha256": "eb0fd55976109eb255f737d15981acf90181d8e72b30cca6712d2ea9f9e8b320"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/docs/v1.4/p2/report.md",
+    "bytes": 5811,
+    "lines": 46,
+    "sha256": "0aa35d4fc5d2ba788ffa2fc5fd3391aff116e1d4fda0ff124b795a2bcbc9febe"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/docs/v1.4/p2/p3-handoff.md",
+    "bytes": 4953,
+    "lines": 20,
+    "sha256": "3b45aaf7c24fb516c51bf8ac30ee1eb40da6c8bc4614d16e43c25c1d7558e1e0"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/docs/v1.4/p2/event-coverage.generated.md",
+    "bytes": 75778,
+    "lines": 1193,
+    "sha256": "ff08b15df33f78e8d11e12ddc16da3e9b8bb2940873f8a8a0b634590da385f42"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/docs/v1.4/p2/redemption.generated.md",
+    "bytes": 10696,
+    "lines": 122,
+    "sha256": "f04db7f60a43ca44295c4fb500f0d8a3597261dc6ce533ed394014089f63ca0a"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/docs/v1.4/p2/opportunity-collisions.md",
+    "bytes": 5140,
+    "lines": 50,
+    "sha256": "c21123ced62f8e22b6309a9217ce1b300185f4290f3549f66f0805a8c2eb782f"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/docs/v1.4/p2/content-fixes.md",
+    "bytes": 4100,
+    "lines": 17,
+    "sha256": "b02c2fe10c19b326fbdeff24a8b9806da37352cb57b7be415f4445d2c086a6d2"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/docs/v1.4/p2/experience-review.md",
+    "bytes": 16616,
+    "lines": 104,
+    "sha256": "34fe10dbcebde7efd280ae60b5008c1993497ea4862a03548fe3ebbdc8332ccf"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/docs/v1.4/p2/tests-and-browser.md",
+    "bytes": 4747,
+    "lines": 38,
+    "sha256": "7cea5618a44cd61657b238a2103c18bc036f20808dc0eda0d07cfac2fcf92c93"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/index.html",
+    "bytes": 1091,
+    "lines": 28,
+    "sha256": "02e0abf03e9f6b33842b8c54d656cea8a4e29b0a5b3f61012cf7bdbe29c9b4ec"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/app.js",
+    "bytes": 79972,
+    "lines": 1147,
+    "sha256": "953916b38e7b97d0e4d1c9bb2129b7a47f2b6cd25326fe657e3d37309eb47aad"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/content.js",
+    "bytes": 75128,
+    "lines": 562,
+    "sha256": "b68bfc677319f189683d01277bad3c7606b7b0904068c7a574063a70520279ae"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/engine.js",
+    "bytes": 56034,
+    "lines": 941,
+    "sha256": "35c2d85ca84d25ea8d692bd184875ce77912aaae653ff4e48377ad5a5b4f5f1a"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/continuity.js",
+    "bytes": 14189,
+    "lines": 238,
+    "sha256": "89bba4620c548e37143d9489a7ff1fc3e1e1c6fa09d19646667ca77c1aeeb75d"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/responses.js",
+    "bytes": 33591,
+    "lines": 322,
+    "sha256": "835862cac154108c3635162534e9ad194d6e5e1ce47fab69cc9e6a9e045e84b7"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/interaction.js",
+    "bytes": 6987,
+    "lines": 144,
+    "sha256": "4cab86f2df1f1e97d885a6bb7f3312ab4075f75237566121c27add69cf5dcfb4"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/save.js",
+    "bytes": 6890,
+    "lines": 96,
+    "sha256": "c0816866f434a9daf9c14d12b6d3200f0d2f75c5b90e15a56d3d9b8743a6c3b0"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/guidance.js",
+    "bytes": 2212,
+    "lines": 44,
+    "sha256": "53251cb804fcd08864b4347b04622b8f2722cfc1b98573512c9438726cf9e2c5"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/scenes.js",
+    "bytes": 2522,
+    "lines": 57,
+    "sha256": "6f92a2c4eb93c0a3c24b1dd0682840891b391aa6d4ff63d2ff1d53c75301f7ca"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/gift.js",
+    "bytes": 6336,
+    "lines": 92,
+    "sha256": "424ea433b5ad67dab3a7ca4b5162ed138a0c9273937f9203bfea37419c7e3858"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/shop.js",
+    "bytes": 5165,
+    "lines": 82,
+    "sha256": "4cb6cc6a039dec3e824881b665468272157f5f13b346c12859c2d7e8b9eee31a"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/dinner.js",
+    "bytes": 6907,
+    "lines": 100,
+    "sha256": "d7a97154a9174228f50c3edfb21ae077810b8219fb7f9b7c3ec7477ce4d7686c"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/sprite-data.js",
+    "bytes": 2303,
+    "lines": 2,
+    "sha256": "faddc1cb435985c407bfba5e940044c00f75f33e4b7c15abdde7264bd26a45e7"
+  },
+  {
+    "path": "/Users/stephen/Desktop/project/game/prototype/v1.3/audio.js",
+    "bytes": 3126,
+    "lines": 86,
+    "sha256": "b9854ffffa1c5d07d8d2bc6b7c9cb4a0b8a0a58788ff64a43bb559ec091b6055"
+  }
+]

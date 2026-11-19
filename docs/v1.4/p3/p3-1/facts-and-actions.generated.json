@@ -1,0 +1,1279 @@
+[
+  {
+    "branch": "walk",
+    "slot": 25,
+    "age": 25,
+    "eventId": "life-25",
+    "choiceId": "life-25-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "03-ask-grad",
+        "kind": "contact",
+        "routeIds": [
+          "03"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 13,
+            "eventId": "school-exam",
+            "choiceId": "school-exam-0",
+            "actionId": "03-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取清华或北大录取"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 1,
+          "money": 0
+        },
+        "result": {
+          "detail": "咨询老师请你先核对已有学历和目标专业的简章。"
+        }
+      }
+    ],
+    "sourceSlots": [
+      13
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 13,
+    "age": 18,
+    "eventId": "school-exam",
+    "choiceId": "school-exam-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "03-establish",
+        "kind": "dream-established",
+        "routeIds": [
+          "03"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 7,
+            "eventId": "life-7",
+            "choiceId": "life-7-0"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取清华或北大录取"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "active"
+        }
+      }
+    ],
+    "sourceSlots": [
+      7,
+      12
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 12,
+    "age": 17,
+    "eventId": "school-sprint",
+    "choiceId": "school-sprint-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "01-establish",
+        "kind": "dream-established",
+        "routeIds": [
+          "01"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 11,
+            "eventId": "life-11",
+            "choiceId": "life-11-0"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取电竞世界赛"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "active"
+        }
+      }
+    ],
+    "sourceSlots": [
+      11,
+      7
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 15,
+    "age": 18,
+    "eventId": "school-result",
+    "choiceId": "school-result-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "01-pause",
+        "kind": "dream-paused",
+        "routeIds": [
+          "01"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 12,
+            "eventId": "school-sprint",
+            "choiceId": "school-sprint-0",
+            "actionId": "01-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取电竞世界赛"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "paused"
+        }
+      }
+    ],
+    "sourceSlots": [
+      12,
+      7,
+      13,
+      14
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 15,
+    "age": 18,
+    "eventId": "school-result",
+    "choiceId": "school-result-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "01-replay",
+        "kind": "investment",
+        "routeIds": [
+          "01"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 12,
+            "eventId": "school-sprint",
+            "choiceId": "school-sprint-0",
+            "actionId": "01-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取电竞世界赛",
+          "method": "corner"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 1,
+          "money": 0
+        },
+        "result": {
+          "detail": "队友还没出拐角就听到位置，及时收住了脚步。"
+        }
+      }
+    ],
+    "sourceSlots": [
+      12,
+      7,
+      13,
+      14
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 16,
+    "age": 19,
+    "eventId": "arena-club",
+    "choiceId": "arena-club-1",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "01-resume",
+        "kind": "dream-resumed",
+        "routeIds": [
+          "01"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 12,
+            "eventId": "school-sprint",
+            "choiceId": "school-sprint-0",
+            "actionId": "01-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取电竞世界赛"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "active"
+        }
+      }
+    ],
+    "sourceSlots": [
+      12,
+      11
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 14,
+    "age": 18,
+    "eventId": "life-14",
+    "choiceId": "life-14-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "test-stage-establish",
+        "kind": "dream-established",
+        "routeIds": [
+          "test-stage"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 11,
+            "eventId": "life-11",
+            "choiceId": "life-11-0"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "测试排练"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "active"
+        }
+      }
+    ],
+    "sourceSlots": [
+      11
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 24,
+    "age": 24,
+    "eventId": "office-24",
+    "choiceId": "office-24-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "test-stage-practice-test-stage",
+        "kind": "investment",
+        "routeIds": [
+          "test-stage",
+          "01"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 14,
+            "eventId": "life-14",
+            "choiceId": "life-14-0",
+            "actionId": "test-stage-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "测试排练"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 1,
+          "money": 17
+        },
+        "result": {
+          "detail": "节奏已记下"
+        }
+      }
+    ],
+    "sourceSlots": [
+      14,
+      23
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 24,
+    "age": 24,
+    "eventId": "office-24",
+    "choiceId": "office-24-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "J01-shift-full",
+        "kind": "employment",
+        "routeIds": [
+          "J01"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 23,
+            "eventId": "arena-offer",
+            "choiceId": "arena-offer-1"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "办公室工作"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "detail": "约定整班出勤（300 元）的安排写进了班表。",
+          "mode": "full"
+        }
+      }
+    ],
+    "pay": {
+      "paySourceId": "office-24",
+      "routeId": "J01",
+      "mode": "full",
+      "interrupted": false,
+      "workBlocks": 2,
+      "amount": 300
+    },
+    "sourceSlots": [
+      23
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 24,
+    "age": 24,
+    "eventId": "office-24",
+    "choiceId": "office-24-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "J01-shift-part",
+        "kind": "employment",
+        "routeIds": [
+          "J01"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 23,
+            "eventId": "arena-offer",
+            "choiceId": "arena-offer-1"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "办公室工作"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "detail": "签档案室半班聘约，停领整班薪水的安排写进了班表。",
+          "mode": "part"
+        }
+      }
+    ],
+    "pay": {
+      "paySourceId": "office-24",
+      "routeId": "J01",
+      "mode": "part",
+      "interrupted": false,
+      "workBlocks": 1,
+      "amount": 150
+    },
+    "sourceSlots": [
+      23
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 25,
+    "age": 25,
+    "eventId": "life-25",
+    "choiceId": "life-25-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "03-revise",
+        "kind": "investment",
+        "routeIds": [
+          "03"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 13,
+            "eventId": "school-exam",
+            "choiceId": "school-exam-0",
+            "actionId": "03-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取清华或北大录取",
+          "method": "domain"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 1,
+          "money": 0
+        },
+        "result": {
+          "detail": "你在第一行标出分母不能为零，划掉了那个不成立的解。"
+        }
+      }
+    ],
+    "pay": {
+      "paySourceId": "office-25",
+      "routeId": "J01",
+      "mode": "part",
+      "interrupted": false,
+      "workBlocks": 1,
+      "amount": 150
+    },
+    "sourceSlots": [
+      13
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 24,
+    "age": 24,
+    "eventId": "office-24",
+    "choiceId": "office-24-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "J01-shift-study",
+        "kind": "employment",
+        "routeIds": [
+          "J01"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 23,
+            "eventId": "arena-offer",
+            "choiceId": "arena-offer-1"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "办公室工作"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "detail": "停薪学习的安排写进了班表。",
+          "mode": "study"
+        }
+      }
+    ],
+    "pay": {
+      "paySourceId": "office-24",
+      "routeId": "J01",
+      "mode": "study",
+      "interrupted": false,
+      "workBlocks": 0,
+      "amount": 0
+    },
+    "sourceSlots": [
+      23
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 25,
+    "age": 25,
+    "eventId": "life-25",
+    "choiceId": "life-25-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "03-revise",
+        "kind": "investment",
+        "routeIds": [
+          "03"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 13,
+            "eventId": "school-exam",
+            "choiceId": "school-exam-0",
+            "actionId": "03-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取清华或北大录取",
+          "method": "domain"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 1,
+          "money": 0
+        },
+        "result": {
+          "detail": "你在第一行标出分母不能为零，划掉了那个不成立的解。"
+        }
+      }
+    ],
+    "pay": {
+      "paySourceId": "office-25",
+      "routeId": "J01",
+      "mode": "study",
+      "interrupted": false,
+      "workBlocks": 0,
+      "amount": 0
+    },
+    "sourceSlots": [
+      13
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 24,
+    "age": 24,
+    "eventId": "office-24",
+    "choiceId": "office-24-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "J01-shift-leave",
+        "kind": "employment",
+        "routeIds": [
+          "J01"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 23,
+            "eventId": "arena-offer",
+            "choiceId": "arena-offer-1"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "办公室工作"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "detail": "申请离岗的安排写进了班表。",
+          "mode": "leave"
+        }
+      }
+    ],
+    "pay": {
+      "paySourceId": "office-24",
+      "routeId": "J01",
+      "mode": "leave",
+      "interrupted": false,
+      "workBlocks": 0,
+      "amount": 0
+    },
+    "sourceSlots": [
+      23
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 25,
+    "age": 25,
+    "eventId": "life-25",
+    "choiceId": "life-25-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "03-revise",
+        "kind": "investment",
+        "routeIds": [
+          "03"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 13,
+            "eventId": "school-exam",
+            "choiceId": "school-exam-0",
+            "actionId": "03-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取清华或北大录取",
+          "method": "domain"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 1,
+          "money": 0
+        },
+        "result": {
+          "detail": "你在第一行标出分母不能为零，划掉了那个不成立的解。"
+        }
+      }
+    ],
+    "pay": {
+      "paySourceId": "office-25",
+      "routeId": "J01",
+      "mode": "leave",
+      "interrupted": false,
+      "workBlocks": 0,
+      "amount": 0
+    },
+    "sourceSlots": [
+      13
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 24,
+    "age": 24,
+    "eventId": "office-24",
+    "choiceId": "office-24-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "01-scrimmage",
+        "kind": "fate-result",
+        "routeIds": [
+          "01"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 12,
+            "eventId": "school-sprint",
+            "choiceId": "school-sprint-0",
+            "actionId": "01-establish"
+          },
+          {
+            "branch": "walk",
+            "slot": 13,
+            "eventId": "school-exam",
+            "choiceId": "school-exam-0",
+            "actionId": "01-replay"
+          },
+          {
+            "branch": "walk",
+            "slot": 14,
+            "eventId": "life-14",
+            "choiceId": "life-14-0",
+            "actionId": "01-replay"
+          },
+          {
+            "branch": "walk",
+            "slot": 15,
+            "eventId": "school-result",
+            "choiceId": "school-result-0",
+            "actionId": "01-replay"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取电竞世界赛"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 1,
+          "money": 50
+        },
+        "result": {
+          "qualification": [
+            {
+              "branch": "walk",
+              "slot": 13,
+              "eventId": "school-exam",
+              "choiceId": "school-exam-0",
+              "actionId": "01-replay"
+            },
+            {
+              "branch": "walk",
+              "slot": 14,
+              "eventId": "life-14",
+              "choiceId": "life-14-0",
+              "actionId": "01-replay"
+            }
+          ],
+          "externalSource": [
+            1,
+            "01",
+            1,
+            "club-round-24"
+          ],
+          "attemptId": "club-round-24",
+          "opportunityId": "scrimmage",
+          "external": 0,
+          "preparation": [
+            {
+              "branch": "walk",
+              "slot": 13,
+              "eventId": "school-exam",
+              "choiceId": "school-exam-0",
+              "actionId": "01-replay"
+            },
+            {
+              "branch": "walk",
+              "slot": 14,
+              "eventId": "life-14",
+              "choiceId": "life-14-0",
+              "actionId": "01-replay"
+            },
+            {
+              "branch": "walk",
+              "slot": 15,
+              "eventId": "school-result",
+              "choiceId": "school-result-0",
+              "actionId": "01-replay"
+            }
+          ],
+          "outcome": "通过",
+          "next": "可在后续训练窗口继续练习"
+        }
+      }
+    ],
+    "sourceSlots": [
+      12,
+      13,
+      14,
+      15,
+      23
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 23,
+    "age": 23,
+    "eventId": "arena-offer",
+    "choiceId": "arena-offer-1",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "03-pause",
+        "kind": "dream-paused",
+        "routeIds": [
+          "03"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 13,
+            "eventId": "school-exam",
+            "choiceId": "school-exam-0",
+            "actionId": "03-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取清华或北大录取"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "paused"
+        }
+      }
+    ],
+    "sourceSlots": [
+      13,
+      11,
+      16,
+      21
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 24,
+    "age": 24,
+    "eventId": "sanitation-24",
+    "choiceId": "sanitation-24-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "03-ask-undergrad",
+        "kind": "contact",
+        "routeIds": [
+          "03"
+        ],
+        "sourceRefs": [],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取清华或北大录取"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 1,
+          "money": 0
+        },
+        "result": {
+          "detail": "你记下普通高考报名地和当年资格核对事项。"
+        }
+      }
+    ],
+    "sourceSlots": [
+      23
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 26,
+    "age": 25,
+    "eventId": "indie-weekend",
+    "choiceId": "indie-weekend-1",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "03-revise",
+        "kind": "investment",
+        "routeIds": [
+          "03"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 25,
+            "eventId": "life-25",
+            "choiceId": "life-25-0",
+            "actionId": "03-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "争取清华或北大录取",
+          "method": "check"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 1,
+          "money": 0
+        },
+        "result": {
+          "detail": "等号两边对不上。你沿着草稿往回找，在约分那一行圈出了漏掉的条件。"
+        }
+      }
+    ],
+    "sourceSlots": [
+      25,
+      10,
+      22
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 14,
+    "age": 18,
+    "eventId": "life-14",
+    "choiceId": "life-14-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "test-archive-establish",
+        "kind": "dream-established",
+        "routeIds": [
+          "test-archive"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 11,
+            "eventId": "life-11",
+            "choiceId": "life-11-0"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "测试排练"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "active"
+        }
+      }
+    ],
+    "sourceSlots": [
+      11
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 25,
+    "age": 25,
+    "eventId": "life-25",
+    "choiceId": "life-25-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "test-archive-work-establish",
+        "kind": "dream-established",
+        "routeIds": [
+          "test-archive-work"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 24,
+            "eventId": "office-24",
+            "choiceId": "office-24-0"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "测试排练"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "active"
+        }
+      }
+    ],
+    "pay": {
+      "paySourceId": "office-25",
+      "routeId": "J01",
+      "mode": "part",
+      "interrupted": false,
+      "workBlocks": 1,
+      "amount": 150
+    },
+    "sourceSlots": [
+      24
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 12,
+    "age": 17,
+    "eventId": "school-sprint",
+    "choiceId": "school-sprint-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "test-assessment-establish",
+        "kind": "dream-established",
+        "routeIds": [
+          "test-assessment"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 11,
+            "eventId": "life-11",
+            "choiceId": "life-11-0"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "测试排练"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "active"
+        }
+      }
+    ],
+    "sourceSlots": [
+      11,
+      7
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 13,
+    "age": 18,
+    "eventId": "school-exam",
+    "choiceId": "school-exam-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "test-assessment-pause",
+        "kind": "dream-paused",
+        "routeIds": [
+          "test-assessment"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 12,
+            "eventId": "school-sprint",
+            "choiceId": "school-sprint-0",
+            "actionId": "test-assessment-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "测试排练"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "paused"
+        }
+      }
+    ],
+    "sourceSlots": [
+      12,
+      7
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 16,
+    "age": 19,
+    "eventId": "arena-club",
+    "choiceId": "arena-club-1",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "test-assessment-resume",
+        "kind": "dream-resumed",
+        "routeIds": [
+          "test-assessment"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 12,
+            "eventId": "school-sprint",
+            "choiceId": "school-sprint-0",
+            "actionId": "test-assessment-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "测试排练"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "active"
+        }
+      }
+    ],
+    "sourceSlots": [
+      12,
+      11
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 24,
+    "age": 24,
+    "eventId": "office-24",
+    "choiceId": "office-24-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "test-assessment-tryout-badge",
+        "kind": "qualification",
+        "routeIds": [
+          "test-assessment"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 12,
+            "eventId": "school-sprint",
+            "choiceId": "school-sprint-0",
+            "actionId": "test-assessment-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "测试排练"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 1,
+          "money": 0
+        },
+        "result": {
+          "detail": "样卷核对通过"
+        }
+      }
+    ],
+    "sourceSlots": [
+      12,
+      23
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 25,
+    "age": 25,
+    "eventId": "life-25",
+    "choiceId": "life-25-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "test-assessment-final-reading",
+        "kind": "fate-result",
+        "routeIds": [
+          "test-assessment"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 12,
+            "eventId": "school-sprint",
+            "choiceId": "school-sprint-0",
+            "actionId": "test-assessment-establish"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "测试排练"
+        },
+        "costs": {
+          "time": 1,
+          "energy": 1,
+          "money": 0
+        },
+        "result": {
+          "achieved": true,
+          "qualification": [
+            {
+              "branch": "walk",
+              "slot": 24,
+              "eventId": "office-24",
+              "choiceId": "office-24-0",
+              "actionId": "test-assessment-tryout-badge"
+            }
+          ],
+          "externalSource": [
+            1,
+            "test-assessment",
+            1,
+            "reading-one"
+          ],
+          "attemptId": "reading-one",
+          "opportunityId": "final-reading",
+          "external": -1,
+          "preparation": [],
+          "outcome": "通过",
+          "next": "留存录音"
+        }
+      }
+    ],
+    "sourceSlots": [
+      12
+    ]
+  },
+  {
+    "branch": "walk",
+    "slot": 12,
+    "age": 17,
+    "eventId": "school-sprint",
+    "choiceId": "school-sprint-0",
+    "actions": [
+      {
+        "schema": 1,
+        "actionId": "test-full-day-establish",
+        "kind": "dream-established",
+        "routeIds": [
+          "test-full-day"
+        ],
+        "sourceRefs": [
+          {
+            "branch": "walk",
+            "slot": 11,
+            "eventId": "life-11",
+            "choiceId": "life-11-0"
+          }
+        ],
+        "payload": {
+          "ruleVersion": 1,
+          "goal": "测试排练"
+        },
+        "costs": {
+          "time": 0,
+          "energy": 0,
+          "money": 0
+        },
+        "result": {
+          "state": "active"
+        }
+      }
+    ],
+    "sourceSlots": [
+      11,
+      7
+    ]
+  }
+]

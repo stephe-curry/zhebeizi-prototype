@@ -1,0 +1,124 @@
+{ "frames": [
+   {
+    "filename": "career-places 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 180
+   },
+   {
+    "filename": "career-places 1.aseprite",
+    "frame": { "x": 96, "y": 0, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 120
+   },
+   {
+    "filename": "career-places 2.aseprite",
+    "frame": { "x": 192, "y": 0, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 160
+   },
+   {
+    "filename": "career-places 3.aseprite",
+    "frame": { "x": 288, "y": 0, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 260
+   },
+   {
+    "filename": "career-places 4.aseprite",
+    "frame": { "x": 0, "y": 48, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 180
+   },
+   {
+    "filename": "career-places 5.aseprite",
+    "frame": { "x": 96, "y": 48, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 120
+   },
+   {
+    "filename": "career-places 6.aseprite",
+    "frame": { "x": 192, "y": 48, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 160
+   },
+   {
+    "filename": "career-places 7.aseprite",
+    "frame": { "x": 288, "y": 48, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 260
+   },
+   {
+    "filename": "career-places 8.aseprite",
+    "frame": { "x": 0, "y": 96, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 180
+   },
+   {
+    "filename": "career-places 9.aseprite",
+    "frame": { "x": 96, "y": 96, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 120
+   },
+   {
+    "filename": "career-places 10.aseprite",
+    "frame": { "x": 192, "y": 96, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 160
+   },
+   {
+    "filename": "career-places 11.aseprite",
+    "frame": { "x": 288, "y": 96, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 260
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.18.6-dev",
+  "image": "career-places.png",
+  "format": "RGBA8888",
+  "size": { "w": 384, "h": 144 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "stock-sale", "from": 0, "to": 3, "direction": "forward", "color": "#000000ff" },
+   { "name": "service-window", "from": 4, "to": 7, "direction": "forward", "color": "#000000ff" },
+   { "name": "kitchen-pass", "from": 8, "to": 11, "direction": "forward", "color": "#000000ff" }
+  ]
+ }
+}

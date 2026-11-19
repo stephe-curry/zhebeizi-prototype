@@ -1,0 +1,19 @@
+{
+  "slots": 46,
+  "cards": 101,
+  "baseChoices": 306,
+  "committedChoiceIds": 318,
+  "grades": {
+    "S": 15,
+    "A": 71,
+    "B": 15
+  },
+  "sFollowups": 50,
+  "sClosures": 6,
+  "natural": {
+    "complete": 476,
+    "early": 4,
+    "events": 97,
+    "choices": 292
+  }
+}

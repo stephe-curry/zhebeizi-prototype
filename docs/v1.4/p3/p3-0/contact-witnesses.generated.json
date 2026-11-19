@@ -1,0 +1,116 @@
+[
+  {
+    "29": {
+      "slot": 31,
+      "event": "life-31",
+      "choice": "life-31-1"
+    },
+    "origin": "scholar",
+    "seed": 3,
+    "01": {
+      "slot": 11,
+      "event": "life-11",
+      "choice": "life-11-0"
+    },
+    "03": {
+      "slot": 7,
+      "event": "life-7",
+      "choice": "life-7-0"
+    }
+  },
+  {
+    "29": {
+      "slot": 31,
+      "event": "life-31",
+      "choice": "life-31-1"
+    },
+    "origin": "leader",
+    "seed": 12,
+    "01": {
+      "slot": 11,
+      "event": "life-11",
+      "choice": "life-11-0"
+    },
+    "03": {
+      "slot": 7,
+      "event": "life-7",
+      "choice": "life-7-0"
+    }
+  },
+  {
+    "29": {
+      "slot": 31,
+      "event": "life-31",
+      "choice": "life-31-1"
+    },
+    "origin": "athlete",
+    "seed": 4,
+    "01": {
+      "slot": 11,
+      "event": "life-11",
+      "choice": "life-11-0"
+    },
+    "03": {
+      "slot": 7,
+      "event": "life-7",
+      "choice": "life-7-0"
+    }
+  },
+  {
+    "29": {
+      "slot": 31,
+      "event": "life-31",
+      "choice": "life-31-1"
+    },
+    "origin": "wealthy",
+    "seed": 1,
+    "01": {
+      "slot": 11,
+      "event": "life-11",
+      "choice": "life-11-0"
+    },
+    "03": {
+      "slot": 7,
+      "event": "life-7",
+      "choice": "life-7-0"
+    }
+  },
+  {
+    "29": {
+      "slot": 31,
+      "event": "life-31",
+      "choice": "life-31-1"
+    },
+    "origin": "craft-child",
+    "seed": 9,
+    "01": {
+      "slot": 11,
+      "event": "life-11",
+      "choice": "life-11-0"
+    },
+    "03": {
+      "slot": 7,
+      "event": "life-7",
+      "choice": "life-7-0"
+    }
+  },
+  {
+    "29": {
+      "slot": 31,
+      "event": "life-31",
+      "choice": "life-31-1"
+    },
+    "origin": "grandma",
+    "seed": 2,
+    "01": {
+      "slot": 11,
+      "event": "life-11",
+      "choice": "life-11-0"
+    },
+    "03": {
+      "slot": 7,
+      "event": "life-7",
+      "choice": "life-7-0"
+    }
+  }
+]

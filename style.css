@@ -464,3 +464,96 @@ dialog::backdrop { background:#101612bc; }
   .gift-scene .yoyo-wood,.gift-scene .gift-person,.gift-scene .yoyo-envelope,.gift-scene .yoyo-cash,
   .gift-scene .stock .gift-art,.gift-scene .yoyo-handoff,.gift-scene .yoyo-first-try {animation:none}
 }
+
+/* A short, settled-action flourish beside the equipment-room receipt. */
+.echo-play {
+  display: block;
+  width: 40px;
+  height: 40px;
+  --start: 0px;
+  background: url("assets/echo-play.png") var(--start) 0 / 480px 40px no-repeat;
+  image-rendering: pixelated;
+  animation: echo-play-once 820ms step-end both;
+}
+.echo-play.shuttle { --start: -240px; }
+@keyframes echo-play-once {
+  0% { background-position-x: var(--start); }
+  15% { background-position-x: calc(var(--start) - 40px); }
+  26% { background-position-x: calc(var(--start) - 80px); }
+  38% { background-position-x: calc(var(--start) - 120px); }
+  49% { background-position-x: calc(var(--start) - 160px); }
+  66%,100% { background-position-x: calc(var(--start) - 200px); }
+}
+.still-gifts .echo-play { animation: none; background-position-x: calc(var(--start) - 200px); }
+@media (prefers-reduced-motion: reduce) {
+  .echo-play { animation: none; background-position-x: calc(var(--start) - 200px); }
+}
+
+.appointment,.followups { margin: 14px 0; padding: 12px; border: 1px solid #9c9779; border-radius: 8px; }
+.appointment h2,.followups h3,.followup-done p { margin: 0; }
+.response-row,.followup-done { display: flex; align-items: center; gap: 10px; }
+.response-row small { display: block; margin: 6px 0; }
+.response-row .chip { white-space: normal; text-align: start; }
+.response-row .chip[aria-pressed="true"],.appointment .chip[aria-pressed="true"] { box-shadow: inset 0 -3px #a06a43; }
+.stamp-play,.stamp-set { display: inline-block; width: 64px; height: 64px; flex: 0 0 64px;
+  background: url('assets/appointment-stamp.png') 100% 0 / 900% 100% no-repeat; image-rendering: pixelated; }
+.stamp-play { animation: appointment-stamp 1060ms steps(1,end) both; }
+.still-gifts .stamp-play { animation: none; }
+@media (prefers-reduced-motion: reduce) { .stamp-play { animation: none; } }
+@keyframes appointment-stamp {
+  0.000% { background-position: 0.0% 0; }
+  16.038% { background-position: 12.5% 0; }
+  24.528% { background-position: 25.0% 0; }
+  31.132% { background-position: 37.5% 0; }
+  36.792% { background-position: 50.0% 0; }
+  43.396% { background-position: 62.5% 0; }
+  55.660% { background-position: 75.0% 0; }
+  64.151% { background-position: 87.5% 0; }
+  75.472% { background-position: 100.0% 0; }
+  100% { background-position: 100% 0; }
+}
+.sample-desk { background: #eee3c9; color: #302f29; border: 1px solid #a58a60; border-radius: 6px; padding: 12px; margin: 10px 0; }
+.sample-desk > div:first-child { display: flex; align-items: center; gap: 8px; }
+.sample-desk .sample-prop { width: 32px; height: 32px; }
+.sample-desk p { color: #403b31; }
+.shift-clip { display: inline-block; height: 64px; width: 64px; flex-shrink: 0;
+  background: url('assets/shift-desk.png') 0 var(--row,0%) / 700% 300% no-repeat; image-rendering: pixelated; }
+.shift-clip.socket { --row: 50%; }
+.shift-clip.detour { --row: 100%; }
+.shift-clip.played { background-position-x: 100%; animation: shift-work 1010ms steps(1,end) both; }
+@keyframes shift-work {
+  0% { background-position-x: 0%; } 15.842% { background-position-x: 16.6667%; }
+  25.743% { background-position-x: 33.3333%; } 33.663% { background-position-x: 50%; }
+  42.574% { background-position-x: 66.6667%; } 55.446% { background-position-x: 83.3333%; }
+  72.277%,100% { background-position-x: 100%; }
+}
+.still-gifts .shift-clip { animation: none; }
+@media (prefers-reduced-motion: reduce) { .shift-clip { animation: none !important; } }
+.scene-detail { display:flex; align-items:center; gap:10px; border-left:3px solid #a78b5d; padding:0 10px; margin:10px 0; }
+.scene-detail .detail-prop { width:32px; height:32px; flex:0 0 32px; }
+.scene-detail p { margin:0; }
+.dream-note{display:inline-block;vertical-align:middle;width:64px;height:64px;background:url(assets/dream-note.png) 100% 0/800% 100%;image-rendering:pixelated;animation:write-note .9s steps(1,end) both}
+@keyframes write-note{0%{background-position:0 0}13.33%{background-position:14.2857% 0}22.22%{background-position:28.5714% 0}31.11%{background-position:42.8571% 0}42.22%{background-position:57.1429% 0}53.33%{background-position:71.4286% 0}62.22%{background-position:85.7143% 0}73.33%,100%{background-position:100% 0}}
+@media(prefers-reduced-motion:reduce){.dream-note{animation:none}}
+.still-gifts .dream-note{animation:none}
+.chapter-station{margin:12px 0;padding:4px 12px;border-left:3px solid #568684;background:#f0e6d3;color:#493d35}
+.delivery-slip{display:inline-block;vertical-align:middle;width:64px;height:64px;background:url(assets/delivery-slip.png) 100% 0/800% 100%;image-rendering:pixelated;animation:sign-delivery .9s steps(1,end) both}
+@keyframes sign-delivery{0%{background-position:0 0}11.11%{background-position:14.2857% 0}20%{background-position:28.5714% 0}28.89%{background-position:42.8571% 0}40%{background-position:57.1429% 0}55.56%{background-position:71.4286% 0}66.67%{background-position:85.7143% 0}77.78%,100%{background-position:100% 0}}
+.still-gifts .delivery-slip{animation:none}
+@media(prefers-reduced-motion:reduce){.delivery-slip{animation:none}}
+.chapter-art{display:block;width:160px;height:72px;margin:8px auto 0;image-rendering:pixelated;background-image:url(assets/life-desks.png);background-size:400% 600%;background-position:100% var(--row,0%);animation:chapter-beat .64s steps(1,end) both}
+.chapter-art.campus{--row:20%}.chapter-art.home{--row:40%}.chapter-art.office{--row:60%}.chapter-art.factory{--row:80%}.chapter-art.delivery{--row:100%}
+@keyframes chapter-beat{0%{background-position-x:0%}21.875%{background-position-x:33.3333%}37.5%{background-position-x:66.6667%}56.25%,100%{background-position-x:100%}}
+.still-gifts .chapter-art{animation:none}
+@media(prefers-reduced-motion:reduce){.chapter-art{animation:none}}
+.dream-place{width:min(92vw,390px);max-height:86dvh;overflow:auto;box-sizing:border-box;border:3px solid #574c3e;background:#fbefd6;color:#302e2a;padding:16px;border-radius:8px}.dream-place::backdrop{background:#242b29c9}.dream-place h2{margin:0;font-size:1.2rem}.dream-place .chip{margin:4px 2px;white-space:normal}.dream-place .dream-art{background-image:url(assets/dream-places.png);background-size:400% 700%;width:192px;height:96px;max-width:100%;animation:dream-beat .72s steps(1,end) both}.art-07,.art-J05{--row:16.6667%}.art-08,.art-MED{--row:33.3333%}.art-11{--row:50%}.art-12{--row:66.6667%}.art-25,.art-J08{--row:83.3333%}.art-30{--row:100%}
+@keyframes dream-beat{0%{background-position:0 var(--row,0%)}25%{background-position:33.3333% var(--row,0%)}41.6667%{background-position:66.6667% var(--row,0%)}63.8889%,100%{background-position:100% var(--row,0%)}}
+.still-gifts .dream-place .dream-art{animation:none}@media(prefers-reduced-motion:reduce){.dream-place .dream-art{animation:none}}
+.connection-map{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:2px;background:#dce5ce;border:2px solid #8a9d84;padding:7px;color:#34483d}.connection-map .chip:last-child{grid-column:3}.connection-map span{text-align:center}
+.dream-place .art-J04,.dream-place .art-J06,.dream-place .art-J07{background-image:url(assets/career-places.png);background-size:400% 300%}.art-J04{--row:0%}.art-J06{--row:50%}.art-J07{--row:100%}
+.closing-clip {display:block;width:192px;height:96px;image-rendering:pixelated;background:url(assets/kitchen-closing.png) 100% 0/400% 100% no-repeat;animation:dream-beat .72s steps(1,end) both}
+.still-gifts .closing-clip {animation:none}
+@media(prefers-reduced-motion:reduce){.closing-clip{animation:none}}
+
+.still-gifts .dream-place .dream-art{background-position-x:100%}
+@media(prefers-reduced-motion:reduce){.dream-place .dream-art{background-position-x:100%}}

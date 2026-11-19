@@ -1,0 +1,5 @@
+Error: Chrome exited SIGABRT
+
+    at ChildProcess.<anonymous> (/Users/stephen/Desktop/project/game/prototype/v1.3/tests/portrait-browser.cjs:31:48)
+    at ChildProcess.emit (node:events:518:28)
+    at ChildProcess._handle.onexit (node:internal/child_process:293:12)

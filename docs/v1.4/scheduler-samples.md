@@ -1,0 +1,111 @@
+# 调度器自然路径抽样
+工作区 E.create → E.currentCard → E.commit → E.advance；固定 seed 1–480，奇数新童年、偶数兼容旧童年。无直接跳槽或编造事实。模型选择与真实人群频率无关。
+完整46回合 475，提前谢幕 5；命中注册卡 96/101；不同提交 choiceId 287。
+未命中：life-24、life-27、life-32、life-36、late-recovery。未命中不代表死卡。
+## 同窗竞争实证
+左为实际入选，右为当时也符合条件的候选；seed 为可复现样本。公共回退卡不列为落选机会。
+- indie-memory > delivery-45，seed 480
+- indie-memory > sanitation-45，seed 478
+- delivery-routine > delivery-37，seed 465
+- indie-memory > factory-45，seed 473
+- arena-final > indie-launch，seed 425
+- arena-quiet > indie-memory > office-45，seed 474
+- indie-memory > office-45，seed 444
+- arena-quiet > office-45，seed 470
+## 入选见证
+- spring-envelope：479
+- school-yoyo：479
+- life-3：480
+- life-4：480
+- life-5：480
+- life-6：480
+- life-7：480
+- life-8：476
+- life-9：480
+- life-10：480
+- life-11：480
+- life-12：470
+- school-exam：480
+- life-14：480
+- life-15：480
+- arena-club：474
+- life-17：480
+- life-18：480
+- indie-kit：479
+- school-degree：480
+- life-21：480
+- life-22：480
+- life-23：480
+- sanitation-24：478
+- life-25：480
+- indie-weekend：480
+- sanitation-27：478
+- life-28：480
+- chance-old-friend：480
+- life-30：480
+- life-31：480
+- sanitation-32：478
+- indie-budget：480
+- life-34：480
+- indie-rights：480
+- city-pivot：478
+- sanitation-37：478
+- active-recovery：480
+- life-39：480
+- life-40：480
+- life-41：480
+- life-42：480
+- life-43：480
+- life-44：480
+- indie-memory：480
+- life-46：480
+- life-1：480
+- life-2：480
+- life-19：480
+- arena-offer：474
+- life-26：478
+- life-29：479
+- life-33：478
+- life-35：477
+- sanitation-45：455
+- school-prep：480
+- school-sprint：480
+- life-16：480
+- office-24：477
+- office-27：477
+- office-32：477
+- office-pivot：477
+- office-37：477
+- office-45：477
+- delivery-24：480
+- delivery-27：480
+- delivery-32：480
+- rain-shift：480
+- delivery-37：480
+- delivery-45：469
+- factory-24：473
+- factory-27：473
+- factory-32：473
+- factory-pivot：473
+- factory-37：473
+- indie-launch：479
+- factory-45：472
+- life-38：474
+- life-13：470
+- life-20：470
+- school-result：479
+- delivery-routine：465
+- life-45：476
+- indie-feedback：478
+- arena-start：474
+- arena-lineup：474
+- arena-injury：474
+- arena-tactics：474
+- life-37：474
+- arena-final：474
+- arena-retire：474
+- arena-quiet：474
+- indie-second-desk：470
+- indie-second-launch：470
+- early-diagnosis：456
+- early-goodbye：456

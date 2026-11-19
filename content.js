@@ -21,9 +21,10 @@ globalThis.LifeContent = (() => {
   };
 
   const items = {
+    screenshot:['试玩起始画面','旧比例的起始界面，来自晚年亲手打开的试玩文件。','photo'],
     yoyo:['悠悠球','八岁那年，你用整笔压岁钱换来的悠悠球。','yoyo'],
     lamp:['旧台灯','玻璃灯罩上有一道白痕，只有开灯时才显出来。','lamp'],
-    console:['旧游戏机','背面的小螺丝生了锈。存档还记着第一次通关的日子。','console'],
+    console:['旧游戏机','背面的小螺丝生了锈。按下开始键，屏幕会先闪一下。','console'],
     notes:['错题本','每个折角都留给一道曾经不会的题。','book'],
     letter:['录取信封','写着学校名字的那一页被夹在最里面。','letter'],
     badge:['旧工牌','透明夹子里夹过姓名和一段每天走过的路。','badge'],
@@ -38,7 +39,7 @@ globalThis.LifeContent = (() => {
   };
   const experience = {
     repair:['修灯的手艺','加入后可以自己检修旧物，少付 250 元。',{money:250,skill:1}],
-    practice:['一起解题','加入后能找同学一起准备，减轻压力。',{stress:-3,knowledge:1}],
+    practice:['解题练习','按自己练过的步骤拆题，减轻压力。',{stress:-3,knowledge:1}],
     teamwork:['合作调试','加入后可以请旧搭档提前测试玩版。',{stress:-2,skill:2}],
     safety:['街头安全经验','加入后可用熟悉的安全路线降低暴露。',{stress:-2,health:2}],
     workshop:['班组交接经验','加入后能改用熟悉的交接清单，减少加班。',{stress:-3,skill:1}],
@@ -47,7 +48,7 @@ globalThis.LifeContent = (() => {
     mentor:['带新人','加入后可与新人一起分担现场任务。',{stress:-3,social:2}]
   };
   const wishes = {admit:'把志愿填好',rank:'认真打一场比赛',make:'做完一款小游戏',save:'给自己留一笔生活备用金',rest:'把身体养回来',pass:'把会的事教给别人'};
-  const jobs = {office:['办公室职员','大厂'],factory:['制造业技工','手艺'],delivery:['配送骑手','手艺'],sanitation:['环卫工','体制'],player:['职业电竞选手','电竞'],developer:['独立游戏制作人','创作'],dispatcher:['站点调度','手艺'],retired:['退休','生活']};
+  const jobs = {vendor:['文具摊经营者','手艺'],civil:['街道公务员','体制'],cook:['饭馆厨师','手艺'],programmer:['公交软件程序员','技术'],teacher:['小学教师','教育'],surgeon:['外科团队医师','医疗'],office:['办公室职员','大厂'],factory:['制造业技工','手艺'],delivery:['配送骑手','手艺'],sanitation:['环卫工','体制'],player:['职业电竞选手','电竞'],developer:['独立游戏制作人','创作'],dispatcher:['站点调度','手艺'],retired:['退休','生活']};
   const directions = ['学术','体制','大厂','手艺','文艺','电竞','创业','躺平','出国'];
   const people = {parent:'家人',friend:'同学阿宁',colleague:'同事小周',coach:'教练陈姐',player:'玩家小叶'};
   const threads = {school:'升学',esport:'竞技',indie:'游戏制作'};
@@ -295,7 +296,7 @@ globalThis.LifeContent = (() => {
       ['夜班的交接铃','交接早到五分钟就能说清温度异常，晚一点却能多睡一会儿。','改成交接清单|两班各留三分钟，误报慢慢少了|make|gain:notebook,exp:workshop~跟同事调班|他答应临时换一天，也提前说了下周有事|help|meet:colleague~按防护流程结束|多花了一会儿，你回家给手腕敷了热毛巾|care|exp:safety'],
       ['手腕开始发木','换批次后手上的动作变密。产量和休息很难同时保住。','先报告并换工位|工时少了一点，你花了两周适应另一道工序|care|setback:factory,protect:2~和同事轮换操作|小周帮了两班，余下时间还需要重新安排|help|protect:1,meet:colleague~先完成这一批|产量顶住了，夜里手腕更难放松|pay|protect:0'],
       ['离开熟悉的机台','班里有个新人才来几天。你还没决定要不要拿新的岗位证。','带新人过检查项|他学会了遇到异响先停再问|help|exp:mentor~去学新的工序|实训期没有原来熟练，你接受缓一点|learn|exp:recovery~把旧机台做稳|你把几项容易漏的检查补进了说明|make|exp:workshop'],
-      ['工具板空出一格','钥匙要交给下一班。那把握把换过两次的扳手还在你手里。','把方法演示给新人|他跟着做完一遍，又主动重新检查了一次|help|exp:mentor,shine:factory~自己留着工具盒|你回去给松动的椅腿上了颗新螺丝|make|gain:tools~和小周整理旧表|翻到交接日那一页时，你们都认出了旧字迹|rest|meet:colleague']
+      ['工具板空出一格','钥匙要交给下一班。工具板上挂着一把换过握把的公用扳手。','把方法演示给新人|他跟着做完一遍，又主动重新检查了一次|help|exp:mentor,shine:factory~自己留着工具盒|你回去给松动的椅腿上了颗新螺丝|make|gain:tools~和小周整理旧表|翻到交接日那一页时，你们都认出了旧字迹|rest|meet:colleague']
     ],
     delivery:[
       ['第一条绕行建议','站点的地图看不出那座桥有多滑。小周等你一起骑第一趟。','记下安全路线|你多走了四分钟，回来把坡度画在纸上|move|gain:map,exp:safety,meet:colleague~请教取餐的少一个台阶的入口|老板隔天就认出你在找哪里|help~多熟悉两处楼门|第三趟时，你已经能提前放慢速度|learn'],
@@ -329,17 +330,17 @@ globalThis.LifeContent = (() => {
     ['arena-injury',32,'esport-job','手腕发紧的时候','还有一轮选拔。继续超量练习可能加重负担，减练会影响磨合。','减量，留出恢复时间|陈姐把一场训练改成你可以参加的复盘|care|protect:2,exp:recovery~调整位置和动作|队里改了一套战术，你需要重新熟悉节奏|move|protect:1,thread:esport~先坚持到这场打完|你记了一场完整录像，手腕的不适还在|pay|protect:0,thread:esport'],
     ['arena-tactics',36,'esport-job','出场前三步','三张战术纸只能确定一张作为开局。还可以用余力和队友对一次细节。','先稳住可以配合的位置|队友知道第一波该为谁留出空档|make|thread:esport,arena:steady~抢先打开空间|你们练了一套高投入战术，早段必须保持清醒|move|thread:esport,arena:attack~把这一场交给替补|你把对手录像的时间点留在桌上|rest|arena:mentor'],
     ['arena-final',39,'esport-job','最后一张比赛用纸','纸上画着上一局失误的位置。对手也还没有坐稳。','执行和队友定下的打法|手贴到桌上时，你先听见队友报位置|make|final:play~在场边做协助|你把两处观察发给了队友，比赛由他们继续|help|final:assist~准备退役|错过这一场以后，你想清楚仍想带走什么|rest|final:leave'],
-    ['arena-retire',40,'esport-job','书包里多了一块替补牌','下一季还没有签。有人邀请你带训练，也有人问要不要一起做项目。','留下来给新人带训练|相同的失误，你试着用更易听懂的话重讲一次|help|job:office,exp:mentor,pause:esport~去做游戏项目|你把竞技所学变成一份玩法说明|make|job:office,thread:indie,wish:make,pause:esport~离开后先休息|第一次周末回来，没人问你今天训练几小时|rest|job:office,pause:esport'],
-    ['arena-quiet',45,'esport-echo','这次比赛坐看台','陈姐转来了一张入场券。票上的日期让你想起以前发训练表的时候。','和旧队伍见一面|大家聊了半小时各自在忙的事|help|meet:coach~把比赛徽章收好|你把它和第一次写的战术放在一起|rest~给新人写一条建议|你删掉了“应该”，留下一个当时学会的方法|make|exp:mentor'],
-    ['indie-kit',19,'indie','一份能玩的旧文件','阿宁发现上回做的小人还有两个动作没接上。你们只有一周时间。','把第一关做完整|阿宁把收来的意见写在名字旁边|make|gain:prototype,thread:indie,exp:teamwork,meet:friend~把源文件交给阿宁|你保留了一份能开起来的副本|help|gain:prototype,meet:friend~先停止更新|你留了份笔记，写下当时想做的东西|rest|pause:indie'],
+    ['arena-retire',40,'esport-job','书包里多了一块替补牌','下一季还没有签。有人邀请你带训练，也有人问要不要一起做项目。','留下来给新人带训练|你转入队务办公室，从带新人复盘做起，把那次失误讲得更易懂|help|job:office,exp:mentor,pause:esport~去做游戏项目|你在项目办公室做协调，也把竞技所学变成一份玩法说明|make|job:office,thread:indie,wish:make,pause:esport~离开后先休息|新安排先做日间队务。第一个空出来的周末，没人问你今天训练几小时|rest|job:office,pause:esport'],
+    ['arena-quiet',45,'esport-echo','这次比赛坐看台','陈姐转来了一张入场券。票上的日期让你想起以前发训练表的时候。','和旧队伍见一面|大家聊了半小时各自在忙的事|help|meet:coach~把比赛徽章收好|你把它放在今天带回来的赛程纸旁|rest~给新人写一条建议|你删掉了“应该”，留下一个当时学会的方法|make|exp:mentor'],
+    ['indie-kit',19,'indie','一份能玩的旧文件','桌上的试玩文件里，小人还有两个动作没接上。你们只有一周时间。','把第一关做完整|阿宁把收来的意见写在名字旁边|make|gain:prototype,thread:indie,exp:teamwork,meet:friend~把源文件交给阿宁|你保留了一份能开起来的副本|help|gain:prototype,meet:friend~先停止更新|你留了份笔记，写下当时想做的东西|rest|pause:indie'],
     ['indie-weekend',26,'indie','下班后的联调','阿宁做出了一个小关卡。第二天你还要早起。','约两个短晚上|你给现有版本留了一次真正的测试|make|thread:indie,wish:make,meet:friend~先做预算表|你们把目前做得到的范围缩了下来|learn|gain:notebook,thread:indie~请搭档先停一下|项目还留在桌上，彼此有时间想清楚|rest|pause:indie'],
     ['indie-budget',33,'indie','第一份可发出去的试玩','试玩展下月开，工作也排到了同一周。还需要留一点资金和休息时间。','先把玩法做完整|你删了一张地图，试玩真的可以打通了|make|project:polish,wish:make,priority:project~优先处理程序问题|三种机型的问题只剩下一种难以重现|learn|project:repair,wish:make,priority:project~先守住本职收入|试玩延期，你把现有版本留在电脑里|pay|project:wait,priority:work~把休息排进日历|你和搭档约好，等身体缓过来再看试玩|rest|pause:indie,priority:rest'],
     ['indie-rights',35,'indie-active','谁能用这段声音','一段配乐没有谈清使用方式。展会要收的是可以正式发布的版本。','换掉配乐继续迭代|你们用了可授权的声音，晚交了一天|make|project:repair~和原作者谈约定|两人把署名、配合时间和能用的部分讲清楚|help|project:polish,meet:friend~先收起项目|你们把还能继续的文件整理好再各自关机|rest|pause:indie'],
     ['indie-launch',39,'indie-active','发布按钮下面还有一行字','仍有一个会影响部分玩家的故障。发布后也需要时间回复问题。','提交现在的版本|你在说明里写明已知的问题和更新计划|make|release:now~延迟，做最后一轮修复|你又做了一遍测试，把还没解决的事列在提交单上|learn|release:later~只留在制作组|你把现有可用的文件整理到同一个目录|rest|release:stop'],
     ['indie-second-desk',41,'former-player','后来重新坐到桌前','曾经的队友问你想不想把比赛里学到的东西做进一关游戏。你能拿出的时间有限。','先把一关做出来|你把当队员时最熟悉的一个问题做成了关卡|make|project:polish,wish:make~和搭档试一个较小的版本|试玩文件已经能打开，你们还需要谈清接下来的安排|learn|project:repair,wish:make~把计划留在纸上|晚上你还愿意看以前的战术，不需要马上变成作品|rest|pause:indie'],
     ['indie-second-launch',44,'late-release','隔了这么久，仍有人试玩','最后一轮试玩还有留言。可以在保留休息时间的同时，给作品一个去处。','再打磨一下再提交|你按试玩反馈重新调整了关卡开头|make|release:later~提交并说明现在的范围|帮助文档多了一段当年比赛学来的东西|learn|release:now~和合作者分享最终文件|这次作品留在你们之间，各自都收到了可玩的版本|rest|release:stop'],
-    ['indie-feedback',42,'indie-echo','以前的留言地址','邮箱里有一封和许多年前长得很像的回信。今天你可以按自己的节奏答复。','把回信留给这份作品|你记下玩家在哪一刻终于明白了规则|help|meet:player,exp:launch~给阿宁看看|两个人想起有段玩法第一次试时完全跑不通|help|meet:friend~记下下一件想做的事|这次目标写得很小，几页纸就装得下|make|wish:make'],
-    ['indie-memory',45,'indie-history','第一份试玩重新打开了','屏幕比例不太对，按两下还能进到起始关卡。存档日期没有改。','给最早的画面留张照片|你把截图打印出来，背面写上当时的日期|make|reopen:prototype~再和一位旧搭档说声谢谢|对方以为你早把那个版本删了|help|meet:friend~把文件归进自己的档案|晚上你另建了个空文件夹，暂时没给它起名|rest']
+    ['indie-feedback',42,'indie-echo','以前的留言地址','邮箱里有一封和许多年前长得很像的回信。今天你可以按自己的节奏答复。','把回信留给这份作品|你记下玩家在哪一刻终于明白了规则|help|meet:player,exp:launch~给阿宁看看|阿宁看完，问这条留言说的是哪一段玩法|help|meet:friend~记下下一件想做的事|这次目标写得很小，几页纸就装得下|make|wish:make'],
+    ['indie-memory',45,'indie-history','第一份试玩重新打开了','屏幕比例不太对，按两下还能进到起始关卡。存档日期没有改。','给最早的画面留张照片|你把截图打印出来，背面写上当时的日期|make|reopen:prototype,gain:screenshot~再和一位旧搭档说声谢谢|对方以为你早把那个版本删了|help|meet:friend~把文件归进自己的档案|晚上你另建了个空文件夹，暂时没给它起名|rest']
   ];
   const stories = storyRows.map(([id,slot,rule,title,body,lines]) => card(id,slot,title,body,lines,{rule}));
 
@@ -351,12 +352,13 @@ globalThis.LifeContent = (() => {
     card('delivery-routine',37,'站里有人在等一份新排班','风雨过后，站点让你选下个月要怎样接班。小周的班也有变动。','留下熟悉路线|你在值班表上留了一格供临时调整|move|exp:safety~去了解调度岗位|新人问到一条路线，你知道该先解释哪个时间段|learn|job:dispatcher,exp:workshop~和小周约好交接时间|你们把各自需要提前说的事写在一起|help|meet:colleague',{rule:'delivery-routine'}),
     card('active-recovery',38,'下一张账单还会到','前一段停工的代价还在。恢复情况允许你重新排计划。','试一轮短班复工|你按承受得住的时间重新上手，还保留了休息日|care|recover:short,exp:recovery~学一个新岗位|适应期工资还没回到原来，已经能看见新的安排|learn|recover:change,exp:recovery~请人共担一段|小周说只能帮到月底，你据此改过日程|help|recover:help,exp:recovery,meet:colleague',{rule:'recover'}),
     card('late-recovery',41,'还有一段日子要重新安排','三十五岁的转折已经过去，之前停工的账单还留下了一部分。新一段生活允许你慢慢重新安排。','约一个可试行的短班|你先谈好什么时候做得到、什么时候需要停下|care|recover:short,exp:recovery~从岗位培训重新开始|收入还没补齐，手里已有一份新的时间表|learn|recover:change,exp:recovery~请能联系到的人分担|你们先对清哪些事可以一起做，哪些还要另想办法|help|recover:help,exp:recovery,meet:colleague',{rule:'recover'}),
-    card('chance-old-friend',29,'阿宁发来一页旧笔记','那一页上还有十年前的涂改。阿宁问你想不想把想法说完。','用半晚把草稿做出来|最后你们留下一份能互相交接的草稿|make|thread:indie,meet:friend,exp:teamwork~把消息留到周末|对方回了一个时间，也问你最近如何|help|meet:friend~告诉他最近没有余力|他把文件留给你，说有空再看|rest',{rule:'chance'}),
+    card('chance-old-friend',29,'阿宁发来一页旧笔记','阿宁发来的纸页上有几处旧涂改。阿宁问你想不想把想法说完。','用半晚把草稿做出来|最后你们留下一份能互相交接的草稿|make|thread:indie,meet:friend,exp:teamwork~把消息留到周末|对方回了一个时间，也问你最近如何|help|meet:friend~告诉他最近没有余力|他把文件留给你，说有空再看|rest',{rule:'chance'}),
     card('early-diagnosis',43,'把最近这段日子安排好','一次突发的严重病情让长远计划变得不确定。医生说接下来需要留院照护。','告诉能联系到的人|你说出了想要怎样度过接下来的日子|help|early:contact~把重要的物件和文件放在手边|你写下哪里还能找到没交接的东西|make|early:object~先留一段安静的时间|没有要立刻回的消息，你把窗边的位置留给下午|rest|early:quiet',{rule:'early'}),
     card('early-goodbye',44,'今天窗边有光','病情继续恶化。还能安排的时间变短了，你想留下一件小事。','写下现在想到的话|你在最后一行写上了日期|rest|earlyEnd:note~把一件旧物托付给照护的人|你说清楚它为什么留到了今天|family|earlyEnd:item~让这个下午安静过去|当天的最后一个画面是窗边挪动的一点光|rest|earlyEnd:quiet',{rule:'early-next'})
   ];
 
   const cards = [...shared,...occupations,...stories,...risks];
+  cards.find(c=>c.id==='indie-memory').opportunityWindow=[45,46];
   const talents = {
     patient:['缓一点再出发','初始心态 +3、压力 −4',{mind:3,stress:-4}],
     maker:['手上有办法','初始技能 +4',{skill:4}],
@@ -415,17 +417,25 @@ globalThis.LifeContent = (() => {
   const giftEvents = ['spring-envelope','school-yoyo'];
   const giftPlaces = {box:'小盒子', family:'红纸包', drawer:'抽屉'};
   const yoyoStory = 'yoyo-story';
+  function giftDeposit(run) {
+    const caregiver = run.birth==='grandma'?'外婆':'家人';
+    const origin = run.facts.find(f=>f.slot===1 && f.eventId===giftEvents[0]);
+    const deposit = origin?.interaction;
+    const place = deposit?.place;
+    if (run.childhood==='spring-gift' && deposit?.sceneId===giftEvents[0] &&
+      deposit.owner==='player' && deposit.custodian===(place==='family'?caregiver:'player') &&
+      deposit.amount===giftAmount && deposit.balance===giftAmount && deposit.performed?.[0]===place &&
+      origin.choiceId===giftEvents[0]+'-'+place &&
+      Object.hasOwn(giftPlaces,place)) return origin;
+  }
+
   function giftCard(run,card) {
     const saving = card.id===giftEvents[0];
     const caregiver = run.birth==='grandma'?'外婆':'家人';
     const origin = run.facts.find(f=>f.slot===1 && f.eventId===giftEvents[0]);
     const deposit = origin?.interaction;
     const place = deposit?.place;
-    const funded = run.childhood==='spring-gift' && deposit?.sceneId===giftEvents[0] &&
-      deposit.owner==='player' && deposit.custodian===(place==='family'?caregiver:'player') &&
-      deposit.amount===giftAmount && deposit.balance===giftAmount && deposit.performed?.[0]===place &&
-      origin.choiceId===giftEvents[0]+'-'+place &&
-      Object.hasOwn(giftPlaces,place);
+    const funded = !!giftDeposit(run);
     const keeper = place==='family' ? deposit?.custodian : 'player';
     const family = keeper==='外婆' ? '外婆' : '家人';
     const homeBeat = {
@@ -489,5 +499,64 @@ globalThis.LifeContent = (() => {
   }
   cards.push(giftDefinition(giftEvents[0],1,'这笔钱，我想自己管',{box:'自己藏好',family:'交给家人',drawer:'放进抽屉'}),
     giftDefinition(giftEvents[1],2,'我也想玩那个',{keep:'继续留着',buy:'买下它'}));
-  return {giftEvents,giftCard,yoyoStory,ages,keySlots,familySlots,labels,origins,items,experience,wishes,jobs,directions,people,threads,opportunities,shared,cards,talents,supports,dayPlans,dinner,lastFish};
+
+  const core=new Set('spring-envelope school-yoyo life-3 life-4 life-6 life-14 life-23 life-33 life-36 life-40 life-46 school-result arena-final indie-launch early-goodbye'.split(' '));
+  const daily=new Set('life-5 life-8 life-10 life-12 life-15 life-17 life-22 life-25 life-26 life-30 life-31 life-34 life-37 life-41 life-42'.split(' '));
+  for(const card of cards)card.grade=core.has(card.id)?'S':daily.has(card.id)?'B':'A';
+
+  function schoolGiftEcho(run,card,hasYoyo) {
+    const deposit = giftDeposit(run)?.interaction;
+    const source = run.facts.find(f=>f.slot===2 && f.eventId===giftEvents[1]);
+    const receipt = source?.interaction;
+    if (!deposit || receipt?.sceneId!==giftEvents[1] || receipt.eventId!==source.eventId ||
+        receipt.choiceId!==source.choiceId || receipt.sourceSlot!==1 ||
+        !Array.isArray(source.sourceSlots) || !source.sourceSlots.includes(1) ||
+        receipt.owner!==deposit.owner || receipt.place!==deposit.place || receipt.sourceCustodian!==deposit.custodian ||
+        receipt.price!==giftAmount || receipt.amount!==giftAmount ||
+        !Array.isArray(receipt.performed) || !Array.isArray(source.items)) return;
+    const branch = receipt.performed.at(-1);
+    if (source.choiceId!==giftEvents[1]+'-'+branch) return;
+    // Earlier settled receipts have a single action and the same balance/custody fields.
+    const retrieved = {box:'open-box',family:'ask-family',drawer:'open-drawer'}[deposit.place];
+    const steps = ['see-price','go-home',retrieved,branch];
+    if (receipt.story===undefined
+      ? receipt.performed.length!==1
+      : receipt.story!==yoyoStory || receipt.retrievedBy!==retrieved ||
+        receipt.performed.length!==steps.length || steps.some((step,index)=>receipt.performed[index]!==step)) return;
+
+    let body, choice;
+    if (branch==='buy' && hasYoyo && source.items.includes('yoyo') && receipt.purchased===true &&
+        receipt.spent===giftAmount && receipt.balance===0 && receipt.custodian===null &&
+        (receipt.story===undefined || receipt.storedAt===null)) {
+      body='同学在器材室外腾出一块空地，约带了悠悠球的人午休时交换一个花式。你八岁时买的那只还在。';
+      choice={id:'life-6-yoyo',label:'带上悠悠球去练一轮',
+        outcome:'你带上八岁时买的悠悠球。你们轮流试对方的花式，收线失败了就换个人示范。',
+        delta:{},commands:['reopen:yoyo']};
+    } else if (branch==='keep' && !run.items.yoyo && !source.items.includes('yoyo') && receipt.purchased===false &&
+        receipt.spent===0 && receipt.balance===giftAmount && receipt.custodian===deposit.custodian &&
+        (receipt.story===undefined || receipt.storedAt===deposit.place)) {
+      const take = {
+        box:'从小盒子里取出十元',
+        family:'请'+deposit.custodian+'拿出红纸包里的十元',
+        drawer:'从抽屉里取出十元'
+      }[deposit.place];
+      body='隔天午休有人约双打，球拍能借，羽毛球得自备。八岁时留下的十元，刚好够买两个。';
+      choice={id:'life-6-shuttlecocks',label:'用留下的十元买球去打双打',
+        outcome:'你回家'+take+'，在文具店买了两个羽毛球。隔天借到球拍，你们两两搭档打完了一局。',
+        delta:{},commands:[]};
+    }
+    if (!choice) return;
+    return {...card,body:card.body+' '+body,choices:[...card.choices,choice],
+      giftEcho:{choiceId:choice.id,sourceSlot:source.slot,branch,balance:receipt.balance}};
+  }
+
+  const sampleTasks={
+    'office-24':{id:'cost-center',clip:'form',title:'退回的报销单',icon:'book',clue:'小票合计 42 元。单上金额 42 元，成本中心一栏空着。',targets:['核对金额','圈出缺的成本中心'],correct:1,hint:'两处金额一致。再看看哪个必填栏空着。',done:'你圈出了空栏，样单上的补填位置清楚了。'},
+    'factory-24':{id:'missing-socket',clip:'socket',title:'交班工具板',icon:'box',clue:'清单上有 8 和 10 两个套筒。8 的挂钩是空的，10 仍在板上。',targets:['在清单标记 8 号','在清单标记 10 号'],correct:0,hint:'10 号还在挂钩上。沿板边再核一次。',done:'8 号的空位标出来了，可以带清单去料箱找。'},
+    'delivery-24':{id:'river-detour',clip:'detour',title:'站点纸地图',icon:'planner',clue:'桥头下雨后打滑。河边平路多四分钟，路口有慢行灯。',targets:['把桥头标作捷径','把平路画成绕行线'],correct:1,hint:'到桥头还要穿过湿滑坡面。看看沿河的另一条线。',done:'桥头打了叉，铅笔线沿着河边接回原路。'},
+    'life-14':{id:'backup-school',title:'志愿草表',icon:'letter',clue:'想冲的学校排第一，第二行还是空的。',targets:['圈好第一行就交','在第二行填好备选'],correct:1,hint:'第一志愿没有录取时，这一行仍需要有个去处。',done:'两行都有了去处，草稿可以誊到志愿表上。'},
+    'arena-final':{id:'right-support',title:'决赛用纸',icon:'planner',clue:'队友报了右侧空位。把开局记号放在队友能接应的地方。',targets:['圈出右侧接应位','单独圈远端'],correct:0,hint:'远端没人接应。再听一次队友报的位置。',done:'右侧标记对齐，你把用纸推回队伍中间。'},
+    'indie-launch':{id:'known-issue',title:'版本提交单',icon:'console',clue:'这个版本还有一个影响部分玩家的故障。提交前，给玩家留一条说明。',targets:['标为没有已知问题','附上复现和临时处理办法'],correct:1,hint:'测试单还有一项未关闭。提交说明得让人看得到。',done:'已知问题随版本列在提交单上，现在可以决定是否发出。'}
+  };
+  return {sampleTasks,giftEvents,giftCard,schoolGiftEcho,yoyoStory,ages,keySlots,familySlots,labels,origins,items,experience,wishes,jobs,directions,people,threads,opportunities,shared,cards,talents,supports,dayPlans,dinner,lastFish};
 })();

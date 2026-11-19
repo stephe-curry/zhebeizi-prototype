@@ -1,0 +1,2733 @@
+{
+  "samples": 480,
+  "coverage": {
+    "life-1": {
+      "examined": 480,
+      "eligible": 240,
+      "selected": 240,
+      "seen": 0,
+      "status": {
+        "ineligible": 240,
+        "resolved": 240
+      }
+    },
+    "spring-envelope": {
+      "examined": 480,
+      "eligible": 240,
+      "selected": 240,
+      "seen": 0,
+      "status": {
+        "resolved": 240,
+        "ineligible": 240
+      }
+    },
+    "life-2": {
+      "examined": 480,
+      "eligible": 240,
+      "selected": 240,
+      "seen": 0,
+      "status": {
+        "ineligible": 240,
+        "resolved": 240
+      }
+    },
+    "school-yoyo": {
+      "examined": 480,
+      "eligible": 240,
+      "selected": 240,
+      "seen": 0,
+      "status": {
+        "resolved": 240,
+        "ineligible": 240
+      }
+    },
+    "life-3": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-4": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-5": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "again-life-3-2": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "eligible": 480
+      }
+    },
+    "life-6": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-6-yoyo": {
+      "examined": 114,
+      "eligible": 114,
+      "selected": 114,
+      "seen": 0,
+      "status": {
+        "resolved": 23,
+        "eligible": 91
+      }
+    },
+    "life-7": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-8": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 149,
+      "seen": 0,
+      "status": {
+        "resolved": 149,
+        "deferred": 331
+      }
+    },
+    "school-prep": {
+      "examined": 480,
+      "eligible": 331,
+      "selected": 331,
+      "seen": 0,
+      "status": {
+        "ineligible": 149,
+        "resolved": 331
+      }
+    },
+    "again-life-7-2": {
+      "examined": 149,
+      "eligible": 149,
+      "selected": 149,
+      "seen": 0,
+      "status": {
+        "eligible": 149
+      }
+    },
+    "life-9": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-10": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "again-life-6-yoyo": {
+      "examined": 23,
+      "eligible": 23,
+      "selected": 23,
+      "seen": 0,
+      "status": {
+        "eligible": 23
+      }
+    },
+    "life-11": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-12": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 63,
+      "seen": 0,
+      "status": {
+        "resolved": 63,
+        "deferred": 417
+      }
+    },
+    "school-sprint": {
+      "examined": 480,
+      "eligible": 417,
+      "selected": 417,
+      "seen": 0,
+      "status": {
+        "ineligible": 63,
+        "resolved": 417
+      }
+    },
+    "again-life-4-keep-eating": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "eligible": 480
+      }
+    },
+    "life-13": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 44,
+      "seen": 0,
+      "status": {
+        "deferred": 436,
+        "resolved": 44
+      }
+    },
+    "school-exam": {
+      "examined": 480,
+      "eligible": 436,
+      "selected": 436,
+      "seen": 0,
+      "status": {
+        "resolved": 436,
+        "ineligible": 44
+      }
+    },
+    "again-life-11-0": {
+      "examined": 170,
+      "eligible": 170,
+      "selected": 170,
+      "seen": 0,
+      "status": {
+        "eligible": 170
+      }
+    },
+    "life-14": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-15": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 315,
+      "seen": 0,
+      "status": {
+        "resolved": 315,
+        "deferred": 165
+      }
+    },
+    "school-result": {
+      "examined": 480,
+      "eligible": 165,
+      "selected": 165,
+      "seen": 0,
+      "status": {
+        "ineligible": 315,
+        "resolved": 165
+      }
+    },
+    "again-life-14-1": {
+      "examined": 161,
+      "eligible": 161,
+      "selected": 161,
+      "seen": 0,
+      "status": {
+        "eligible": 161
+      }
+    },
+    "life-16": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 310,
+      "seen": 0,
+      "status": {
+        "deferred": 170,
+        "resolved": 310
+      }
+    },
+    "arena-club": {
+      "examined": 480,
+      "eligible": 170,
+      "selected": 170,
+      "seen": 0,
+      "status": {
+        "resolved": 170,
+        "ineligible": 310
+      }
+    },
+    "life-17": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-18": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-19": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 118,
+      "seen": 0,
+      "status": {
+        "deferred": 362,
+        "resolved": 118
+      }
+    },
+    "indie-kit": {
+      "examined": 480,
+      "eligible": 362,
+      "selected": 362,
+      "seen": 0,
+      "status": {
+        "resolved": 362,
+        "ineligible": 118
+      }
+    },
+    "life-20": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 33,
+      "seen": 0,
+      "status": {
+        "deferred": 447,
+        "resolved": 33
+      }
+    },
+    "school-degree": {
+      "examined": 480,
+      "eligible": 447,
+      "selected": 447,
+      "seen": 0,
+      "status": {
+        "resolved": 447,
+        "ineligible": 33
+      }
+    },
+    "life-21": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "again-school-degree-0": {
+      "examined": 156,
+      "eligible": 156,
+      "selected": 156,
+      "seen": 0,
+      "status": {
+        "eligible": 156
+      }
+    },
+    "life-22": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-23": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 376,
+      "seen": 0,
+      "status": {
+        "resolved": 376,
+        "deferred": 104
+      }
+    },
+    "arena-offer": {
+      "examined": 480,
+      "eligible": 104,
+      "selected": 104,
+      "seen": 0,
+      "status": {
+        "ineligible": 376,
+        "resolved": 104
+      }
+    },
+    "again-life-21-0": {
+      "examined": 154,
+      "eligible": 154,
+      "selected": 154,
+      "seen": 0,
+      "status": {
+        "eligible": 154
+      }
+    },
+    "life-24": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 0,
+      "seen": 0,
+      "status": {
+        "deferred": 480
+      }
+    },
+    "office-24": {
+      "examined": 480,
+      "eligible": 119,
+      "selected": 119,
+      "seen": 0,
+      "status": {
+        "ineligible": 361,
+        "resolved": 119
+      }
+    },
+    "factory-24": {
+      "examined": 480,
+      "eligible": 106,
+      "selected": 106,
+      "seen": 0,
+      "status": {
+        "ineligible": 374,
+        "resolved": 106
+      }
+    },
+    "delivery-24": {
+      "examined": 480,
+      "eligible": 117,
+      "selected": 117,
+      "seen": 0,
+      "status": {
+        "ineligible": 363,
+        "resolved": 117
+      }
+    },
+    "sanitation-24": {
+      "examined": 480,
+      "eligible": 116,
+      "selected": 116,
+      "seen": 0,
+      "status": {
+        "resolved": 116,
+        "ineligible": 364
+      }
+    },
+    "arena-start": {
+      "examined": 480,
+      "eligible": 22,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "ineligible": 458,
+        "resolved": 22
+      }
+    },
+    "again-life-23-3": {
+      "examined": 100,
+      "eligible": 100,
+      "selected": 100,
+      "seen": 0,
+      "status": {
+        "eligible": 100
+      }
+    },
+    "life-25": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-26": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 80,
+      "seen": 0,
+      "status": {
+        "deferred": 400,
+        "resolved": 80
+      }
+    },
+    "indie-weekend": {
+      "examined": 480,
+      "eligible": 400,
+      "selected": 400,
+      "seen": 0,
+      "status": {
+        "resolved": 400,
+        "ineligible": 80
+      }
+    },
+    "life-27": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 0,
+      "seen": 0,
+      "status": {
+        "deferred": 480
+      }
+    },
+    "office-27": {
+      "examined": 480,
+      "eligible": 119,
+      "selected": 119,
+      "seen": 0,
+      "status": {
+        "ineligible": 361,
+        "resolved": 119
+      }
+    },
+    "factory-27": {
+      "examined": 480,
+      "eligible": 106,
+      "selected": 106,
+      "seen": 0,
+      "status": {
+        "ineligible": 374,
+        "resolved": 106
+      }
+    },
+    "delivery-27": {
+      "examined": 480,
+      "eligible": 117,
+      "selected": 117,
+      "seen": 0,
+      "status": {
+        "ineligible": 363,
+        "resolved": 117
+      }
+    },
+    "sanitation-27": {
+      "examined": 480,
+      "eligible": 116,
+      "selected": 116,
+      "seen": 0,
+      "status": {
+        "resolved": 116,
+        "ineligible": 364
+      }
+    },
+    "arena-lineup": {
+      "examined": 480,
+      "eligible": 22,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "ineligible": 458,
+        "resolved": 22
+      }
+    },
+    "life-28": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-29": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 311,
+      "seen": 0,
+      "status": {
+        "deferred": 169,
+        "resolved": 311
+      }
+    },
+    "chance-old-friend": {
+      "examined": 480,
+      "eligible": 169,
+      "selected": 169,
+      "seen": 0,
+      "status": {
+        "resolved": 169,
+        "ineligible": 311
+      }
+    },
+    "life-30": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-31": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-32": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 0,
+      "seen": 0,
+      "status": {
+        "deferred": 480
+      }
+    },
+    "office-32": {
+      "examined": 480,
+      "eligible": 119,
+      "selected": 119,
+      "seen": 0,
+      "status": {
+        "ineligible": 361,
+        "resolved": 119
+      }
+    },
+    "factory-32": {
+      "examined": 480,
+      "eligible": 106,
+      "selected": 106,
+      "seen": 0,
+      "status": {
+        "ineligible": 374,
+        "resolved": 106
+      }
+    },
+    "delivery-32": {
+      "examined": 480,
+      "eligible": 117,
+      "selected": 117,
+      "seen": 0,
+      "status": {
+        "ineligible": 363,
+        "resolved": 117
+      }
+    },
+    "sanitation-32": {
+      "examined": 480,
+      "eligible": 116,
+      "selected": 116,
+      "seen": 0,
+      "status": {
+        "resolved": 116,
+        "ineligible": 364
+      }
+    },
+    "arena-injury": {
+      "examined": 480,
+      "eligible": 22,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "ineligible": 458,
+        "resolved": 22
+      }
+    },
+    "life-33": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 183,
+      "seen": 0,
+      "status": {
+        "deferred": 297,
+        "resolved": 183
+      }
+    },
+    "indie-budget": {
+      "examined": 480,
+      "eligible": 297,
+      "selected": 297,
+      "seen": 0,
+      "status": {
+        "resolved": 297,
+        "ineligible": 183
+      }
+    },
+    "indie-budget-0": {
+      "examined": 297,
+      "eligible": 297,
+      "selected": 297,
+      "seen": 0,
+      "status": {
+        "eligible": 223,
+        "resolved": 74
+      }
+    },
+    "indie-budget-1": {
+      "examined": 297,
+      "eligible": 297,
+      "selected": 297,
+      "seen": 0,
+      "status": {
+        "resolved": 74,
+        "eligible": 223
+      }
+    },
+    "indie-budget-2": {
+      "examined": 297,
+      "eligible": 297,
+      "selected": 297,
+      "seen": 0,
+      "status": {
+        "eligible": 213,
+        "resolved": 84
+      }
+    },
+    "indie-budget-3": {
+      "examined": 297,
+      "eligible": 297,
+      "selected": 297,
+      "seen": 0,
+      "status": {
+        "eligible": 232,
+        "resolved": 65
+      }
+    },
+    "life-34": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 480,
+      "seen": 0,
+      "status": {
+        "resolved": 480
+      }
+    },
+    "life-35": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 176,
+      "seen": 0,
+      "status": {
+        "deferred": 304,
+        "resolved": 176
+      }
+    },
+    "indie-rights": {
+      "examined": 480,
+      "eligible": 304,
+      "selected": 304,
+      "seen": 0,
+      "status": {
+        "resolved": 304,
+        "ineligible": 176
+      }
+    },
+    "life-36": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 0,
+      "seen": 0,
+      "status": {
+        "deferred": 480
+      }
+    },
+    "arena-tactics": {
+      "examined": 480,
+      "eligible": 22,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "ineligible": 458,
+        "resolved": 22
+      }
+    },
+    "rain-shift": {
+      "examined": 480,
+      "eligible": 117,
+      "selected": 117,
+      "seen": 0,
+      "status": {
+        "ineligible": 363,
+        "resolved": 117
+      }
+    },
+    "office-pivot": {
+      "examined": 480,
+      "eligible": 119,
+      "selected": 119,
+      "seen": 0,
+      "status": {
+        "ineligible": 361,
+        "resolved": 119
+      }
+    },
+    "factory-pivot": {
+      "examined": 480,
+      "eligible": 106,
+      "selected": 106,
+      "seen": 0,
+      "status": {
+        "ineligible": 374,
+        "resolved": 106
+      }
+    },
+    "city-pivot": {
+      "examined": 480,
+      "eligible": 116,
+      "selected": 116,
+      "seen": 0,
+      "status": {
+        "resolved": 116,
+        "ineligible": 364
+      }
+    },
+    "life-37": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "deferred": 458,
+        "resolved": 22
+      }
+    },
+    "office-37": {
+      "examined": 480,
+      "eligible": 119,
+      "selected": 119,
+      "seen": 0,
+      "status": {
+        "ineligible": 361,
+        "resolved": 119
+      }
+    },
+    "factory-37": {
+      "examined": 480,
+      "eligible": 106,
+      "selected": 106,
+      "seen": 0,
+      "status": {
+        "ineligible": 374,
+        "resolved": 106
+      }
+    },
+    "delivery-37": {
+      "examined": 480,
+      "eligible": 117,
+      "selected": 67,
+      "seen": 0,
+      "status": {
+        "ineligible": 363,
+        "resolved": 67,
+        "deferred": 50
+      }
+    },
+    "sanitation-37": {
+      "examined": 480,
+      "eligible": 116,
+      "selected": 116,
+      "seen": 0,
+      "status": {
+        "resolved": 116,
+        "ineligible": 364
+      }
+    },
+    "delivery-routine": {
+      "examined": 480,
+      "eligible": 50,
+      "selected": 50,
+      "seen": 0,
+      "status": {
+        "ineligible": 430,
+        "resolved": 50
+      }
+    },
+    "life-38": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 157,
+      "seen": 0,
+      "status": {
+        "deferred": 323,
+        "resolved": 157
+      }
+    },
+    "active-recovery": {
+      "examined": 480,
+      "eligible": 323,
+      "selected": 323,
+      "seen": 0,
+      "status": {
+        "resolved": 323,
+        "ineligible": 157
+      }
+    },
+    "again-life-28-0": {
+      "examined": 158,
+      "eligible": 158,
+      "selected": 158,
+      "seen": 0,
+      "status": {
+        "eligible": 158
+      }
+    },
+    "again-city-pivot-0": {
+      "examined": 43,
+      "eligible": 43,
+      "selected": 43,
+      "seen": 0,
+      "status": {
+        "eligible": 43
+      }
+    },
+    "life-39": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 258,
+      "seen": 0,
+      "status": {
+        "resolved": 258,
+        "deferred": 222
+      }
+    },
+    "arena-final": {
+      "examined": 480,
+      "eligible": 22,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "ineligible": 458,
+        "resolved": 22
+      }
+    },
+    "indie-launch": {
+      "examined": 480,
+      "eligible": 209,
+      "selected": 200,
+      "seen": 0,
+      "status": {
+        "ineligible": 271,
+        "resolved": 200,
+        "deferred": 9
+      }
+    },
+    "life-40": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 458,
+      "seen": 0,
+      "status": {
+        "resolved": 458,
+        "deferred": 22
+      }
+    },
+    "arena-retire": {
+      "examined": 480,
+      "eligible": 22,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "ineligible": 458,
+        "resolved": 22
+      }
+    },
+    "life-40-0": {
+      "examined": 458,
+      "eligible": 458,
+      "selected": 458,
+      "seen": 0,
+      "status": {
+        "eligible": 297,
+        "resolved": 161
+      }
+    },
+    "life-40-1": {
+      "examined": 458,
+      "eligible": 458,
+      "selected": 458,
+      "seen": 0,
+      "status": {
+        "resolved": 148,
+        "eligible": 310
+      }
+    },
+    "life-40-2": {
+      "examined": 458,
+      "eligible": 458,
+      "selected": 458,
+      "seen": 0,
+      "status": {
+        "eligible": 309,
+        "resolved": 149
+      }
+    },
+    "life-41": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 393,
+      "seen": 0,
+      "status": {
+        "deferred": 87,
+        "resolved": 393
+      }
+    },
+    "indie-second-desk": {
+      "examined": 480,
+      "eligible": 8,
+      "selected": 8,
+      "seen": 0,
+      "status": {
+        "ineligible": 472,
+        "resolved": 8
+      }
+    },
+    "late-recovery": {
+      "examined": 480,
+      "eligible": 79,
+      "selected": 79,
+      "seen": 0,
+      "status": {
+        "resolved": 79,
+        "ineligible": 401
+      }
+    },
+    "again-life-40-1": {
+      "examined": 148,
+      "eligible": 148,
+      "selected": 148,
+      "seen": 0,
+      "status": {
+        "eligible": 148
+      }
+    },
+    "again-life-39-0": {
+      "examined": 83,
+      "eligible": 83,
+      "selected": 83,
+      "seen": 0,
+      "status": {
+        "eligible": 83
+      }
+    },
+    "life-42": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 398,
+      "seen": 0,
+      "status": {
+        "resolved": 398,
+        "deferred": 82
+      }
+    },
+    "indie-feedback": {
+      "examined": 480,
+      "eligible": 82,
+      "selected": 82,
+      "seen": 0,
+      "status": {
+        "ineligible": 398,
+        "resolved": 82
+      }
+    },
+    "life-43": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 476,
+      "seen": 0,
+      "status": {
+        "resolved": 476,
+        "deferred": 4
+      }
+    },
+    "early-diagnosis": {
+      "examined": 480,
+      "eligible": 4,
+      "selected": 4,
+      "seen": 0,
+      "status": {
+        "ineligible": 476,
+        "resolved": 4
+      }
+    },
+    "life-44": {
+      "examined": 480,
+      "eligible": 480,
+      "selected": 471,
+      "seen": 0,
+      "status": {
+        "resolved": 471,
+        "deferred": 9
+      }
+    },
+    "indie-second-launch": {
+      "examined": 480,
+      "eligible": 5,
+      "selected": 5,
+      "seen": 0,
+      "status": {
+        "ineligible": 475,
+        "resolved": 5
+      }
+    },
+    "early-goodbye": {
+      "examined": 480,
+      "eligible": 4,
+      "selected": 4,
+      "seen": 0,
+      "status": {
+        "ineligible": 476,
+        "resolved": 4
+      }
+    },
+    "life-45": {
+      "examined": 476,
+      "eligible": 476,
+      "selected": 63,
+      "seen": 0,
+      "status": {
+        "deferred": 413,
+        "resolved": 63
+      }
+    },
+    "office-45": {
+      "examined": 476,
+      "eligible": 101,
+      "selected": 43,
+      "seen": 0,
+      "status": {
+        "ineligible": 375,
+        "resolved": 43,
+        "deferred": 58
+      }
+    },
+    "factory-45": {
+      "examined": 476,
+      "eligible": 72,
+      "selected": 38,
+      "seen": 0,
+      "status": {
+        "ineligible": 404,
+        "resolved": 38,
+        "deferred": 34
+      }
+    },
+    "delivery-45": {
+      "examined": 476,
+      "eligible": 116,
+      "selected": 67,
+      "seen": 0,
+      "status": {
+        "ineligible": 360,
+        "resolved": 67,
+        "deferred": 49
+      }
+    },
+    "sanitation-45": {
+      "examined": 476,
+      "eligible": 77,
+      "selected": 43,
+      "seen": 0,
+      "status": {
+        "ineligible": 399,
+        "resolved": 43,
+        "deferred": 34
+      }
+    },
+    "arena-quiet": {
+      "examined": 476,
+      "eligible": 22,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "ineligible": 454,
+        "resolved": 22
+      }
+    },
+    "indie-memory": {
+      "examined": 476,
+      "eligible": 213,
+      "selected": 200,
+      "seen": 0,
+      "status": {
+        "resolved": 200,
+        "ineligible": 263,
+        "deferred": 13
+      }
+    },
+    "life-46": {
+      "examined": 476,
+      "eligible": 476,
+      "selected": 476,
+      "seen": 0,
+      "status": {
+        "resolved": 476
+      }
+    },
+    "again-life-6-2": {
+      "examined": 142,
+      "eligible": 142,
+      "selected": 142,
+      "seen": 0,
+      "status": {
+        "eligible": 142
+      }
+    },
+    "again-sanitation-24-0": {
+      "examined": 42,
+      "eligible": 42,
+      "selected": 42,
+      "seen": 0,
+      "status": {
+        "eligible": 42
+      }
+    },
+    "again-sanitation-27-0": {
+      "examined": 41,
+      "eligible": 41,
+      "selected": 41,
+      "seen": 0,
+      "status": {
+        "eligible": 41
+      }
+    },
+    "life-33-0": {
+      "examined": 183,
+      "eligible": 183,
+      "selected": 183,
+      "seen": 0,
+      "status": {
+        "resolved": 64,
+        "eligible": 119
+      }
+    },
+    "life-33-1": {
+      "examined": 183,
+      "eligible": 183,
+      "selected": 183,
+      "seen": 0,
+      "status": {
+        "eligible": 111,
+        "resolved": 72
+      }
+    },
+    "life-33-2": {
+      "examined": 183,
+      "eligible": 183,
+      "selected": 183,
+      "seen": 0,
+      "status": {
+        "eligible": 136,
+        "resolved": 47
+      }
+    },
+    "again-life-33-0": {
+      "examined": 64,
+      "eligible": 64,
+      "selected": 64,
+      "seen": 0,
+      "status": {
+        "eligible": 64
+      }
+    },
+    "again-active-recovery-0": {
+      "examined": 74,
+      "eligible": 74,
+      "selected": 74,
+      "seen": 0,
+      "status": {
+        "eligible": 74
+      }
+    },
+    "again-life-40-2": {
+      "examined": 149,
+      "eligible": 149,
+      "selected": 149,
+      "seen": 0,
+      "status": {
+        "eligible": 149
+      }
+    },
+    "again-life-43-0": {
+      "examined": 152,
+      "eligible": 152,
+      "selected": 152,
+      "seen": 0,
+      "status": {
+        "eligible": 152
+      }
+    },
+    "again-sanitation-45-0": {
+      "examined": 13,
+      "eligible": 13,
+      "selected": 13,
+      "seen": 0,
+      "status": {
+        "eligible": 13
+      }
+    },
+    "again-life-7-0": {
+      "examined": 148,
+      "eligible": 148,
+      "selected": 148,
+      "seen": 0,
+      "status": {
+        "eligible": 148
+      }
+    },
+    "again-school-yoyo-buy": {
+      "examined": 91,
+      "eligible": 91,
+      "selected": 91,
+      "seen": 0,
+      "status": {
+        "eligible": 91
+      }
+    },
+    "again-life-14-2": {
+      "examined": 154,
+      "eligible": 154,
+      "selected": 154,
+      "seen": 0,
+      "status": {
+        "eligible": 154
+      }
+    },
+    "again-indie-kit-0": {
+      "examined": 128,
+      "eligible": 128,
+      "selected": 128,
+      "seen": 0,
+      "status": {
+        "eligible": 128
+      }
+    },
+    "again-life-23-0": {
+      "examined": 101,
+      "eligible": 101,
+      "selected": 101,
+      "seen": 0,
+      "status": {
+        "eligible": 101
+      }
+    },
+    "again-office-24-0": {
+      "examined": 40,
+      "eligible": 40,
+      "selected": 40,
+      "seen": 0,
+      "status": {
+        "eligible": 40
+      }
+    },
+    "again-indie-weekend-0": {
+      "examined": 128,
+      "eligible": 128,
+      "selected": 128,
+      "seen": 0,
+      "status": {
+        "eligible": 128
+      }
+    },
+    "again-office-pivot-0": {
+      "examined": 39,
+      "eligible": 39,
+      "selected": 39,
+      "seen": 0,
+      "status": {
+        "eligible": 39
+      }
+    },
+    "again-life-1-0": {
+      "examined": 85,
+      "eligible": 85,
+      "selected": 85,
+      "seen": 0,
+      "status": {
+        "eligible": 85
+      }
+    },
+    "again-life-7-1": {
+      "examined": 183,
+      "eligible": 183,
+      "selected": 183,
+      "seen": 0,
+      "status": {
+        "eligible": 183
+      }
+    },
+    "again-school-prep-0": {
+      "examined": 126,
+      "eligible": 126,
+      "selected": 126,
+      "seen": 0,
+      "status": {
+        "eligible": 126
+      }
+    },
+    "again-life-6-1": {
+      "examined": 152,
+      "eligible": 152,
+      "selected": 152,
+      "seen": 0,
+      "status": {
+        "eligible": 152
+      }
+    },
+    "again-school-sprint-0": {
+      "examined": 144,
+      "eligible": 144,
+      "selected": 144,
+      "seen": 0,
+      "status": {
+        "eligible": 144
+      }
+    },
+    "again-school-exam-0": {
+      "examined": 145,
+      "eligible": 145,
+      "selected": 145,
+      "seen": 0,
+      "status": {
+        "eligible": 145
+      }
+    },
+    "again-life-18-0": {
+      "examined": 161,
+      "eligible": 161,
+      "selected": 161,
+      "seen": 0,
+      "status": {
+        "eligible": 161
+      }
+    },
+    "again-life-23-2": {
+      "examined": 97,
+      "eligible": 97,
+      "selected": 97,
+      "seen": 0,
+      "status": {
+        "eligible": 97
+      }
+    },
+    "again-delivery-27-0": {
+      "examined": 37,
+      "eligible": 37,
+      "selected": 37,
+      "seen": 0,
+      "status": {
+        "eligible": 37
+      }
+    },
+    "again-delivery-32-0": {
+      "examined": 41,
+      "eligible": 41,
+      "selected": 41,
+      "seen": 0,
+      "status": {
+        "eligible": 41
+      }
+    },
+    "again-delivery-37-0": {
+      "examined": 20,
+      "eligible": 20,
+      "selected": 20,
+      "seen": 0,
+      "status": {
+        "eligible": 20
+      }
+    },
+    "again-delivery-45-0": {
+      "examined": 19,
+      "eligible": 19,
+      "selected": 19,
+      "seen": 0,
+      "status": {
+        "eligible": 19
+      }
+    },
+    "life-6-shuttlecocks": {
+      "examined": 126,
+      "eligible": 126,
+      "selected": 126,
+      "seen": 0,
+      "status": {
+        "resolved": 35,
+        "eligible": 91
+      }
+    },
+    "again-life-6-shuttlecocks": {
+      "examined": 35,
+      "eligible": 35,
+      "selected": 35,
+      "seen": 0,
+      "status": {
+        "eligible": 35
+      }
+    },
+    "again-life-23-1": {
+      "examined": 78,
+      "eligible": 78,
+      "selected": 78,
+      "seen": 0,
+      "status": {
+        "eligible": 78
+      }
+    },
+    "again-life-29-0": {
+      "examined": 120,
+      "eligible": 120,
+      "selected": 120,
+      "seen": 0,
+      "status": {
+        "eligible": 120
+      }
+    },
+    "again-life-33-1": {
+      "examined": 72,
+      "eligible": 72,
+      "selected": 72,
+      "seen": 0,
+      "status": {
+        "eligible": 72
+      }
+    },
+    "again-indie-rights-0": {
+      "examined": 104,
+      "eligible": 104,
+      "selected": 104,
+      "seen": 0,
+      "status": {
+        "eligible": 104
+      }
+    },
+    "indie-launch-0": {
+      "examined": 200,
+      "eligible": 200,
+      "selected": 200,
+      "seen": 0,
+      "status": {
+        "eligible": 140,
+        "resolved": 60
+      }
+    },
+    "indie-launch-1": {
+      "examined": 200,
+      "eligible": 200,
+      "selected": 200,
+      "seen": 0,
+      "status": {
+        "eligible": 135,
+        "resolved": 65
+      }
+    },
+    "indie-launch-2": {
+      "examined": 200,
+      "eligible": 200,
+      "selected": 200,
+      "seen": 0,
+      "status": {
+        "resolved": 75,
+        "eligible": 125
+      }
+    },
+    "again-life-40-0": {
+      "examined": 161,
+      "eligible": 161,
+      "selected": 161,
+      "seen": 0,
+      "status": {
+        "eligible": 161
+      }
+    },
+    "again-indie-launch-2": {
+      "examined": 75,
+      "eligible": 75,
+      "selected": 75,
+      "seen": 0,
+      "status": {
+        "eligible": 75
+      }
+    },
+    "again-factory-45-0": {
+      "examined": 13,
+      "eligible": 13,
+      "selected": 13,
+      "seen": 0,
+      "status": {
+        "eligible": 13
+      }
+    },
+    "again-indie-launch-0": {
+      "examined": 60,
+      "eligible": 60,
+      "selected": 60,
+      "seen": 0,
+      "status": {
+        "eligible": 60
+      }
+    },
+    "again-life-44-0": {
+      "examined": 148,
+      "eligible": 148,
+      "selected": 148,
+      "seen": 0,
+      "status": {
+        "eligible": 148
+      }
+    },
+    "again-arena-club-0": {
+      "examined": 48,
+      "eligible": 48,
+      "selected": 48,
+      "seen": 0,
+      "status": {
+        "eligible": 48
+      }
+    },
+    "again-life-35-0": {
+      "examined": 59,
+      "eligible": 59,
+      "selected": 59,
+      "seen": 0,
+      "status": {
+        "eligible": 59
+      }
+    },
+    "again-rain-shift-0": {
+      "examined": 36,
+      "eligible": 36,
+      "selected": 36,
+      "seen": 0,
+      "status": {
+        "eligible": 36
+      }
+    },
+    "again-life-16-0": {
+      "examined": 117,
+      "eligible": 117,
+      "selected": 117,
+      "seen": 0,
+      "status": {
+        "eligible": 117
+      }
+    },
+    "again-chance-old-friend-0": {
+      "examined": 51,
+      "eligible": 51,
+      "selected": 51,
+      "seen": 0,
+      "status": {
+        "eligible": 51
+      }
+    },
+    "again-sanitation-32-0": {
+      "examined": 43,
+      "eligible": 43,
+      "selected": 43,
+      "seen": 0,
+      "status": {
+        "eligible": 43
+      }
+    },
+    "again-life-6-0": {
+      "examined": 128,
+      "eligible": 128,
+      "selected": 128,
+      "seen": 0,
+      "status": {
+        "eligible": 128
+      }
+    },
+    "again-life-14-0": {
+      "examined": 165,
+      "eligible": 165,
+      "selected": 165,
+      "seen": 0,
+      "status": {
+        "eligible": 165
+      }
+    },
+    "again-school-result-2": {
+      "examined": 67,
+      "eligible": 67,
+      "selected": 67,
+      "seen": 0,
+      "status": {
+        "eligible": 67
+      }
+    },
+    "again-sanitation-37-0": {
+      "examined": 33,
+      "eligible": 33,
+      "selected": 33,
+      "seen": 0,
+      "status": {
+        "eligible": 33
+      }
+    },
+    "again-office-27-0": {
+      "examined": 42,
+      "eligible": 42,
+      "selected": 42,
+      "seen": 0,
+      "status": {
+        "eligible": 42
+      }
+    },
+    "again-delivery-24-0": {
+      "examined": 33,
+      "eligible": 33,
+      "selected": 33,
+      "seen": 0,
+      "status": {
+        "eligible": 33
+      }
+    },
+    "again-delivery-routine-0": {
+      "examined": 20,
+      "eligible": 20,
+      "selected": 20,
+      "seen": 0,
+      "status": {
+        "eligible": 20
+      }
+    },
+    "again-life-38-0": {
+      "examined": 41,
+      "eligible": 41,
+      "selected": 41,
+      "seen": 0,
+      "status": {
+        "eligible": 41
+      }
+    },
+    "again-office-32-0": {
+      "examined": 36,
+      "eligible": 36,
+      "selected": 36,
+      "seen": 0,
+      "status": {
+        "eligible": 36
+      }
+    },
+    "again-life-33-2": {
+      "examined": 47,
+      "eligible": 47,
+      "selected": 47,
+      "seen": 0,
+      "status": {
+        "eligible": 47
+      }
+    },
+    "again-life-45-0": {
+      "examined": 28,
+      "eligible": 28,
+      "selected": 28,
+      "seen": 0,
+      "status": {
+        "eligible": 28
+      }
+    },
+    "again-school-yoyo-keep": {
+      "examined": 91,
+      "eligible": 91,
+      "selected": 91,
+      "seen": 0,
+      "status": {
+        "eligible": 91
+      }
+    },
+    "again-school-result-1": {
+      "examined": 48,
+      "eligible": 48,
+      "selected": 48,
+      "seen": 0,
+      "status": {
+        "eligible": 48
+      }
+    },
+    "again-office-45-0": {
+      "examined": 13,
+      "eligible": 13,
+      "selected": 13,
+      "seen": 0,
+      "status": {
+        "eligible": 13
+      }
+    },
+    "again-life-2-0": {
+      "examined": 92,
+      "eligible": 92,
+      "selected": 92,
+      "seen": 0,
+      "status": {
+        "eligible": 92
+      }
+    },
+    "again-indie-memory-0": {
+      "examined": 68,
+      "eligible": 68,
+      "selected": 68,
+      "seen": 0,
+      "status": {
+        "eligible": 68
+      }
+    },
+    "again-factory-24-0": {
+      "examined": 31,
+      "eligible": 31,
+      "selected": 31,
+      "seen": 0,
+      "status": {
+        "eligible": 31
+      }
+    },
+    "again-indie-budget-0": {
+      "examined": 46,
+      "eligible": 46,
+      "selected": 46,
+      "seen": 0,
+      "status": {
+        "eligible": 46
+      }
+    },
+    "again-factory-pivot-0": {
+      "examined": 34,
+      "eligible": 34,
+      "selected": 34,
+      "seen": 0,
+      "status": {
+        "eligible": 34
+      }
+    },
+    "again-life-9-0": {
+      "examined": 156,
+      "eligible": 156,
+      "selected": 156,
+      "seen": 0,
+      "status": {
+        "eligible": 156
+      }
+    },
+    "again-school-result-0": {
+      "examined": 50,
+      "eligible": 50,
+      "selected": 50,
+      "seen": 0,
+      "status": {
+        "eligible": 50
+      }
+    },
+    "again-office-37-0": {
+      "examined": 48,
+      "eligible": 48,
+      "selected": 48,
+      "seen": 0,
+      "status": {
+        "eligible": 48
+      }
+    },
+    "again-indie-launch-1": {
+      "examined": 65,
+      "eligible": 65,
+      "selected": 65,
+      "seen": 0,
+      "status": {
+        "eligible": 65
+      }
+    },
+    "again-life-19-0": {
+      "examined": 40,
+      "eligible": 40,
+      "selected": 40,
+      "seen": 0,
+      "status": {
+        "eligible": 40
+      }
+    },
+    "again-factory-27-0": {
+      "examined": 31,
+      "eligible": 31,
+      "selected": 31,
+      "seen": 0,
+      "status": {
+        "eligible": 31
+      }
+    },
+    "again-factory-37-0": {
+      "examined": 31,
+      "eligible": 31,
+      "selected": 31,
+      "seen": 0,
+      "status": {
+        "eligible": 31
+      }
+    },
+    "again-life-20-0": {
+      "examined": 13,
+      "eligible": 13,
+      "selected": 13,
+      "seen": 0,
+      "status": {
+        "eligible": 13
+      }
+    },
+    "again-late-recovery-0": {
+      "examined": 27,
+      "eligible": 27,
+      "selected": 27,
+      "seen": 0,
+      "status": {
+        "eligible": 27
+      }
+    },
+    "again-arena-offer-0": {
+      "examined": 22,
+      "eligible": 22,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "eligible": 22
+      }
+    },
+    "arena-final-0": {
+      "examined": 22,
+      "eligible": 22,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "resolved": 5,
+        "eligible": 17
+      }
+    },
+    "arena-final-1": {
+      "examined": 22,
+      "eligible": 22,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "eligible": 12,
+        "resolved": 10
+      }
+    },
+    "arena-final-2": {
+      "examined": 22,
+      "eligible": 22,
+      "selected": 22,
+      "seen": 0,
+      "status": {
+        "eligible": 15,
+        "resolved": 7
+      }
+    },
+    "again-arena-final-0": {
+      "examined": 5,
+      "eligible": 5,
+      "selected": 5,
+      "seen": 0,
+      "status": {
+        "eligible": 5
+      }
+    },
+    "again-arena-retire-0": {
+      "examined": 7,
+      "eligible": 7,
+      "selected": 7,
+      "seen": 0,
+      "status": {
+        "eligible": 7
+      }
+    },
+    "again-indie-memory": {
+      "examined": 13,
+      "eligible": 13,
+      "selected": 13,
+      "seen": 0,
+      "status": {
+        "eligible": 13
+      }
+    },
+    "again-factory-32-0": {
+      "examined": 33,
+      "eligible": 33,
+      "selected": 33,
+      "seen": 0,
+      "status": {
+        "eligible": 33
+      }
+    },
+    "again-life-13-0": {
+      "examined": 11,
+      "eligible": 11,
+      "selected": 11,
+      "seen": 0,
+      "status": {
+        "eligible": 11
+      }
+    },
+    "again-arena-start-0": {
+      "examined": 5,
+      "eligible": 5,
+      "selected": 5,
+      "seen": 0,
+      "status": {
+        "eligible": 5
+      }
+    },
+    "again-arena-final-2": {
+      "examined": 7,
+      "eligible": 7,
+      "selected": 7,
+      "seen": 0,
+      "status": {
+        "eligible": 7
+      }
+    },
+    "again-indie-feedback-0": {
+      "examined": 28,
+      "eligible": 28,
+      "selected": 28,
+      "seen": 0,
+      "status": {
+        "eligible": 28
+      }
+    },
+    "again-arena-tactics-0": {
+      "examined": 12,
+      "eligible": 12,
+      "selected": 12,
+      "seen": 0,
+      "status": {
+        "eligible": 12
+      }
+    },
+    "again-arena-quiet-0": {
+      "examined": 10,
+      "eligible": 10,
+      "selected": 10,
+      "seen": 0,
+      "status": {
+        "eligible": 10
+      }
+    },
+    "again-arena-injury-0": {
+      "examined": 10,
+      "eligible": 10,
+      "selected": 10,
+      "seen": 0,
+      "status": {
+        "eligible": 10
+      }
+    },
+    "again-arena-final-1": {
+      "examined": 10,
+      "eligible": 10,
+      "selected": 10,
+      "seen": 0,
+      "status": {
+        "eligible": 10
+      }
+    },
+    "again-indie-second-desk-0": {
+      "examined": 3,
+      "eligible": 3,
+      "selected": 3,
+      "seen": 0,
+      "status": {
+        "eligible": 3
+      }
+    },
+    "indie-second-launch-0": {
+      "examined": 5,
+      "eligible": 5,
+      "selected": 5,
+      "seen": 0,
+      "status": {
+        "resolved": 3,
+        "eligible": 2
+      }
+    },
+    "indie-second-launch-1": {
+      "examined": 5,
+      "eligible": 5,
+      "selected": 5,
+      "seen": 0,
+      "status": {
+        "eligible": 4,
+        "resolved": 1
+      }
+    },
+    "indie-second-launch-2": {
+      "examined": 5,
+      "eligible": 5,
+      "selected": 5,
+      "seen": 0,
+      "status": {
+        "eligible": 4,
+        "resolved": 1
+      }
+    },
+    "again-indie-second-launch-0": {
+      "examined": 3,
+      "eligible": 3,
+      "selected": 3,
+      "seen": 0,
+      "status": {
+        "eligible": 3
+      }
+    },
+    "again-arena-lineup-0": {
+      "examined": 4,
+      "eligible": 4,
+      "selected": 4,
+      "seen": 0,
+      "status": {
+        "eligible": 4
+      }
+    },
+    "again-early-diagnosis-0": {
+      "examined": 2,
+      "eligible": 2,
+      "selected": 2,
+      "seen": 0,
+      "status": {
+        "eligible": 2
+      }
+    }
+  },
+  "missing": [
+    "life-24",
+    "life-27",
+    "life-32",
+    "life-36"
+  ],
+  "neverEligible": [],
+  "collisions": [
+    {
+      "seed": 425,
+      "slot": 39,
+      "selected": "arena-final",
+      "entries": [
+        {
+          "id": "life-39",
+          "scope": "event",
+          "rule": null,
+          "eligible": true,
+          "selected": false,
+          "status": "deferred",
+          "window": [
+            39,
+            39
+          ],
+          "ages": [
+            35,
+            35
+          ],
+          "seen": false,
+          "sources": [],
+          "windowEnded": true,
+          "reason": "window-ended-unseen"
+        },
+        {
+          "id": "arena-final",
+          "scope": "event",
+          "rule": "esport-job",
+          "eligible": true,
+          "selected": true,
+          "status": "resolved",
+          "window": [
+            39,
+            39
+          ],
+          "ages": [
+            35,
+            35
+          ],
+          "seen": false,
+          "sources": [
+            {
+              "branch": null,
+              "slot": 23,
+              "eventId": "arena-offer",
+              "choiceId": "arena-offer-0"
+            }
+          ],
+          "endCondition": "决赛当晚与本轮版本交付时段重合",
+          "accepted": false,
+          "result": {
+            "branch": null,
+            "slot": 39,
+            "eventId": "arena-final",
+            "choiceId": "arena-final-2"
+          },
+          "reason": "explicit-opt-out",
+          "outcome": "retired"
+        },
+        {
+          "id": "indie-launch",
+          "scope": "event",
+          "rule": "indie-active",
+          "eligible": true,
+          "selected": false,
+          "status": "deferred",
+          "window": [
+            39,
+            39
+          ],
+          "ages": [
+            35,
+            35
+          ],
+          "seen": false,
+          "sources": [
+            {
+              "branch": null,
+              "slot": 33,
+              "eventId": "indie-budget",
+              "choiceId": "indie-budget-2"
+            }
+          ],
+          "endCondition": "决赛当晚与本轮版本交付时段重合",
+          "windowEnded": true,
+          "reason": "window-ended-unseen"
+        },
+        {
+          "id": "arena-final-0",
+          "host": "arena-final",
+          "scope": "action",
+          "rule": "final:play",
+          "eligible": true,
+          "selected": true,
+          "status": "eligible",
+          "window": [
+            39,
+            39
+          ],
+          "seen": false,
+          "sources": [
+            {
+              "branch": null,
+              "slot": 23,
+              "eventId": "arena-offer",
+              "choiceId": "arena-offer-0"
+            }
+          ],
+          "windowEnded": true,
+          "reason": "window-ended-unseen"
+        },
+        {
+          "id": "arena-final-1",
+          "host": "arena-final",
+          "scope": "action",
+          "rule": "final:assist",
+          "eligible": true,
+          "selected": true,
+          "status": "eligible",
+          "window": [
+            39,
+            39
+          ],
+          "seen": false,
+          "sources": [
+            {
+              "branch": null,
+              "slot": 23,
+              "eventId": "arena-offer",
+              "choiceId": "arena-offer-0"
+            }
+          ],
+          "windowEnded": true,
+          "reason": "window-ended-unseen"
+        },
+        {
+          "id": "arena-final-2",
+          "host": "arena-final",
+          "scope": "action",
+          "rule": "final:leave",
+          "eligible": true,
+          "selected": true,
+          "status": "resolved",
+          "window": [
+            39,
+            39
+          ],
+          "seen": false,
+          "sources": [
+            {
+              "branch": null,
+              "slot": 23,
+              "eventId": "arena-offer",
+              "choiceId": "arena-offer-0"
+            }
+          ],
+          "accepted": true,
+          "result": {
+            "branch": null,
+            "slot": 39,
+            "eventId": "arena-final",
+            "choiceId": "arena-final-2"
+          }
+        }
+      ],
+      "threads": {
+        "indie": [
+          {
+            "state": "seeded",
+            "source": {
+              "branch": null,
+              "slot": 20,
+              "eventId": "school-degree",
+              "choiceId": "school-degree-0"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 22,
+              "eventId": "life-22",
+              "choiceId": "life-22-1"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 26,
+              "eventId": "indie-weekend",
+              "choiceId": "indie-weekend-1"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 27,
+              "eventId": "arena-lineup",
+              "choiceId": "arena-lineup-2"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 35,
+              "eventId": "indie-rights",
+              "choiceId": "indie-rights-1"
+            }
+          }
+        ],
+        "esport": [
+          {
+            "state": "seeded",
+            "source": {
+              "branch": null,
+              "slot": 11,
+              "eventId": "life-11",
+              "choiceId": "life-11-0"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 16,
+              "eventId": "arena-club",
+              "choiceId": "arena-club-1"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 23,
+              "eventId": "arena-offer",
+              "choiceId": "arena-offer-0"
+            }
+          },
+          {
+            "state": "entered",
+            "source": {
+              "branch": null,
+              "slot": 23,
+              "eventId": "arena-offer",
+              "choiceId": "arena-offer-0"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "seed": 474,
+      "slot": 45,
+      "selected": "arena-quiet",
+      "entries": [
+        {
+          "id": "life-45",
+          "scope": "event",
+          "rule": null,
+          "eligible": true,
+          "selected": false,
+          "status": "deferred",
+          "window": [
+            45,
+            45
+          ],
+          "ages": [
+            64,
+            64
+          ],
+          "seen": false,
+          "sources": [],
+          "windowEnded": true,
+          "reason": "window-ended-unseen"
+        },
+        {
+          "id": "office-45",
+          "scope": "event",
+          "rule": "office",
+          "eligible": true,
+          "selected": false,
+          "status": "deferred",
+          "window": [
+            45,
+            45
+          ],
+          "ages": [
+            64,
+            64
+          ],
+          "seen": false,
+          "sources": [
+            {
+              "branch": null,
+              "slot": 40,
+              "eventId": "arena-retire",
+              "choiceId": "arena-retire-0"
+            }
+          ],
+          "endCondition": "同日的交接与见面只能赴一处",
+          "windowEnded": true,
+          "reason": "window-ended-unseen"
+        },
+        {
+          "id": "factory-45",
+          "scope": "event",
+          "rule": "factory",
+          "eligible": false,
+          "selected": false,
+          "status": "ineligible",
+          "window": [
+            45,
+            45
+          ],
+          "ages": [
+            64,
+            64
+          ],
+          "seen": false,
+          "sources": []
+        },
+        {
+          "id": "delivery-45",
+          "scope": "event",
+          "rule": "delivery",
+          "eligible": false,
+          "selected": false,
+          "status": "ineligible",
+          "window": [
+            45,
+            45
+          ],
+          "ages": [
+            64,
+            64
+          ],
+          "seen": false,
+          "sources": []
+        },
+        {
+          "id": "sanitation-45",
+          "scope": "event",
+          "rule": "sanitation",
+          "eligible": false,
+          "selected": false,
+          "status": "ineligible",
+          "window": [
+            45,
+            45
+          ],
+          "ages": [
+            64,
+            64
+          ],
+          "seen": false,
+          "sources": []
+        },
+        {
+          "id": "arena-quiet",
+          "scope": "event",
+          "rule": "esport-echo",
+          "eligible": true,
+          "selected": true,
+          "status": "resolved",
+          "window": [
+            45,
+            45
+          ],
+          "ages": [
+            64,
+            64
+          ],
+          "seen": false,
+          "sources": [
+            {
+              "branch": null,
+              "slot": 23,
+              "eventId": "arena-offer",
+              "choiceId": "arena-offer-0"
+            },
+            {
+              "branch": null,
+              "slot": 24,
+              "eventId": "arena-start",
+              "choiceId": "arena-start-0"
+            },
+            {
+              "branch": null,
+              "slot": 40,
+              "eventId": "arena-retire",
+              "choiceId": "arena-retire-0"
+            }
+          ],
+          "endCondition": "同日的交接与见面只能赴一处",
+          "accepted": true,
+          "result": {
+            "branch": null,
+            "slot": 45,
+            "eventId": "arena-quiet",
+            "choiceId": "arena-quiet-1"
+          }
+        },
+        {
+          "id": "indie-memory",
+          "scope": "event",
+          "rule": "indie-history",
+          "eligible": true,
+          "selected": false,
+          "status": "deferred",
+          "window": [
+            45,
+            46
+          ],
+          "ages": [
+            64,
+            72
+          ],
+          "seen": false,
+          "sources": [
+            {
+              "branch": null,
+              "slot": 33,
+              "eventId": "indie-budget",
+              "choiceId": "indie-budget-1"
+            }
+          ]
+        },
+        {
+          "id": "again-life-44-0",
+          "scope": "action",
+          "rule": "followup",
+          "eligible": true,
+          "selected": true,
+          "status": "eligible",
+          "window": [
+            45,
+            45
+          ],
+          "seen": false,
+          "sources": [
+            {
+              "branch": null,
+              "slot": 44,
+              "eventId": "life-44",
+              "choiceId": "life-44-0"
+            }
+          ],
+          "windowEnded": true,
+          "reason": "window-ended-unseen"
+        }
+      ],
+      "threads": {
+        "indie": [
+          {
+            "state": "seeded",
+            "source": {
+              "branch": null,
+              "slot": 19,
+              "eventId": "life-19",
+              "choiceId": "life-19-0"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 20,
+              "eventId": "school-degree",
+              "choiceId": "school-degree-0"
+            }
+          },
+          {
+            "state": "paused",
+            "source": {
+              "branch": null,
+              "slot": 26,
+              "eventId": "indie-weekend",
+              "choiceId": "indie-weekend-2"
+            }
+          },
+          {
+            "state": "resumed",
+            "source": {
+              "branch": null,
+              "slot": 27,
+              "eventId": "arena-lineup",
+              "choiceId": "arena-lineup-2"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 33,
+              "eventId": "indie-budget",
+              "choiceId": "indie-budget-1"
+            }
+          },
+          {
+            "state": "paused",
+            "source": {
+              "branch": null,
+              "slot": 35,
+              "eventId": "indie-rights",
+              "choiceId": "indie-rights-2"
+            }
+          }
+        ],
+        "esport": [
+          {
+            "state": "seeded",
+            "source": {
+              "branch": null,
+              "slot": 11,
+              "eventId": "life-11",
+              "choiceId": "life-11-0"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 16,
+              "eventId": "arena-club",
+              "choiceId": "arena-club-0"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 23,
+              "eventId": "arena-offer",
+              "choiceId": "arena-offer-0"
+            }
+          },
+          {
+            "state": "entered",
+            "source": {
+              "branch": null,
+              "slot": 23,
+              "eventId": "arena-offer",
+              "choiceId": "arena-offer-0"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 24,
+              "eventId": "arena-start",
+              "choiceId": "arena-start-0"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 32,
+              "eventId": "arena-injury",
+              "choiceId": "arena-injury-1"
+            }
+          },
+          {
+            "state": "continued",
+            "source": {
+              "branch": null,
+              "slot": 36,
+              "eventId": "arena-tactics",
+              "choiceId": "arena-tactics-1"
+            }
+          },
+          {
+            "state": "paused",
+            "source": {
+              "branch": null,
+              "slot": 40,
+              "eventId": "arena-retire",
+              "choiceId": "arena-retire-0"
+            }
+          },
+          {
+            "state": "redirected",
+            "source": {
+              "branch": null,
+              "slot": 40,
+              "eventId": "arena-retire",
+              "choiceId": "arena-retire-0"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "seed": 1,
+    "attempt": "club-round-24",
+    "external": 0,
+    "two": "本次未通过",
+    "three": "通过"
+  },
+  {
+    "seed": 2,
+    "attempt": "club-round-24",
+    "external": -2,
+    "two": "本次未通过",
+    "three": "本次未通过"
+  },
+  {
+    "seed": 3,
+    "attempt": "club-round-24",
+    "external": 1,
+    "two": "通过",
+    "three": "通过"
+  },
+  {
+    "seed": 4,
+    "attempt": "club-round-24",
+    "external": 1,
+    "two": "通过",
+    "three": "通过"
+  },
+  {
+    "seed": 5,
+    "attempt": "club-round-24",
+    "external": 1,
+    "two": "通过",
+    "three": "通过"
+  },
+  {
+    "seed": 6,
+    "attempt": "club-round-24",
+    "external": 2,
+    "two": "通过",
+    "three": "通过"
+  },
+  {
+    "seed": 7,
+    "attempt": "club-round-24",
+    "external": 2,
+    "two": "通过",
+    "three": "通过"
+  },
+  {
+    "seed": 8,
+    "attempt": "club-round-24",
+    "external": 0,
+    "two": "本次未通过",
+    "three": "通过"
+  },
+  {
+    "seed": 9,
+    "attempt": "club-round-24",
+    "external": -2,
+    "two": "本次未通过",
+    "three": "本次未通过"
+  },
+  {
+    "seed": 10,
+    "attempt": "club-round-24",
+    "external": 0,
+    "two": "本次未通过",
+    "three": "通过"
+  },
+  {
+    "seed": 11,
+    "attempt": "club-round-24",
+    "external": -2,
+    "two": "本次未通过",
+    "three": "本次未通过"
+  },
+  {
+    "seed": 12,
+    "attempt": "club-round-24",
+    "external": 1,
+    "two": "通过",
+    "three": "通过"
+  },
+  {
+    "seed": 13,
+    "attempt": "club-round-24",
+    "external": 2,
+    "two": "通过",
+    "three": "通过"
+  },
+  {
+    "seed": 14,
+    "attempt": "club-round-24",
+    "external": 0,
+    "two": "本次未通过",
+    "three": "通过"
+  },
+  {
+    "seed": 15,
+    "attempt": "club-round-24",
+    "external": -1,
+    "two": "本次未通过",
+    "three": "本次未通过"
+  },
+  {
+    "seed": 16,
+    "attempt": "club-round-24",
+    "external": 1,
+    "two": "通过",
+    "three": "通过"
+  },
+  {
+    "seed": 17,
+    "attempt": "club-round-24",
+    "external": -1,
+    "two": "本次未通过",
+    "three": "本次未通过"
+  },
+  {
+    "seed": 18,
+    "attempt": "club-round-24",
+    "external": 0,
+    "two": "本次未通过",
+    "three": "通过"
+  }
+]

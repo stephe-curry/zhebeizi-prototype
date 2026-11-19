@@ -1,0 +1,272 @@
+{ "frames": [
+   {
+    "filename": "dream-places 0.aseprite",
+    "frame": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 180
+   },
+   {
+    "filename": "dream-places 1.aseprite",
+    "frame": { "x": 96, "y": 0, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 120
+   },
+   {
+    "filename": "dream-places 2.aseprite",
+    "frame": { "x": 192, "y": 0, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 160
+   },
+   {
+    "filename": "dream-places 3.aseprite",
+    "frame": { "x": 288, "y": 0, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 260
+   },
+   {
+    "filename": "dream-places 4.aseprite",
+    "frame": { "x": 0, "y": 48, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 180
+   },
+   {
+    "filename": "dream-places 5.aseprite",
+    "frame": { "x": 96, "y": 48, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 120
+   },
+   {
+    "filename": "dream-places 6.aseprite",
+    "frame": { "x": 192, "y": 48, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 160
+   },
+   {
+    "filename": "dream-places 7.aseprite",
+    "frame": { "x": 288, "y": 48, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 260
+   },
+   {
+    "filename": "dream-places 8.aseprite",
+    "frame": { "x": 0, "y": 96, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 180
+   },
+   {
+    "filename": "dream-places 9.aseprite",
+    "frame": { "x": 96, "y": 96, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 120
+   },
+   {
+    "filename": "dream-places 10.aseprite",
+    "frame": { "x": 192, "y": 96, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 160
+   },
+   {
+    "filename": "dream-places 11.aseprite",
+    "frame": { "x": 288, "y": 96, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 260
+   },
+   {
+    "filename": "dream-places 12.aseprite",
+    "frame": { "x": 0, "y": 144, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 180
+   },
+   {
+    "filename": "dream-places 13.aseprite",
+    "frame": { "x": 96, "y": 144, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 120
+   },
+   {
+    "filename": "dream-places 14.aseprite",
+    "frame": { "x": 192, "y": 144, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 160
+   },
+   {
+    "filename": "dream-places 15.aseprite",
+    "frame": { "x": 288, "y": 144, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 260
+   },
+   {
+    "filename": "dream-places 16.aseprite",
+    "frame": { "x": 0, "y": 192, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 180
+   },
+   {
+    "filename": "dream-places 17.aseprite",
+    "frame": { "x": 96, "y": 192, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 120
+   },
+   {
+    "filename": "dream-places 18.aseprite",
+    "frame": { "x": 192, "y": 192, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 160
+   },
+   {
+    "filename": "dream-places 19.aseprite",
+    "frame": { "x": 288, "y": 192, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 260
+   },
+   {
+    "filename": "dream-places 20.aseprite",
+    "frame": { "x": 0, "y": 240, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 180
+   },
+   {
+    "filename": "dream-places 21.aseprite",
+    "frame": { "x": 96, "y": 240, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 120
+   },
+   {
+    "filename": "dream-places 22.aseprite",
+    "frame": { "x": 192, "y": 240, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 160
+   },
+   {
+    "filename": "dream-places 23.aseprite",
+    "frame": { "x": 288, "y": 240, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 260
+   },
+   {
+    "filename": "dream-places 24.aseprite",
+    "frame": { "x": 0, "y": 288, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 180
+   },
+   {
+    "filename": "dream-places 25.aseprite",
+    "frame": { "x": 96, "y": 288, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 120
+   },
+   {
+    "filename": "dream-places 26.aseprite",
+    "frame": { "x": 192, "y": 288, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 160
+   },
+   {
+    "filename": "dream-places 27.aseprite",
+    "frame": { "x": 288, "y": 288, "w": 96, "h": 48 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 96, "h": 48 },
+    "sourceSize": { "w": 96, "h": 48 },
+    "duration": 260
+   }
+ ],
+ "meta": {
+  "app": "https://www.aseprite.org/",
+  "version": "1.3.18.6-dev",
+  "image": "dream-places.png",
+  "format": "RGBA8888",
+  "size": { "w": 384, "h": 336 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "hurdles", "from": 0, "to": 3, "direction": "forward", "color": "#000000ff" },
+   { "name": "terminal", "from": 4, "to": 7, "direction": "forward", "color": "#000000ff" },
+   { "name": "handover", "from": 8, "to": 11, "direction": "forward", "color": "#000000ff" },
+   { "name": "rain-song", "from": 12, "to": 15, "direction": "forward", "color": "#000000ff" },
+   { "name": "film", "from": 16, "to": 19, "direction": "forward", "color": "#000000ff" },
+   { "name": "classroom", "from": 20, "to": 23, "direction": "forward", "color": "#000000ff" },
+   { "name": "journey", "from": 24, "to": 27, "direction": "forward", "color": "#000000ff" }
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+ M app.js
+ M content.js
+ M engine.js
+ M index.html
+ M save.js
+ M style.css
+ M tests/acceptance.cjs
+ M tests/gift.cjs
+ M tests/guidance.html
+ M tests/portrait-browser.cjs
+?? art/appointment-stamp.aseprite
+?? art/echo-play.aseprite
+?? art/previews/appointment-stamp-preview.gif
+?? art/previews/shift-desk-preview.gif
+?? art/shift-desk.aseprite
+?? assets/appointment-stamp.json
+?? assets/appointment-stamp.png
+?? assets/echo-play.png
+?? assets/shift-desk.json
+?? assets/shift-desk.png
+?? continuity.js
+?? docs/
+?? responses.js
+?? tests/continuity.cjs
+?? tests/p2-browser.cjs
+?? tests/p2-evidence.cjs
+?? tests/p2-paths.cjs
+?? tests/p2.cjs

@@ -64,7 +64,7 @@ const stoppedProject=search((run,event)=>event.id==='indie-launch'?2:multiPolicy
 assert(!stoppedProject.highlights.published);
 const esport=(run,event)=>event.id==='arena-final'?0:defaultChoice(run);
 const champ=search((run,event)=>run.slot===11?0:esport(run,event),run=>run.highlights.world);
-assert.equal(champ.memo.line,'命运会反复出题，直到你给出新的答案。');
+assert.equal(champ.memo.line,'散场很久以后，你还记得队友报出最后一个位置的声音。');
 assert(champ.careerLog.some(record=>record.from==='player'));
 const pastFinal=search((run,event)=>run.slot===11?0:event.id==='arena-final'?2:defaultChoice(run),run=>run.facts.some(fact=>fact.eventId==='arena-final'));
 assert.equal(pastFinal.facts.length,46);

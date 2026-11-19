@@ -1,0 +1,2290 @@
+TAP version 13
+# Subtest: six-year decision and eight-year options after find
+ok 1 - six-year decision and eight-year options after find
+  ---
+  duration_ms: 1.0635
+  ...
+# Subtest: six-year decision and eight-year options after tell
+ok 2 - six-year decision and eight-year options after tell
+  ---
+  duration_ms: 0.103875
+  ...
+# Subtest: real scheduler competition 425
+ok 3 - real scheduler competition 425
+  ---
+  duration_ms: 30.690625
+  ...
+# Subtest: real scheduler competition 474
+ok 4 - real scheduler competition 474
+  ---
+  duration_ms: 16.071833
+  ...
+# Subtest: presentation, revocable acceptance, expiry and loss of qualification are distinct
+ok 5 - presentation, revocable acceptance, expiry and loss of qualification are distinct
+  ---
+  duration_ms: 8.849
+  ...
+# Subtest: growth needs separate commitments and archived branch receipts stay isolated
+ok 6 - growth needs separate commitments and archived branch receipts stay isolated
+  ---
+  duration_ms: 14.86125
+  ...
+# Subtest: old history has no inferred exposure and an old pending event has unknown candidate history
+ok 7 - old history has no inferred exposure and an old pending event has unknown candidate history
+  ---
+  duration_ms: 4.396416
+  ...
+# Subtest: completed narration records reading separately from actual exposure
+ok 8 - completed narration records reading separately from actual exposure
+  ---
+  duration_ms: 13.885209
+  ...
+# Subtest: a declared later window requires an open opportunity and fresh qualification
+ok 9 - a declared later window requires an open opportunity and fresh qualification
+  ---
+  duration_ms: 3.363166
+  ...
+# Subtest: directly save the fish
+ok 10 - directly save the fish
+  ---
+  duration_ms: 11.59625
+  ...
+# Subtest: directly eat the fish
+ok 11 - directly eat the fish
+  ---
+  duration_ms: 9.704208
+  ...
+# Subtest: ask first and save the fish
+ok 12 - ask first and save the fish
+  ---
+  duration_ms: 1.46
+  ...
+# Subtest: ask first and eat the fish
+ok 13 - ask first and eat the fish
+  ---
+  duration_ms: 1.736125
+  ...
+# Subtest: keep eating quietly
+ok 14 - keep eating quietly
+  ---
+  duration_ms: 6.192
+  ...
+# Subtest: guidance starts on the fish and offers both bowls after selection
+ok 15 - guidance starts on the fish and offers both bowls after selection
+  ---
+  duration_ms: 0.751167
+  ...
+# Subtest: family state controls guests and the meaning of the reserve bowl
+ok 16 - family state controls guests and the meaning of the reserve bowl
+  ---
+  duration_ms: 1.324917
+  ...
+# Subtest: the opening sets up the meal and asking resolves its uncertainty across reload
+ok 17 - the opening sets up the meal and asking resolves its uncertainty across reload
+  ---
+  duration_ms: 4.462833
+  ...
+# Subtest: listen, reload, cite real stories with distinct witness-aware responses, settle once
+ok 18 - listen, reload, cite real stories with distinct witness-aware responses, settle once
+  ---
+  duration_ms: 14.075
+  ...
+# Subtest: free exploration, one beat, helping, humor and quiet have distinct outcomes
+ok 19 - free exploration, one beat, helping, humor and quiet have distinct outcomes
+  ---
+  duration_ms: 5.988167
+  ...
+# Subtest: three beats end the scene and replay rejects post-ending actions
+ok 20 - three beats end the scene and replay rejects post-ending actions
+  ---
+  duration_ms: 2.724208
+  ...
+# Subtest: lost objects cannot appear, but a true memory still can
+ok 21 - lost objects cannot appear, but a true memory still can
+  ---
+  duration_ms: 0.659167
+  ...
+# Subtest: legacy choice IDs, suspended and resolved saves, later duel, memoir and branch history
+ok 22 - legacy choice IDs, suspended and resolved saves, later duel, memoir and branch history
+  ---
+  duration_ms: 13.261584
+  ...
+# Subtest: same lamp and choice ID, different real experience in a non-craft family
+ok 23 - same lamp and choice ID, different real experience in a non-craft family
+  ---
+  duration_ms: 4.073875
+  ...
+# Subtest: obsolete repair draft cannot settle; reloading keeps valid beats and permits a new ending
+ok 24 - obsolete repair draft cannot settle; reloading keeps valid beats and permits a new ending
+  ---
+  duration_ms: 0.915542
+  ...
+# Subtest: repair learned in another turn cannot authenticate the lamp story
+ok 25 - repair learned in another turn cannot authenticate the lamp story
+  ---
+  duration_ms: 6.14125
+  ...
+# Subtest: loading a settled legacy record leaves its original account intact
+ok 26 - loading a settled legacy record leaves its original account intact
+  ---
+  duration_ms: 1.063875
+  ...
+# Subtest: box then buy
+ok 27 - box then buy
+  ---
+  duration_ms: 35.596875
+  ...
+# Subtest: box then keep
+ok 28 - box then keep
+  ---
+  duration_ms: 12.96425
+  ...
+# Subtest: family then buy
+ok 29 - family then buy
+  ---
+  duration_ms: 19.739541
+  ...
+# Subtest: family then keep
+ok 30 - family then keep
+  ---
+  duration_ms: 12.974292
+  ...
+# Subtest: drawer then buy
+ok 31 - drawer then buy
+  ---
+  duration_ms: 15.855375
+  ...
+# Subtest: drawer then keep
+ok 32 - drawer then keep
+  ---
+  duration_ms: 9.142042
+  ...
+# Subtest: a missing deposit cannot fund a yoyo
+ok 33 - a missing deposit cannot fund a yoyo
+  ---
+  duration_ms: 0.157667
+  ...
+# Subtest: declining either offer keeps the ordinary outcome and never debits the envelope
+ok 34 - declining either offer keeps the ordinary outcome and never debits the envelope
+  ---
+  duration_ms: 2.634959
+  ...
+# Subtest: only consistent settled receipts and current ownership can offer the callback
+ok 35 - only consistent settled receipts and current ownership can offer the callback
+  ---
+  duration_ms: 22.34575
+  ...
+# Subtest: older committed gift receipts can offer the echo without rewriting history
+ok 36 - older committed gift receipts can offer the echo without rewriting history
+  ---
+  duration_ms: 2.942292
+  ...
+# Subtest: unversioned saves continue both original lamp histories
+ok 37 - unversioned saves continue both original lamp histories
+  ---
+  duration_ms: 2.556125
+  ...
+# Subtest: previous yoyo drafts restart and previous finished results keep their facts
+ok 38 - previous yoyo drafts restart and previous finished results keep their facts
+  ---
+  duration_ms: 1.120667
+  ...
+# Subtest: generic caregiver remains a family member throughout, without an invented identity
+ok 39 - generic caregiver remains a family member throughout, without an invented identity
+  ---
+  duration_ms: 0.313583
+  ...
+# Subtest: equipment-room evidence and visibility come from distinct receipts
+ok 40 - equipment-room evidence and visibility come from distinct receipts
+  ---
+  duration_ms: 3.070375
+  ...
+# Subtest: reading the invitation text does not mean its offscreen action was offered or rejected
+ok 41 - reading the invitation text does not mean its offscreen action was offered or rejected
+  ---
+  duration_ms: 1.002583
+  ...
+# Subtest: free exploration changes target, goal and feedback; completion ends help
+ok 42 - free exploration changes target, goal and feedback; completion ends help
+  ---
+  duration_ms: 3.541917
+  ...
+# Subtest: eligible actions alone supply recommendations
+ok 43 - eligible actions alone supply recommendations
+  ---
+  duration_ms: 0.238083
+  ...
+# Subtest: foreground idle time, invalid input, free progress and instant help
+ok 44 - foreground idle time, invalid input, free progress and instant help
+  ---
+  duration_ms: 0.407542
+  ...
+# Subtest: intro, stable IDs, missing and unowned objects, harmless observation
+ok 45 - intro, stable IDs, missing and unowned objects, harmless observation
+  ---
+  duration_ms: 4.478167
+  ...
+# Subtest: bounded allocation, pure preview, deterministic undo/rearrange/cancel
+ok 46 - bounded allocation, pure preview, deterministic undo/rearrange/cancel
+  ---
+  duration_ms: 1.086042
+  ...
+# Subtest: engine is the only commit boundary; confirmed result survives round trip
+ok 47 - engine is the only commit boundary; confirmed result survives round trip
+  ---
+  duration_ms: 30.877084
+  ...
+# Subtest: real experience and observed person gate recall; ordinary exit always works
+ok 48 - real experience and observed person gate recall; ordinary exit always works
+  ---
+  duration_ms: 1.149375
+  ...
+# Subtest: isolated storage never reads/writes the old key; reload and import preserve draft
+ok 49 - isolated storage never reads/writes the old key; reload and import preserve draft
+  ---
+  duration_ms: 1.569083
+  ...
+# Subtest: replay rejects stale event IDs and impossible persisted steps
+ok 50 - replay rejects stale event IDs and impossible persisted steps
+  ---
+  duration_ms: 0.881917
+  ...
+# Subtest: every registered decision, core callback, terminal action and important scene has an executable witness
+ok 51 - every registered decision, core callback, terminal action and important scene has an executable witness
+  ---
+  duration_ms: 2234.519375
+  ...
+# Subtest: 425 books one evening; assistance, retirement, failed submission and real release stay distinct
+ok 52 - 425 books one evening; assistance, retirement, failed submission and real release stay distinct
+  ---
+  duration_ms: 17.808625
+  ...
+# Subtest: 474 occupational handover and rescheduled keepsake require two actual decisions; revocation, refresh and changed custody
+ok 53 - 474 occupational handover and rescheduled keepsake require two actual decisions; revocation, refresh and changed custody
+  ---
+  duration_ms: 8.237667
+  ...
+# Subtest: a visible old build can wait while each eligible occupation uses its own appointment
+ok 54 - a visible old build can wait while each eligible occupation uses its own appointment
+  ---
+  duration_ms: 29.468542
+  ...
+# Subtest: actual physical workplace inspection changes a later handover; entry or a wrong mark supplies no sample
+ok 55 - actual physical workplace inspection changes a later handover; entry or a wrong mark supplies no sample
+  ---
+  duration_ms: 539.657875
+  ...
+# Subtest: source and live item checks separate own practice, first practice and borrowing a returned prop
+ok 56 - source and live item checks separate own practice, first practice and borrowing a returned prop
+  ---
+  duration_ms: 1.820541
+  ...
+# Subtest: alternate schedule is reached from eligible cards; low can stay active until the later recovery
+ok 57 - alternate schedule is reached from eligible cards; low can stay active until the later recovery
+  ---
+  duration_ms: 455.120292
+  ...
+# Subtest: physical sheets use intact frame dimensions, nonuniform timings, tags and reduced motion endpoints
+ok 58 - physical sheets use intact frame dimensions, nonuniform timings, tags and reduced motion endpoints
+  ---
+  duration_ms: 2.627458
+  ...
+# Subtest: a new sketch at 29 can recall shared study only after the actual conversation
+ok 59 - a new sketch at 29 can recall shared study only after the actual conversation
+  ---
+  duration_ms: 8.310292
+  ...
+# Subtest: a retirement keepsake is entrusted to an actual carer, and closed items cannot be brought home
+ok 60 - a retirement keepsake is entrusted to an actual carer, and closed items cannot be brought home
+  ---
+  duration_ms: 385.447125
+  ...
+# Subtest: future study, business and home hooks require the specific action and confer no dream completion
+ok 61 - future study, business and home hooks require the specific action and confer no dream completion
+  ---
+  duration_ms: 1.485167
+  ...
+# Subtest: every counter observation and both coin identities can settle; the original shared water-bottle story can be told
+ok 62 - every counter observation and both coin identities can settle; the original shared water-bottle story can be told
+  ---
+  duration_ms: 1.304375
+  ...
+# Subtest: professional work and midlife work, retraining and rest each have playable later responses
+ok 63 - professional work and midlife work, retraining and rest each have playable later responses
+  ---
+  duration_ms: 394.010042
+  ...
+# Subtest: routine short shifts can lead to dispatch training without creating a past injury or recovery qualification
+ok 64 - routine short shifts can lead to dispatch training without creating a past injury or recovery qualification
+  ---
+  duration_ms: 6.29825
+  ...
+# Subtest: M01 prior contact is required
+ok 65 - M01 prior contact is required
+  ---
+  duration_ms: 12.576416
+  ...
+# Subtest: M02 discovered goals wait, adult consultation creates a sourced alternative
+ok 66 - M02 discovered goals wait, adult consultation creates a sourced alternative
+  ---
+  duration_ms: 26.366666
+  ...
+# Subtest: M03 independent goals, draft cancellation and duplicate establishment
+ok 67 - M03 independent goals, draft cancellation and duplicate establishment
+  ---
+  duration_ms: 9.933458
+  ...
+# Subtest: M04 resumption rechecks availability and preserves investments
+ok 68 - M04 resumption rechecks availability and preserves investments
+  ---
+  duration_ms: 11.348417
+  ...
+# Subtest: E01 declarations reject collisions, unsupported versions, missing conditions and invalid amounts
+ok 69 - E01 declarations reject collisions, unsupported versions, missing conditions and invalid amounts
+  ---
+  duration_ms: 0.276583
+  ...
+# Subtest: E02 E03 M05 declarative extension has its own history and one shared practice cost
+ok 70 - E02 E03 M05 declarative extension has its own history and one shared practice cost
+  ---
+  duration_ms: 22.197833
+  ...
+# Subtest: M06 conflicts reject the entire transaction for time, energy and personal cash
+ok 71 - M06 conflicts reject the entire transaction for time, energy and personal cash
+  ---
+  duration_ms: 23.445791
+  ...
+# Subtest: M07 E04 working time and one salary for shared job and study evidence
+ok 72 - M07 E04 working time and one salary for shared job and study evidence
+  ---
+  duration_ms: 85.307791
+  ...
+# Subtest: M08 qualification, bounded deterministic external factor and real preparation
+ok 73 - M08 qualification, bounded deterministic external factor and real preparation
+  ---
+  duration_ms: 608.629667
+  ...
+# Subtest: M09 immutable attempt, restored draft, invalid imports and obsolete draft cleanup
+ok 74 - M09 immutable attempt, restored draft, invalid imports and obsolete draft cleanup
+  ---
+  duration_ms: 40.590375
+  ...
+# Subtest: M10 visible deferral, unseen, expired, invalidated and real continuation
+ok 75 - M10 visible deferral, unseen, expired, invalidated and real continuation
+  ---
+  duration_ms: 18.139792
+  ...
+# Subtest: M11 M12 E05 legacy life and memoir survive route registration and isolated forks
+ok 76 - M11 M12 E05 legacy life and memoir survive route registration and isolated forks
+  ---
+  duration_ms: 155.34575
+  ...
+# Subtest: adult first contact without a school candidate; distinct methods and absent route code
+ok 77 - adult first contact without a school candidate; distinct methods and absent route code
+  ---
+  duration_ms: 73.742625
+  ...
+# Subtest: E04 one inspected work sample supports a later goal without a second wage or duplicate item
+ok 78 - E04 one inspected work sample supports a later goal without a second wage or duplicate item
+  ---
+  duration_ms: 11.784084
+  ...
+# Subtest: route-defined qualifications, terminal outcome and eligibility to resume are replayable
+ok 79 - route-defined qualifications, terminal outcome and eligibility to resume are replayable
+  ---
+  duration_ms: 24.164125
+  ...
+# Subtest: a two-block professional action must own the matching main scene
+ok 80 - a two-block professional action must own the matching main scene
+  ---
+  duration_ms: 46.400875
+  ...
+# Subtest: 少年赛场
+ok 81 - 少年赛场
+  ---
+  duration_ms: 112.622
+  ...
+# Subtest: 成年试训
+ok 82 - 成年试训
+  ---
+  duration_ms: 92.823167
+  ...
+# Subtest: 竞技未竟
+ok 83 - 竞技未竟
+  ---
+  duration_ms: 13.213708
+  ...
+# Subtest: 少年本科
+ok 84 - 少年本科
+  ---
+  duration_ms: 165.481583
+  ...
+# Subtest: 在职重考
+ok 85 - 在职重考
+  ---
+  duration_ms: 231.476875
+  ...
+# Subtest: 重考落选
+ok 86 - 重考落选
+  ---
+  duration_ms: 43.884334
+  ...
+# Subtest: 本科后读研
+ok 87 - 本科后读研
+  ---
+  duration_ms: 233.517208
+  ...
+# Subtest: 工厂附近的家
+ok 88 - 工厂附近的家
+  ---
+  duration_ms: 57.046916
+  ...
+# Subtest: 搬离再安顿
+ok 89 - 搬离再安顿
+  ---
+  duration_ms: 277.524833
+  ...
+# Subtest: 退租再寻找
+ok 90 - 退租再寻找
+  ---
+  duration_ms: 100.782333
+  ...
+# Subtest: 租住未竟
+ok 91 - 租住未竟
+  ---
+  duration_ms: 142.965041
+  ...
+# Subtest: 办公室交接
+ok 92 - 办公室交接
+  ---
+  duration_ms: 21.916875
+  ...
+# Subtest: 并组撤岗
+ok 93 - 并组撤岗
+  ---
+  duration_ms: 26.997166
+  ...
+# Subtest: 离职再聘
+ok 94 - 离职再聘
+  ---
+  duration_ms: 20.496209
+  ...
+# Subtest: 制造带教
+ok 95 - 制造带教
+  ---
+  duration_ms: 36.397958
+  ...
+# Subtest: 工位转向
+ok 96 - 工位转向
+  ---
+  duration_ms: 48.440375
+  ...
+# Subtest: 街区老客
+ok 97 - 街区老客
+  ---
+  duration_ms: 35.237333
+  ...
+# Subtest: 站点调度
+ok 98 - 站点调度
+  ---
+  duration_ms: 38.014958
+  ...
+# Subtest: 送餐草稿可刷新，错误封签、跳过路线、改写回执都不能正式交付
+ok 99 - 送餐草稿可刷新，错误封签、跳过路线、改写回执都不能正式交付
+  ---
+  duration_ms: 31.523458
+  ...
+# Subtest: 工艺权限、实际样单与本科资格必须各有出处，停班与满班争用资源
+ok 100 - 工艺权限、实际样单与本科资格必须各有出处，停班与满班争用资源
+  ---
+  duration_ms: 18.144458
+  ...
+# Subtest: 搬迁不会确立梦想，缺少入住不能产生回望，第二处住处需要独立布置
+ok 101 - 搬迁不会确立梦想，缺少入住不能产生回望，第二处住处需要独立布置
+  ---
+  duration_ms: 138.683875
+  ...
+# Subtest: 没有个人上场记录不能得到个人赛果，训练不足者保留未竟人生
+ok 102 - 没有个人上场记录不能得到个人赛果，训练不足者保留未竟人生
+  ---
+  duration_ms: 15.987875
+  ...
+# Subtest: 第一栏·直路
+ok 103 - 第一栏·直路
+  ---
+  duration_ms: 84.701375
+  ...
+# Subtest: 第一栏·重拾
+ok 104 - 第一栏·重拾
+  ---
+  duration_ms: 70.649708
+  ...
+# Subtest: 第一栏·未竟
+ok 105 - 第一栏·未竟
+  ---
+  duration_ms: 25.364667
+  ...
+# Subtest: 站名簿·直路
+ok 106 - 站名簿·直路
+  ---
+  duration_ms: 144.014167
+  ...
+# Subtest: 站名簿·重拾
+ok 107 - 站名簿·重拾
+  ---
+  duration_ms: 79.975458
+  ...
+# Subtest: 站名簿·未竟
+ok 108 - 站名簿·未竟
+  ---
+  duration_ms: 27.908375
+  ...
+# Subtest: 两张交班单·直路
+ok 109 - 两张交班单·直路
+  ---
+  duration_ms: 267.284875
+  ...
+# Subtest: 两张交班单·重拾
+ok 110 - 两张交班单·重拾
+  ---
+  duration_ms: 239.685708
+  ...
+# Subtest: 两张交班单·未竟
+ok 111 - 两张交班单·未竟
+  ---
+  duration_ms: 22.038542
+  ...
+# Subtest: 雨棚·直路
+ok 112 - 雨棚·直路
+  ---
+  duration_ms: 50.200292
+  ...
+# Subtest: 雨棚·重拾
+ok 113 - 雨棚·重拾
+  ---
+  duration_ms: 48.337959
+  ...
+# Subtest: 雨棚·未竟
+ok 114 - 雨棚·未竟
+  ---
+  duration_ms: 32.486208
+  ...
+# Subtest: 潮痕·直路
+ok 115 - 潮痕·直路
+  ---
+  duration_ms: 64.63
+  ...
+# Subtest: 潮痕·重拾
+ok 116 - 潮痕·重拾
+  ---
+  duration_ms: 150.57225
+  ...
+# Subtest: 潮痕·未竟
+ok 117 - 潮痕·未竟
+  ---
+  duration_ms: 53.279959
+  ...
+# Subtest: 两根纸条·直路
+ok 118 - 两根纸条·直路
+  ---
+  duration_ms: 60.891167
+  ...
+# Subtest: 两根纸条·重拾
+ok 119 - 两根纸条·重拾
+  ---
+  duration_ms: 148.09225
+  ...
+# Subtest: 两根纸条·未竟
+ok 120 - 两根纸条·未竟
+  ---
+  duration_ms: 52.703959
+  ...
+# Subtest: 回程线·直路
+ok 121 - 回程线·直路
+  ---
+  duration_ms: 146.768334
+  ...
+# Subtest: 回程线·重拾
+ok 122 - 回程线·重拾
+  ---
+  duration_ms: 135.674291
+  ...
+# Subtest: 回程线·未竟
+ok 123 - 回程线·未竟
+  ---
+  duration_ms: 35.692083
+  ...
+# Subtest: 出生 1 可接触并主动确立 11
+ok 124 - 出生 1 可接触并主动确立 11
+  ---
+  duration_ms: 3.287583
+  ...
+# Subtest: 出生 1 可接触并主动确立 12
+ok 125 - 出生 1 可接触并主动确立 12
+  ---
+  duration_ms: 8.481584
+  ...
+# Subtest: 出生 1 可接触并主动确立 25
+ok 126 - 出生 1 可接触并主动确立 25
+  ---
+  duration_ms: 3.765625
+  ...
+# Subtest: 出生 1 可接触并主动确立 30
+ok 127 - 出生 1 可接触并主动确立 30
+  ---
+  duration_ms: 5.053542
+  ...
+# Subtest: 出生 1 可接触并主动确立 02
+ok 128 - 出生 1 可接触并主动确立 02
+  ---
+  duration_ms: 3.405041
+  ...
+# Subtest: 出生 1 可接触并主动确立 07
+ok 129 - 出生 1 可接触并主动确立 07
+  ---
+  duration_ms: 3.020459
+  ...
+# Subtest: 出生 1 可接触并主动确立 08
+ok 130 - 出生 1 可接触并主动确立 08
+  ---
+  duration_ms: 6.773625
+  ...
+# Subtest: 出生 2 可接触并主动确立 11
+ok 131 - 出生 2 可接触并主动确立 11
+  ---
+  duration_ms: 2.994083
+  ...
+# Subtest: 出生 2 可接触并主动确立 12
+ok 132 - 出生 2 可接触并主动确立 12
+  ---
+  duration_ms: 11.528042
+  ...
+# Subtest: 出生 2 可接触并主动确立 25
+ok 133 - 出生 2 可接触并主动确立 25
+  ---
+  duration_ms: 3.227208
+  ...
+# Subtest: 出生 2 可接触并主动确立 30
+ok 134 - 出生 2 可接触并主动确立 30
+  ---
+  duration_ms: 3.20275
+  ...
+# Subtest: 出生 2 可接触并主动确立 02
+ok 135 - 出生 2 可接触并主动确立 02
+  ---
+  duration_ms: 4.603166
+  ...
+# Subtest: 出生 2 可接触并主动确立 07
+ok 136 - 出生 2 可接触并主动确立 07
+  ---
+  duration_ms: 2.960125
+  ...
+# Subtest: 出生 2 可接触并主动确立 08
+ok 137 - 出生 2 可接触并主动确立 08
+  ---
+  duration_ms: 9.221667
+  ...
+# Subtest: 出生 3 可接触并主动确立 11
+ok 138 - 出生 3 可接触并主动确立 11
+  ---
+  duration_ms: 2.936041
+  ...
+# Subtest: 出生 3 可接触并主动确立 12
+ok 139 - 出生 3 可接触并主动确立 12
+  ---
+  duration_ms: 2.903375
+  ...
+# Subtest: 出生 3 可接触并主动确立 25
+ok 140 - 出生 3 可接触并主动确立 25
+  ---
+  duration_ms: 7.418291
+  ...
+# Subtest: 出生 3 可接触并主动确立 30
+ok 141 - 出生 3 可接触并主动确立 30
+  ---
+  duration_ms: 3.170708
+  ...
+# Subtest: 出生 3 可接触并主动确立 02
+ok 142 - 出生 3 可接触并主动确立 02
+  ---
+  duration_ms: 3.934291
+  ...
+# Subtest: 出生 3 可接触并主动确立 07
+ok 143 - 出生 3 可接触并主动确立 07
+  ---
+  duration_ms: 2.782875
+  ...
+# Subtest: 出生 3 可接触并主动确立 08
+ok 144 - 出生 3 可接触并主动确立 08
+  ---
+  duration_ms: 5.628917
+  ...
+# Subtest: 出生 4 可接触并主动确立 11
+ok 145 - 出生 4 可接触并主动确立 11
+  ---
+  duration_ms: 5.452209
+  ...
+# Subtest: 出生 4 可接触并主动确立 12
+ok 146 - 出生 4 可接触并主动确立 12
+  ---
+  duration_ms: 2.810458
+  ...
+# Subtest: 出生 4 可接触并主动确立 25
+ok 147 - 出生 4 可接触并主动确立 25
+  ---
+  duration_ms: 7.027333
+  ...
+# Subtest: 出生 4 可接触并主动确立 30
+ok 148 - 出生 4 可接触并主动确立 30
+  ---
+  duration_ms: 3.409
+  ...
+# Subtest: 出生 4 可接触并主动确立 02
+ok 149 - 出生 4 可接触并主动确立 02
+  ---
+  duration_ms: 3.827958
+  ...
+# Subtest: 出生 4 可接触并主动确立 07
+ok 150 - 出生 4 可接触并主动确立 07
+  ---
+  duration_ms: 2.933542
+  ...
+# Subtest: 出生 4 可接触并主动确立 08
+ok 151 - 出生 4 可接触并主动确立 08
+  ---
+  duration_ms: 2.781875
+  ...
+# Subtest: 出生 9 可接触并主动确立 11
+ok 152 - 出生 9 可接触并主动确立 11
+  ---
+  duration_ms: 5.041417
+  ...
+# Subtest: 出生 9 可接触并主动确立 12
+ok 153 - 出生 9 可接触并主动确立 12
+  ---
+  duration_ms: 2.916083
+  ...
+# Subtest: 出生 9 可接触并主动确立 25
+ok 154 - 出生 9 可接触并主动确立 25
+  ---
+  duration_ms: 8.063333
+  ...
+# Subtest: 出生 9 可接触并主动确立 30
+ok 155 - 出生 9 可接触并主动确立 30
+  ---
+  duration_ms: 3.445875
+  ...
+# Subtest: 出生 9 可接触并主动确立 02
+ok 156 - 出生 9 可接触并主动确立 02
+  ---
+  duration_ms: 2.76825
+  ...
+# Subtest: 出生 9 可接触并主动确立 07
+ok 157 - 出生 9 可接触并主动确立 07
+  ---
+  duration_ms: 12.54525
+  ...
+# Subtest: 出生 9 可接触并主动确立 08
+ok 158 - 出生 9 可接触并主动确立 08
+  ---
+  duration_ms: 6.74875
+  ...
+# Subtest: 出生 12 可接触并主动确立 11
+ok 159 - 出生 12 可接触并主动确立 11
+  ---
+  duration_ms: 7.131209
+  ...
+# Subtest: 出生 12 可接触并主动确立 12
+ok 160 - 出生 12 可接触并主动确立 12
+  ---
+  duration_ms: 2.765
+  ...
+# Subtest: 出生 12 可接触并主动确立 25
+ok 161 - 出生 12 可接触并主动确立 25
+  ---
+  duration_ms: 2.602917
+  ...
+# Subtest: 出生 12 可接触并主动确立 30
+ok 162 - 出生 12 可接触并主动确立 30
+  ---
+  duration_ms: 13.380333
+  ...
+# Subtest: 出生 12 可接触并主动确立 02
+ok 163 - 出生 12 可接触并主动确立 02
+  ---
+  duration_ms: 2.902333
+  ...
+# Subtest: 出生 12 可接触并主动确立 07
+ok 164 - 出生 12 可接触并主动确立 07
+  ---
+  duration_ms: 5.149625
+  ...
+# Subtest: 出生 12 可接触并主动确立 08
+ok 165 - 出生 12 可接触并主动确立 08
+  ---
+  duration_ms: 2.873959
+  ...
+# Subtest: 起跑、伤病、有效期和本届名单分别约束参赛
+ok 166 - 起跑、伤病、有效期和本届名单分别约束参赛
+  ---
+  duration_ms: 167.203708
+  ...
+# Subtest: 公司权限和个人公开版本分开，离岗后可继续合法维护
+ok 167 - 公司权限和个人公开版本分开，离岗后可继续合法维护
+  ---
+  duration_ms: 101.335959
+  ...
+# Subtest: 医学不能借护理或师范资格；离开全日制学程会中断毕业资格
+ok 168 - 医学不能借护理或师范资格；离开全日制学程会中断毕业资格
+  ---
+  duration_ms: 28.189875
+  ...
+# Subtest: 万人票数只取现场，小场不能支付大场费用；无发行或网络发行不能进赛
+ok 169 - 万人票数只取现场，小场不能支付大场费用；无发行或网络发行不能进赛
+  ---
+  duration_ms: 73.598917
+  ...
+# Subtest: 普通小学聘任、乡村学生和调动各自保留真实历史
+ok 170 - 普通小学聘任、乡村学生和调动各自保留真实历史
+  ---
+  duration_ms: 54.557084
+  ...
+# Subtest: 过期、取消和未抵达都不给足迹，旅费不足不部分结算
+ok 171 - 过期、取消和未抵达都不给足迹，旅费不足不部分结算
+  ---
+  duration_ms: 79.043125
+  ...
+# Subtest: 跨梦想、满班和家庭附加安排共用日程；伪造多人署名的收据不能导入
+ok 172 - 跨梦想、满班和家庭附加安排共用日程；伪造多人署名的收据不能导入
+  ---
+  duration_ms: 54.275166
+  ...
+# Subtest: 旅行准备与同一人生的租约、实际租金和出发当期工资逐项结算
+ok 173 - 旅行准备与同一人生的租约、实际租金和出发当期工资逐项结算
+  ---
+  duration_ms: 28.227791
+  ...
+# Subtest: 年度检验的种子、准备和资格复核后相同，低体力无法出发
+ok 174 - 年度检验的种子、准备和资格复核后相同，低体力无法出发
+  ---
+  duration_ms: 18.443167
+  ...
+# Subtest: 医院停薪期间仍可交接离岗；两年后重新核验注册，重聘只发当前岗位工资
+ok 175 - 医院停薪期间仍可交接离岗；两年后重新核验注册，重聘只发当前岗位工资
+  ---
+  duration_ms: 65.659041
+  ...
+# Subtest: J04·普通
+ok 176 - J04·普通
+  ---
+  duration_ms: 124.825333
+  ...
+# Subtest: J04·改变
+ok 177 - J04·改变
+  ---
+  duration_ms: 158.409833
+  ...
+# Subtest: J04·交汇
+ok 178 - J04·交汇
+  ---
+  duration_ms: 238.710417
+  ...
+# Subtest: J05·普通
+ok 179 - J05·普通
+  ---
+  duration_ms: 196.367334
+  ...
+# Subtest: J05·改变
+ok 180 - J05·改变
+  ---
+  duration_ms: 105.1495
+  ...
+# Subtest: J05·交汇
+ok 181 - J05·交汇
+  ---
+  duration_ms: 220.16875
+  ...
+# Subtest: J06·普通
+ok 182 - J06·普通
+  ---
+  duration_ms: 144.9155
+  ...
+# Subtest: J06·改变
+ok 183 - J06·改变
+  ---
+  duration_ms: 217.301083
+  ...
+# Subtest: J06·交汇
+ok 184 - J06·交汇
+  ---
+  duration_ms: 148.387042
+  ...
+# Subtest: J07·普通
+ok 185 - J07·普通
+  ---
+  duration_ms: 63.372375
+  ...
+# Subtest: J07·改变
+ok 186 - J07·改变
+  ---
+  duration_ms: 83.13625
+  ...
+# Subtest: J07·交汇
+ok 187 - J07·交汇
+  ---
+  duration_ms: 130.200875
+  ...
+# Subtest: J08·普通
+ok 188 - J08·普通
+  ---
+  duration_ms: 101.137625
+  ...
+# Subtest: J08·改变
+ok 189 - J08·改变
+  ---
+  duration_ms: 81.590083
+  ...
+# Subtest: J08·交汇
+ok 190 - J08·交汇
+  ---
+  duration_ms: 79.295792
+  ...
+# Subtest: 出生 1 接触 J04
+ok 191 - 出生 1 接触 J04
+  ---
+  duration_ms: 11.544125
+  ...
+# Subtest: 出生 1 接触 J05
+ok 192 - 出生 1 接触 J05
+  ---
+  duration_ms: 12.880042
+  ...
+# Subtest: 出生 1 接触 J06
+ok 193 - 出生 1 接触 J06
+  ---
+  duration_ms: 8.038583
+  ...
+# Subtest: 出生 1 接触 J07
+ok 194 - 出生 1 接触 J07
+  ---
+  duration_ms: 9.982792
+  ...
+# Subtest: 出生 1 接触 J08
+ok 195 - 出生 1 接触 J08
+  ---
+  duration_ms: 3.800875
+  ...
+# Subtest: 出生 2 接触 J04
+ok 196 - 出生 2 接触 J04
+  ---
+  duration_ms: 3.874291
+  ...
+# Subtest: 出生 2 接触 J05
+ok 197 - 出生 2 接触 J05
+  ---
+  duration_ms: 18.255792
+  ...
+# Subtest: 出生 2 接触 J06
+ok 198 - 出生 2 接触 J06
+  ---
+  duration_ms: 7.709125
+  ...
+# Subtest: 出生 2 接触 J07
+ok 199 - 出生 2 接触 J07
+  ---
+  duration_ms: 30.511333
+  ...
+# Subtest: 出生 2 接触 J08
+ok 200 - 出生 2 接触 J08
+  ---
+  duration_ms: 2.480625
+  ...
+# Subtest: 出生 3 接触 J04
+ok 201 - 出生 3 接触 J04
+  ---
+  duration_ms: 20.56275
+  ...
+# Subtest: 出生 3 接触 J05
+ok 202 - 出生 3 接触 J05
+  ---
+  duration_ms: 8.5475
+  ...
+# Subtest: 出生 3 接触 J06
+ok 203 - 出生 3 接触 J06
+  ---
+  duration_ms: 9.252667
+  ...
+# Subtest: 出生 3 接触 J07
+ok 204 - 出生 3 接触 J07
+  ---
+  duration_ms: 3.91
+  ...
+# Subtest: 出生 3 接触 J08
+ok 205 - 出生 3 接触 J08
+  ---
+  duration_ms: 2.753167
+  ...
+# Subtest: 出生 4 接触 J04
+ok 206 - 出生 4 接触 J04
+  ---
+  duration_ms: 3.813125
+  ...
+# Subtest: 出生 4 接触 J05
+ok 207 - 出生 4 接触 J05
+  ---
+  duration_ms: 9.832
+  ...
+# Subtest: 出生 4 接触 J06
+ok 208 - 出生 4 接触 J06
+  ---
+  duration_ms: 4.014792
+  ...
+# Subtest: 出生 4 接触 J07
+ok 209 - 出生 4 接触 J07
+  ---
+  duration_ms: 9.263791
+  ...
+# Subtest: 出生 4 接触 J08
+ok 210 - 出生 4 接触 J08
+  ---
+  duration_ms: 2.175083
+  ...
+# Subtest: 出生 9 接触 J04
+ok 211 - 出生 9 接触 J04
+  ---
+  duration_ms: 6.386709
+  ...
+# Subtest: 出生 9 接触 J05
+ok 212 - 出生 9 接触 J05
+  ---
+  duration_ms: 8.119
+  ...
+# Subtest: 出生 9 接触 J06
+ok 213 - 出生 9 接触 J06
+  ---
+  duration_ms: 7.916583
+  ...
+# Subtest: 出生 9 接触 J07
+ok 214 - 出生 9 接触 J07
+  ---
+  duration_ms: 4.040875
+  ...
+# Subtest: 出生 9 接触 J08
+ok 215 - 出生 9 接触 J08
+  ---
+  duration_ms: 7.004417
+  ...
+# Subtest: 出生 12 接触 J04
+ok 216 - 出生 12 接触 J04
+  ---
+  duration_ms: 9.93225
+  ...
+# Subtest: 出生 12 接触 J05
+ok 217 - 出生 12 接触 J05
+  ---
+  duration_ms: 5.362875
+  ...
+# Subtest: 出生 12 接触 J06
+ok 218 - 出生 12 接触 J06
+  ---
+  duration_ms: 3.907959
+  ...
+# Subtest: 出生 12 接触 J07
+ok 219 - 出生 12 接触 J07
+  ---
+  duration_ms: 12.778375
+  ...
+# Subtest: 出生 12 接触 J08
+ok 220 - 出生 12 接触 J08
+  ---
+  duration_ms: 6.304083
+  ...
+# Subtest: 库存付款、退货和停业的门槛来自原始收据
+ok 221 - 库存付款、退货和停业的门槛来自原始收据
+  ---
+  duration_ms: 49.016042
+  ...
+# Subtest: 无学历不能报考，无聘任不能办件；未试教不能产生旧生回忆
+ok 222 - 无学历不能报考，无聘任不能办件；未试教不能产生旧生回忆
+  ---
+  duration_ms: 6.996625
+  ...
+# Subtest: 摊位库存、利润、重复提交与原始现金一致
+ok 223 - 摊位库存、利润、重复提交与原始现金一致
+  ---
+  duration_ms: 18.273916
+  ...
+# Subtest: 高价销售退货按原价回退现金和成本，破坏利润拒绝导入
+ok 224 - 高价销售退货按原价回退现金和成本，破坏利润拒绝导入
+  ---
+  duration_ms: 53.387875
+  ...
+# Subtest: 发布失败仍需修复后部署，大厂申请有历史条件
+ok 225 - 发布失败仍需修复后部署，大厂申请有历史条件
+  ---
+  duration_ms: 22.0015
+  ...
+# Subtest: 离岗权限、未出菜与退单补救各自核验
+ok 226 - 离岗权限、未出菜与退单补救各自核验
+  ---
+  duration_ms: 54.637667
+  ...
+# Subtest: 资金不足时进货整笔拒绝，满班不能额外摆摊
+ok 227 - 资金不足时进货整笔拒绝，满班不能额外摆摊
+  ---
+  duration_ms: 8.438834
+  ...
+# Subtest: 厨师转自营需许可、食材付款和交付，原厨师工资停止
+ok 228 - 厨师转自营需许可、食材付款和交付，原厨师工资停止
+  ---
+  duration_ms: 37.661791
+  ...
+# Subtest: 大厂招聘有真实技术条件，落选保留原项目；公务员笔试不能代替录用
+ok 229 - 大厂招聘有真实技术条件，落选保留原项目；公务员笔试不能代替录用
+  ---
+  duration_ms: 162.653209
+  ...
+# Subtest: X01A
+ok 230 - X01A
+  ---
+  duration_ms: 115.161209
+  ...
+# Subtest: X01B
+ok 231 - X01B
+  ---
+  duration_ms: 68.209792
+  ...
+# Subtest: X01C
+ok 232 - X01C
+  ---
+  duration_ms: 33.687042
+  ...
+# Subtest: X02A
+ok 233 - X02A
+  ---
+  duration_ms: 94.845583
+  ...
+# Subtest: X02B
+ok 234 - X02B
+  ---
+  duration_ms: 51.035209
+  ...
+# Subtest: X02C
+ok 235 - X02C
+  ---
+  duration_ms: 105.533916
+  ...
+# Subtest: X03A
+ok 236 - X03A
+  ---
+  duration_ms: 127.969166
+  ...
+# Subtest: X03B
+ok 237 - X03B
+  ---
+  duration_ms: 124.669458
+  ...
+# Subtest: X03C
+ok 238 - X03C
+  ---
+  duration_ms: 38.334792
+  ...
+# Subtest: X04A
+ok 239 - X04A
+  ---
+  duration_ms: 62.682292
+  ...
+# Subtest: X04B
+ok 240 - X04B
+  ---
+  duration_ms: 26.96675
+  ...
+# Subtest: X04C
+ok 241 - X04C
+  ---
+  duration_ms: 17.113417
+  ...
+# Subtest: X05A
+ok 242 - X05A
+  ---
+  duration_ms: 204.187333
+  ...
+# Subtest: X05B
+ok 243 - X05B
+  ---
+  duration_ms: 26.493459
+  ...
+# Subtest: X05C
+ok 244 - X05C
+  ---
+  duration_ms: 12.696333
+  ...
+# Subtest: X06A
+ok 245 - X06A
+  ---
+  duration_ms: 95.004875
+  ...
+# Subtest: X06B
+ok 246 - X06B
+  ---
+  duration_ms: 104.004
+  ...
+# Subtest: X06C
+ok 247 - X06C
+  ---
+  duration_ms: 68.974583
+  ...
+# Subtest: X07A
+ok 248 - X07A
+  ---
+  duration_ms: 74.471042
+  ...
+# Subtest: X07B
+ok 249 - X07B
+  ---
+  duration_ms: 49.604166
+  ...
+# Subtest: X07C
+ok 250 - X07C
+  ---
+  duration_ms: 65.01525
+  ...
+# Subtest: X08A
+ok 251 - X08A
+  ---
+  duration_ms: 137.054458
+  ...
+# Subtest: X08B
+ok 252 - X08B
+  ---
+  duration_ms: 76.723208
+  ...
+# Subtest: X08C
+ok 253 - X08C
+  ---
+  duration_ms: 68.683791
+  ...
+# Subtest: X09A
+ok 254 - X09A
+  ---
+  duration_ms: 66.850875
+  ...
+# Subtest: X09B
+ok 255 - X09B
+  ---
+  duration_ms: 47.952458
+  ...
+# Subtest: X09C
+ok 256 - X09C
+  ---
+  duration_ms: 41.468834
+  ...
+# Subtest: X10A
+ok 257 - X10A
+  ---
+  duration_ms: 108.439708
+  ...
+# Subtest: X10B
+ok 258 - X10B
+  ---
+  duration_ms: 67.38925
+  ...
+# Subtest: X10C
+ok 259 - X10C
+  ---
+  duration_ms: 51.69575
+  ...
+# Subtest: X11A
+ok 260 - X11A
+  ---
+  duration_ms: 49.373334
+  ...
+# Subtest: X11B
+ok 261 - X11B
+  ---
+  duration_ms: 25.557667
+  ...
+# Subtest: X11C
+ok 262 - X11C
+  ---
+  duration_ms: 24.551125
+  ...
+# Subtest: X12A
+ok 263 - X12A
+  ---
+  duration_ms: 75.016042
+  ...
+# Subtest: X12B
+ok 264 - X12B
+  ---
+  duration_ms: 12.730416
+  ...
+# Subtest: X12C
+ok 265 - X12C
+  ---
+  duration_ms: 13.778292
+  ...
+# Subtest: X13A
+ok 266 - X13A
+  ---
+  duration_ms: 58.704916
+  ...
+# Subtest: X13B
+ok 267 - X13B
+  ---
+  duration_ms: 40.443542
+  ...
+# Subtest: X13C
+ok 268 - X13C
+  ---
+  duration_ms: 32.298709
+  ...
+# Subtest: 办公室交接
+ok 269 - 办公室交接
+  ---
+  duration_ms: 38.24175
+  ...
+# Subtest: 制造带教
+ok 270 - 制造带教
+  ---
+  duration_ms: 36.137083
+  ...
+# Subtest: 街区老客
+ok 271 - 街区老客
+  ---
+  duration_ms: 21.10575
+  ...
+# Subtest: J04·普通
+ok 272 - J04·普通
+  ---
+  duration_ms: 56.694584
+  ...
+# Subtest: J05·普通
+ok 273 - J05·普通
+  ---
+  duration_ms: 27.94125
+  ...
+# Subtest: J06·普通
+ok 274 - J06·普通
+  ---
+  duration_ms: 51.170959
+  ...
+# Subtest: J07·普通
+ok 275 - J07·普通
+  ---
+  duration_ms: 25.093166
+  ...
+# Subtest: J08·普通
+ok 276 - J08·普通
+  ---
+  duration_ms: 36.806917
+  ...
+# Subtest: 食堂闭店
+ok 277 - 食堂闭店
+  ---
+  duration_ms: 45.673
+  ...
+# Subtest: 歌手暂停后旅行
+ok 278 - 歌手暂停后旅行
+  ---
+  duration_ms: 28.736
+  ...
+# Subtest: 成家与开源
+ok 279 - 成家与开源
+  ---
+  duration_ms: 36.439208
+  ...
+# Subtest: 开源完成后继续找家
+ok 280 - 开源完成后继续找家
+  ---
+  duration_ms: 32.168416
+  ...
+# Subtest: 换岗后重拾站名簿
+ok 281 - 换岗后重拾站名簿
+  ---
+  duration_ms: 27.239458
+  ...
+# Subtest: 分别放下两件事
+ok 282 - 分别放下两件事
+  ---
+  duration_ms: 14.144834
+  ...
+# Subtest: 外科离岗再就业
+ok 283 - 外科离岗再就业
+  ---
+  duration_ms: 38.340416
+  ...
+# Subtest: 较早的一页
+ok 284 - 较早的一页
+  ---
+  duration_ms: 4.530666
+  ...
+# Subtest: 同前缀 X01
+ok 285 - 同前缀 X01
+  ---
+  duration_ms: 34.656791
+  ...
+# Subtest: 同前缀 X02
+ok 286 - 同前缀 X02
+  ---
+  duration_ms: 29.036625
+  ...
+# Subtest: 同前缀 X03
+ok 287 - 同前缀 X03
+  ---
+  duration_ms: 21.761292
+  ...
+# Subtest: 同前缀 X04
+ok 288 - 同前缀 X04
+  ---
+  duration_ms: 22.764416
+  ...
+# Subtest: 同前缀 X05
+ok 289 - 同前缀 X05
+  ---
+  duration_ms: 19.551458
+  ...
+# Subtest: 同前缀 X06
+ok 290 - 同前缀 X06
+  ---
+  duration_ms: 81.060667
+  ...
+# Subtest: 同前缀 X07
+ok 291 - 同前缀 X07
+  ---
+  duration_ms: 66.313792
+  ...
+# Subtest: 同前缀 X08
+ok 292 - 同前缀 X08
+  ---
+  duration_ms: 124.719
+  ...
+# Subtest: 同前缀 X09
+ok 293 - 同前缀 X09
+  ---
+  duration_ms: 86.571917
+  ...
+# Subtest: 同前缀 X10
+ok 294 - 同前缀 X10
+  ---
+  duration_ms: 79.647
+  ...
+# Subtest: 同前缀 X11
+ok 295 - 同前缀 X11
+  ---
+  duration_ms: 33.105917
+  ...
+# Subtest: 同前缀 X12
+ok 296 - 同前缀 X12
+  ---
+  duration_ms: 27.912041
+  ...
+# Subtest: 同前缀 X13
+ok 297 - 同前缀 X13
+  ---
+  duration_ms: 69.594792
+  ...
+# Subtest: 接触 1/11
+ok 298 - 接触 1/11
+  ---
+  duration_ms: 4.989792
+  ...
+# Subtest: 接触 1/12
+ok 299 - 接触 1/12
+  ---
+  duration_ms: 5.101584
+  ...
+# Subtest: 接触 1/25
+ok 300 - 接触 1/25
+  ---
+  duration_ms: 4.961375
+  ...
+# Subtest: 接触 1/29
+ok 301 - 接触 1/29
+  ---
+  duration_ms: 4.807834
+  ...
+# Subtest: 接触 1/30
+ok 302 - 接触 1/30
+  ---
+  duration_ms: 4.782167
+  ...
+# Subtest: 接触 1/01
+ok 303 - 接触 1/01
+  ---
+  duration_ms: 5.047
+  ...
+# Subtest: 接触 1/02
+ok 304 - 接触 1/02
+  ---
+  duration_ms: 4.710416
+  ...
+# Subtest: 接触 1/03
+ok 305 - 接触 1/03
+  ---
+  duration_ms: 4.840584
+  ...
+# Subtest: 接触 1/07
+ok 306 - 接触 1/07
+  ---
+  duration_ms: 4.902125
+  ...
+# Subtest: 接触 1/08
+ok 307 - 接触 1/08
+  ---
+  duration_ms: 5.102833
+  ...
+# Subtest: 接触 2/11
+ok 308 - 接触 2/11
+  ---
+  duration_ms: 4.865584
+  ...
+# Subtest: 接触 2/12
+ok 309 - 接触 2/12
+  ---
+  duration_ms: 5.076333
+  ...
+# Subtest: 接触 2/25
+ok 310 - 接触 2/25
+  ---
+  duration_ms: 4.863292
+  ...
+# Subtest: 接触 2/29
+ok 311 - 接触 2/29
+  ---
+  duration_ms: 5.111917
+  ...
+# Subtest: 接触 2/30
+ok 312 - 接触 2/30
+  ---
+  duration_ms: 5.094458
+  ...
+# Subtest: 接触 2/01
+ok 313 - 接触 2/01
+  ---
+  duration_ms: 5.580333
+  ...
+# Subtest: 接触 2/02
+ok 314 - 接触 2/02
+  ---
+  duration_ms: 5.301333
+  ...
+# Subtest: 接触 2/03
+ok 315 - 接触 2/03
+  ---
+  duration_ms: 4.791625
+  ...
+# Subtest: 接触 2/07
+ok 316 - 接触 2/07
+  ---
+  duration_ms: 5.008875
+  ...
+# Subtest: 接触 2/08
+ok 317 - 接触 2/08
+  ---
+  duration_ms: 5.353584
+  ...
+# Subtest: 接触 3/11
+ok 318 - 接触 3/11
+  ---
+  duration_ms: 5.214958
+  ...
+# Subtest: 接触 3/12
+ok 319 - 接触 3/12
+  ---
+  duration_ms: 5.157125
+  ...
+# Subtest: 接触 3/25
+ok 320 - 接触 3/25
+  ---
+  duration_ms: 5.298125
+  ...
+# Subtest: 接触 3/29
+ok 321 - 接触 3/29
+  ---
+  duration_ms: 5.094041
+  ...
+# Subtest: 接触 3/30
+ok 322 - 接触 3/30
+  ---
+  duration_ms: 5.012291
+  ...
+# Subtest: 接触 3/01
+ok 323 - 接触 3/01
+  ---
+  duration_ms: 5.115209
+  ...
+# Subtest: 接触 3/02
+ok 324 - 接触 3/02
+  ---
+  duration_ms: 5.004417
+  ...
+# Subtest: 接触 3/03
+ok 325 - 接触 3/03
+  ---
+  duration_ms: 4.779875
+  ...
+# Subtest: 接触 3/07
+ok 326 - 接触 3/07
+  ---
+  duration_ms: 5.221708
+  ...
+# Subtest: 接触 3/08
+ok 327 - 接触 3/08
+  ---
+  duration_ms: 4.816083
+  ...
+# Subtest: 接触 4/11
+ok 328 - 接触 4/11
+  ---
+  duration_ms: 4.976542
+  ...
+# Subtest: 接触 4/12
+ok 329 - 接触 4/12
+  ---
+  duration_ms: 4.801875
+  ...
+# Subtest: 接触 4/25
+ok 330 - 接触 4/25
+  ---
+  duration_ms: 4.980167
+  ...
+# Subtest: 接触 4/29
+ok 331 - 接触 4/29
+  ---
+  duration_ms: 5.025334
+  ...
+# Subtest: 接触 4/30
+ok 332 - 接触 4/30
+  ---
+  duration_ms: 5.202334
+  ...
+# Subtest: 接触 4/01
+ok 333 - 接触 4/01
+  ---
+  duration_ms: 6.28875
+  ...
+# Subtest: 接触 4/02
+ok 334 - 接触 4/02
+  ---
+  duration_ms: 7.349458
+  ...
+# Subtest: 接触 4/03
+ok 335 - 接触 4/03
+  ---
+  duration_ms: 4.77475
+  ...
+# Subtest: 接触 4/07
+ok 336 - 接触 4/07
+  ---
+  duration_ms: 5.054667
+  ...
+# Subtest: 接触 4/08
+ok 337 - 接触 4/08
+  ---
+  duration_ms: 4.99075
+  ...
+# Subtest: 接触 9/11
+ok 338 - 接触 9/11
+  ---
+  duration_ms: 4.838916
+  ...
+# Subtest: 接触 9/12
+ok 339 - 接触 9/12
+  ---
+  duration_ms: 4.9345
+  ...
+# Subtest: 接触 9/25
+ok 340 - 接触 9/25
+  ---
+  duration_ms: 4.982542
+  ...
+# Subtest: 接触 9/29
+ok 341 - 接触 9/29
+  ---
+  duration_ms: 4.854417
+  ...
+# Subtest: 接触 9/30
+ok 342 - 接触 9/30
+  ---
+  duration_ms: 4.874375
+  ...
+# Subtest: 接触 9/01
+ok 343 - 接触 9/01
+  ---
+  duration_ms: 4.937167
+  ...
+# Subtest: 接触 9/02
+ok 344 - 接触 9/02
+  ---
+  duration_ms: 5.057917
+  ...
+# Subtest: 接触 9/03
+ok 345 - 接触 9/03
+  ---
+  duration_ms: 4.233667
+  ...
+# Subtest: 接触 9/07
+ok 346 - 接触 9/07
+  ---
+  duration_ms: 4.325875
+  ...
+# Subtest: 接触 9/08
+ok 347 - 接触 9/08
+  ---
+  duration_ms: 4.601417
+  ...
+# Subtest: 接触 12/11
+ok 348 - 接触 12/11
+  ---
+  duration_ms: 4.217625
+  ...
+# Subtest: 接触 12/12
+ok 349 - 接触 12/12
+  ---
+  duration_ms: 4.188708
+  ...
+# Subtest: 接触 12/25
+ok 350 - 接触 12/25
+  ---
+  duration_ms: 4.174667
+  ...
+# Subtest: 接触 12/29
+ok 351 - 接触 12/29
+  ---
+  duration_ms: 4.141584
+  ...
+# Subtest: 接触 12/30
+ok 352 - 接触 12/30
+  ---
+  duration_ms: 4.199917
+  ...
+# Subtest: 接触 12/01
+ok 353 - 接触 12/01
+  ---
+  duration_ms: 4.284333
+  ...
+# Subtest: 接触 12/02
+ok 354 - 接触 12/02
+  ---
+  duration_ms: 4.23875
+  ...
+# Subtest: 接触 12/03
+ok 355 - 接触 12/03
+  ---
+  duration_ms: 3.838959
+  ...
+# Subtest: 接触 12/07
+ok 356 - 接触 12/07
+  ---
+  duration_ms: 4.090375
+  ...
+# Subtest: 接触 12/08
+ok 357 - 接触 12/08
+  ---
+  duration_ms: 4.263958
+  ...
+# Subtest: 履约后退款，已出库或报损原料不能再次交付
+ok 358 - 履约后退款，已出库或报损原料不能再次交付
+  ---
+  duration_ms: 49.704833
+  ...
+# Subtest: 转让余料、店款净额和尾薪各清一次，重新开业需重新付款
+ok 359 - 转让余料、店款净额和尾薪各清一次，重新开业需重新付款
+  ---
+  duration_ms: 35.695625
+  ...
+# Subtest: 清算资金不足无部分退款；结清后不能重复提取资金
+ok 360 - 清算资金不足无部分退款；结清后不能重复提取资金
+  ---
+  duration_ms: 48.643792
+  ...
+# Subtest: office 任职期间确立 11
+ok 361 - office 任职期间确立 11
+  ---
+  duration_ms: 9.480417
+  ...
+# Subtest: office 任职期间确立 12
+ok 362 - office 任职期间确立 12
+  ---
+  duration_ms: 9.455
+  ...
+# Subtest: office 任职期间确立 25
+ok 363 - office 任职期间确立 25
+  ---
+  duration_ms: 9.562
+  ...
+# Subtest: office 任职期间确立 29
+ok 364 - office 任职期间确立 29
+  ---
+  duration_ms: 9.225042
+  ...
+# Subtest: office 任职期间确立 30
+ok 365 - office 任职期间确立 30
+  ---
+  duration_ms: 8.880208
+  ...
+# Subtest: office 任职期间确立 01
+ok 366 - office 任职期间确立 01
+  ---
+  duration_ms: 9.02175
+  ...
+# Subtest: office 任职期间确立 02
+ok 367 - office 任职期间确立 02
+  ---
+  duration_ms: 7.295
+  ...
+# Subtest: office 任职期间确立 03
+ok 368 - office 任职期间确立 03
+  ---
+  duration_ms: 6.9945
+  ...
+# Subtest: office 任职期间确立 07
+ok 369 - office 任职期间确立 07
+  ---
+  duration_ms: 8.901458
+  ...
+# Subtest: office 任职期间确立 08
+ok 370 - office 任职期间确立 08
+  ---
+  duration_ms: 9.015209
+  ...
+# Subtest: factory 任职期间确立 11
+ok 371 - factory 任职期间确立 11
+  ---
+  duration_ms: 12.433666
+  ...
+# Subtest: factory 任职期间确立 12
+ok 372 - factory 任职期间确立 12
+  ---
+  duration_ms: 12.238667
+  ...
+# Subtest: factory 任职期间确立 25
+ok 373 - factory 任职期间确立 25
+  ---
+  duration_ms: 12.531167
+  ...
+# Subtest: factory 任职期间确立 29
+ok 374 - factory 任职期间确立 29
+  ---
+  duration_ms: 12.441958
+  ...
+# Subtest: factory 任职期间确立 30
+ok 375 - factory 任职期间确立 30
+  ---
+  duration_ms: 12.310708
+  ...
+# Subtest: factory 任职期间确立 01
+ok 376 - factory 任职期间确立 01
+  ---
+  duration_ms: 12.357083
+  ...
+# Subtest: factory 任职期间确立 02
+ok 377 - factory 任职期间确立 02
+  ---
+  duration_ms: 11.289292
+  ...
+# Subtest: factory 任职期间确立 03
+ok 378 - factory 任职期间确立 03
+  ---
+  duration_ms: 10.602417
+  ...
+# Subtest: factory 任职期间确立 07
+ok 379 - factory 任职期间确立 07
+  ---
+  duration_ms: 12.667458
+  ...
+# Subtest: factory 任职期间确立 08
+ok 380 - factory 任职期间确立 08
+  ---
+  duration_ms: 12.899875
+  ...
+# Subtest: delivery 任职期间确立 11
+ok 381 - delivery 任职期间确立 11
+  ---
+  duration_ms: 9.565583
+  ...
+# Subtest: delivery 任职期间确立 12
+ok 382 - delivery 任职期间确立 12
+  ---
+  duration_ms: 9.682791
+  ...
+# Subtest: delivery 任职期间确立 25
+ok 383 - delivery 任职期间确立 25
+  ---
+  duration_ms: 9.541959
+  ...
+# Subtest: delivery 任职期间确立 29
+ok 384 - delivery 任职期间确立 29
+  ---
+  duration_ms: 9.380917
+  ...
+# Subtest: delivery 任职期间确立 30
+ok 385 - delivery 任职期间确立 30
+  ---
+  duration_ms: 9.237042
+  ...
+# Subtest: delivery 任职期间确立 01
+ok 386 - delivery 任职期间确立 01
+  ---
+  duration_ms: 9.029208
+  ...
+# Subtest: delivery 任职期间确立 02
+ok 387 - delivery 任职期间确立 02
+  ---
+  duration_ms: 7.701417
+  ...
+# Subtest: delivery 任职期间确立 03
+ok 388 - delivery 任职期间确立 03
+  ---
+  duration_ms: 6.786166
+  ...
+# Subtest: delivery 任职期间确立 07
+ok 389 - delivery 任职期间确立 07
+  ---
+  duration_ms: 9.256166
+  ...
+# Subtest: delivery 任职期间确立 08
+ok 390 - delivery 任职期间确立 08
+  ---
+  duration_ms: 9.009041
+  ...
+# Subtest: vendor 任职期间确立 11
+ok 391 - vendor 任职期间确立 11
+  ---
+  duration_ms: 21.304209
+  ...
+# Subtest: vendor 任职期间确立 12
+ok 392 - vendor 任职期间确立 12
+  ---
+  duration_ms: 21.024625
+  ...
+# Subtest: vendor 任职期间确立 25
+ok 393 - vendor 任职期间确立 25
+  ---
+  duration_ms: 20.867667
+  ...
+# Subtest: vendor 任职期间确立 29
+ok 394 - vendor 任职期间确立 29
+  ---
+  duration_ms: 21.339
+  ...
+# Subtest: vendor 任职期间确立 30
+ok 395 - vendor 任职期间确立 30
+  ---
+  duration_ms: 21.601084
+  ...
+# Subtest: vendor 任职期间确立 01
+ok 396 - vendor 任职期间确立 01
+  ---
+  duration_ms: 21.49925
+  ...
+# Subtest: vendor 任职期间确立 02
+ok 397 - vendor 任职期间确立 02
+  ---
+  duration_ms: 20.33675
+  ...
+# Subtest: vendor 任职期间确立 03
+ok 398 - vendor 任职期间确立 03
+  ---
+  duration_ms: 20.221041
+  ...
+# Subtest: vendor 任职期间确立 07
+ok 399 - vendor 任职期间确立 07
+  ---
+  duration_ms: 22.073166
+  ...
+# Subtest: vendor 任职期间确立 08
+ok 400 - vendor 任职期间确立 08
+  ---
+  duration_ms: 20.888709
+  ...
+# Subtest: programmer 任职期间确立 11
+ok 401 - programmer 任职期间确立 11
+  ---
+  duration_ms: 17.208208
+  ...
+# Subtest: programmer 任职期间确立 12
+ok 402 - programmer 任职期间确立 12
+  ---
+  duration_ms: 16.772958
+  ...
+# Subtest: programmer 任职期间确立 25
+ok 403 - programmer 任职期间确立 25
+  ---
+  duration_ms: 17.622708
+  ...
+# Subtest: programmer 任职期间确立 29
+ok 404 - programmer 任职期间确立 29
+  ---
+  duration_ms: 17.296792
+  ...
+# Subtest: programmer 任职期间确立 30
+ok 405 - programmer 任职期间确立 30
+  ---
+  duration_ms: 17.265541
+  ...
+# Subtest: programmer 任职期间确立 01
+ok 406 - programmer 任职期间确立 01
+  ---
+  duration_ms: 16.593709
+  ...
+# Subtest: programmer 任职期间确立 02
+ok 407 - programmer 任职期间确立 02
+  ---
+  duration_ms: 17.31125
+  ...
+# Subtest: programmer 任职期间确立 03
+ok 408 - programmer 任职期间确立 03
+  ---
+  duration_ms: 15.00225
+  ...
+# Subtest: programmer 任职期间确立 07
+ok 409 - programmer 任职期间确立 07
+  ---
+  duration_ms: 16.8905
+  ...
+# Subtest: programmer 任职期间确立 08
+ok 410 - programmer 任职期间确立 08
+  ---
+  duration_ms: 16.701583
+  ...
+# Subtest: civil 任职期间确立 11
+ok 411 - civil 任职期间确立 11
+  ---
+  duration_ms: 23.54625
+  ...
+# Subtest: civil 任职期间确立 12
+ok 412 - civil 任职期间确立 12
+  ---
+  duration_ms: 23.156666
+  ...
+# Subtest: civil 任职期间确立 25
+ok 413 - civil 任职期间确立 25
+  ---
+  duration_ms: 23.492833
+  ...
+# Subtest: civil 任职期间确立 29
+ok 414 - civil 任职期间确立 29
+  ---
+  duration_ms: 23.111875
+  ...
+# Subtest: civil 任职期间确立 30
+ok 415 - civil 任职期间确立 30
+  ---
+  duration_ms: 23.082792
+  ...
+# Subtest: civil 任职期间确立 01
+ok 416 - civil 任职期间确立 01
+  ---
+  duration_ms: 22.928708
+  ...
+# Subtest: civil 任职期间确立 02
+ok 417 - civil 任职期间确立 02
+  ---
+  duration_ms: 20.949917
+  ...
+# Subtest: civil 任职期间确立 03
+ok 418 - civil 任职期间确立 03
+  ---
+  duration_ms: 20.486125
+  ...
+# Subtest: civil 任职期间确立 07
+ok 419 - civil 任职期间确立 07
+  ---
+  duration_ms: 23.246333
+  ...
+# Subtest: civil 任职期间确立 08
+ok 420 - civil 任职期间确立 08
+  ---
+  duration_ms: 23.570916
+  ...
+# Subtest: cook 任职期间确立 11
+ok 421 - cook 任职期间确立 11
+  ---
+  duration_ms: 10.999833
+  ...
+# Subtest: cook 任职期间确立 12
+ok 422 - cook 任职期间确立 12
+  ---
+  duration_ms: 10.935375
+  ...
+# Subtest: cook 任职期间确立 25
+ok 423 - cook 任职期间确立 25
+  ---
+  duration_ms: 11.060667
+  ...
+# Subtest: cook 任职期间确立 29
+ok 424 - cook 任职期间确立 29
+  ---
+  duration_ms: 11.061791
+  ...
+# Subtest: cook 任职期间确立 30
+ok 425 - cook 任职期间确立 30
+  ---
+  duration_ms: 11.010583
+  ...
+# Subtest: cook 任职期间确立 01
+ok 426 - cook 任职期间确立 01
+  ---
+  duration_ms: 11.175375
+  ...
+# Subtest: cook 任职期间确立 02
+ok 427 - cook 任职期间确立 02
+  ---
+  duration_ms: 9.199458
+  ...
+# Subtest: cook 任职期间确立 03
+ok 428 - cook 任职期间确立 03
+  ---
+  duration_ms: 8.920541
+  ...
+# Subtest: cook 任职期间确立 07
+ok 429 - cook 任职期间确立 07
+  ---
+  duration_ms: 11.005458
+  ...
+# Subtest: cook 任职期间确立 08
+ok 430 - cook 任职期间确立 08
+  ---
+  duration_ms: 10.899583
+  ...
+# Subtest: teacher 任职期间确立 11
+ok 431 - teacher 任职期间确立 11
+  ---
+  duration_ms: 18.002625
+  ...
+# Subtest: teacher 任职期间确立 12
+ok 432 - teacher 任职期间确立 12
+  ---
+  duration_ms: 17.809791
+  ...
+# Subtest: teacher 任职期间确立 25
+ok 433 - teacher 任职期间确立 25
+  ---
+  duration_ms: 18.230167
+  ...
+# Subtest: teacher 任职期间确立 29
+ok 434 - teacher 任职期间确立 29
+  ---
+  duration_ms: 17.800875
+  ...
+# Subtest: teacher 任职期间确立 30
+ok 435 - teacher 任职期间确立 30
+  ---
+  duration_ms: 17.937709
+  ...
+# Subtest: teacher 任职期间确立 01
+ok 436 - teacher 任职期间确立 01
+  ---
+  duration_ms: 18.045875
+  ...
+# Subtest: teacher 任职期间确立 02
+ok 437 - teacher 任职期间确立 02
+  ---
+  duration_ms: 16.142334
+  ...
+# Subtest: teacher 任职期间确立 03
+ok 438 - teacher 任职期间确立 03
+  ---
+  duration_ms: 16.239667
+  ...
+# Subtest: teacher 任职期间确立 07
+ok 439 - teacher 任职期间确立 07
+  ---
+  duration_ms: 18.470958
+  ...
+# Subtest: teacher 任职期间确立 08
+ok 440 - teacher 任职期间确立 08
+  ---
+  duration_ms: 17.874584
+  ...
+# Subtest: 明确谢绝、撤回和未见分别记录
+ok 441 - 明确谢绝、撤回和未见分别记录
+  ---
+  duration_ms: 7.343917
+  ...
+# Subtest: 有食堂待退预收时不能直接签新工作，原聘约与店账保持原值
+ok 442 - 有食堂待退预收时不能直接签新工作，原聘约与店账保持原值
+  ---
+  duration_ms: 22.358708
+  ...
+# Subtest: 既有房租优先预留，订票不能花同一笔钱
+ok 443 - 既有房租优先预留，订票不能花同一笔钱
+  ---
+  duration_ms: 23.155125
+  ...
+# Subtest: 两张预收回执分别交付与退款，不能重复核销同一桌
+ok 444 - 两张预收回执分别交付与退款，不能重复核销同一桌
+  ---
+  duration_ms: 36.889125
+  ...
+# Subtest: 食堂清算旧账重放及伪造退款的导入反例
+ok 445 - 食堂清算旧账重放及伪造退款的导入反例
+  ---
+  duration_ms: 37.897083
+  ...
+# Subtest: 赴乡后保留城南资料，不能在石桥当班时接城南的新班
+ok 446 - 赴乡后保留城南资料，不能在石桥当班时接城南的新班
+  ---
+  duration_ms: 26.518042
+  ...
+# Subtest: ice and automatic change
+ok 447 - ice and automatic change
+  ---
+  duration_ms: 4.31375
+  ...
+# Subtest: ice and explicit change
+ok 448 - ice and explicit change
+  ---
+  duration_ms: 1.114708
+  ...
+# Subtest: explicit change then ice
+ok 449 - explicit change then ice
+  ---
+  duration_ms: 94.324041
+  ...
+# Subtest: blocks
+ok 450 - blocks
+  ---
+  duration_ms: 0.8975
+  ...
+# Subtest: leave immediately
+ok 451 - leave immediately
+  ---
+  duration_ms: 0.898458
+  ...
+# Subtest: leave with partial reservation
+ok 452 - leave with partial reservation
+  ---
+  duration_ms: 0.641
+  ...
+# Subtest: leave with one coin saved
+ok 453 - leave with one coin saved
+  ---
+  duration_ms: 8.092541
+  ...
+# Subtest: both coins explicitly saved
+ok 454 - both coins explicitly saved
+  ---
+  duration_ms: 0.773708
+  ...
+# Subtest: undo a purchase and choose another item
+ok 455 - undo a purchase and choose another item
+  ---
+  duration_ms: 0.539083
+  ...
+# Subtest: the other 98 cards still settle through their existing choice
+ok 456 - the other 98 cards still settle through their existing choice
+  ---
+  duration_ms: 63.64525
+  ...
+1..456
+# tests 456
+# suites 0
+# pass 456
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 5865.899417

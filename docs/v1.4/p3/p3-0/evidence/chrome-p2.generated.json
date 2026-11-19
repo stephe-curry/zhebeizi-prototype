@@ -1,0 +1,5714 @@
+{
+  "screens": [
+    "shift-office-24",
+    "checked-office-24",
+    "shift-delivery-24",
+    "checked-delivery-24",
+    "shift-factory-24",
+    "checked-factory-24",
+    "collision-425",
+    "collision-474",
+    "old-build-at-72",
+    "collision-465",
+    "collision-473"
+  ],
+  "scenes": [
+    {
+      "slot": 1,
+      "event": "spring-envelope",
+      "id": "spring-envelope-box",
+      "seen": [],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 2,
+      "event": "school-yoyo",
+      "id": "school-yoyo-buy",
+      "seen": [
+        {
+          "id": "school-yoyo",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        1
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 3,
+      "event": "life-3",
+      "id": "life-3-2",
+      "seen": [],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 4,
+      "event": "life-4",
+      "id": "life-4-keep-eating",
+      "seen": [],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 6,
+      "event": "life-6",
+      "id": "life-6-0",
+      "seen": [],
+      "job": null,
+      "source": [
+        2
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 7,
+      "event": "life-7",
+      "id": "life-7-0",
+      "seen": [
+        {
+          "id": "life-7",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 9,
+      "event": "life-9",
+      "id": "life-9-0",
+      "seen": [
+        {
+          "id": "life-9",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 11,
+      "event": "life-11",
+      "id": "life-11-0",
+      "seen": [
+        {
+          "id": "life-11",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        9
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 13,
+      "event": "school-exam",
+      "id": "school-exam-0",
+      "seen": [
+        {
+          "id": "again-life-11-0",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        }
+      ],
+      "job": null,
+      "source": [
+        12
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 14,
+      "event": "life-14",
+      "id": "life-14-0",
+      "inspected": "backup-school",
+      "seen": [
+        {
+          "id": "life-14",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 16,
+      "event": "arena-club",
+      "id": "arena-club-0",
+      "seen": [
+        {
+          "id": "arena-club",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        11
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 18,
+      "event": "life-18",
+      "id": "life-18-0",
+      "seen": [],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 19,
+      "event": "indie-kit",
+      "id": "indie-kit-0",
+      "seen": [
+        {
+          "id": "indie-kit",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        10
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 20,
+      "event": "school-degree",
+      "id": "school-degree-0",
+      "seen": [],
+      "job": null,
+      "source": [
+        12,
+        18,
+        19
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 21,
+      "event": "life-21",
+      "id": "life-21-0",
+      "seen": [
+        {
+          "id": "life-21",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 23,
+      "event": "life-23",
+      "id": "life-23-0",
+      "seen": [
+        {
+          "id": "life-23",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-21-0",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        }
+      ],
+      "job": "office",
+      "source": [
+        21
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 24,
+      "event": "sanitation-24",
+      "id": "sanitation-24-0",
+      "seen": [
+        {
+          "id": "life-24",
+          "status": "expired",
+          "reason": "booked-other-appointment"
+        },
+        {
+          "id": "again-life-23-3",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 24,
+      "event": "life-24",
+      "id": "life-24-0",
+      "seen": [
+        {
+          "id": "life-24",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 26,
+      "event": "indie-weekend",
+      "id": "indie-weekend-0",
+      "seen": [
+        {
+          "id": "indie-weekend",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        10,
+        20,
+        22
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "sanitation-27",
+      "id": "sanitation-27-0",
+      "seen": [
+        {
+          "id": "life-27",
+          "status": "expired",
+          "reason": "booked-other-appointment"
+        },
+        {
+          "id": "sanitation-27",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        23,
+        24,
+        26
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "life-27",
+      "id": "life-27-0",
+      "seen": [
+        {
+          "id": "life-27",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        24,
+        26
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 28,
+      "event": "life-28",
+      "id": "life-28-0",
+      "seen": [
+        {
+          "id": "life-28",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 29,
+      "event": "chance-old-friend",
+      "id": "chance-old-friend-0",
+      "seen": [],
+      "job": "sanitation",
+      "source": [
+        17,
+        27
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 32,
+      "event": "sanitation-32",
+      "id": "sanitation-32-0",
+      "seen": [],
+      "job": "sanitation",
+      "source": [
+        23,
+        29
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 32,
+      "event": "life-32",
+      "id": "life-32-0",
+      "seen": [
+        {
+          "id": "life-32",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        29
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 33,
+      "event": "indie-budget",
+      "id": "indie-budget-0",
+      "seen": [
+        {
+          "id": "indie-budget",
+          "status": "resolved"
+        },
+        {
+          "id": "indie-budget-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        10,
+        20,
+        22,
+        26,
+        32
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 35,
+      "event": "indie-rights",
+      "id": "indie-rights-0",
+      "seen": [
+        {
+          "id": "indie-rights",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        33
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 36,
+      "event": "city-pivot",
+      "id": "city-pivot-0",
+      "seen": [
+        {
+          "id": "city-pivot",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 37,
+      "event": "sanitation-37",
+      "id": "sanitation-37-0",
+      "seen": [],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        23,
+        35
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 38,
+      "event": "active-recovery",
+      "id": "active-recovery-0",
+      "seen": [],
+      "low": "recovering",
+      "job": "sanitation",
+      "source": [
+        32,
+        22
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 39,
+      "event": "life-39",
+      "id": "life-39-0",
+      "seen": [
+        {
+          "id": "life-39",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        37
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 40,
+      "event": "life-40",
+      "id": "life-40-0",
+      "seen": [
+        {
+          "id": "life-40-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 41,
+      "event": "late-recovery",
+      "id": "late-recovery-0",
+      "seen": [],
+      "low": "recovering",
+      "job": "dispatcher",
+      "source": [
+        32,
+        38
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 43,
+      "event": "life-43",
+      "id": "life-43-0",
+      "seen": [
+        {
+          "id": "life-43",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 44,
+      "event": "life-44",
+      "id": "life-44-0",
+      "seen": [
+        {
+          "id": "life-44",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        22,
+        43
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "indie-memory",
+      "id": "indie-memory-0",
+      "seen": [
+        {
+          "id": "indie-memory",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        22,
+        33,
+        23,
+        44
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 46,
+      "event": "life-46",
+      "id": "life-46-0",
+      "seen": [
+        {
+          "id": "life-46",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        45
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 1,
+      "event": "life-1",
+      "id": "life-1-0",
+      "seen": [
+        {
+          "id": "life-1",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 2,
+      "event": "life-2",
+      "id": "life-2-0",
+      "seen": [
+        {
+          "id": "life-2",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 19,
+      "event": "life-19",
+      "id": "life-19-0",
+      "seen": [],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 23,
+      "event": "arena-offer",
+      "id": "arena-offer-0",
+      "seen": [],
+      "job": "player",
+      "source": [
+        11,
+        16,
+        21
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 29,
+      "event": "life-29",
+      "id": "life-29-0",
+      "seen": [
+        {
+          "id": "life-29",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 33,
+      "event": "life-33",
+      "id": "life-33-0",
+      "seen": [
+        {
+          "id": "life-33-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        32
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 35,
+      "event": "life-35",
+      "id": "life-35-0",
+      "seen": [
+        {
+          "id": "life-35",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        33
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "sanitation-45",
+      "id": "sanitation-45-0",
+      "seen": [],
+      "low": "resolved",
+      "job": "sanitation",
+      "source": [
+        23,
+        44
+      ],
+      "highlights": [
+        "sanitation"
+      ]
+    },
+    {
+      "slot": 8,
+      "event": "school-prep",
+      "id": "school-prep-0",
+      "seen": [
+        {
+          "id": "school-prep",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        7
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "school-sprint",
+      "id": "school-sprint-0",
+      "seen": [
+        {
+          "id": "again-life-4-keep-eating",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        }
+      ],
+      "job": null,
+      "source": [
+        7,
+        11
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 16,
+      "event": "life-16",
+      "id": "life-16-0",
+      "seen": [
+        {
+          "id": "life-16",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 24,
+      "event": "office-24",
+      "id": "office-24-0",
+      "inspected": "cost-center",
+      "seen": [
+        {
+          "id": "life-24",
+          "status": "expired",
+          "reason": "booked-other-appointment"
+        },
+        {
+          "id": "office-24",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "office-27",
+      "id": "office-27-0",
+      "seen": [],
+      "job": "office",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 32,
+      "event": "office-32",
+      "id": "office-32-0",
+      "seen": [
+        {
+          "id": "life-32",
+          "status": "expired",
+          "reason": "booked-other-appointment"
+        },
+        {
+          "id": "office-32",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 36,
+      "event": "office-pivot",
+      "id": "office-pivot-0",
+      "seen": [
+        {
+          "id": "office-pivot",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "office",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 37,
+      "event": "office-37",
+      "id": "office-37-0",
+      "seen": [
+        {
+          "id": "office-37",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "office",
+      "source": [
+        23,
+        35
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "office-45",
+      "id": "office-45-0",
+      "seen": [],
+      "low": "resolved",
+      "job": "office",
+      "source": [
+        23,
+        44
+      ],
+      "highlights": [
+        "office"
+      ]
+    },
+    {
+      "slot": 24,
+      "event": "delivery-24",
+      "id": "delivery-24-0",
+      "inspected": "river-detour",
+      "seen": [
+        {
+          "id": "life-24",
+          "status": "expired",
+          "reason": "booked-other-appointment"
+        },
+        {
+          "id": "delivery-24",
+          "status": "resolved"
+        }
+      ],
+      "job": "delivery",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "delivery-27",
+      "id": "delivery-27-0",
+      "seen": [],
+      "job": "delivery",
+      "source": [
+        23,
+        24,
+        26
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 32,
+      "event": "delivery-32",
+      "id": "delivery-32-0",
+      "seen": [],
+      "job": "delivery",
+      "source": [
+        23,
+        29
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 36,
+      "event": "rain-shift",
+      "id": "rain-shift-0",
+      "seen": [
+        {
+          "id": "rain-shift",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "delivery",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 37,
+      "event": "delivery-37",
+      "id": "delivery-37-0",
+      "seen": [],
+      "low": "active",
+      "job": "delivery",
+      "source": [
+        23,
+        35,
+        36
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "delivery-45",
+      "id": "delivery-45-0",
+      "seen": [
+        {
+          "id": "delivery-45",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        23,
+        38,
+        1,
+        44
+      ],
+      "highlights": [
+        "delivery"
+      ]
+    },
+    {
+      "slot": 24,
+      "event": "factory-24",
+      "id": "factory-24-0",
+      "inspected": "missing-socket",
+      "seen": [
+        {
+          "id": "life-24",
+          "status": "expired",
+          "reason": "booked-other-appointment"
+        },
+        {
+          "id": "factory-24",
+          "status": "resolved"
+        }
+      ],
+      "job": "factory",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "factory-27",
+      "id": "factory-27-0",
+      "seen": [],
+      "job": "factory",
+      "source": [
+        23,
+        24,
+        26
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 32,
+      "event": "factory-32",
+      "id": "factory-32-0",
+      "seen": [
+        {
+          "id": "life-32",
+          "status": "expired",
+          "reason": "booked-other-appointment"
+        },
+        {
+          "id": "factory-32",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "factory",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 36,
+      "event": "factory-pivot",
+      "id": "factory-pivot-0",
+      "seen": [
+        {
+          "id": "factory-pivot",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "factory",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 37,
+      "event": "factory-37",
+      "id": "factory-37-0",
+      "seen": [
+        {
+          "id": "factory-37",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "factory",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 39,
+      "event": "indie-launch",
+      "id": "indie-launch-0",
+      "inspected": "known-issue",
+      "seen": [
+        {
+          "id": "indie-launch-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "recovering",
+      "job": "factory",
+      "source": [
+        33,
+        37,
+        36,
+        35
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "factory-45",
+      "id": "factory-45-0",
+      "seen": [],
+      "low": "resolved",
+      "job": "factory",
+      "source": [
+        23,
+        44
+      ],
+      "highlights": [
+        "factory"
+      ]
+    },
+    {
+      "slot": 38,
+      "event": "life-38",
+      "id": "life-38-0",
+      "seen": [],
+      "job": "factory",
+      "source": [
+        28,
+        36
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 13,
+      "event": "life-13",
+      "id": "life-13-0",
+      "seen": [],
+      "job": null,
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 20,
+      "event": "life-20",
+      "id": "life-20-0",
+      "seen": [],
+      "job": null,
+      "source": [
+        19
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 15,
+      "event": "school-result",
+      "id": "school-result-0",
+      "seen": [
+        {
+          "id": "again-life-14-0",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        }
+      ],
+      "job": null,
+      "source": [
+        7,
+        14,
+        13
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 37,
+      "event": "delivery-routine",
+      "id": "delivery-routine-0",
+      "seen": [],
+      "job": "delivery",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "life-45",
+      "id": "life-45-0",
+      "seen": [
+        {
+          "id": "life-45",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 42,
+      "event": "indie-feedback",
+      "id": "indie-feedback-0",
+      "seen": [],
+      "low": "recovering",
+      "job": "dispatcher",
+      "source": [
+        33,
+        39,
+        1,
+        41,
+        36
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 24,
+      "event": "arena-start",
+      "id": "arena-start-0",
+      "seen": [
+        {
+          "id": "arena-start",
+          "status": "resolved"
+        }
+      ],
+      "job": "player",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "arena-lineup",
+      "id": "arena-lineup-0",
+      "seen": [],
+      "job": "player",
+      "source": [
+        23,
+        24,
+        26
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 32,
+      "event": "arena-injury",
+      "id": "arena-injury-0",
+      "seen": [],
+      "job": "player",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 36,
+      "event": "arena-tactics",
+      "id": "arena-tactics-0",
+      "seen": [
+        {
+          "id": "life-36",
+          "status": "expired",
+          "reason": "booked-other-appointment"
+        },
+        {
+          "id": "arena-tactics",
+          "status": "resolved"
+        }
+      ],
+      "job": "player",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 36,
+      "event": "life-36",
+      "id": "life-36-0",
+      "seen": [
+        {
+          "id": "life-36",
+          "status": "resolved"
+        },
+        {
+          "id": "arena-tactics",
+          "status": "expired",
+          "reason": "booked-other-appointment"
+        }
+      ],
+      "job": "player",
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 39,
+      "event": "arena-final",
+      "id": "arena-final-0",
+      "inspected": "right-support",
+      "seen": [
+        {
+          "id": "arena-final-0",
+          "status": "resolved"
+        },
+        {
+          "id": "arena-final-1",
+          "status": "declined",
+          "reason": "chose-alternative"
+        }
+      ],
+      "job": "player",
+      "source": [
+        23,
+        36
+      ],
+      "highlights": [
+        "world"
+      ]
+    },
+    {
+      "slot": 40,
+      "event": "arena-retire",
+      "id": "arena-retire-0",
+      "seen": [],
+      "job": "office",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "arena-quiet",
+      "id": "arena-quiet-0",
+      "seen": [],
+      "job": "office",
+      "source": [
+        23,
+        40,
+        2
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 43,
+      "event": "early-diagnosis",
+      "id": "early-diagnosis-0",
+      "seen": [],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [],
+      "highlights": []
+    },
+    {
+      "slot": 44,
+      "event": "early-goodbye",
+      "id": "early-goodbye-0",
+      "seen": [],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        43
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 41,
+      "event": "indie-second-desk",
+      "id": "indie-second-desk-0",
+      "seen": [
+        {
+          "id": "indie-second-desk",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        23,
+        40,
+        38
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 44,
+      "event": "indie-second-launch",
+      "id": "indie-second-launch-0",
+      "seen": [
+        {
+          "id": "indie-second-launch",
+          "status": "resolved"
+        },
+        {
+          "id": "indie-second-launch-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        41,
+        2
+      ],
+      "highlights": [
+        "published"
+      ]
+    }
+  ],
+  "routes": [
+    [
+      {
+        "slot": 1,
+        "event": "spring-envelope",
+        "id": "spring-envelope-box",
+        "seen": [
+          {
+            "id": "spring-envelope",
+            "status": "resolved"
+          }
+        ],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 2,
+        "event": "school-yoyo",
+        "id": "school-yoyo-buy",
+        "seen": [],
+        "job": null,
+        "source": [
+          1
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 3,
+        "event": "life-3",
+        "id": "life-3-2",
+        "seen": [
+          {
+            "id": "life-3",
+            "status": "resolved"
+          }
+        ],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 4,
+        "event": "life-4",
+        "id": "life-4-keep-eating",
+        "seen": [],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 5,
+        "event": "life-5",
+        "id": "life-5-0",
+        "seen": [],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 6,
+        "event": "life-6",
+        "id": "life-6-yoyo",
+        "seen": [
+          {
+            "id": "life-6-yoyo",
+            "status": "resolved"
+          }
+        ],
+        "job": null,
+        "source": [
+          2
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 7,
+        "event": "life-7",
+        "id": "life-7-2",
+        "seen": [],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 8,
+        "event": "life-8",
+        "id": "life-8-1",
+        "seen": [],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 9,
+        "event": "life-9",
+        "id": "life-9-2",
+        "seen": [
+          {
+            "id": "life-9",
+            "status": "resolved"
+          }
+        ],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 10,
+        "event": "life-10",
+        "id": "life-10-1",
+        "seen": [],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 11,
+        "event": "life-11",
+        "id": "life-11-0",
+        "seen": [],
+        "job": null,
+        "source": [
+          9
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 12,
+        "event": "life-12",
+        "id": "life-12-0",
+        "seen": [],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 13,
+        "event": "school-exam",
+        "id": "school-exam-1",
+        "seen": [],
+        "job": null,
+        "source": [
+          12
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 14,
+        "event": "life-14",
+        "id": "life-14-2",
+        "seen": [
+          {
+            "id": "life-14",
+            "status": "resolved"
+          }
+        ],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 15,
+        "event": "life-15",
+        "id": "life-15-2",
+        "followup": "again-life-14-2",
+        "seen": [
+          {
+            "id": "again-life-14-2",
+            "status": "resolved"
+          }
+        ],
+        "job": null,
+        "source": [
+          14,
+          13
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 16,
+        "event": "arena-club",
+        "id": "arena-club-2",
+        "seen": [],
+        "job": null,
+        "source": [
+          11
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 17,
+        "event": "life-17",
+        "id": "life-17-1",
+        "seen": [
+          {
+            "id": "life-17",
+            "status": "resolved"
+          }
+        ],
+        "job": null,
+        "source": [
+          16
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 18,
+        "event": "life-18",
+        "id": "life-18-1",
+        "seen": [],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 19,
+        "event": "indie-kit",
+        "id": "indie-kit-2",
+        "seen": [],
+        "job": null,
+        "source": [
+          10
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 20,
+        "event": "school-degree",
+        "id": "school-degree-0",
+        "seen": [],
+        "job": null,
+        "source": [
+          12,
+          18,
+          19
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 21,
+        "event": "life-21",
+        "id": "life-21-0",
+        "seen": [],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 22,
+        "event": "life-22",
+        "id": "life-22-1",
+        "seen": [],
+        "job": null,
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 23,
+        "event": "life-23",
+        "id": "life-23-0",
+        "seen": [],
+        "job": "office",
+        "source": [
+          21
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 24,
+        "event": "office-24",
+        "id": "office-24-0",
+        "inspected": "cost-center",
+        "seen": [],
+        "job": "office",
+        "source": [
+          23
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 25,
+        "event": "life-25",
+        "id": "life-25-2",
+        "seen": [],
+        "job": "office",
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 26,
+        "event": "indie-weekend",
+        "id": "indie-weekend-1",
+        "seen": [],
+        "job": "office",
+        "source": [
+          10,
+          20,
+          22
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 27,
+        "event": "office-27",
+        "id": "office-27-1",
+        "seen": [],
+        "job": "office",
+        "source": [
+          23,
+          26
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 28,
+        "event": "life-28",
+        "id": "life-28-0",
+        "seen": [
+          {
+            "id": "life-28",
+            "status": "resolved"
+          }
+        ],
+        "job": "office",
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 29,
+        "event": "chance-old-friend",
+        "id": "chance-old-friend-1",
+        "seen": [],
+        "job": "office",
+        "source": [
+          17,
+          27
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 30,
+        "event": "life-30",
+        "id": "life-30-1",
+        "seen": [
+          {
+            "id": "life-30",
+            "status": "resolved"
+          }
+        ],
+        "job": "office",
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 31,
+        "event": "life-31",
+        "id": "life-31-2",
+        "seen": [],
+        "job": "office",
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 32,
+        "event": "office-32",
+        "id": "office-32-1",
+        "seen": [],
+        "job": "office",
+        "source": [
+          23,
+          29
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 33,
+        "event": "indie-budget",
+        "id": "indie-budget-1",
+        "seen": [
+          {
+            "id": "indie-budget",
+            "status": "resolved"
+          },
+          {
+            "id": "indie-budget-0",
+            "status": "expired"
+          },
+          {
+            "id": "indie-budget-1",
+            "status": "resolved"
+          }
+        ],
+        "job": "office",
+        "source": [
+          10,
+          20,
+          22,
+          26,
+          32
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 34,
+        "event": "life-34",
+        "id": "life-34-2",
+        "seen": [],
+        "job": "office",
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 35,
+        "event": "indie-rights",
+        "id": "indie-rights-2",
+        "seen": [],
+        "job": "office",
+        "source": [
+          33
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 36,
+        "event": "office-pivot",
+        "id": "office-pivot-0",
+        "seen": [],
+        "low": "active",
+        "job": "office",
+        "source": [
+          23
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 37,
+        "event": "office-37",
+        "id": "office-37-2",
+        "seen": [],
+        "low": "active",
+        "job": "office",
+        "source": [
+          23,
+          35
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 38,
+        "event": "active-recovery",
+        "id": "active-recovery-wait",
+        "seen": [
+          {
+            "id": "again-life-28-0",
+            "status": "expired",
+            "reason": "seen-not-taken"
+          },
+          {
+            "id": "again-office-pivot-0",
+            "status": "expired",
+            "reason": "seen-not-taken"
+          }
+        ],
+        "low": "active",
+        "job": "office",
+        "source": [
+          36,
+          22
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 39,
+        "event": "life-39",
+        "id": "life-39-0",
+        "seen": [],
+        "low": "active",
+        "job": "office",
+        "source": [
+          37
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 40,
+        "event": "life-40",
+        "id": "life-40-1",
+        "seen": [
+          {
+            "id": "life-40-1",
+            "status": "resolved"
+          }
+        ],
+        "low": "active",
+        "job": "dispatcher",
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 41,
+        "event": "late-recovery",
+        "id": "late-recovery-1",
+        "seen": [],
+        "low": "recovering",
+        "job": "dispatcher",
+        "source": [
+          36,
+          38
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 42,
+        "event": "life-42",
+        "id": "life-42-0",
+        "seen": [],
+        "low": "recovering",
+        "job": "dispatcher",
+        "source": [
+          10,
+          41,
+          36
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 43,
+        "event": "life-43",
+        "id": "life-43-1",
+        "seen": [],
+        "low": "resolved",
+        "job": "dispatcher",
+        "source": [],
+        "highlights": []
+      },
+      {
+        "slot": 44,
+        "event": "life-44",
+        "id": "life-44-1",
+        "seen": [],
+        "low": "resolved",
+        "job": "dispatcher",
+        "source": [
+          11,
+          22,
+          43
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 45,
+        "event": "indie-memory",
+        "id": "indie-memory-1",
+        "seen": [],
+        "low": "resolved",
+        "job": "dispatcher",
+        "source": [
+          22,
+          33,
+          23,
+          44
+        ],
+        "highlights": []
+      },
+      {
+        "slot": 46,
+        "event": "life-46",
+        "id": "life-46-2",
+        "seen": [
+          {
+            "id": "life-46",
+            "status": "resolved"
+          }
+        ],
+        "low": "resolved",
+        "job": "dispatcher",
+        "source": [
+          45
+        ],
+        "highlights": []
+      }
+    ],
+    [
+      {
+        "slot": 39,
+        "event": "indie-launch",
+        "id": "indie-launch-0",
+        "seen": [
+          {
+            "id": "arena-final",
+            "status": "expired",
+            "reason": "booked-other-appointment"
+          },
+          {
+            "id": "indie-launch",
+            "status": "resolved"
+          },
+          {
+            "id": "indie-launch-0",
+            "status": "resolved"
+          }
+        ],
+        "job": "player",
+        "source": [
+          33,
+          36,
+          35
+        ],
+        "highlights": []
+      }
+    ],
+    [
+      {
+        "slot": 39,
+        "event": "indie-launch",
+        "id": "indie-launch-1",
+        "seen": [
+          {
+            "id": "arena-final",
+            "status": "expired",
+            "reason": "booked-other-appointment"
+          },
+          {
+            "id": "indie-launch",
+            "status": "resolved"
+          },
+          {
+            "id": "indie-launch-1",
+            "status": "resolved"
+          }
+        ],
+        "job": "player",
+        "source": [
+          33,
+          36,
+          35
+        ],
+        "highlights": [
+          "published"
+        ]
+      }
+    ],
+    [
+      {
+        "slot": 39,
+        "event": "arena-final",
+        "id": "arena-final-2",
+        "seen": [
+          {
+            "id": "arena-final",
+            "status": "declined",
+            "reason": "explicit-opt-out"
+          },
+          {
+            "id": "arena-final-2",
+            "status": "resolved"
+          }
+        ],
+        "job": "player",
+        "source": [
+          23,
+          36
+        ],
+        "highlights": []
+      }
+    ],
+    [
+      {
+        "slot": 45,
+        "event": "office-45",
+        "id": "office-45-0",
+        "seen": [
+          {
+            "id": "office-45",
+            "status": "resolved"
+          },
+          {
+            "id": "arena-quiet",
+            "status": "expired",
+            "reason": "booked-other-appointment"
+          },
+          {
+            "id": "again-life-44-0",
+            "status": "expired",
+            "reason": "seen-not-taken"
+          }
+        ],
+        "job": "office",
+        "source": [
+          40,
+          42
+        ],
+        "highlights": [
+          "office"
+        ]
+      },
+      {
+        "slot": 46,
+        "event": "life-46",
+        "id": "life-46-1",
+        "followup": "again-indie-memory",
+        "seen": [
+          {
+            "id": "life-46",
+            "status": "resolved"
+          },
+          {
+            "id": "again-office-45-0",
+            "status": "expired",
+            "reason": "seen-not-taken"
+          },
+          {
+            "id": "again-indie-memory",
+            "status": "resolved"
+          }
+        ],
+        "job": "office",
+        "source": [
+          33,
+          45
+        ],
+        "highlights": []
+      }
+    ],
+    [
+      {
+        "slot": 37,
+        "event": "delivery-37",
+        "id": "delivery-37-0",
+        "seen": [
+          {
+            "id": "delivery-37",
+            "status": "resolved"
+          },
+          {
+            "id": "delivery-routine",
+            "status": "expired",
+            "reason": "booked-other-appointment"
+          }
+        ],
+        "job": "delivery",
+        "source": [
+          23,
+          35,
+          36
+        ],
+        "highlights": []
+      }
+    ],
+    [
+      {
+        "slot": 45,
+        "event": "factory-45",
+        "id": "factory-45-0",
+        "seen": [
+          {
+            "id": "factory-45",
+            "status": "resolved"
+          },
+          {
+            "id": "indie-memory",
+            "status": "deferred",
+            "reason": "booked-other-appointment"
+          },
+          {
+            "id": "again-life-44-0",
+            "status": "expired",
+            "reason": "seen-not-taken"
+          }
+        ],
+        "job": "factory",
+        "source": [
+          23
+        ],
+        "highlights": [
+          "factory"
+        ]
+      },
+      {
+        "slot": 46,
+        "event": "life-46",
+        "id": "life-46-1",
+        "followup": "again-indie-memory",
+        "seen": [
+          {
+            "id": "life-46",
+            "status": "resolved"
+          },
+          {
+            "id": "again-factory-45-0",
+            "status": "expired",
+            "reason": "seen-not-taken"
+          },
+          {
+            "id": "again-indie-memory",
+            "status": "resolved"
+          }
+        ],
+        "job": "factory",
+        "source": [
+          19,
+          33,
+          45
+        ],
+        "highlights": []
+      }
+    ]
+  ],
+  "responses": [
+    {
+      "slot": 5,
+      "event": "life-5",
+      "id": "life-5-0",
+      "followup": "again-life-3-0",
+      "seen": [
+        {
+          "id": "again-life-3-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        3
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 5,
+      "event": "life-5",
+      "id": "life-5-0",
+      "followup": "again-life-3-1",
+      "seen": [
+        {
+          "id": "life-5",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-3-1",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        3
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 5,
+      "event": "life-5",
+      "id": "life-5-0",
+      "followup": "again-life-3-2",
+      "seen": [
+        {
+          "id": "life-5",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-3-2",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        3
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-0",
+      "seen": [
+        {
+          "id": "life-12",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-4-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-1",
+      "seen": [
+        {
+          "id": "again-life-4-1",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-2",
+      "seen": [
+        {
+          "id": "again-life-4-2",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-turn",
+      "seen": [
+        {
+          "id": "life-12",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-4-turn",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-reply",
+      "seen": [
+        {
+          "id": "again-life-4-reply",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-ask",
+      "seen": [
+        {
+          "id": "life-12",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-4-ask",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-humor",
+      "seen": [
+        {
+          "id": "again-life-4-humor",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-story",
+      "seen": [
+        {
+          "id": "life-12",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-4-story",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-quiet",
+      "seen": [
+        {
+          "id": "again-life-4-quiet",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-save-fish",
+      "seen": [
+        {
+          "id": "life-12",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-4-save-fish",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-eat-fish",
+      "seen": [
+        {
+          "id": "life-12",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-4-eat-fish",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 12,
+      "event": "life-12",
+      "id": "life-12-0",
+      "followup": "again-life-4-keep-eating",
+      "seen": [
+        {
+          "id": "life-12",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-4-keep-eating",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        4
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 10,
+      "event": "life-10",
+      "id": "life-10-1",
+      "followup": "again-life-6-0",
+      "seen": [
+        {
+          "id": "again-life-6-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        6
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 10,
+      "event": "life-10",
+      "id": "life-10-1",
+      "followup": "again-life-6-1",
+      "seen": [
+        {
+          "id": "again-life-6-1",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        6
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 10,
+      "event": "life-10",
+      "id": "life-10-1",
+      "followup": "again-life-6-2",
+      "seen": [
+        {
+          "id": "life-10",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-6-2",
+          "status": "resolved"
+        },
+        {
+          "id": "again-school-yoyo-buy",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        }
+      ],
+      "job": null,
+      "source": [
+        6
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 10,
+      "event": "life-10",
+      "id": "life-10-1",
+      "followup": "again-life-6-yoyo",
+      "seen": [
+        {
+          "id": "life-10",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-6-yoyo",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        6
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 10,
+      "event": "life-10",
+      "id": "life-10-2",
+      "followup": "again-life-6-shuttlecocks",
+      "seen": [
+        {
+          "id": "life-10",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-6-shuttlecocks",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        6
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 15,
+      "event": "school-result",
+      "id": "school-result-2",
+      "followup": "again-life-14-0",
+      "seen": [
+        {
+          "id": "again-life-14-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        12,
+        14,
+        13
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 15,
+      "event": "life-15",
+      "id": "life-15-2",
+      "followup": "again-life-14-1",
+      "seen": [
+        {
+          "id": "life-15",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-14-1",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        14,
+        13
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 15,
+      "event": "life-15",
+      "id": "life-15-2",
+      "followup": "again-life-14-2",
+      "seen": [
+        {
+          "id": "life-15",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-14-2",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        14,
+        13
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 17,
+      "event": "life-17",
+      "id": "life-17-0",
+      "followup": "again-school-result-0",
+      "seen": [
+        {
+          "id": "again-school-result-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        15,
+        16
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 17,
+      "event": "life-17",
+      "id": "life-17-0",
+      "followup": "again-school-result-1",
+      "seen": [
+        {
+          "id": "life-17",
+          "status": "resolved"
+        },
+        {
+          "id": "again-school-result-1",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        15,
+        16
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 17,
+      "event": "life-17",
+      "id": "life-17-0",
+      "followup": "again-school-result-2",
+      "seen": [
+        {
+          "id": "life-17",
+          "status": "resolved"
+        },
+        {
+          "id": "again-school-result-2",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        15,
+        16
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 24,
+      "event": "office-24",
+      "id": "office-24-1",
+      "followup": "again-life-23-0",
+      "seen": [
+        {
+          "id": "again-life-23-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 24,
+      "event": "factory-24",
+      "id": "factory-24-1",
+      "followup": "again-life-23-1",
+      "seen": [
+        {
+          "id": "again-life-23-1",
+          "status": "resolved"
+        }
+      ],
+      "job": "factory",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 24,
+      "event": "delivery-24",
+      "id": "delivery-24-1",
+      "followup": "again-life-23-2",
+      "seen": [
+        {
+          "id": "again-life-23-2",
+          "status": "resolved"
+        }
+      ],
+      "job": "delivery",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 24,
+      "event": "sanitation-24",
+      "id": "sanitation-24-1",
+      "followup": "again-life-23-3",
+      "seen": [
+        {
+          "id": "again-life-23-3",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 35,
+      "event": "life-35",
+      "id": "life-35-2",
+      "followup": "again-life-33-0",
+      "seen": [
+        {
+          "id": "life-35",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-33-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        33
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 35,
+      "event": "indie-rights",
+      "id": "indie-rights-2",
+      "followup": "again-life-33-1",
+      "seen": [
+        {
+          "id": "indie-rights",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-33-1",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        33
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 35,
+      "event": "life-35",
+      "id": "life-35-2",
+      "followup": "again-life-33-2",
+      "seen": [
+        {
+          "id": "life-35",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-33-2",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        33
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 37,
+      "event": "life-37",
+      "id": "life-37-0",
+      "followup": "again-life-36-0",
+      "seen": [
+        {
+          "id": "life-37",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-36-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "player",
+      "source": [
+        36,
+        35
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 37,
+      "event": "life-37",
+      "id": "life-37-0",
+      "followup": "again-life-36-1",
+      "seen": [
+        {
+          "id": "life-37",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-36-1",
+          "status": "resolved"
+        }
+      ],
+      "job": "player",
+      "source": [
+        36,
+        35
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 37,
+      "event": "life-37",
+      "id": "life-37-0",
+      "followup": "again-life-36-2",
+      "seen": [
+        {
+          "id": "life-37",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-36-2",
+          "status": "resolved"
+        }
+      ],
+      "job": "player",
+      "source": [
+        36,
+        35
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 40,
+      "event": "arena-retire",
+      "id": "arena-retire-0",
+      "followup": "again-arena-final-0",
+      "seen": [
+        {
+          "id": "again-arena-final-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        23,
+        39
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 40,
+      "event": "arena-retire",
+      "id": "arena-retire-0",
+      "followup": "again-arena-final-1",
+      "seen": [
+        {
+          "id": "arena-retire",
+          "status": "resolved"
+        },
+        {
+          "id": "again-arena-final-1",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        23,
+        39
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 40,
+      "event": "arena-retire",
+      "id": "arena-retire-0",
+      "followup": "again-arena-final-2",
+      "seen": [
+        {
+          "id": "arena-retire",
+          "status": "resolved"
+        },
+        {
+          "id": "again-arena-final-2",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        23,
+        39
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 42,
+      "event": "life-42",
+      "id": "life-42-0",
+      "followup": "again-indie-launch-0",
+      "seen": [
+        {
+          "id": "again-indie-launch-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "factory",
+      "source": [
+        39,
+        7
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 42,
+      "event": "indie-feedback",
+      "id": "indie-feedback-0",
+      "followup": "again-indie-launch-1",
+      "seen": [
+        {
+          "id": "indie-feedback",
+          "status": "resolved"
+        },
+        {
+          "id": "again-indie-launch-1",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "factory",
+      "source": [
+        33,
+        39,
+        7
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 42,
+      "event": "life-42",
+      "id": "life-42-0",
+      "followup": "again-indie-launch-2",
+      "seen": [
+        {
+          "id": "life-42",
+          "status": "resolved"
+        },
+        {
+          "id": "again-indie-launch-2",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "factory",
+      "source": [
+        39,
+        7
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 41,
+      "event": "late-recovery",
+      "id": "late-recovery-1",
+      "followup": "again-life-40-0",
+      "seen": [
+        {
+          "id": "again-life-40-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "recovering",
+      "job": "sanitation",
+      "source": [
+        32,
+        38,
+        40
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 41,
+      "event": "late-recovery",
+      "id": "late-recovery-1",
+      "followup": "again-life-40-1",
+      "seen": [
+        {
+          "id": "again-life-40-1",
+          "status": "resolved"
+        }
+      ],
+      "low": "recovering",
+      "job": "dispatcher",
+      "source": [
+        32,
+        38,
+        40
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 41,
+      "event": "late-recovery",
+      "id": "late-recovery-1",
+      "followup": "again-life-40-2",
+      "seen": [
+        {
+          "id": "again-life-40-2",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-39-0",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        }
+      ],
+      "low": "recovering",
+      "job": "sanitation",
+      "source": [
+        32,
+        38,
+        40
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 5,
+      "event": "life-5",
+      "id": "life-5-1",
+      "followup": "again-life-1-0",
+      "seen": [
+        {
+          "id": "again-life-1-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        1
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 7,
+      "event": "life-7",
+      "id": "life-7-2",
+      "followup": "again-life-2-0",
+      "seen": [
+        {
+          "id": "life-7",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-2-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        2
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 8,
+      "event": "school-prep",
+      "id": "school-prep-1",
+      "followup": "again-life-7-0",
+      "seen": [
+        {
+          "id": "again-life-7-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        7
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 9,
+      "event": "life-9",
+      "id": "life-9-2",
+      "followup": "again-school-prep-0",
+      "seen": [
+        {
+          "id": "again-school-prep-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        8
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 11,
+      "event": "life-11",
+      "id": "life-11-0",
+      "followup": "again-life-9-0",
+      "seen": [
+        {
+          "id": "again-life-9-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        9
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 13,
+      "event": "school-exam",
+      "id": "school-exam-1",
+      "followup": "again-life-11-0",
+      "seen": [
+        {
+          "id": "school-exam",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-11-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        12,
+        11
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 13,
+      "event": "school-exam",
+      "id": "school-exam-2",
+      "followup": "again-school-sprint-0",
+      "seen": [
+        {
+          "id": "again-school-sprint-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        7,
+        11,
+        12
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 15,
+      "event": "life-15",
+      "id": "life-15-1",
+      "followup": "again-life-13-0",
+      "seen": [
+        {
+          "id": "life-15",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-14-2",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        },
+        {
+          "id": "again-life-13-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        13
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 15,
+      "event": "life-15",
+      "id": "life-15-2",
+      "followup": "again-school-exam-0",
+      "seen": [
+        {
+          "id": "life-15",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-14-1",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        },
+        {
+          "id": "again-school-exam-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        13
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 17,
+      "event": "life-17",
+      "id": "life-17-2",
+      "followup": "again-life-16-0",
+      "seen": [
+        {
+          "id": "life-17",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-16-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        16
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 17,
+      "event": "life-17",
+      "id": "life-17-1",
+      "followup": "again-arena-club-0",
+      "seen": [
+        {
+          "id": "life-17",
+          "status": "resolved"
+        },
+        {
+          "id": "again-arena-club-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        16
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 20,
+      "event": "school-degree",
+      "id": "school-degree-0",
+      "followup": "again-life-18-0",
+      "seen": [
+        {
+          "id": "again-life-18-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        12,
+        18,
+        19
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 20,
+      "event": "school-degree",
+      "id": "school-degree-1",
+      "followup": "again-life-19-0",
+      "seen": [
+        {
+          "id": "again-life-19-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        12,
+        19,
+        18
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 20,
+      "event": "school-degree",
+      "id": "school-degree-0",
+      "followup": "again-indie-kit-0",
+      "seen": [
+        {
+          "id": "again-indie-kit-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        12,
+        19,
+        18
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 21,
+      "event": "life-21",
+      "id": "life-21-0",
+      "followup": "again-life-20-0",
+      "seen": [
+        {
+          "id": "life-21",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-20-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        20
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 21,
+      "event": "life-21",
+      "id": "life-21-0",
+      "followup": "again-school-degree-0",
+      "seen": [
+        {
+          "id": "life-21",
+          "status": "resolved"
+        },
+        {
+          "id": "again-school-degree-0",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        20
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 23,
+      "event": "life-23",
+      "id": "life-23-3",
+      "followup": "again-life-21-0",
+      "seen": [
+        {
+          "id": "life-23",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-21-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        21
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 24,
+      "event": "arena-start",
+      "id": "arena-start-0",
+      "followup": "again-arena-offer-0",
+      "seen": [
+        {
+          "id": "arena-start",
+          "status": "resolved"
+        },
+        {
+          "id": "again-arena-offer-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "player",
+      "source": [
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 26,
+      "event": "indie-weekend",
+      "id": "indie-weekend-1",
+      "followup": "again-life-24-0",
+      "seen": [
+        {
+          "id": "indie-weekend",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-24-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        10,
+        20,
+        22,
+        24
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "office-27",
+      "id": "office-27-1",
+      "followup": "again-office-24-0",
+      "seen": [
+        {
+          "id": "office-27",
+          "status": "resolved"
+        },
+        {
+          "id": "again-office-24-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        23,
+        24
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "factory-27",
+      "id": "factory-27-1",
+      "followup": "again-factory-24-0",
+      "seen": [
+        {
+          "id": "again-factory-24-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "factory",
+      "source": [
+        23,
+        24,
+        26
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "delivery-27",
+      "id": "delivery-27-0",
+      "followup": "again-delivery-24-0",
+      "seen": [
+        {
+          "id": "again-delivery-24-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "delivery",
+      "source": [
+        23,
+        24,
+        26
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "sanitation-27",
+      "id": "sanitation-27-1",
+      "followup": "again-sanitation-24-0",
+      "seen": [
+        {
+          "id": "again-sanitation-24-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        23,
+        24,
+        26
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "arena-lineup",
+      "id": "arena-lineup-1",
+      "followup": "again-arena-start-0",
+      "seen": [
+        {
+          "id": "again-arena-start-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "player",
+      "source": [
+        23,
+        24,
+        26
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 27,
+      "event": "sanitation-27",
+      "id": "sanitation-27-1",
+      "followup": "again-indie-weekend-0",
+      "seen": [
+        {
+          "id": "again-indie-weekend-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        23,
+        26,
+        24
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 29,
+      "event": "life-29",
+      "id": "life-29-1",
+      "followup": "again-life-27-0",
+      "seen": [
+        {
+          "id": "life-29",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-27-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        27
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 29,
+      "event": "life-29",
+      "id": "life-29-1",
+      "followup": "again-office-27-0",
+      "seen": [
+        {
+          "id": "again-office-27-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        27
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 29,
+      "event": "life-29",
+      "id": "life-29-0",
+      "followup": "again-factory-27-0",
+      "seen": [
+        {
+          "id": "life-29",
+          "status": "resolved"
+        },
+        {
+          "id": "again-factory-27-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "factory",
+      "source": [
+        27
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 29,
+      "event": "chance-old-friend",
+      "id": "chance-old-friend-2",
+      "followup": "again-delivery-27-0",
+      "seen": [
+        {
+          "id": "chance-old-friend",
+          "status": "resolved"
+        },
+        {
+          "id": "again-delivery-27-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "delivery",
+      "source": [
+        22,
+        27,
+        7
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 29,
+      "event": "life-29",
+      "id": "life-29-1",
+      "followup": "again-sanitation-27-0",
+      "seen": [
+        {
+          "id": "life-29",
+          "status": "resolved"
+        },
+        {
+          "id": "again-sanitation-27-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        27
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 29,
+      "event": "life-29",
+      "id": "life-29-0",
+      "followup": "again-arena-lineup-0",
+      "seen": [
+        {
+          "id": "life-29",
+          "status": "resolved"
+        },
+        {
+          "id": "again-arena-lineup-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "player",
+      "source": [
+        27
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 38,
+      "event": "active-recovery",
+      "id": "active-recovery-wait",
+      "followup": "again-life-28-0",
+      "seen": [
+        {
+          "id": "active-recovery",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-28-0",
+          "status": "resolved"
+        },
+        {
+          "id": "again-city-pivot-0",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        32,
+        28,
+        22
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 30,
+      "event": "life-30",
+      "id": "life-30-2",
+      "followup": "again-life-29-0",
+      "seen": [
+        {
+          "id": "life-30",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-29-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        29
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 32,
+      "event": "sanitation-32",
+      "id": "sanitation-32-1",
+      "followup": "again-chance-old-friend-0",
+      "seen": [
+        {
+          "id": "life-32",
+          "status": "expired",
+          "reason": "booked-other-appointment"
+        },
+        {
+          "id": "again-chance-old-friend-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        23,
+        29
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 33,
+      "event": "indie-budget",
+      "id": "indie-budget-1",
+      "followup": "again-life-32-0",
+      "seen": [
+        {
+          "id": "indie-budget",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-32-0",
+          "status": "resolved"
+        },
+        {
+          "id": "indie-budget-1",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        10,
+        20,
+        22,
+        26,
+        32
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 33,
+      "event": "indie-budget",
+      "id": "indie-budget-3",
+      "followup": "again-office-32-0",
+      "seen": [
+        {
+          "id": "indie-budget",
+          "status": "resolved"
+        },
+        {
+          "id": "again-office-32-0",
+          "status": "resolved"
+        },
+        {
+          "id": "indie-budget-3",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        16,
+        19,
+        26,
+        32
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 33,
+      "event": "life-33",
+      "id": "life-33-1",
+      "followup": "again-factory-32-0",
+      "seen": [
+        {
+          "id": "life-33",
+          "status": "resolved"
+        },
+        {
+          "id": "again-factory-32-0",
+          "status": "resolved"
+        },
+        {
+          "id": "life-33-1",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "factory",
+      "source": [
+        32
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 33,
+      "event": "life-33",
+      "id": "life-33-0",
+      "followup": "again-delivery-32-0",
+      "seen": [
+        {
+          "id": "life-33",
+          "status": "resolved"
+        },
+        {
+          "id": "again-delivery-32-0",
+          "status": "resolved"
+        },
+        {
+          "id": "life-33-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "delivery",
+      "source": [
+        32
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 33,
+      "event": "indie-budget",
+      "id": "indie-budget-1",
+      "followup": "again-sanitation-32-0",
+      "seen": [
+        {
+          "id": "again-sanitation-32-0",
+          "status": "resolved"
+        },
+        {
+          "id": "indie-budget-1",
+          "status": "resolved"
+        }
+      ],
+      "job": "sanitation",
+      "source": [
+        10,
+        20,
+        22,
+        26,
+        32
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 33,
+      "event": "indie-budget",
+      "id": "indie-budget-2",
+      "followup": "again-arena-injury-0",
+      "seen": [
+        {
+          "id": "indie-budget",
+          "status": "resolved"
+        },
+        {
+          "id": "again-arena-injury-0",
+          "status": "resolved"
+        },
+        {
+          "id": "indie-budget-2",
+          "status": "resolved"
+        }
+      ],
+      "job": "player",
+      "source": [
+        19,
+        20,
+        22,
+        26,
+        32
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 35,
+      "event": "indie-rights",
+      "id": "indie-rights-2",
+      "followup": "again-indie-budget-0",
+      "seen": [
+        {
+          "id": "again-indie-budget-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        33
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 37,
+      "event": "sanitation-37",
+      "id": "sanitation-37-1",
+      "followup": "again-life-35-0",
+      "seen": [
+        {
+          "id": "sanitation-37",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-35-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        23,
+        35
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 37,
+      "event": "sanitation-37",
+      "id": "sanitation-37-2",
+      "followup": "again-indie-rights-0",
+      "seen": [
+        {
+          "id": "sanitation-37",
+          "status": "resolved"
+        },
+        {
+          "id": "again-indie-rights-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        23,
+        35
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 39,
+      "event": "arena-final",
+      "id": "arena-final-0",
+      "followup": "again-arena-tactics-0",
+      "seen": [
+        {
+          "id": "again-arena-tactics-0",
+          "status": "resolved"
+        },
+        {
+          "id": "arena-final-0",
+          "status": "resolved"
+        },
+        {
+          "id": "arena-final-1",
+          "status": "declined",
+          "reason": "chose-alternative"
+        },
+        {
+          "id": "arena-final-2",
+          "status": "declined",
+          "reason": "chose-alternative"
+        }
+      ],
+      "job": "player",
+      "source": [
+        23,
+        36
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 37,
+      "event": "delivery-37",
+      "id": "delivery-37-0",
+      "followup": "again-rain-shift-0",
+      "seen": [
+        {
+          "id": "again-rain-shift-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "delivery",
+      "source": [
+        23,
+        36,
+        35
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 38,
+      "event": "active-recovery",
+      "id": "active-recovery-2",
+      "followup": "again-office-pivot-0",
+      "seen": [
+        {
+          "id": "again-office-pivot-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "adjusted",
+      "job": "office",
+      "source": [
+        36,
+        28
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 38,
+      "event": "active-recovery",
+      "id": "active-recovery-0",
+      "followup": "again-factory-pivot-0",
+      "seen": [
+        {
+          "id": "again-factory-pivot-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "recovering",
+      "job": "factory",
+      "source": [
+        36,
+        28
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 38,
+      "event": "active-recovery",
+      "id": "active-recovery-wait",
+      "followup": "again-city-pivot-0",
+      "seen": [
+        {
+          "id": "again-city-pivot-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        32,
+        36,
+        22
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 39,
+      "event": "life-39",
+      "id": "life-39-2",
+      "followup": "again-office-37-0",
+      "seen": [
+        {
+          "id": "life-39",
+          "status": "resolved"
+        },
+        {
+          "id": "again-office-37-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "adjusted",
+      "job": "office",
+      "source": [
+        37
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 39,
+      "event": "indie-launch",
+      "id": "indie-launch-2",
+      "followup": "again-factory-37-0",
+      "seen": [
+        {
+          "id": "again-factory-37-0",
+          "status": "resolved"
+        },
+        {
+          "id": "indie-launch-0",
+          "status": "declined",
+          "reason": "chose-alternative"
+        },
+        {
+          "id": "indie-launch-1",
+          "status": "declined",
+          "reason": "chose-alternative"
+        },
+        {
+          "id": "indie-launch-2",
+          "status": "resolved"
+        }
+      ],
+      "low": "recovering",
+      "job": "factory",
+      "source": [
+        33,
+        37,
+        36,
+        35
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 39,
+      "event": "life-39",
+      "id": "life-39-2",
+      "followup": "again-delivery-37-0",
+      "seen": [
+        {
+          "id": "life-39",
+          "status": "resolved"
+        },
+        {
+          "id": "again-delivery-37-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "recovering",
+      "job": "dispatcher",
+      "source": [
+        37,
+        36
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 39,
+      "event": "life-39",
+      "id": "life-39-0",
+      "followup": "again-sanitation-37-0",
+      "seen": [
+        {
+          "id": "life-39",
+          "status": "resolved"
+        },
+        {
+          "id": "again-sanitation-37-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "active",
+      "job": "sanitation",
+      "source": [
+        37
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 38,
+      "event": "life-38",
+      "id": "life-38-0",
+      "followup": "again-delivery-routine-0",
+      "seen": [
+        {
+          "id": "life-38",
+          "status": "resolved"
+        },
+        {
+          "id": "again-delivery-routine-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "delivery",
+      "source": [
+        37,
+        2,
+        28
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 41,
+      "event": "life-41",
+      "id": "life-41-0",
+      "followup": "again-life-38-0",
+      "seen": [
+        {
+          "id": "again-life-38-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "factory",
+      "source": [
+        38,
+        39
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 40,
+      "event": "life-40",
+      "id": "life-40-1",
+      "followup": "again-active-recovery-0",
+      "seen": [
+        {
+          "id": "life-40",
+          "status": "resolved"
+        },
+        {
+          "id": "again-active-recovery-0",
+          "status": "resolved"
+        },
+        {
+          "id": "life-40-1",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        38
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 41,
+      "event": "late-recovery",
+      "id": "late-recovery-1",
+      "followup": "again-life-39-0",
+      "seen": [
+        {
+          "id": "again-life-40-1",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        },
+        {
+          "id": "again-life-39-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "recovering",
+      "job": "dispatcher",
+      "source": [
+        32,
+        38,
+        39
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 41,
+      "event": "life-41",
+      "id": "life-41-2",
+      "followup": "again-arena-retire-0",
+      "seen": [
+        {
+          "id": "life-41",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-38-0",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        },
+        {
+          "id": "again-arena-retire-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        40,
+        22
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 42,
+      "event": "life-42",
+      "id": "life-42-0",
+      "followup": "again-indie-second-desk-0",
+      "seen": [
+        {
+          "id": "again-indie-second-desk-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        41,
+        1
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 42,
+      "event": "life-42",
+      "id": "life-42-0",
+      "followup": "again-late-recovery-0",
+      "seen": [
+        {
+          "id": "again-late-recovery-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "recovering",
+      "job": "dispatcher",
+      "source": [
+        41,
+        10,
+        32
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 43,
+      "event": "life-43",
+      "id": "life-43-1",
+      "followup": "again-indie-feedback-0",
+      "seen": [
+        {
+          "id": "again-indie-feedback-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        42
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 44,
+      "event": "life-44",
+      "id": "life-44-1",
+      "followup": "again-life-43-0",
+      "seen": [
+        {
+          "id": "life-44",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-43-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        43,
+        11,
+        22
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 44,
+      "event": "early-goodbye",
+      "id": "early-goodbye-0",
+      "followup": "again-early-diagnosis-0",
+      "seen": [
+        {
+          "id": "early-goodbye",
+          "status": "resolved"
+        },
+        {
+          "id": "again-early-diagnosis-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        43
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "indie-memory",
+      "id": "indie-memory-1",
+      "followup": "again-life-44-0",
+      "seen": [
+        {
+          "id": "indie-memory",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-44-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        22,
+        33,
+        44,
+        23
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "arena-quiet",
+      "id": "arena-quiet-0",
+      "followup": "again-indie-second-launch-0",
+      "seen": [
+        {
+          "id": "again-indie-second-launch-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        23,
+        40,
+        44,
+        37
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 46,
+      "event": "life-46",
+      "id": "life-46-0",
+      "followup": "again-life-45-0",
+      "seen": [
+        {
+          "id": "life-46",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-45-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        45
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 46,
+      "event": "life-46",
+      "id": "life-46-1",
+      "followup": "again-office-45-0",
+      "seen": [
+        {
+          "id": "life-46",
+          "status": "resolved"
+        },
+        {
+          "id": "again-office-45-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "office",
+      "source": [
+        45
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 46,
+      "event": "life-46",
+      "id": "life-46-0",
+      "followup": "again-factory-45-0",
+      "seen": [
+        {
+          "id": "life-46",
+          "status": "resolved"
+        },
+        {
+          "id": "again-factory-45-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "factory",
+      "source": [
+        45
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 46,
+      "event": "life-46",
+      "id": "life-46-1",
+      "followup": "again-delivery-45-0",
+      "seen": [
+        {
+          "id": "life-46",
+          "status": "resolved"
+        },
+        {
+          "id": "again-delivery-45-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        45
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 46,
+      "event": "life-46",
+      "id": "life-46-1",
+      "followup": "again-sanitation-45-0",
+      "seen": [
+        {
+          "id": "life-46",
+          "status": "resolved"
+        },
+        {
+          "id": "again-sanitation-45-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "sanitation",
+      "source": [
+        45
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 46,
+      "event": "life-46",
+      "id": "life-46-2",
+      "followup": "again-arena-quiet-0",
+      "seen": [
+        {
+          "id": "again-arena-quiet-0",
+          "status": "resolved"
+        }
+      ],
+      "job": "office",
+      "source": [
+        45
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 46,
+      "event": "life-46",
+      "id": "life-46-2",
+      "followup": "again-indie-memory-0",
+      "seen": [
+        {
+          "id": "life-46",
+          "status": "resolved"
+        },
+        {
+          "id": "again-indie-memory-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        45
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 8,
+      "event": "school-prep",
+      "id": "school-prep-1",
+      "followup": "again-life-7-1",
+      "seen": [
+        {
+          "id": "school-prep",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-7-1",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        7
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 8,
+      "event": "life-8",
+      "id": "life-8-1",
+      "followup": "again-life-7-2",
+      "seen": [
+        {
+          "id": "again-life-7-2",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        7
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 10,
+      "event": "life-10",
+      "id": "life-10-1",
+      "followup": "again-school-yoyo-buy",
+      "seen": [
+        {
+          "id": "life-10",
+          "status": "resolved"
+        },
+        {
+          "id": "again-life-6-2",
+          "status": "expired",
+          "reason": "seen-not-taken"
+        },
+        {
+          "id": "again-school-yoyo-buy",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        2
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 10,
+      "event": "life-10",
+      "id": "life-10-1",
+      "followup": "again-school-yoyo-keep",
+      "seen": [
+        {
+          "id": "again-school-yoyo-keep",
+          "status": "resolved"
+        }
+      ],
+      "job": null,
+      "source": [
+        2
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 39,
+      "event": "life-39",
+      "id": "life-39-2",
+      "followup": "handover-cost-center",
+      "seen": [
+        {
+          "id": "handover-cost-center",
+          "status": "resolved"
+        }
+      ],
+      "low": "adjusted",
+      "job": "office",
+      "source": [
+        24,
+        37
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 39,
+      "event": "life-39",
+      "id": "life-39-2",
+      "followup": "handover-missing-socket",
+      "seen": [
+        {
+          "id": "life-39",
+          "status": "resolved"
+        },
+        {
+          "id": "handover-missing-socket",
+          "status": "resolved"
+        }
+      ],
+      "low": "recovering",
+      "job": "factory",
+      "source": [
+        24,
+        37,
+        36
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 39,
+      "event": "life-39",
+      "id": "life-39-2",
+      "followup": "handover-river-detour",
+      "seen": [
+        {
+          "id": "life-39",
+          "status": "resolved"
+        },
+        {
+          "id": "handover-river-detour",
+          "status": "resolved"
+        }
+      ],
+      "job": "delivery",
+      "source": [
+        24
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "indie-memory",
+      "id": "indie-memory-1",
+      "followup": "later-life-40-0",
+      "seen": [
+        {
+          "id": "later-life-40-0",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "sanitation",
+      "source": [
+        22,
+        33,
+        41,
+        23,
+        44
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "indie-memory",
+      "id": "indie-memory-1",
+      "followup": "later-life-40-1",
+      "seen": [
+        {
+          "id": "later-life-40-1",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "dispatcher",
+      "source": [
+        22,
+        33,
+        41,
+        23,
+        44
+      ],
+      "highlights": []
+    },
+    {
+      "slot": 45,
+      "event": "indie-memory",
+      "id": "indie-memory-1",
+      "followup": "later-life-40-2",
+      "seen": [
+        {
+          "id": "later-life-40-2",
+          "status": "resolved"
+        }
+      ],
+      "low": "resolved",
+      "job": "sanitation",
+      "source": [
+        22,
+        33,
+        41,
+        23,
+        44
+      ],
+      "highlights": []
+    }
+  ],
+  "details": [
+    {
+      "slot": 5,
+      "source": 1,
+      "event": "life-5",
+      "choice": "life-1-1"
+    },
+    {
+      "slot": 5,
+      "source": 1,
+      "event": "life-5",
+      "choice": "life-1-2"
+    },
+    {
+      "slot": 7,
+      "source": 2,
+      "event": "life-7",
+      "choice": "life-2-1"
+    },
+    {
+      "slot": 7,
+      "source": 2,
+      "event": "life-7",
+      "choice": "life-2-2"
+    },
+    {
+      "slot": 11,
+      "source": 9,
+      "event": "life-11",
+      "choice": "life-9-1"
+    },
+    {
+      "slot": 11,
+      "source": 9,
+      "event": "life-11",
+      "choice": "life-9-2"
+    },
+    {
+      "slot": 13,
+      "source": 11,
+      "event": "school-exam",
+      "choice": "life-11-1"
+    },
+    {
+      "slot": 13,
+      "source": 11,
+      "event": "school-exam",
+      "choice": "life-11-2"
+    },
+    {
+      "slot": 15,
+      "source": 13,
+      "event": "life-15",
+      "choice": "life-13-1"
+    },
+    {
+      "slot": 15,
+      "source": 13,
+      "event": "life-15",
+      "choice": "life-13-2"
+    },
+    {
+      "slot": 17,
+      "source": 16,
+      "event": "life-17",
+      "choice": "life-16-1"
+    },
+    {
+      "slot": 17,
+      "source": 16,
+      "event": "life-17",
+      "choice": "life-16-2"
+    },
+    {
+      "slot": 20,
+      "source": 18,
+      "event": "school-degree",
+      "choice": "life-18-1"
+    },
+    {
+      "slot": 20,
+      "source": 18,
+      "event": "school-degree",
+      "choice": "life-18-2"
+    },
+    {
+      "slot": 20,
+      "source": 19,
+      "event": "school-degree",
+      "choice": "life-19-1"
+    },
+    {
+      "slot": 20,
+      "source": 19,
+      "event": "school-degree",
+      "choice": "life-19-2"
+    },
+    {
+      "slot": 21,
+      "source": 20,
+      "event": "life-21",
+      "choice": "life-20-1"
+    },
+    {
+      "slot": 21,
+      "source": 20,
+      "event": "life-21",
+      "choice": "life-20-2"
+    },
+    {
+      "slot": 23,
+      "source": 21,
+      "event": "life-23",
+      "choice": "life-21-1"
+    },
+    {
+      "slot": 23,
+      "source": 21,
+      "event": "life-23",
+      "choice": "life-21-2"
+    },
+    {
+      "slot": 26,
+      "source": 24,
+      "event": "indie-weekend",
+      "choice": "life-24-1"
+    },
+    {
+      "slot": 26,
+      "source": 24,
+      "event": "indie-weekend",
+      "choice": "life-24-2"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "chance-old-friend",
+      "choice": "life-27-1"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "chance-old-friend",
+      "choice": "life-27-2"
+    },
+    {
+      "slot": 38,
+      "source": 28,
+      "event": "active-recovery",
+      "choice": "life-28-1"
+    },
+    {
+      "slot": 38,
+      "source": 28,
+      "event": "active-recovery",
+      "choice": "life-28-2"
+    },
+    {
+      "slot": 30,
+      "source": 29,
+      "event": "life-30",
+      "choice": "life-29-1"
+    },
+    {
+      "slot": 30,
+      "source": 29,
+      "event": "life-30",
+      "choice": "life-29-2"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "indie-budget",
+      "choice": "life-32-1"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "indie-budget",
+      "choice": "life-32-2"
+    },
+    {
+      "slot": 37,
+      "source": 35,
+      "event": "sanitation-37",
+      "choice": "life-35-1"
+    },
+    {
+      "slot": 37,
+      "source": 35,
+      "event": "sanitation-37",
+      "choice": "life-35-2"
+    },
+    {
+      "slot": 41,
+      "source": 38,
+      "event": "life-41",
+      "choice": "life-38-1"
+    },
+    {
+      "slot": 41,
+      "source": 38,
+      "event": "life-41",
+      "choice": "life-38-2"
+    },
+    {
+      "slot": 41,
+      "source": 39,
+      "event": "late-recovery",
+      "choice": "life-39-1"
+    },
+    {
+      "slot": 41,
+      "source": 39,
+      "event": "late-recovery",
+      "choice": "life-39-2"
+    },
+    {
+      "slot": 44,
+      "source": 43,
+      "event": "life-44",
+      "choice": "life-43-1"
+    },
+    {
+      "slot": 44,
+      "source": 43,
+      "event": "life-44",
+      "choice": "life-43-2"
+    },
+    {
+      "slot": 45,
+      "source": 44,
+      "event": "indie-memory",
+      "choice": "life-44-1"
+    },
+    {
+      "slot": 45,
+      "source": 44,
+      "event": "indie-memory",
+      "choice": "life-44-2"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "life-45-1"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "life-45-2"
+    },
+    {
+      "slot": 27,
+      "source": 24,
+      "event": "office-27",
+      "choice": "office-24-1"
+    },
+    {
+      "slot": 27,
+      "source": 24,
+      "event": "office-27",
+      "choice": "office-24-2"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "life-29",
+      "choice": "office-27-1"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "life-29",
+      "choice": "office-27-2"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "indie-budget",
+      "choice": "office-32-1"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "indie-budget",
+      "choice": "office-32-2"
+    },
+    {
+      "slot": 39,
+      "source": 37,
+      "event": "life-39",
+      "choice": "office-37-1"
+    },
+    {
+      "slot": 39,
+      "source": 37,
+      "event": "life-39",
+      "choice": "office-37-2"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "office-45-1"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "office-45-2"
+    },
+    {
+      "slot": 27,
+      "source": 24,
+      "event": "factory-27",
+      "choice": "factory-24-1"
+    },
+    {
+      "slot": 27,
+      "source": 24,
+      "event": "factory-27",
+      "choice": "factory-24-2"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "life-29",
+      "choice": "factory-27-1"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "life-29",
+      "choice": "factory-27-2"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "life-33",
+      "choice": "factory-32-1"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "life-33",
+      "choice": "factory-32-2"
+    },
+    {
+      "slot": 39,
+      "source": 37,
+      "event": "indie-launch",
+      "choice": "factory-37-1"
+    },
+    {
+      "slot": 39,
+      "source": 37,
+      "event": "indie-launch",
+      "choice": "factory-37-2"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "factory-45-1"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "factory-45-2"
+    },
+    {
+      "slot": 27,
+      "source": 24,
+      "event": "delivery-27",
+      "choice": "delivery-24-1"
+    },
+    {
+      "slot": 27,
+      "source": 24,
+      "event": "delivery-27",
+      "choice": "delivery-24-2"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "life-29",
+      "choice": "delivery-27-1"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "life-29",
+      "choice": "delivery-27-2"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "life-33",
+      "choice": "delivery-32-1"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "life-33",
+      "choice": "delivery-32-2"
+    },
+    {
+      "slot": 39,
+      "source": 37,
+      "event": "life-39",
+      "choice": "delivery-37-1"
+    },
+    {
+      "slot": 39,
+      "source": 37,
+      "event": "life-39",
+      "choice": "delivery-37-2"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "delivery-45-1"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "delivery-45-2"
+    },
+    {
+      "slot": 27,
+      "source": 24,
+      "event": "sanitation-27",
+      "choice": "sanitation-24-1"
+    },
+    {
+      "slot": 27,
+      "source": 24,
+      "event": "sanitation-27",
+      "choice": "sanitation-24-2"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "chance-old-friend",
+      "choice": "sanitation-27-1"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "life-29",
+      "choice": "sanitation-27-2"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "indie-budget",
+      "choice": "sanitation-32-1"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "indie-budget",
+      "choice": "sanitation-32-2"
+    },
+    {
+      "slot": 39,
+      "source": 37,
+      "event": "life-39",
+      "choice": "sanitation-37-1"
+    },
+    {
+      "slot": 39,
+      "source": 37,
+      "event": "life-39",
+      "choice": "sanitation-37-2"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "sanitation-45-1"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "sanitation-45-2"
+    },
+    {
+      "slot": 9,
+      "source": 8,
+      "event": "life-9",
+      "choice": "school-prep-1"
+    },
+    {
+      "slot": 9,
+      "source": 8,
+      "event": "life-9",
+      "choice": "school-prep-2"
+    },
+    {
+      "slot": 13,
+      "source": 12,
+      "event": "school-exam",
+      "choice": "school-sprint-1"
+    },
+    {
+      "slot": 13,
+      "source": 12,
+      "event": "school-exam",
+      "choice": "school-sprint-2"
+    },
+    {
+      "slot": 15,
+      "source": 13,
+      "event": "life-15",
+      "choice": "school-exam-1"
+    },
+    {
+      "slot": 15,
+      "source": 13,
+      "event": "life-15",
+      "choice": "school-exam-2"
+    },
+    {
+      "slot": 21,
+      "source": 20,
+      "event": "life-21",
+      "choice": "school-degree-1"
+    },
+    {
+      "slot": 21,
+      "source": 20,
+      "event": "life-21",
+      "choice": "school-degree-2"
+    },
+    {
+      "slot": 17,
+      "source": 16,
+      "event": "life-17",
+      "choice": "arena-club-1"
+    },
+    {
+      "slot": 17,
+      "source": 16,
+      "event": "life-17",
+      "choice": "arena-club-2"
+    },
+    {
+      "slot": 24,
+      "source": 23,
+      "event": "office-24",
+      "choice": "arena-offer-1"
+    },
+    {
+      "slot": 24,
+      "source": 23,
+      "event": "factory-24",
+      "choice": "arena-offer-2"
+    },
+    {
+      "slot": 24,
+      "source": 23,
+      "event": "delivery-24",
+      "choice": "arena-offer-3"
+    },
+    {
+      "slot": 24,
+      "source": 23,
+      "event": "sanitation-24",
+      "choice": "arena-offer-4"
+    },
+    {
+      "slot": 27,
+      "source": 24,
+      "event": "arena-lineup",
+      "choice": "arena-start-1"
+    },
+    {
+      "slot": 27,
+      "source": 24,
+      "event": "arena-lineup",
+      "choice": "arena-start-2"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "life-29",
+      "choice": "arena-lineup-1"
+    },
+    {
+      "slot": 29,
+      "source": 27,
+      "event": "life-29",
+      "choice": "arena-lineup-2"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "indie-budget",
+      "choice": "arena-injury-1"
+    },
+    {
+      "slot": 33,
+      "source": 32,
+      "event": "indie-budget",
+      "choice": "arena-injury-2"
+    },
+    {
+      "slot": 39,
+      "source": 36,
+      "event": "arena-final",
+      "choice": "arena-tactics-1"
+    },
+    {
+      "slot": 39,
+      "source": 36,
+      "event": "arena-final",
+      "choice": "arena-tactics-2"
+    },
+    {
+      "slot": 41,
+      "source": 40,
+      "event": "life-41",
+      "choice": "arena-retire-1"
+    },
+    {
+      "slot": 41,
+      "source": 40,
+      "event": "life-41",
+      "choice": "arena-retire-2"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "arena-quiet-1"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "arena-quiet-2"
+    },
+    {
+      "slot": 20,
+      "source": 19,
+      "event": "school-degree",
+      "choice": "indie-kit-1"
+    },
+    {
+      "slot": 20,
+      "source": 19,
+      "event": "school-degree",
+      "choice": "indie-kit-2"
+    },
+    {
+      "slot": 27,
+      "source": 26,
+      "event": "sanitation-27",
+      "choice": "indie-weekend-1"
+    },
+    {
+      "slot": 27,
+      "source": 26,
+      "event": "sanitation-27",
+      "choice": "indie-weekend-2"
+    },
+    {
+      "slot": 35,
+      "source": 33,
+      "event": "indie-rights",
+      "choice": "indie-budget-1"
+    },
+    {
+      "slot": 35,
+      "source": 33,
+      "event": "indie-rights",
+      "choice": "indie-budget-2"
+    },
+    {
+      "slot": 35,
+      "source": 33,
+      "event": "life-35",
+      "choice": "indie-budget-3"
+    },
+    {
+      "slot": 37,
+      "source": 35,
+      "event": "sanitation-37",
+      "choice": "indie-rights-1"
+    },
+    {
+      "slot": 37,
+      "source": 35,
+      "event": "sanitation-37",
+      "choice": "indie-rights-2"
+    },
+    {
+      "slot": 42,
+      "source": 41,
+      "event": "life-42",
+      "choice": "indie-second-desk-1"
+    },
+    {
+      "slot": 42,
+      "source": 41,
+      "event": "life-42",
+      "choice": "indie-second-desk-2"
+    },
+    {
+      "slot": 45,
+      "source": 44,
+      "event": "arena-quiet",
+      "choice": "indie-second-launch-1"
+    },
+    {
+      "slot": 45,
+      "source": 44,
+      "event": "arena-quiet",
+      "choice": "indie-second-launch-2"
+    },
+    {
+      "slot": 43,
+      "source": 42,
+      "event": "life-43",
+      "choice": "indie-feedback-1"
+    },
+    {
+      "slot": 43,
+      "source": 42,
+      "event": "life-43",
+      "choice": "indie-feedback-2"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "indie-memory-1"
+    },
+    {
+      "slot": 46,
+      "source": 45,
+      "event": "life-46",
+      "choice": "indie-memory-2"
+    },
+    {
+      "slot": 37,
+      "source": 36,
+      "event": "delivery-37",
+      "choice": "rain-shift-1"
+    },
+    {
+      "slot": 37,
+      "source": 36,
+      "event": "delivery-37",
+      "choice": "rain-shift-2"
+    },
+    {
+      "slot": 38,
+      "source": 36,
+      "event": "active-recovery",
+      "choice": "office-pivot-1"
+    },
+    {
+      "slot": 38,
+      "source": 36,
+      "event": "active-recovery",
+      "choice": "office-pivot-2"
+    },
+    {
+      "slot": 38,
+      "source": 36,
+      "event": "life-38",
+      "choice": "factory-pivot-1"
+    },
+    {
+      "slot": 38,
+      "source": 36,
+      "event": "active-recovery",
+      "choice": "factory-pivot-2"
+    },
+    {
+      "slot": 38,
+      "source": 36,
+      "event": "active-recovery",
+      "choice": "city-pivot-1"
+    },
+    {
+      "slot": 38,
+      "source": 36,
+      "event": "active-recovery",
+      "choice": "city-pivot-2"
+    },
+    {
+      "slot": 38,
+      "source": 37,
+      "event": "life-38",
+      "choice": "delivery-routine-1"
+    },
+    {
+      "slot": 38,
+      "source": 37,
+      "event": "life-38",
+      "choice": "delivery-routine-2"
+    },
+    {
+      "slot": 40,
+      "source": 38,
+      "event": "life-40",
+      "choice": "active-recovery-1"
+    },
+    {
+      "slot": 40,
+      "source": 38,
+      "event": "life-40",
+      "choice": "active-recovery-2"
+    },
+    {
+      "slot": 41,
+      "source": 38,
+      "event": "late-recovery",
+      "choice": "active-recovery-wait"
+    },
+    {
+      "slot": 42,
+      "source": 41,
+      "event": "life-42",
+      "choice": "late-recovery-1"
+    },
+    {
+      "slot": 42,
+      "source": 41,
+      "event": "life-42",
+      "choice": "late-recovery-2"
+    },
+    {
+      "slot": 32,
+      "source": 29,
+      "event": "sanitation-32",
+      "choice": "chance-old-friend-1"
+    },
+    {
+      "slot": 32,
+      "source": 29,
+      "event": "sanitation-32",
+      "choice": "chance-old-friend-2"
+    },
+    {
+      "slot": 44,
+      "source": 43,
+      "event": "early-goodbye",
+      "choice": "early-diagnosis-1"
+    },
+    {
+      "slot": 44,
+      "source": 43,
+      "event": "early-goodbye",
+      "choice": "early-diagnosis-2"
+    }
+  ]
+}

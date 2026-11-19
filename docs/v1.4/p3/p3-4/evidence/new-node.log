@@ -1,0 +1,280 @@
+TAP version 13
+# Subtest: J04·普通
+ok 1 - J04·普通
+  ---
+  duration_ms: 59.098
+  ...
+# Subtest: J04·改变
+ok 2 - J04·改变
+  ---
+  duration_ms: 54.4285
+  ...
+# Subtest: J04·交汇
+ok 3 - J04·交汇
+  ---
+  duration_ms: 44.095375
+  ...
+# Subtest: J05·普通
+ok 4 - J05·普通
+  ---
+  duration_ms: 32.876917
+  ...
+# Subtest: J05·改变
+ok 5 - J05·改变
+  ---
+  duration_ms: 37.366
+  ...
+# Subtest: J05·交汇
+ok 6 - J05·交汇
+  ---
+  duration_ms: 40.426875
+  ...
+# Subtest: J06·普通
+ok 7 - J06·普通
+  ---
+  duration_ms: 43.568833
+  ...
+# Subtest: J06·改变
+ok 8 - J06·改变
+  ---
+  duration_ms: 46.785167
+  ...
+# Subtest: J06·交汇
+ok 9 - J06·交汇
+  ---
+  duration_ms: 53.387583
+  ...
+# Subtest: J07·普通
+ok 10 - J07·普通
+  ---
+  duration_ms: 23.536708
+  ...
+# Subtest: J07·改变
+ok 11 - J07·改变
+  ---
+  duration_ms: 25.770333
+  ...
+# Subtest: J07·交汇
+ok 12 - J07·交汇
+  ---
+  duration_ms: 47.765792
+  ...
+# Subtest: J08·普通
+ok 13 - J08·普通
+  ---
+  duration_ms: 33.002125
+  ...
+# Subtest: J08·改变
+ok 14 - J08·改变
+  ---
+  duration_ms: 38.806916
+  ...
+# Subtest: J08·交汇
+ok 15 - J08·交汇
+  ---
+  duration_ms: 47.585333
+  ...
+# Subtest: 出生 1 接触 J04
+ok 16 - 出生 1 接触 J04
+  ---
+  duration_ms: 3.647875
+  ...
+# Subtest: 出生 1 接触 J05
+ok 17 - 出生 1 接触 J05
+  ---
+  duration_ms: 3.56375
+  ...
+# Subtest: 出生 1 接触 J06
+ok 18 - 出生 1 接触 J06
+  ---
+  duration_ms: 3.539709
+  ...
+# Subtest: 出生 1 接触 J07
+ok 19 - 出生 1 接触 J07
+  ---
+  duration_ms: 3.605209
+  ...
+# Subtest: 出生 1 接触 J08
+ok 20 - 出生 1 接触 J08
+  ---
+  duration_ms: 1.989458
+  ...
+# Subtest: 出生 2 接触 J04
+ok 21 - 出生 2 接触 J04
+  ---
+  duration_ms: 3.470625
+  ...
+# Subtest: 出生 2 接触 J05
+ok 22 - 出生 2 接触 J05
+  ---
+  duration_ms: 3.46825
+  ...
+# Subtest: 出生 2 接触 J06
+ok 23 - 出生 2 接触 J06
+  ---
+  duration_ms: 3.221208
+  ...
+# Subtest: 出生 2 接触 J07
+ok 24 - 出生 2 接触 J07
+  ---
+  duration_ms: 3.421625
+  ...
+# Subtest: 出生 2 接触 J08
+ok 25 - 出生 2 接触 J08
+  ---
+  duration_ms: 1.798708
+  ...
+# Subtest: 出生 3 接触 J04
+ok 26 - 出生 3 接触 J04
+  ---
+  duration_ms: 3.495042
+  ...
+# Subtest: 出生 3 接触 J05
+ok 27 - 出生 3 接触 J05
+  ---
+  duration_ms: 3.272125
+  ...
+# Subtest: 出生 3 接触 J06
+ok 28 - 出生 3 接触 J06
+  ---
+  duration_ms: 5.800709
+  ...
+# Subtest: 出生 3 接触 J07
+ok 29 - 出生 3 接触 J07
+  ---
+  duration_ms: 3.501084
+  ...
+# Subtest: 出生 3 接触 J08
+ok 30 - 出生 3 接触 J08
+  ---
+  duration_ms: 1.971416
+  ...
+# Subtest: 出生 4 接触 J04
+ok 31 - 出生 4 接触 J04
+  ---
+  duration_ms: 3.765458
+  ...
+# Subtest: 出生 4 接触 J05
+ok 32 - 出生 4 接触 J05
+  ---
+  duration_ms: 3.6295
+  ...
+# Subtest: 出生 4 接触 J06
+ok 33 - 出生 4 接触 J06
+  ---
+  duration_ms: 3.411416
+  ...
+# Subtest: 出生 4 接触 J07
+ok 34 - 出生 4 接触 J07
+  ---
+  duration_ms: 3.809709
+  ...
+# Subtest: 出生 4 接触 J08
+ok 35 - 出生 4 接触 J08
+  ---
+  duration_ms: 1.899042
+  ...
+# Subtest: 出生 9 接触 J04
+ok 36 - 出生 9 接触 J04
+  ---
+  duration_ms: 3.483083
+  ...
+# Subtest: 出生 9 接触 J05
+ok 37 - 出生 9 接触 J05
+  ---
+  duration_ms: 3.648708
+  ...
+# Subtest: 出生 9 接触 J06
+ok 38 - 出生 9 接触 J06
+  ---
+  duration_ms: 3.312917
+  ...
+# Subtest: 出生 9 接触 J07
+ok 39 - 出生 9 接触 J07
+  ---
+  duration_ms: 3.475625
+  ...
+# Subtest: 出生 9 接触 J08
+ok 40 - 出生 9 接触 J08
+  ---
+  duration_ms: 1.826958
+  ...
+# Subtest: 出生 12 接触 J04
+ok 41 - 出生 12 接触 J04
+  ---
+  duration_ms: 3.482875
+  ...
+# Subtest: 出生 12 接触 J05
+ok 42 - 出生 12 接触 J05
+  ---
+  duration_ms: 2.987584
+  ...
+# Subtest: 出生 12 接触 J06
+ok 43 - 出生 12 接触 J06
+  ---
+  duration_ms: 3.11325
+  ...
+# Subtest: 出生 12 接触 J07
+ok 44 - 出生 12 接触 J07
+  ---
+  duration_ms: 2.910958
+  ...
+# Subtest: 出生 12 接触 J08
+ok 45 - 出生 12 接触 J08
+  ---
+  duration_ms: 1.892917
+  ...
+# Subtest: 库存付款、退货和停业的门槛来自原始收据
+ok 46 - 库存付款、退货和停业的门槛来自原始收据
+  ---
+  duration_ms: 25.216041
+  ...
+# Subtest: 无学历不能报考，无聘任不能办件；未试教不能产生旧生回忆
+ok 47 - 无学历不能报考，无聘任不能办件；未试教不能产生旧生回忆
+  ---
+  duration_ms: 4.060083
+  ...
+# Subtest: 摊位库存、利润、重复提交与原始现金一致
+ok 48 - 摊位库存、利润、重复提交与原始现金一致
+  ---
+  duration_ms: 11.026917
+  ...
+# Subtest: 高价销售退货按原价回退现金和成本，破坏利润拒绝导入
+ok 49 - 高价销售退货按原价回退现金和成本，破坏利润拒绝导入
+  ---
+  duration_ms: 17.212959
+  ...
+# Subtest: 发布失败仍需修复后部署，大厂申请有历史条件
+ok 50 - 发布失败仍需修复后部署，大厂申请有历史条件
+  ---
+  duration_ms: 14.582167
+  ...
+# Subtest: 离岗权限、未出菜与退单补救各自核验
+ok 51 - 离岗权限、未出菜与退单补救各自核验
+  ---
+  duration_ms: 36.899125
+  ...
+# Subtest: 资金不足时进货整笔拒绝，满班不能额外摆摊
+ok 52 - 资金不足时进货整笔拒绝，满班不能额外摆摊
+  ---
+  duration_ms: 6.395833
+  ...
+# Subtest: 厨师转自营需许可、食材付款和交付，原厨师工资停止
+ok 53 - 厨师转自营需许可、食材付款和交付，原厨师工资停止
+  ---
+  duration_ms: 20.365583
+  ...
+# Subtest: 大厂招聘有真实技术条件，落选保留原项目；公务员笔试不能代替录用
+ok 54 - 大厂招聘有真实技术条件，落选保留原项目；公务员笔试不能代替录用
+  ---
+  duration_ms: 82.235875
+  ...
+1..54
+# tests 54
+# suites 0
+# pass 54
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1004.597417

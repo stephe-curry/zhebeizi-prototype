@@ -72,8 +72,8 @@ async function evaluate(expression) {
   return result.value;
 }
 
-async function wait(expression,message) {
-  for(let attempt=0;attempt<75;attempt++) {
+async function wait(expression,message,attempts=75) {
+  for(let attempt=0;attempt<attempts;attempt++) {
     if(await evaluate(expression))return;
     await delay(30);
   }
@@ -165,6 +165,12 @@ async function main() {
   await send('Runtime.enable');
   await send('Page.enable');
   await send('Network.enable');
+  if(process.argv.includes('--p35'))return require('./p32-browser.cjs')({load,resize,send,evaluate,wait,tap,portrait,faults,remoteRequests},require('./p35.cjs').browser);
+  if(process.argv.includes('--p34'))return require('./p32-browser.cjs')({load,resize,send,evaluate,wait,tap,portrait,faults,remoteRequests},require('./p34.cjs').browser);
+  if(process.argv.includes('--p33'))return require('./p32-browser.cjs')({load,resize,send,evaluate,wait,tap,portrait,faults,remoteRequests},require('./p33.cjs').browser);
+  if(process.argv.includes('--p32'))return require('./p32-browser.cjs')({load,resize,send,evaluate,wait,tap,portrait,faults,remoteRequests});
+  if(process.argv.includes('--p3'))return require('./p3-browser.cjs')({load,resize,send,evaluate,wait,tap,pressEnter,mouseClick,portrait,faults,remoteRequests});
+  if(process.argv.includes('--p2'))return require('./p2-browser.cjs')({load,resize,send,evaluate,wait,tap,portrait,faults,remoteRequests});
   await resize(360,640,true);
   await load();
   const dimensions=[await portrait('small phone')];
@@ -188,7 +194,7 @@ async function main() {
     await tap('.start-panel '+action('resume'));
     await wait(has(expected));
   }
-  for(const [place,decision] of [['box','buy'],['family','buy'],['family','keep'],['drawer','buy']]){
+  for(const [place,decision] of [['box','buy'],['family','buy'],['family','keep'],['drawer','buy'],['drawer','keep']]){
     const route=place+'-'+decision;
     const homeAction={box:'open-box',family:'ask-family',drawer:'open-drawer'}[place];
     await tap('.start-panel '+action('setup'));
@@ -253,6 +259,58 @@ async function main() {
     await wait(has(action('next')));
     await tap(action('next'));
     await wait(has('.day-track'));
+    if(place==='family'||route==='drawer-keep'){
+      await tap('.day-card[data-id="life-5-0"]');
+      await wait(has('.turn-footer '+action('commit')+':enabled'));
+      await tap('.turn-footer '+action('commit'));
+      await wait(has(action('next')));
+      await tap(action('next'));
+      const buy=decision==='buy';
+      const option=action('choose')+'[data-id="'+(buy?'life-6-yoyo':'life-6-shuttlecocks')+'"]';
+      const other=action('choose')+'[data-id="'+(buy?'life-6-shuttlecocks':'life-6-yoyo')+'"]';
+      await wait(has(option));
+      assert.equal(await evaluate(has(other)),false);
+      assert.equal(await evaluate("document.querySelector('h1').textContent"),'体育器材室');
+      assert.match(await evaluate("document.querySelector('.event-panel').textContent"),
+        buy?/八岁时买的那只还在/:/八岁时留下的十元/);
+      await portrait('13-year callback offer '+decision+' at 320×568');
+      await point(option);
+      const echoId=buy?'life-6-yoyo':'life-6-shuttlecocks';
+      const entryExpr="(()=>{const d=LifeSave.read(localStorage);return d.branches[d.active].run.pageTrace.entries.find(e=>e.id==="+JSON.stringify(echoId)+")})()";
+      await wait(entryExpr+"?.seen");
+      const participate=route!=='drawer-keep';
+      const selectedControl=participate?option:action('choose')+'[data-id="life-6-0"]';
+      await tap(selectedControl);
+      await wait(has(selectedControl+'[aria-pressed="true"]'));
+      await resumeGift(selectedControl+'[aria-pressed="true"]');
+      await tap('.turn-footer '+action('commit'));
+      await wait(has(action('next')));
+      await resumeGift(action('next'));
+      await portrait('13-year callback result '+decision+' at 320×568');
+      if(participate)assert.match(await evaluate("document.querySelector('.event-panel').textContent"),
+        buy?/带上八岁时买的悠悠球/:/红纸包.*两个羽毛球.*打完了一局/);
+      assert.equal(await evaluate(has('.echo-play')),participate);
+      if(participate){
+        await evaluate("document.querySelector('.echo-play').scrollIntoView({block:'center'})");
+        await wait("(()=>{const e=document.querySelector('.echo-play');return e.clientWidth===40 && getComputedStyle(e).backgroundImage.includes('echo-play.png')})()");
+        if(process.env.GIFT_SHOTS){
+          const {data}=await send('Page.captureScreenshot',{format:'png'});
+          writeFileSync(join(process.env.GIFT_SHOTS,'p1-'+route+'.png'),Buffer.from(data,'base64'));
+        }
+      }
+      const late=await evaluate("(()=>{const d=LifeSave.read(localStorage);return d.branches[d.active].run.facts})()");
+      const tracked=late[5].trace.candidates.find(e=>e.id===echoId);
+      assert.equal(tracked.seen,true);
+      assert.equal(tracked.status,participate?'resolved':'declined');
+      assert.equal(tracked.sources[0].slot,2);
+      assert.deepEqual(late[1].interaction,receipt);
+      assert.deepEqual(late[5].sourceSlots,[2]);
+      assert.deepEqual(late[5].giftEcho,{sourceSlot:2,branch:decision,status:participate?'taken':'passed',spent:participate&&!buy?10:0,balance:participate||buy?0:10});
+      assert.equal(late.length,6);
+      await tap(action('next'));
+      await wait(has('.day-track'));
+      assert.equal(await evaluate(has(option)),false);
+    }
     await tap(action('home'));
     await wait(has('.start-panel '+action('setup')));
   }
@@ -505,6 +563,7 @@ async function main() {
   await wait(has(action('next')));
   await dinnerShot('06-ended-desktop');
   await send('Emulation.setEmulatedMedia',{features:[]});
+  await evaluate('new Promise(done=>requestAnimationFrame(()=>requestAnimationFrame(()=>done(true))))');
   await mouseClick(action('next'));
   await wait('!'+has('.dinner-panel'));
   await resize(390,844,true);
@@ -653,14 +712,10 @@ async function main() {
   await wait(has('.start-panel'));
   await send('Page.reload',{ignoreCache:true});
   await wait(has(recommended));
-  // Advance the browser clock without making the player wait during the test.
-  async function advanceGuideTime(ms) {
-    await send('Emulation.setVirtualTimePolicy',{policy:'advance',budget:ms});
-  }
-  await advanceGuideTime(8500);
-  await wait(has('[data-guide-level="1"] '+recommended));
-  await advanceGuideTime(10500);
-  await wait(has('[data-guide-level="2"] .guide-hint'));
+  // The guidance clock samples real foreground time. Observe both thresholds
+  // without replacing a still-running DevTools virtual time budget.
+  await wait(has('[data-guide-level="1"] '+recommended),'first idle hint',400);
+  await wait(has('[data-guide-level="2"] .guide-hint'),'second idle hint',450);
   assert.deepEqual(faults,[],'guidance demo without runtime errors');
   console.log('PASS · narrow guidance demo, help, alternative action, redraw, keyboard, confirmation and exit');
   console.log('PASS · local file, 9:16 layout, no sideways overflow, touch, mouse, keyboard, drag, reload, day planner, packing board, object settlement, early memoir, fork dialog and 17 animation previews');

@@ -1,0 +1,90 @@
+TAP version 13
+# Subtest: M01 prior contact is required
+ok 1 - M01 prior contact is required
+  ---
+  duration_ms: 7.501334
+  ...
+# Subtest: M02 discovered goals wait, adult consultation creates a sourced alternative
+ok 2 - M02 discovered goals wait, adult consultation creates a sourced alternative
+  ---
+  duration_ms: 5.971875
+  ...
+# Subtest: M03 independent goals, draft cancellation and duplicate establishment
+ok 3 - M03 independent goals, draft cancellation and duplicate establishment
+  ---
+  duration_ms: 2.248333
+  ...
+# Subtest: M04 resumption rechecks availability and preserves investments
+ok 4 - M04 resumption rechecks availability and preserves investments
+  ---
+  duration_ms: 4.533709
+  ...
+# Subtest: E01 declarations reject collisions, unsupported versions, missing conditions and invalid amounts
+ok 5 - E01 declarations reject collisions, unsupported versions, missing conditions and invalid amounts
+  ---
+  duration_ms: 0.335042
+  ...
+# Subtest: E02 E03 M05 declarative extension has its own history and one shared practice cost
+ok 6 - E02 E03 M05 declarative extension has its own history and one shared practice cost
+  ---
+  duration_ms: 4.502917
+  ...
+# Subtest: M06 conflicts reject the entire transaction for time, energy and personal cash
+ok 7 - M06 conflicts reject the entire transaction for time, energy and personal cash
+  ---
+  duration_ms: 7.707459
+  ...
+# Subtest: M07 E04 working time and one salary for shared job and study evidence
+ok 8 - M07 E04 working time and one salary for shared job and study evidence
+  ---
+  duration_ms: 8.196542
+  ...
+# Subtest: M08 qualification, bounded deterministic external factor and real preparation
+ok 9 - M08 qualification, bounded deterministic external factor and real preparation
+  ---
+  duration_ms: 75.054125
+  ...
+# Subtest: M09 immutable attempt, restored draft, invalid imports and obsolete draft cleanup
+ok 10 - M09 immutable attempt, restored draft, invalid imports and obsolete draft cleanup
+  ---
+  duration_ms: 7.065042
+  ...
+# Subtest: M10 visible deferral, unseen, expired, invalidated and real continuation
+ok 11 - M10 visible deferral, unseen, expired, invalidated and real continuation
+  ---
+  duration_ms: 2.136708
+  ...
+# Subtest: M11 M12 E05 legacy life and memoir survive route registration and isolated forks
+ok 12 - M11 M12 E05 legacy life and memoir survive route registration and isolated forks
+  ---
+  duration_ms: 29.514958
+  ...
+# Subtest: adult first contact without a school candidate; distinct methods and absent route code
+ok 13 - adult first contact without a school candidate; distinct methods and absent route code
+  ---
+  duration_ms: 41.62725
+  ...
+# Subtest: E04 one inspected work sample supports a later goal without a second wage or duplicate item
+ok 14 - E04 one inspected work sample supports a later goal without a second wage or duplicate item
+  ---
+  duration_ms: 8.232875
+  ...
+# Subtest: route-defined qualifications, terminal outcome and eligibility to resume are replayable
+ok 15 - route-defined qualifications, terminal outcome and eligibility to resume are replayable
+  ---
+  duration_ms: 3.36775
+  ...
+# Subtest: a two-block professional action must own the matching main scene
+ok 16 - a two-block professional action must own the matching main scene
+  ---
+  duration_ms: 3.349625
+  ...
+1..16
+# tests 16
+# suites 0
+# pass 16
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 286.593209

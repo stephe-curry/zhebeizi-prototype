@@ -1,0 +1,664 @@
+{
+  "frames": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "frame": [
+        320,
+        568
+      ]
+    },
+    {
+      "viewport": [
+        1366,
+        768
+      ],
+      "frame": [
+        432,
+        768
+      ]
+    }
+  ],
+  "log": [
+    {
+      "slot": 1,
+      "event": "spring-envelope",
+      "choice": "spring-envelope-box"
+    },
+    {
+      "slot": 2,
+      "event": "school-yoyo",
+      "choice": "school-yoyo-buy"
+    },
+    {
+      "slot": 3,
+      "event": "life-3",
+      "choice": "life-3-2"
+    },
+    {
+      "slot": 4,
+      "event": "life-4",
+      "choice": "life-4-keep-eating"
+    },
+    {
+      "slot": 5,
+      "event": "life-5",
+      "choice": "life-5-0"
+    },
+    {
+      "slot": 6,
+      "event": "life-6",
+      "choice": "life-6-yoyo"
+    },
+    {
+      "slot": 7,
+      "event": "life-7",
+      "choice": "life-7-0"
+    },
+    {
+      "slot": 8,
+      "event": "school-prep",
+      "choice": "school-prep-1"
+    },
+    {
+      "slot": 9,
+      "event": "life-9",
+      "choice": "life-9-2"
+    },
+    {
+      "slot": 10,
+      "event": "life-10",
+      "choice": "life-10-1"
+    },
+    {
+      "slot": 11,
+      "event": "life-11",
+      "choice": "life-11-0"
+    },
+    {
+      "slot": 12,
+      "event": "school-sprint",
+      "choice": "school-sprint-0",
+      "actions": [
+        {
+          "schema": 1,
+          "actionId": "01-establish",
+          "kind": "dream-established",
+          "routeIds": [
+            "01"
+          ],
+          "sourceRefs": [
+            {
+              "branch": "1rw9gp4-rl8y7w",
+              "slot": 11,
+              "eventId": "life-11",
+              "choiceId": "life-11-0"
+            }
+          ],
+          "payload": {
+            "ruleVersion": 1,
+            "goal": "争取电竞世界赛"
+          },
+          "costs": {
+            "time": 0,
+            "energy": 0,
+            "money": 0
+          },
+          "result": {
+            "state": "active"
+          }
+        }
+      ]
+    },
+    {
+      "slot": 13,
+      "event": "school-exam",
+      "choice": "school-exam-1",
+      "actions": [
+        {
+          "schema": 1,
+          "actionId": "03-establish",
+          "kind": "dream-established",
+          "routeIds": [
+            "03"
+          ],
+          "sourceRefs": [
+            {
+              "branch": "1rw9gp4-rl8y7w",
+              "slot": 7,
+              "eventId": "life-7",
+              "choiceId": "life-7-0"
+            }
+          ],
+          "payload": {
+            "ruleVersion": 1,
+            "goal": "争取清华或北大录取"
+          },
+          "costs": {
+            "time": 0,
+            "energy": 0,
+            "money": 0
+          },
+          "result": {
+            "state": "active"
+          }
+        }
+      ]
+    },
+    {
+      "slot": 14,
+      "event": "life-14",
+      "choice": "life-14-1",
+      "actions": [
+        {
+          "schema": 1,
+          "actionId": "01-replay",
+          "kind": "investment",
+          "routeIds": [
+            "01"
+          ],
+          "sourceRefs": [
+            {
+              "branch": "1rw9gp4-rl8y7w",
+              "slot": 12,
+              "eventId": "school-sprint",
+              "choiceId": "school-sprint-0",
+              "actionId": "01-establish"
+            }
+          ],
+          "payload": {
+            "ruleVersion": 1,
+            "goal": "争取电竞世界赛",
+            "method": "after"
+          },
+          "costs": {
+            "time": 1,
+            "energy": 1,
+            "money": 0
+          },
+          "result": {
+            "detail": "位置报准了，队友却已过了拐角。你把两句话在录像上对了一遍。"
+          }
+        }
+      ]
+    },
+    {
+      "slot": 15,
+      "event": "life-15",
+      "choice": "life-15-2",
+      "actions": [
+        {
+          "schema": 1,
+          "actionId": "01-pause",
+          "kind": "dream-paused",
+          "routeIds": [
+            "01"
+          ],
+          "sourceRefs": [
+            {
+              "branch": "1rw9gp4-rl8y7w",
+              "slot": 12,
+              "eventId": "school-sprint",
+              "choiceId": "school-sprint-0",
+              "actionId": "01-establish"
+            }
+          ],
+          "payload": {
+            "ruleVersion": 1,
+            "goal": "争取电竞世界赛"
+          },
+          "costs": {
+            "time": 0,
+            "energy": 0,
+            "money": 0
+          },
+          "result": {
+            "state": "paused"
+          }
+        }
+      ]
+    },
+    {
+      "slot": 16,
+      "event": "arena-club",
+      "choice": "arena-club-2",
+      "actions": [
+        {
+          "schema": 1,
+          "actionId": "01-resume",
+          "kind": "dream-resumed",
+          "routeIds": [
+            "01"
+          ],
+          "sourceRefs": [
+            {
+              "branch": "1rw9gp4-rl8y7w",
+              "slot": 12,
+              "eventId": "school-sprint",
+              "choiceId": "school-sprint-0",
+              "actionId": "01-establish"
+            }
+          ],
+          "payload": {
+            "ruleVersion": 1,
+            "goal": "争取电竞世界赛"
+          },
+          "costs": {
+            "time": 0,
+            "energy": 0,
+            "money": 0
+          },
+          "result": {
+            "state": "active"
+          }
+        }
+      ]
+    },
+    {
+      "slot": 17,
+      "event": "life-17",
+      "choice": "life-17-1"
+    },
+    {
+      "slot": 18,
+      "event": "life-18",
+      "choice": "life-18-1"
+    },
+    {
+      "slot": 19,
+      "event": "indie-kit",
+      "choice": "indie-kit-2"
+    },
+    {
+      "slot": 20,
+      "event": "school-degree",
+      "choice": "school-degree-0"
+    },
+    {
+      "slot": 21,
+      "event": "life-21",
+      "choice": "life-21-0"
+    },
+    {
+      "slot": 22,
+      "event": "life-22",
+      "choice": "life-22-1"
+    },
+    {
+      "slot": 23,
+      "event": "life-23",
+      "choice": "life-23-0"
+    },
+    {
+      "slot": 24,
+      "event": "office-24",
+      "choice": "office-24-1",
+      "actions": [
+        {
+          "schema": 1,
+          "actionId": "J01-shift-full",
+          "kind": "employment",
+          "routeIds": [
+            "J01"
+          ],
+          "sourceRefs": [
+            {
+              "branch": "1rw9gp4-rl8y7w",
+              "slot": 23,
+              "eventId": "life-23",
+              "choiceId": "life-23-0"
+            }
+          ],
+          "payload": {
+            "ruleVersion": 1,
+            "goal": "办公室工作"
+          },
+          "costs": {
+            "time": 0,
+            "energy": 0,
+            "money": 0
+          },
+          "result": {
+            "detail": "约定整班出勤（300 元）的安排写进了班表。",
+            "mode": "full"
+          }
+        }
+      ],
+      "pay": {
+        "paySourceId": "office-24",
+        "routeId": "J01",
+        "mode": "full",
+        "interrupted": false,
+        "workBlocks": 2,
+        "amount": 300
+      }
+    },
+    {
+      "slot": 25,
+      "event": "life-25",
+      "choice": "life-25-2",
+      "actions": [
+        {
+          "schema": 1,
+          "actionId": "J01-shift-part",
+          "kind": "employment",
+          "routeIds": [
+            "J01"
+          ],
+          "sourceRefs": [
+            {
+              "branch": "1rw9gp4-rl8y7w",
+              "slot": 24,
+              "eventId": "office-24",
+              "choiceId": "office-24-1"
+            }
+          ],
+          "payload": {
+            "ruleVersion": 1,
+            "goal": "办公室工作"
+          },
+          "costs": {
+            "time": 1,
+            "energy": 0,
+            "money": 0
+          },
+          "result": {
+            "detail": "签档案室半班聘约，停领整班薪水的安排写进了班表。",
+            "mode": "part"
+          }
+        }
+      ],
+      "pay": {
+        "paySourceId": "office-25",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": false,
+        "workBlocks": 1,
+        "amount": 150
+      }
+    },
+    {
+      "slot": 26,
+      "event": "indie-weekend",
+      "choice": "indie-weekend-1",
+      "actions": [
+        {
+          "schema": 1,
+          "actionId": "03-ask-grad",
+          "kind": "contact",
+          "routeIds": [
+            "03"
+          ],
+          "sourceRefs": [
+            {
+              "branch": "1rw9gp4-rl8y7w",
+              "slot": 13,
+              "eventId": "school-exam",
+              "choiceId": "school-exam-1",
+              "actionId": "03-establish"
+            }
+          ],
+          "payload": {
+            "ruleVersion": 1,
+            "goal": "争取清华或北大录取"
+          },
+          "costs": {
+            "time": 1,
+            "energy": 1,
+            "money": 0
+          },
+          "result": {
+            "detail": "咨询老师请你先核对已有学历和目标专业的简章。"
+          }
+        }
+      ],
+      "pay": {
+        "paySourceId": "office-26",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": false,
+        "workBlocks": 1,
+        "amount": 150
+      }
+    },
+    {
+      "slot": 27,
+      "event": "office-27",
+      "choice": "office-27-1",
+      "actions": [
+        {
+          "schema": 1,
+          "actionId": "03-revise",
+          "kind": "investment",
+          "routeIds": [
+            "03"
+          ],
+          "sourceRefs": [
+            {
+              "branch": "1rw9gp4-rl8y7w",
+              "slot": 13,
+              "eventId": "school-exam",
+              "choiceId": "school-exam-1",
+              "actionId": "03-establish"
+            }
+          ],
+          "payload": {
+            "ruleVersion": 1,
+            "goal": "争取清华或北大录取",
+            "method": "domain"
+          },
+          "costs": {
+            "time": 1,
+            "energy": 1,
+            "money": 0
+          },
+          "result": {
+            "detail": "你在第一行标出分母不能为零，划掉了那个不成立的解。"
+          }
+        }
+      ],
+      "pay": {
+        "paySourceId": "office-27",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": false,
+        "workBlocks": 1,
+        "amount": 150
+      }
+    },
+    {
+      "slot": 28,
+      "event": "life-28",
+      "choice": "life-28-0",
+      "pay": {
+        "paySourceId": "office-28",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": false,
+        "workBlocks": 1,
+        "amount": 150
+      }
+    },
+    {
+      "slot": 29,
+      "event": "life-29",
+      "choice": "life-29-1",
+      "pay": {
+        "paySourceId": "office-29",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": false,
+        "workBlocks": 1,
+        "amount": 150
+      }
+    },
+    {
+      "slot": 30,
+      "event": "life-30",
+      "choice": "life-30-1",
+      "pay": {
+        "paySourceId": "office-30",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": false,
+        "workBlocks": 1,
+        "amount": 150
+      }
+    },
+    {
+      "slot": 31,
+      "event": "life-31",
+      "choice": "life-31-2",
+      "pay": {
+        "paySourceId": "office-31",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": false,
+        "workBlocks": 1,
+        "amount": 150
+      }
+    },
+    {
+      "slot": 32,
+      "event": "office-32",
+      "choice": "office-32-1",
+      "pay": {
+        "paySourceId": "office-32",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": false,
+        "workBlocks": 1,
+        "amount": 150
+      }
+    },
+    {
+      "slot": 33,
+      "event": "indie-budget",
+      "choice": "indie-budget-1",
+      "pay": {
+        "paySourceId": "office-33",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": false,
+        "workBlocks": 1,
+        "amount": 150
+      }
+    },
+    {
+      "slot": 34,
+      "event": "life-34",
+      "choice": "life-34-2",
+      "pay": {
+        "paySourceId": "office-34",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": false,
+        "workBlocks": 1,
+        "amount": 150
+      }
+    },
+    {
+      "slot": 35,
+      "event": "indie-rights",
+      "choice": "indie-rights-2",
+      "pay": {
+        "paySourceId": "office-35",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": false,
+        "workBlocks": 1,
+        "amount": 150
+      }
+    },
+    {
+      "slot": 36,
+      "event": "office-pivot",
+      "choice": "office-pivot-0",
+      "pay": {
+        "paySourceId": "office-36",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": true,
+        "workBlocks": 0,
+        "amount": 0
+      }
+    },
+    {
+      "slot": 37,
+      "event": "office-37",
+      "choice": "office-37-2",
+      "pay": {
+        "paySourceId": "office-37",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": true,
+        "workBlocks": 0,
+        "amount": 0
+      }
+    },
+    {
+      "slot": 38,
+      "event": "active-recovery",
+      "choice": "active-recovery-wait",
+      "pay": {
+        "paySourceId": "office-38",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": true,
+        "workBlocks": 0,
+        "amount": 0
+      }
+    },
+    {
+      "slot": 39,
+      "event": "life-39",
+      "choice": "life-39-0",
+      "pay": {
+        "paySourceId": "office-39",
+        "routeId": "J01",
+        "mode": "part",
+        "interrupted": true,
+        "workBlocks": 0,
+        "amount": 0
+      }
+    },
+    {
+      "slot": 40,
+      "event": "life-40",
+      "choice": "life-40-1"
+    },
+    {
+      "slot": 41,
+      "event": "late-recovery",
+      "choice": "late-recovery-1"
+    },
+    {
+      "slot": 42,
+      "event": "life-42",
+      "choice": "life-42-0"
+    },
+    {
+      "slot": 43,
+      "event": "life-43",
+      "choice": "life-43-1"
+    },
+    {
+      "slot": 44,
+      "event": "life-44",
+      "choice": "life-44-1"
+    },
+    {
+      "slot": 45,
+      "event": "indie-memory",
+      "choice": "indie-memory-1"
+    },
+    {
+      "slot": 46,
+      "event": "life-46",
+      "choice": "life-46-2"
+    }
+  ],
+  "fork": 23
+}
