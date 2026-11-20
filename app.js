@@ -402,7 +402,7 @@
     const full=LifeRoutes.employment(run)==='full'?'<p>整班出勤占用余下的空档。可先改签半班聘约。</p>':'';
     const pending=run.draft.route?button('撤回手记安排','route','draft/cancel','chip')+button('这次明确谢绝','route-decline','','chip')+
       '<p role="status">'+esc(selected?.error??selected?.label??'')+'</p>':'';
-    return '<details class="small-section route-desk" '+(run.draft.route?'open':'')+'><summary>我的手记</summary>'+
+    return '<details class="small-section route-desk" '+(run.draft.route?'open':'')+'><summary>'+(run.reviewedVersion?'工作安排':'我的手记')+'</summary>'+
       (run.draft.routeNotice?'<p>'+esc(run.draft.routeNotice)+'</p>':'')+(selected?.station&&place?button('进入'+place,'dream-enter','','chip')+'<dialog class="dream-place" data-key="'+esc(selected.key)+'" aria-label="'+place+'"><h2>'+place+'</h2><p>'+esc(selected.label)+' · 本期独立日程</p><p>时间 '+selected.receipt.costs.time+' 段 · 精力 '+selected.receipt.costs.energy+' · 支出 '+selected.receipt.costs.money+' 元</p>'+station+methods+(rid==='11'&&['11-compose','11-record','11-club','11-headline','11-reprise'].includes(selected.receipt.actionId)?button('试听《雨棚》这版动机','listen-rain',run.draft.routeMethod==='walk'||LifeChapters.records(run,'11-compose').at(-1)?.a.result.motif==='walk'?'walk':'rain','chip'):'')+button('返回本期安排','dream-back','','chip')+'</dialog>'+pending+room+buttons:selected?.station?station+methods+pending+room+buttons:history+room+sources+full+buttons+methods+pending)+'</details>';
   }
   function chapterMemories(run){
@@ -526,6 +526,17 @@
   }
 
   function play(run) {
+    const reading=LifeReviewed.view(run);
+    if(reading){
+      const {eventId,variantId,title,body,choices,feedback}=reading;
+      const icon=eventId==='P-S01'?'<span aria-hidden="true" class="seat-chart'+(feedback?' unfold':'')+'"></span>':eventId.startsWith('O')?'<span aria-hidden="true" class="reviewed-track chapter-art"></span>':
+        S.sprite(eventId.startsWith('E')||eventId==='P-E01'?'console':'planner','large-sprite','once');
+      const options=Object.entries(choices);
+      const action=(label,id)=>button(label,'reviewed-choice',[eventId,variantId,id].join('/')+(reading.opportunityId?'#'+reading.opportunityId:''),'secondary wide');
+      return '<main class="narrow"><section class="surface event-panel">'+icon+
+        '<time datetime="'+esc(reading.date)+'">'+esc(reading.date.replace('T',' '))+'</time><h1 tabindex="-1">'+esc(title)+'</h1>'+body.map(line=>'<p>'+esc(line)+'</p>').join('')+
+        (feedback?button('继续','reviewed-next',eventId,'primary'):options.length?options.map(([id,c])=>action(c.label,id)).join(''):action('继续','read'))+'</section></main>';
+    }
     const event = E.currentCard(run);
     if (event.childhoodGift) return '<main class="layout play gift-layout">'+resources(run)+LifeGift.render(event,guideView,guide,button,esc,run.result?.fact.text)+tools(run,false)+(run.stage==='result'?resultPanel(run,false):'')+'</main>';
     if (event.interaction?.sceneId==='school-shop') return '<main class="layout play shop-layout">'+resources(run)+
@@ -539,7 +550,7 @@
   }
 
   function turnFooter(run) {
-    if (run.activity || run.memo) return '';
+    if (run.activity || run.memo || run.readingReviewed) return '';
     const event = E.currentCard(run);
     if (event.interaction && run.stage==='event') return '';
     let primary, secondary = '', status = '';
@@ -685,13 +696,13 @@
   function animate() {
     const run=nowRun();
     root.classList.toggle('still-gifts',motionPreference()==='off');
-    S.animate(root,motionPreference(),[page,selected,run?.slot,run?.stage,run?.entered,memoPage,modal?.type,modal?.id].join('/'));
+    S.animate(root,motionPreference(),[page,selected,run?.slot,run?.stage,run?.readingReviewed?.eventId,run?.readingReviewed?.feedback,run?.entered,memoPage,modal?.type,modal?.id].join('/'));
   }
 
   let traceObserver;
   function observePage(run){
     traceObserver?.disconnect();
-    if(!run || page!=='play' || modal || document.hidden || !window.IntersectionObserver)return;
+    if(!run || run.readingReviewed || page!=='play' || modal || document.hidden || !window.IntersectionObserver)return;
     const event=E.currentCard(run), stage=run.stage, slot=run.slot;
     if(stage==='event')LifeContinuity.offers(run,event);
     const observer=new IntersectionObserver(entries=>{
@@ -850,7 +861,7 @@
       const n=Object.values(setup.points).reduce((a,b)=>a+b,0);
       if(action==='birth' && n<=Math.min(data.points,6)){
         data.points-=n;
-        start(E.create(setup.seed,{points:setup.points,talent:setup.talent,childhood:'spring-gift'}));
+        start(E.create(setup.seed,{points:setup.points,talent:setup.talent,reviewedVersion:1,childhood:'spring-gift'}));
         render(true);
       } else if(action==='point-up'&&E.attributes.includes(id)&&n<Math.min(data.points,6)) {
         setup.points[id]=(setup.points[id]??0)+1;render();
@@ -1011,7 +1022,12 @@
     }
     let focus = false;
     const event=E.currentCard(run),draft=run.draft;
-    if(['next','skip-memoir'].includes(action)&&run.stage==='result'&&id===run.eventId){
+    if(run.readingReviewed){
+      const current=LifeReviewed.view(run);
+      if(action==='reviewed-choice' && E.commit(run,...id.split('#')))focus=true;
+      else if(action==='reviewed-next' && current.feedback && current.eventId===id && E.advance(run))focus=true;
+      else return;
+    } else if(['next','skip-memoir'].includes(action)&&run.stage==='result'&&id===run.eventId){
       const skip=action==='skip-memoir';
       if(skip && run.slot!==46 && run.finalType!=='early')return;
       if(!E.advance(run))return;

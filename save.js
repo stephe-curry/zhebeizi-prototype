@@ -12,6 +12,9 @@ globalThis.LifeSave = (() => {
     if (!isCurrent(value)) return null;
     for (const [branchId,branch] of Object.entries(value.branches ?? {})) {
       const run = branch?.run;
+      if(run?.reviewedVersion!==undefined || run?.readingReviewed){
+        if(!Array.isArray(run.facts) || !LifeReviewed.validHistory(run))return null;
+      }
       if(run && run.branchId===undefined && run.stage==='event')run.branchId=branchId;
       if(run?.stage==='event'&&run.draft?.route&&!LifeRoutes.options(run).some(o=>o.key===run.draft.route)){
         delete run.draft.route;run.draft.routeNotice='此前的手记安排已过期，请重新选择。';
@@ -129,7 +132,7 @@ globalThis.LifeSave = (() => {
       && (run.draft.routeDeclined===undefined||Array.isArray(run.draft.routeDeclined)&&run.draft.routeDeclined.every(k=>run.draft.routeSeen?.includes(k)))
       && (run.draft.routeSeen===undefined||Array.isArray(run.draft.routeSeen)&&run.draft.routeSeen.every(k=>typeof k==='string'))
       && (run.draft.routeSteps===undefined||Array.isArray(run.draft.routeSteps)&&run.draft.routeSteps.every(s=>typeof s==='string'))
-      && run.facts.every(fact) && routeHistory(run) && activity(run.activity)
+      && run.facts.every(fact) && LifeReviewed.validHistory(run) && routeHistory(run) && activity(run.activity)
       && (run.stage!=='event' || run.draft.interaction===undefined || !!globalThis.LifeInteraction.preview(run))
       && (run.stage!=='result' || record(run.result)&&record(run.result.deltas)&&fact(run.result.fact))
       && Object.values(run.items).every(item=>record(item)&&slot(item.first)&&Array.isArray(item.trail)&&item.trail.every(entry=>slot(entry.slot)))

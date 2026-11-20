@@ -557,3 +557,39 @@ dialog::backdrop { background:#101612bc; }
 
 .still-gifts .dream-place .dream-art{background-position-x:100%}
 @media(prefers-reduced-motion:reduce){.dream-place .dream-art{background-position-x:100%}}
+
+.reviewed-track.chapter-art {
+  width: 192px;
+  height: 96px;
+  max-width: 100%;
+  background-image: url(assets/dream-places.png);
+  background-size: 400% 700%;
+  background-position: 0 0;
+  animation: dream-beat 720ms steps(1, end) both;
+}
+.still-gifts .reviewed-track { animation: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reviewed-track.chapter-art { animation: none; }
+}
+
+.seat-chart {
+  display: block;
+  width: 96px;
+  height: 96px;
+  margin: 0 auto;
+  background: url(assets/seat-chart.png) 0 0 / 600% 100% no-repeat;
+  image-rendering: pixelated;
+}
+.seat-chart.unfold { animation: unfold-chart 1510ms steps(1, end) both; }
+@keyframes unfold-chart {
+  0% { background-position-x: 0; }
+  25.1656% { background-position-x: 20%; }
+  31.7881% { background-position-x: 40%; }
+  37.7483% { background-position-x: 60%; }
+  45.6954% { background-position-x: 80%; }
+  57.6159%, 100% { background-position-x: 100%; }
+}
+.still-gifts .seat-chart.unfold { animation: none; background-position-x: 100%; }
+@media (prefers-reduced-motion: reduce) {
+  .seat-chart.unfold { animation: none; background-position-x: 100%; }
+}

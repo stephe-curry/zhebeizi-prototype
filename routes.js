@@ -84,6 +84,7 @@ globalThis.LifeRoutes = (() => {
     const known=dreams(run), contacts=candidates(run), list=[];
     const context={seed:run.seed,slot:run.slot,eventId:run.eventId,career:run.career,facts:run.facts};
     for(const route of registry.values()) {
+      if(run.reviewedVersion && route.type==='dream')continue;
       const inWindow=run.slot>=route.window[0]&&run.slot<=route.window[1];
       if(!inWindow&&!route.actions.some(a=>a.window&&a.window[0]<=run.slot&&a.window[1]>=run.slot))continue;
       const candidate=contacts.find(c=>c.id===route.id), dream=known[route.id];

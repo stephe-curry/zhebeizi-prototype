@@ -5,6 +5,7 @@ globalThis.LifeEngine = (() => {
   if (!globalThis.LifeResponses && typeof require==="function") require("./responses.js");
   if (!globalThis.LifeChapters && typeof require==='function') require('./chapters.js');
   if (!globalThis.LifeRoutes && typeof require==='function') require('./routes.js');
+  if (!globalThis.LifeReviewed && typeof require==='function') require('./reviewed-scenes.js');
   const routes=globalThis.LifeRoutes;
   Object.assign(globalThis.LifeContinuity,{candidates:routes.candidates,dreams:routes.dreams,employment:routes.employment,qualifications:(run,id)=>routes.history(run,id,'qualification')});
   const continuity=globalThis.LifeContinuity;
@@ -165,7 +166,7 @@ globalThis.LifeEngine = (() => {
 
   function schedule(run) {
     const giftId=run.childhood==='spring-gift' && C.giftEvents[run.slot-1];
-    const matching = C.cards.filter(card => card.slot === run.slot && card.rule && rule(run,card.rule));
+    const matching = C.cards.filter(card => !(run.reviewedVersion && card.id.startsWith('arena-')) && card.slot === run.slot && card.rule && rule(run,card.rule));
     const story = matching.find(card => card.rule === 'early-next' || card.rule === 'early')
       ?? matching.find(card => card.id === 'arena-final')
       ?? matching.find(card => card.rule === 'recover')
@@ -278,7 +279,7 @@ globalThis.LifeEngine = (() => {
     return run;
   }
 
-  function create(seed,{scenario='life',points={},talent=null,childhood}={}) {
+  function create(seed,{scenario='life',points={},talent=null,childhood,reviewedVersion}={}) {
     seed >>>= 0;
     const birth = origin(seed);
     const stats = {...base};
@@ -286,7 +287,7 @@ globalThis.LifeEngine = (() => {
     modify(stats,points);
     if (talent) modify(stats,C.talents[talent]?.[2]);
     return prepare({
-      ...(childhood==='spring-gift'?{childhood}:{}),seed,scenario,birth:birth.id,stats,points,talent,career:null,direction:null,careerLog:[],items:{},people:{},
+      ...(reviewedVersion===1?{reviewedVersion}:{}),...(childhood==='spring-gift'?{childhood}:{}),seed,scenario,birth:birth.id,stats,points,talent,career:null,direction:null,careerLog:[],items:{},people:{},
       threads:{},experience:{},highlights:{},facts:[],forks:[],wish:null,wishLog:[],historyKey:hash(seed,'story'),
       project:{points:0},low:null,early:null,age35:null
     },1);
@@ -413,7 +414,7 @@ globalThis.LifeEngine = (() => {
         break;
       case 'admit': {
         const paper=LifeChapters.records(run,'03-paper').at(-1);
-        const qualified = (!paper||paper.a.result.scoreReady) && value === 'reach' && run.stats.knowledge + (run.threads.school?.steps ?? 0)*2 + roll/6 >= 48;
+        const qualified = !run.reviewedVersion && (!paper||paper.a.result.scoreReady) && value === 'reach' && run.stats.knowledge + (run.threads.school?.steps ?? 0)*2 + roll/6 >= 48;
         run.admission = {name:qualified ? '清北录取' : value === 'trade' ? '实训专业录取' : '备选院校录取',qualified,reach:value === 'reach'};
         events.lines.push(qualified ? '录取页面更新了。那所填在第一行的学校递来了录取消息。' : value === 'reach' ? '第一志愿没有录取，你收到备选学校的通知。' : '录取结果出来了，接下来就是新的生活。');
         transitionItem(run,'letter','display',events);
@@ -678,7 +679,8 @@ globalThis.LifeEngine = (() => {
       (!C.familySlots.includes(run.slot) || run.draft.parent !== null);
   }
 
-  function commit(run) {
+  function commit(run,reviewedKey,opportunityId) {
+    if(run.readingReviewed || reviewedKey!==undefined)return LifeReviewed.commit(run,reviewedKey,opportunityId);
     const event=currentCard(run),draft=preview(run);
     if(!ready(run,event,draft))return false;
     settleTurn(run,event,draft);
@@ -830,6 +832,7 @@ globalThis.LifeEngine = (() => {
     if (day?.extra) fact.dayExtra = day.extra.id;
     if (actionResult) fact.interaction = actionResult;
     continuity.settle(run,event,choice,fact,[...choice.commands,...(day?.extra?.commands??[]),...(response?.commands??[])],before);
+    LifeReviewed.recordOpportunity(run,fact);
     run.facts.push(fact);
     if (run.checkpoint && event.choices.length > 1 && !run.finalType) run.forks.push({
       slot:run.slot,eventId:event.id,title:event.title,choiceId:choice.id,action:choice.label,point:run.checkpoint
@@ -891,6 +894,8 @@ globalThis.LifeEngine = (() => {
 
   function advance(run) {
     if (run.stage !== 'result') return false;
+    if(run.readingReviewed && !run.readingReviewed.feedback)return false;
+    if(LifeReviewed.step(run))return true;
     if (run.finalType === 'early' || run.slot === 46) {
       run.memo = memoir(run);
       run.stage = 'memoir';

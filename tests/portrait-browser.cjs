@@ -165,6 +165,7 @@ async function main() {
   await send('Runtime.enable');
   await send('Page.enable');
   await send('Network.enable');
+  if(process.argv.includes('--reviewed'))return require('./reviewed-browser.cjs')({load,resize,send,evaluate,wait,tap,portrait,faults});
   if(process.argv.includes('--p35'))return require('./p32-browser.cjs')({load,resize,send,evaluate,wait,tap,portrait,faults,remoteRequests},require('./p35.cjs').browser);
   if(process.argv.includes('--p34'))return require('./p32-browser.cjs')({load,resize,send,evaluate,wait,tap,portrait,faults,remoteRequests},require('./p34.cjs').browser);
   if(process.argv.includes('--p33'))return require('./p32-browser.cjs')({load,resize,send,evaluate,wait,tap,portrait,faults,remoteRequests},require('./p33.cjs').browser);
